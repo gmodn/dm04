@@ -52,4 +52,14 @@ partial class Pistol : BaseDmWeapon
 		ShootBullet( 0.2f, 1.5f, 8.0f, 3.0f );
 
 	}
+
+	public override void Simulate(Client cl) 
+	{
+		if (AmmoClip < ClipSize && TimeSincePrimaryAttack >= 1f || AmmoClip == 0 && TimeSincePrimaryAttack > 1f) 
+		{
+			Reload();
+		}
+
+		base.Simulate(cl);
+	}
 }

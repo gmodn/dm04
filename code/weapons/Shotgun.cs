@@ -72,6 +72,16 @@ partial class Shotgun : BaseDmWeapon
 		ShootBullet( 0.4f, 0.3f, 8.0f, 3.0f, 20 );
 	}
 
+	public override void Simulate(Client cl) 
+	{
+		if (AmmoClip < ClipSize && TimeSincePrimaryAttack >= 1f || AmmoClip == 0 && TimeSincePrimaryAttack > 1f) 
+		{
+			Reload();
+		}
+
+		base.Simulate(cl);
+	}
+
 	[ClientRpc]
 	protected override void ShootEffects()
 	{

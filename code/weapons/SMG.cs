@@ -56,6 +56,16 @@ partial class SMG : BaseDmWeapon
 		ShootGrenade();
 	}
 
+	public override void Simulate(Client cl) 
+	{
+		if (AmmoClip < ClipSize && TimeSincePrimaryAttack >= 1f || AmmoClip == 0 && TimeSincePrimaryAttack > 1f) 
+		{
+			Reload();
+		}
+
+		base.Simulate(cl);
+	}
+
 	[ClientRpc]
 	protected override void ShootEffects()
 	{
