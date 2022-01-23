@@ -103,7 +103,7 @@ partial class Shotgun : BaseDmWeapon
 
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
-		ViewModelEntity?.SetAnimBool( "fire_double", true );
+		ViewModelEntity?.SetAnimBool( "altfire", true );
 		CrosshairPanel?.CreateEvent( "fire" );
 
 		if ( IsLocalPawn )
@@ -142,14 +142,20 @@ partial class Shotgun : BaseDmWeapon
 	}
 
 	[ClientRpc]
+	public override void StartReloadEffects() 
+	{
+		base.StartReloadEffects();
+	}
+
+	[ClientRpc]
 	protected virtual void FinishReload()
 	{
-		ViewModelEntity?.SetAnimBool( "reload_finished", true );
+		ViewModelEntity?.SetAnimBool( "reload_end", true );
 	}
 
 	public override void SimulateAnimator( PawnAnimator anim )
 	{
-		anim.SetParam( "holdtype", 2 ); // TODO this is shit
+		anim.SetParam( "holdtype", 3 ); // TODO this is shit
 		anim.SetParam( "aimat_weight", 1.0f );
 	}
 }

@@ -98,9 +98,10 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			OnReloadFinish();
 		}
 
-		if ( AmmoClip < ClipSize && TimeSincePrimaryAttack >= 1f || AmmoClip == 0 && TimeSincePrimaryAttack > 1f )
+		if (AmmoClip == 0 && TimeSincePrimaryAttack > 0.5f)
 		{
 			Reload();
+			StartReloadEffects();
 		}
 	}
 
