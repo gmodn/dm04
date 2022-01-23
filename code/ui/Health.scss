@@ -1,0 +1,32 @@
+Health {
+	position: absolute;
+	left: 37px;
+	bottom: 27px;
+	width: 229px;
+	height: 81px;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 7px;
+
+	.HealthText {
+		position: absolute;
+		left: 112px;
+		bottom: 5px;
+		font-family: HalfLife2;
+		font-size: 61px;
+		color: yellow;
+	}
+
+	.HealthTextName {
+		position: absolute;
+		left: 18px;
+		bottom: 15px;
+		font-family: Verdana;
+		font-size: 16.5px;
+		font-weight: 700;
+		color: yellow;
+	}
+}
+
+.Hidden {
+	display: none;
+}

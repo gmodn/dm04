@@ -1,0 +1,13 @@
+{
+  "SharedAssets": "*.*",
+  "Title": "DM04",
+  "Type": "game",
+  "Org": "gmodn",
+  "Ident": "dm04",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Dm04"
+}
