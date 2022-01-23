@@ -5,16 +5,23 @@ using Sandbox.UI.Construct;
 
 public class Ammo : Panel
 {
-	public Label Text;
-	public Label Weapon;
-	public Label Inventory;
+	private Panel AmmoPanel;
+	private Label CounterText;
+	private Label ReserveText;
+
+	private Panel AltPanel;
+	private Label AltText;
 
 	public Ammo()
 	{
-		Text = Add.Label( "AMMO", "AmmoTextName" );
-		Panel ammoBackground = Add.Panel();
-		Weapon = Add.Label( "100", "weapon" );
-		Inventory = Add.Label( "100", "inventory" );
+		AmmoPanel = Add.Panel( "Ammo" );
+		AmmoPanel.Add.Label( "AMMO", "AmmoText" );
+		CounterText = AmmoPanel.Add.Label( "0", "Counter" );
+		ReserveText = AmmoPanel.Add.Label( "0", "Reserve" );
+
+		AltPanel = Add.Panel( "Alt" );
+		AltPanel.Add.Label( "ALT", "AmmoText" );
+		AltText = AltPanel.Add.Label( "0", "Counter" );
 	}
 
 	public override void Tick()
@@ -27,10 +34,10 @@ public class Ammo : Panel
 
 		if ( weapon == null ) return;
 
-		Weapon.Text = $"{weapon.AmmoClip}";
+		CounterText.Text = $"{weapon.AmmoClip}";
 
 		var inv = weapon.AvailableAmmo();
-		Inventory.Text = $" / {inv}";
-		Inventory.SetClass( "active", inv >= 0 );
+		ReserveText.Text = $"{inv}";
+		ReserveText.SetClass( "active", inv >= 0 );
 	}
 }

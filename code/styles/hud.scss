@@ -27,33 +27,71 @@ rootpanel
 
 ammo {
 	position: absolute;
-	bottom: 27px;
-	right: 50px;
-	font-size: 64px;
-	color: yellow;
-	mix-blend-mode: lighten;
-	font-family: HalfLife2;
+	right: 0px;
+	bottom: 0px;
 
+	Panel {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: 7px;
+	}
 
-	label {
-		text-shadow: 0px 0px 20px #f70a;
+	Label {
+		position: absolute;
+	}
 
-		&.danger {
-			color: #f00;
+	.Ammo {
+		right: 190px;
+		bottom: 27px;
+		width: 287px;
+		height: 81px;
+	}
+
+	.AmmoText {
+		left: 17px;
+		bottom: 15px;
+		font-family: Verdana;
+		font-size: 16.5px;
+		font-weight: 700;
+		color: yellow;
+	}
+
+	.Counter {
+		left: 90px;
+		bottom: 5px;
+		font-family: HalfLife2;
+		font-size: 61px;
+		color: yellow;
+	}
+
+	.Reserve {
+		left: 220px;
+		bottom: 8px;
+		font-family: HalfLife2;
+		font-size: 31px;
+		font-weight: 700;
+		color: yellow;
+	}
+
+	.Alt {
+		right: 22px;
+		bottom: 27px;
+		width: 162px;
+		height: 81px;
+
+		.AmmoText {
+			left: 18px;
+			bottom: 11px;
+		}
+
+		.Counter {
+			left: 58px;
 		}
 	}
 
-	.AmmoTextName {
-		position: absolute;
-		left: -73px;
-		bottom: 9px;
-		font-size: 16.5px;
-		font-weight: 700;
-		color: #ff0;
-		mix-blend-mode: lighten;
-		font-family: Verdana;
+	.Empty {
+		color: "#FF0000";
 	}
-
 }
 
 
