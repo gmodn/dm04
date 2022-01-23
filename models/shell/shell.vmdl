@@ -14,16 +14,8 @@
 						remaps = 
 						[
 							{
-								from = "black.vmat"
-								to = "materials/rifle_shell/black.vmat"
-							},
-							{
-								from = "rifleshellback.vmat"
-								to = "materials/rifle_shell/rifleshellback.vmat"
-							},
-							{
-								from = "rifleshellside.vmat"
-								to = "materials/rifle_shell/rifleshellside.vmat"
+								from = "shell.vmat"
+								to = "materials/pistol_shell/shell.vmat"
 							},
 						]
 						use_global_default = false
@@ -37,7 +29,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/rifleshell/rifleshell.smd"
+						filename = "models/shell/shell.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
