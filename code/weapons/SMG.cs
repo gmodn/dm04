@@ -5,7 +5,7 @@ using System;
 [Hammer.EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
 partial class SMG : BaseDmWeapon
 { 
-	public override string ViewModelPath => "weapons/rust_smg/v_rust_smg.vmdl";
+	public override string ViewModelPath => "models/smg1/smg1_reference.vmdl";
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
