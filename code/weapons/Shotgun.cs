@@ -19,7 +19,7 @@ partial class Shotgun : BaseDmWeapon
 
 		SetModel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" );  
 
-		AmmoClip = 6;
+		AmmoClip = 8;
 	}
 
 	public override void AttackPrimary() 
