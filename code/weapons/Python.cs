@@ -1,17 +1,17 @@
 ﻿using Sandbox;
 
 
-[Library( "dm_pistol", Title = "Pistol" )]
+[Library( "dm_python", Title = "Python" )]
 [Hammer.EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
-partial class Pistol : BaseDmWeapon
+partial class Python : BaseDmWeapon
 { 
-	public override string ViewModelPath => "models/pistol/pistol_reference.vmdl";
+	public override string ViewModelPath => "models/357/python_357_reference.vmdl";
 
-	public override float PrimaryRate => 15.0f;
+	public override float PrimaryRate => 1.6f;
+
+	public override int ClipSize => 6;
 	public override float SecondaryRate => 1.0f;
-	public override float ReloadTime => 1.0f;
-
-	public override int ClipSize => 18;
+	public override float ReloadTime => 3.0f;
 
 	public override int Bucket => 1;
 
@@ -20,7 +20,7 @@ partial class Pistol : BaseDmWeapon
 		base.Spawn();
 
 		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
-		AmmoClip = 12;
+		AmmoClip = 6;
 	}
 
 	public override bool CanPrimaryAttack()
@@ -49,7 +49,7 @@ partial class Pistol : BaseDmWeapon
 		//
 		// Shoot the bullets
 		//
-		ShootBullet( 0.2f, 1.5f, 8.0f, 3.0f );
+		ShootBullet( 0.2f, 1.5f, 75.0f, 3.0f );
 
 	}
 }

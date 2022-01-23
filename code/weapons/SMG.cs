@@ -49,7 +49,11 @@ partial class SMG : BaseDmWeapon
 
 	public override void AttackSecondary()
 	{
-		// Grenade lob
+		TimeSincePrimaryAttack = 0f;
+		TimeSinceSecondaryAttack = 0f;
+
+		PlaySound( "rust_pumpshotgun.shoot" );
+		ShootGrenade();
 	}
 
 	[ClientRpc]
@@ -73,6 +77,26 @@ partial class SMG : BaseDmWeapon
 	{
 		anim.SetParam( "holdtype", 2 ); // TODO this is shit
 		anim.SetParam( "aimat_weight", 1.0f );
+	}
+
+	private void ShootGrenade()
+	{
+		if ( Host.IsClient )
+			return;
+
+		var grenade = new Prop
+		{
+			Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
+			Rotation = Owner.EyeRot,
+			Scale = 0.25f
+		};
+
+		//TODO: Should be replaced with an actual grenade model
+		grenade.SetModel( "models/rust_props/barrels/fuel_barrel.vmdl" );
+		grenade.Velocity = Owner.EyeRot.Forward * 1000;
+
+		grenade.ExplodeAsync( 1f );
+
 	}
 
 }

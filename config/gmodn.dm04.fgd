@@ -21,16 +21,6 @@
 ]
 
 //
-// GravGun
-//
-@PointClass base(BaseProperties_gmodn_dm04) = gravgun : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
 // Crossbow
 //
 @PointClass base(BaseProperties_gmodn_dm04) editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) = dm_crossbow : ""
@@ -51,6 +41,16 @@
 ]
 
 //
+// Python
+//
+@PointClass base(BaseProperties_gmodn_dm04) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_python : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // Shotgun
 //
 @PointClass base(BaseProperties_gmodn_dm04) editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) = dm_shotgun : ""
@@ -64,6 +64,16 @@
 // SMG
 //
 @PointClass base(BaseProperties_gmodn_dm04) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_smg : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// GravGun
+//
+@PointClass base(BaseProperties_gmodn_dm04) = gravgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 

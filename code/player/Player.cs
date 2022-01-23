@@ -37,7 +37,8 @@ partial class DeathmatchPlayer : Player
 		Inventory.Add( new Shotgun() );
 		Inventory.Add( new SMG() );
 		Inventory.Add( new Crossbow() );
-		Inventory.Add(new GravGun());
+		Inventory.Add( new GravGun());
+		Inventory.Add( new Python() );
 
 		GiveAmmo( AmmoType.Pistol, 100 );
 		GiveAmmo( AmmoType.Buckshot, 8 );
@@ -52,7 +53,6 @@ partial class DeathmatchPlayer : Player
 	{
 		base.OnKilled();
 
-		Inventory.DropActive();
 		Inventory.DeleteContents();
 
 		BecomeRagdollOnClient( LastDamage.Force, GetHitboxBone( LastDamage.HitboxIndex ) );
