@@ -2,7 +2,7 @@
   "SharedAssets": "*.*",
   "Title": "DM04",
   "Type": "game",
-  "Org": "gmodn",
+  "Org": "gman",
   "Ident": "dm04",
   "Schema": 1,
   "HasAssets": true,

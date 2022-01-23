@@ -441,6 +441,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = ""
+		anim_graph_name = "models/irifle/v_irifle.vanmgrph"
 	}
 }
