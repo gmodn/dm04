@@ -18,6 +18,8 @@
 	background-size: 100% 100%;
 	background-position: center center;
 	background-color: rgba( 10, 10, 10, 0.8 );
+	border: 2px solid #fc0;
+	border-radius: 37px;
 
 	&.open {
 		opacity: 1;

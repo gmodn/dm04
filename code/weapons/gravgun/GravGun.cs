@@ -29,6 +29,7 @@ partial class GravGun : BaseDmWeapon
 	protected virtual float AttachDistance => 150.0f;
 	protected virtual float DropCooldown => 0.5f;
 	protected virtual float BreakLinearForce => 2000.0f;
+	public override int Bucket => 0;
 
 	private TimeSince timeSinceDrop;
 
