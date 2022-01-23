@@ -6,7 +6,7 @@ using System.Linq;
 [Library( "gravgun", Title = "Pistol")]
 partial class GravGun : BaseDmWeapon
 {
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public override string ViewModelPath => "models/physcannon/physcannon_reference.vmdl";
 
 	private PhysicsBody holdBody;
 	private WeldJoint holdJoint;

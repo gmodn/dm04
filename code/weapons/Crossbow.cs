@@ -4,7 +4,7 @@
 [Hammer.EditorModel( "weapons/rust_crossbow/rust_crossbow.vmdl" )]
 partial class Crossbow : BaseDmWeapon
 { 
-	public override string ViewModelPath => "weapons/rust_crossbow/v_rust_crossbow.vmdl";
+	public override string ViewModelPath => "models/crossbow/crossbow_reference.vmdl";
 
 	public override float PrimaryRate => 1;
 	public override int Bucket => 3;
@@ -40,6 +40,8 @@ partial class Crossbow : BaseDmWeapon
 			bolt.Owner = Owner;
 			bolt.Velocity = Owner.EyeRot.Forward * 100;
 		}
+
+		ShootBullet( 0.1f, 1.5f, 100.0f, 3.0f );
 	}
 
 	public override void Simulate( Client cl )
