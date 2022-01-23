@@ -5,11 +5,14 @@ using Sandbox.UI.Construct;
 
 public class Ammo : Panel
 {
+	public Label Text;
 	public Label Weapon;
 	public Label Inventory;
 
 	public Ammo()
 	{
+		Text = Add.Label( "AMMO", "AmmoTextName" );
+		Panel ammoBackground = Add.Panel();
 		Weapon = Add.Label( "100", "weapon" );
 		Inventory = Add.Label( "100", "inventory" );
 	}

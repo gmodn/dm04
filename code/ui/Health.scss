@@ -4,8 +4,6 @@ Health {
 	bottom: 27px;
 	width: 229px;
 	height: 81px;
-	background-color: rgba(0, 0, 0, 0.3);
-	border-radius: 7px;
 
 	.HealthText {
 		position: absolute;
@@ -14,6 +12,7 @@ Health {
 		font-family: HalfLife2;
 		font-size: 61px;
 		color: yellow;
+		text-shadow: 0px 0px 20px #f70a;
 	}
 
 	.HealthTextName {
@@ -24,6 +23,7 @@ Health {
 		font-size: 16.5px;
 		font-weight: 700;
 		color: yellow;
+		text-shadow: 0px 0px 20px #f70a;
 	}
 }
 
