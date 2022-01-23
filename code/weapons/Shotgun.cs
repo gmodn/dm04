@@ -74,7 +74,12 @@ partial class Shotgun : BaseDmWeapon
 
 	public override void Simulate(Client cl) 
 	{
-
+		if (AmmoClip == 0 && TimeSincePrimaryAttack > 0.5f)
+		{
+			Reload();
+			StartReloadEffects();
+		}
+		
 		base.Simulate(cl);
 	}
 
