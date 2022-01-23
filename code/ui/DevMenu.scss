@@ -1,0 +1,67 @@
+DevMenu {
+    width: 400px;
+    pointer-events: none;
+    transition: all 0.1s ease-out;
+    position: absolute;
+    height: 100%;
+    opacity: 1;
+    margin: auto;
+    background-color: darkgray;
+    flex-direction: column;
+    overflow: hidden;
+    left: -400px;
+    z-index: 4;
+
+    .header {
+        padding: 14px 20px;
+        width: 100%;
+        background-color: #fc0;
+        color: white;
+        font-family: Verdana;
+        font-weight: 700;
+        font-size: 22px;
+        text-align: center;
+        text-shadow: 2px 2px 0 black;
+        box-shadow: 0px 0 10px 5px #0009;
+        position: relative;
+    }
+
+    &.open {
+        pointer-events: all;
+        left: 0;
+    }
+
+    DevMenuButtons {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            font-family: Verdana;
+            font-size: 22px;
+            color: black;
+            background-color: gray;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #82756b;
+            cursor: pointer;
+        }
+
+        .button:active {
+            background-color: #524840;
+        }
+
+        .section {
+            color: black;
+            font-family: Verdana;
+            margin-bottom: 10px;
+        }
+    }
+}

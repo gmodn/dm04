@@ -28,6 +28,7 @@ public partial class DeathmatchHud : HudEntity<RootPanel>
 		RootPanel.AddChild<KillFeed>();
 		RootPanel.AddChild<Scoreboard>();
 		RootPanel.AddChild<VoiceList>();
+		RootPanel.AddChild<DevMenu>();
 	}
 
 	[ClientRpc]
