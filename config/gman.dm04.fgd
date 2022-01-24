@@ -31,16 +31,6 @@
 ]
 
 //
-// Crowbar
-//
-@PointClass base(BaseProperties_gman_dm04) = weapon_crowbar : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
 // Magnum
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm04_357 : ""
@@ -84,16 +74,6 @@
 // SMG
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm04_smg : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
-// StunBaton
-//
-@PointClass base(BaseProperties_gman_dm04) = weapon_stunbaton : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 

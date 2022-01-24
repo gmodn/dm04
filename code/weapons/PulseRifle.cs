@@ -40,7 +40,7 @@ partial class PulseSMG : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "fire1" );
+		PlaySound( "rust_smg.shoot" );
 
 		//
 		// Shoot the bullets

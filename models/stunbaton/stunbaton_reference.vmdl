@@ -199,6 +199,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = "models/stunbaton/v_stunbaton.vanmgrph"
+		anim_graph_name = ""
 	}
 }

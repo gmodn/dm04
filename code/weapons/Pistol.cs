@@ -41,11 +41,7 @@ partial class Pistol : BaseDmWeapon
 		}
 
 		ShootEffects();
-<<<<<<< Updated upstream
 		PlaySound( "pistol_fire2" );
-=======
-		PlaySound( "pistol_fire" );
->>>>>>> Stashed changes
 
 		ShootBullet( 0.2f, 1.5f, 8.0f, 3.0f );
 
