@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 {
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
+	
+	public virtual AltType AltType => AltType.Grenade;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
 	public virtual int Bucket => 1;
@@ -17,6 +19,8 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 	[Net, Predicted]
 	public int AmmoClip { get; set; }
+
+	public int AltClip { get; set; }
 
 	[Net, Predicted]
 	public TimeSince TimeSinceReload { get; set; }
