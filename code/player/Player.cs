@@ -38,7 +38,7 @@ partial class DeathmatchPlayer : Player
 		Inventory.Add( new SMG() );
 		Inventory.Add( new Crossbow() );
 		Inventory.Add( new GravGun());
-		Inventory.Add( new Python() );
+		Inventory.Add( new Magnum() );
 		Inventory.Add( new PulseSMG() );
 
 		GiveAmmo( AmmoType.Pistol, 100 );

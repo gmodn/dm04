@@ -37,7 +37,7 @@ partial class DeathmatchPlayer
 			if ( child is ModelEntity e )
 			{
 				var clothing = new ModelEntity();
-				clothing.SetModel( e.GetModel() );
+				clothing.SetModel( e.GetModelName() );
 				clothing.SetParent( ent, true );
 			}
 		}

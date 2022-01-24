@@ -61,6 +61,9 @@ partial class DeathmatchPlayer
 public enum AmmoType
 {
 	Pistol,
+	Magnum,
+	SMG,
+	Pulse,
 	Buckshot,
 	Crossbow
 }

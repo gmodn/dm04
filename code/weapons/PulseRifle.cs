@@ -13,6 +13,8 @@ partial class PulseSMG : BaseDmWeapon
 	public override float ReloadTime => 1.5f;
 	public override int Bucket => 2;
 
+	public override AmmoType AmmoType => AmmoType.Pulse;
+
 	public override void Spawn()
 	{
 		base.Spawn();

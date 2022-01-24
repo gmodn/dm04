@@ -9,7 +9,7 @@ partial class SMG : BaseDmWeapon
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
-	public override int ClipSize => 30;
+	public override int ClipSize => 45;
 	public override float ReloadTime => 1.5f;
 	public override int Bucket => 2;
 
@@ -18,7 +18,7 @@ partial class SMG : BaseDmWeapon
 		base.Spawn();
 
 		SetModel( "weapons/rust_smg/rust_smg.vmdl" );
-		AmmoClip = 30;
+		AmmoClip = 45;
 	}
 
 	public override void AttackPrimary()
@@ -38,7 +38,7 @@ partial class SMG : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_smg.shoot" );
+		PlaySound( "smg1_fire1" );
 
 		//
 		// Shoot the bullets
@@ -56,9 +56,15 @@ partial class SMG : BaseDmWeapon
 		ShootGrenade();
 	}
 
+	public override void Reload()
+	{
+		base.Reload();
+
+		PlaySound( "smg1_reload" );
+	}
+
 	public override void Simulate(Client cl) 
 	{
-
 		base.Simulate(cl);
 	}
 

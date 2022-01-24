@@ -11,6 +11,7 @@ partial class Pistol : BaseDmWeapon
 	public override float SecondaryRate => 1.0f;
 	public override float ReloadTime => 1.0f;
 
+	public override AmmoType AmmoType => AmmoType.Pistol;
 	public override int ClipSize => 18;
 
 	public override int Bucket => 1;

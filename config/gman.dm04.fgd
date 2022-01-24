@@ -31,6 +31,16 @@
 ]
 
 //
+// Magnum
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm04_357 : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // Pistol
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_pistol : ""
@@ -44,16 +54,6 @@
 // PulseSMG
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_pulsesmg : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
-// Python
-//
-@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_python : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 

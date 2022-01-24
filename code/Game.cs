@@ -21,7 +21,6 @@ partial class DeathmatchGame : Game
 			new DeathmatchHud();
 		}
 
-		
 	}
 
 	public override void PostLevelLoaded()
