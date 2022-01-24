@@ -23,7 +23,7 @@
 //
 // Crossbow
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) = dm_crossbow : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) = dm04_crossbow : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -43,7 +43,7 @@
 //
 // Pistol
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_pistol : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm04_pistol : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -53,7 +53,7 @@
 //
 // PulseSMG
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_pulsesmg : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm04_pulsesmg : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -63,7 +63,7 @@
 //
 // Shotgun
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) = dm_shotgun : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) = dm04_shotgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -73,7 +73,7 @@
 //
 // SMG
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_smg : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm04_smg : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -83,7 +83,7 @@
 //
 // GravGun
 //
-@PointClass base(BaseProperties_gman_dm04) = gravgun : ""
+@PointClass base(BaseProperties_gman_dm04) = dm04_gravgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
