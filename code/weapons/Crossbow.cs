@@ -1,6 +1,6 @@
 ﻿using Sandbox;
 
-[Library( "dm_crossbow", Title = "Crossbow" )]
+[Library( "dm04_crossbow", Title = "Crossbow" )]
 [Hammer.EditorModel( "weapons/rust_crossbow/rust_crossbow.vmdl" )]
 partial class Crossbow : BaseDmWeapon
 { 

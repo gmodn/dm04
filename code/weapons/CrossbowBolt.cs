@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 
-[Library( "crossbow_bolt" )]
+[Library( "dm04_crossbow_bolt" )]
 [Hammer.Skip]
 partial class CrossbowBolt : ModelEntity
 {

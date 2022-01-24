@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "dm_pulsesmg", Title = "Pulse SMG" )]
+[Library( "dm04_pulsesmg", Title = "Pulse SMG" )]
 [Hammer.EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
 partial class PulseSMG : BaseDmWeapon
 {

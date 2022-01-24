@@ -41,32 +41,32 @@ using Sandbox.UI.Construct;
 
 		Add.Label( "Create USP", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "ent_create dm_pistol" );
+			ConsoleSystem.Run( "ent_create dm04_pistol" );
 		} );
 
 		Add.Label( "Create Python", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "ent_create dm_python" );
+			ConsoleSystem.Run( "ent_create dm04_python" );
 		} );
 
 		Add.Label( "Create GravGun", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "ent_create gravgun" );
+			ConsoleSystem.Run( "ent_create dm04_gravgun" );
 		} );
 
 		Add.Label( "Create Shotgun", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "ent_create dm_shotgun" );
+			ConsoleSystem.Run( "ent_create dm04_shotgun" );
 		} );
 
 		Add.Label( "Create SMG", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "ent_create dm_smg" );
+			ConsoleSystem.Run( "ent_create dm04_smg" );
 		} );
 
 		Add.Label( "Create Crossbow", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "ent_create dm_crossbow" );
+			ConsoleSystem.Run( "ent_create dm04_crossbow" );
 		} );
 
 		//

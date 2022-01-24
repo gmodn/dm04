@@ -3,7 +3,7 @@ using Sandbox.Joints;
 using System;
 using System.Linq;
 
-[Library( "gravgun", Title = "Pistol")]
+[Library( "dm04_gravgun", Title = "Pistol")]
 partial class GravGun : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/physcannon/physcannon_reference.vmdl";
