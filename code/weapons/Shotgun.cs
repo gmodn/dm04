@@ -39,7 +39,7 @@ partial class Shotgun : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_pumpshotgun.shoot" );
+		PlaySound( "shotgun_fire" );
 
 		//
 		// Shoot the bullets
@@ -64,7 +64,7 @@ partial class Shotgun : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		DoubleShootEffects();
-		PlaySound( "rust_pumpshotgun.shootdouble" );
+		PlaySound( "shotgun_dbl_fire" );
 
 		//
 		// Shoot the bullets

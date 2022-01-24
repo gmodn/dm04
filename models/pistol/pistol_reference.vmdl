@@ -358,7 +358,11 @@
 								event_frame = 0
 								event_keys = 
 								{
+<<<<<<< Updated upstream
 									name = "pistol_reload1"
+=======
+									name = "pistol_reload"
+>>>>>>> Stashed changes
 									stop_on_seq_change = false
 									use_layer_sequence = false
 									tags = ""
