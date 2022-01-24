@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 
-[Library( "dm_pistol", Title = "Pistol" )]
+[Library( "dm04_pistol", Title = "Pistol" )]
 [Hammer.EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
 partial class Pistol : BaseDmWeapon
 { 
