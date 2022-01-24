@@ -16,15 +16,7 @@ partial class Magnum : BaseDmWeapon
 	//357 magnum doesn't have a secondary fire
 	//public override float SecondaryRate => 1.0f;
 	public override float ReloadTime => 3.75f;
-
 	public override int Bucket => 1;
-
-	private TimeSince timeSinceReloading;
-
-	private bool isPastSequenceOne;
-	private bool isPastSequenceTwo;
-	private bool isPastSequenceThree;
-	private bool isPastSequenceFour;
 
 	public override void Spawn()
 	{
@@ -68,47 +60,10 @@ partial class Magnum : BaseDmWeapon
 	public override void Reload()
 	{
 		base.Reload();
-
-		timeSinceReloading = 0;
-		isPastSequenceOne = false;
-		isPastSequenceTwo = false;
-		isPastSequenceThree = false;
-		isPastSequenceFour = false;
 	}
 
 	public override void Simulate(Client cl) 
 	{
 		base.Simulate(cl); 
-		
-		if ( IsReloading )
-		{
-			//Barrel eject
-			if ( timeSinceReloading > 1.0f && isPastSequenceOne != true )
-			{
-				isPastSequenceOne = true;
-				PlaySound( "357_reload1" );
-			}
-
-			//Bullets eject
-			if ( timeSinceReloading > 1.5f && isPastSequenceTwo != true )
-			{
-				isPastSequenceTwo = true;
-				PlaySound( "357_reload4" );
-			}
-
-			//Bullets insert
-			if ( timeSinceReloading > 2.25f && isPastSequenceThree != true )
-			{
-				isPastSequenceThree = true;
-				PlaySound( "357_reload3" );
-			}
-
-			//Spin barrel
-			if ( timeSinceReloading > 3.0f && isPastSequenceFour != true )
-			{
-				isPastSequenceFour = true;
-				PlaySound( "357_spin1" );
-			}
-		} 
 	}
 }

@@ -40,16 +40,9 @@ partial class Pistol : BaseDmWeapon
 			return;
 		}
 
-
-		//
-		// Tell the clients to play the shoot effects
-		//
 		ShootEffects();
-		PlaySound( "rust_pistol.shoot" );
+		PlaySound( "pistol_fire2" );
 
-		//
-		// Shoot the bullets
-		//
 		ShootBullet( 0.2f, 1.5f, 8.0f, 3.0f );
 
 	}

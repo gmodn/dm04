@@ -42,8 +42,9 @@ partial class DeathmatchPlayer : Player
 		Inventory.Add( new PulseSMG() );
 
 		GiveAmmo( AmmoType.Pistol, 100 );
-		GiveAmmo( AmmoType.Buckshot, 8 );
-		GiveAmmo( AmmoType.Crossbow, 4 );
+		GiveAmmo( AmmoType.Magnum, 12 );
+		GiveAmmo( AmmoType.Buckshot, 12 );
+		GiveAmmo( AmmoType.Crossbow, 3 );
 
 		SupressPickupNotices = false;
 		Health = 100;

@@ -59,8 +59,6 @@ partial class SMG : BaseDmWeapon
 	public override void Reload()
 	{
 		base.Reload();
-
-		PlaySound( "smg1_reload" );
 	}
 
 	public override void Simulate(Client cl) 
