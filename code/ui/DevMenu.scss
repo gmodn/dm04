@@ -6,17 +6,18 @@ DevMenu {
     height: 100%;
     opacity: 1;
     margin: auto;
-    background-color: darkgray;
+    background-color: black;
     flex-direction: column;
     overflow: hidden;
     left: -400px;
     z-index: 4;
+    border: medium;
 
     .header {
         padding: 14px 20px;
         width: 100%;
-        background-color: #fc0;
-        color: white;
+        background-color: black;
+        color: orange;
         font-family: Verdana;
         font-weight: 700;
         font-size: 22px;
@@ -36,30 +37,44 @@ DevMenu {
         width: 100%;
         padding: 10px;
         flex-direction: column;
+        border-radius: 7px;
+        border-color: orange;
+        border: medium;
 
         .button {
             width: 100%;
             padding: 10px;
             font-family: Verdana;
             font-size: 22px;
-            color: black;
-            background-color: gray;
+            color: white;
+            background-color: black;
             border-radius: 3px;
             margin-bottom: 10px;
             font-size: 16px;
+            border-radius: 7px;
+            border-color: white;
+            border: medium;
         }
 
         .button:hover {
-            background-color: #82756b;
+            background-color: black;
             cursor: pointer;
+            color: lightgray;
+            border-radius: 9px;
+            border-color: lightgray;
+            border: medium;
         }
 
         .button:active {
-            background-color: #524840;
+            background-color: black;
+            border-radius: 9px;
+            border-color: darkgray;
+            color: darkgray;
+            border: medium;
         }
 
         .section {
-            color: black;
+            color: orange;
             font-family: Verdana;
             margin-bottom: 10px;
         }

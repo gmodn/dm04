@@ -4,11 +4,11 @@ using Sandbox.UI.Construct;
 
 	public class DevMenu : Panel
 	{
-		public DevMenu()
+		public DevMenu( )
 		{
 			StyleSheet.Load( "/ui/DevMenu.scss" );
 
-			Add.Label( "Developer Menu", "header" );
+			Add.Label( "Deathmatch: 2004 Developer Menu", "header" );
 
 			AddChild<DevMenuButtons>();
 		}
@@ -68,16 +68,5 @@ using Sandbox.UI.Construct;
 		{
 			ConsoleSystem.Run( "ent_create dm04_crossbow" );
 		} );
-
-		//
-		// Entities
-		//
-
-		Add.Label( "Entities", "section" );
-
-			Add.Label( "Spawn a Mimic Bot", "button" ).AddEventListener( "onclick", () =>
-			{
-				ConsoleSystem.Run( "bot_add" );
-			} );
 		}
 	}
