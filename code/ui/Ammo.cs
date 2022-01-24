@@ -21,7 +21,7 @@ public class Ammo : Panel
 
 		AltPanel = Add.Panel( "Alt" );
 		AltPanel.Add.Label( "ALT", "AmmoText" );
-		AltText = AltPanel.Add.Label( "0", "Counter" );
+		AltText = AltPanel.Add.Label( "69", "Counter" );
 	}
 
 	public override void Tick()

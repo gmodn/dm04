@@ -95,19 +95,22 @@ ammo {
 }
 
 
-.dm04_pistol .icon
+.dm_pistol .icon
 {
 	background-image: url( /ui/weapons/dm_pistol.png );
 }
 
-.dm04_shotgun .icon {
+.dm_shotgun .icon
+{
 	background-image: url( /ui/weapons/dm_shotgun.png );
 }
 
-.dm04_smg .icon {
+.dm_smg .icon
+{
 	background-image: url( /ui/weapons/dm_smg.png );
 }
 
-.dm04_crossbow .icon, .crossbow_bolt .icon {
+.dm_crossbow .icon, .crossbow_bolt .icon
+{
 	background-image: url( /ui/weapons/dm_crossbow.png );
 }

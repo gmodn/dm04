@@ -76,7 +76,8 @@ inventorycolumn
 	}
 }
 
-inventoryicon {
+inventoryicon
+{
 	margin-top: 5px;
 	mix-blend-mode: lighten;
 	color: #fc0;
@@ -88,7 +89,8 @@ inventoryicon {
 	justify-content: center;
 	overflow: hidden;
 
-	.icon {
+	.icon
+	{
 		width: 150px;
 		height: 150px;
 		background-size: 100%;
@@ -96,36 +98,25 @@ inventoryicon {
 		position: absolute;
 	}
 
-	&.active {
+	&.active
+	{
 		opacity: 1;
 
-		.icon {
+		.icon
+		{
 			// filter: drop-shadow additive glow
 			opacity: 1;
 		}
 	}
 
-	.item-name {
-		padding: 5px;
-		color: white;
-		text-align: center;
-		left: 0;
-		right: 0;
-		font-size: 12px;
-		font-weight: lighter;
-		position: absolute;
-		bottom: 0;
-		opacity: 0.2;
-		transition: all 0.2s ease-in-out;
-		text-shadow: 1px 1px 5px black;
-	}
-
-	&.empty {
+	&.empty
+	{
 		opacity: 0.5;
 		background-color: #c004;
 		color: #f002;
 
-		.icon {
+		.icon
+		{
 			background-color: #f50;
 		}
 	}

@@ -8,13 +8,10 @@ class InventoryIcon : Panel
 {
 	public BaseDmWeapon Weapon;
 	public Panel Icon;
-	//public Label Label;
-
 
 	public InventoryIcon( BaseDmWeapon weapon )
 	{
 		Weapon = weapon;
-		//Label = Add.Label( "", "Title" );
 		Icon = Add.Panel( "icon" );
 		AddClass( weapon.ClassInfo.Name );
 	}
