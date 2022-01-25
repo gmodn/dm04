@@ -335,7 +335,7 @@
 								event_frame = 0
 								event_keys = 
 								{
-									name = "shotgun_reload2"
+									name = "shotgun_reload"
 									stop_on_seq_change = false
 									use_layer_sequence = false
 									tags = ""

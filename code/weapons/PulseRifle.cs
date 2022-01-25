@@ -7,7 +7,7 @@ partial class PulseSMG : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/irifle/irifle_reference.vmdl";
 
-	public override float PrimaryRate => 15.0f;
+	public override float PrimaryRate => 12.0f;
 	public override float SecondaryRate => 1.0f;
 	public override int ClipSize => 30;
 	public override float ReloadTime => 1.5f;

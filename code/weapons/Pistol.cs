@@ -21,7 +21,7 @@ partial class Pistol : BaseDmWeapon
 		base.Spawn();
 
 		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
-		AmmoClip = 18;
+		AmmoClip = ClipSize;
 	}
 
 	public override bool CanPrimaryAttack()
@@ -41,7 +41,7 @@ partial class Pistol : BaseDmWeapon
 		}
 
 		ShootEffects();
-		PlaySound( "pistol_fire2" );
+		PlaySound( "pistol_fire" );
 
 		ShootBullet( 0.2f, 1.5f, 8.0f, 3.0f );
 

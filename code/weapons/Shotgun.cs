@@ -9,9 +9,11 @@ partial class Shotgun : BaseDmWeapon
 	public override float PrimaryRate => 1;
 	public override float SecondaryRate => 1;
 	public override AmmoType AmmoType => AmmoType.Buckshot;
-	public override int ClipSize => 8;
+	public override int ClipSize => 6;
 	public override float ReloadTime => 0.5f;
 	public override int Bucket => 3;
+
+	private int TotalShells = 7;
 
 	public override void Spawn()
 	{
@@ -19,7 +21,7 @@ partial class Shotgun : BaseDmWeapon
 
 		SetModel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" );  
 
-		AmmoClip = 8;
+		AmmoClip = ClipSize;
 	}
 
 	public override void AttackPrimary() 
@@ -39,12 +41,14 @@ partial class Shotgun : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "shotgun_fire6" );
+		PlaySound( "shotgun_fire7" );
 
 		//
 		// Shoot the bullets
 		//
-		ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f, 10 );
+		for ( int i = 0; i <= TotalShells; i++ )
+			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f, 10 );
+		
 	}
 
 	public override void AttackSecondary()
@@ -64,12 +68,13 @@ partial class Shotgun : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		DoubleShootEffects();
-		PlaySound( "shotgun_dbl_fire7" );
+		PlaySound( "shotgun_dbl_fire" );
 
 		//
 		// Shoot the bullets
 		//
-		ShootBullet( 0.4f, 0.3f, 8.0f, 3.0f, 20 );
+		for ( int i = 0; i <= TotalShells * 2; i++ )
+			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f, 10 );
 	}
 
 	public override void Simulate(Client cl) 
@@ -133,8 +138,6 @@ partial class Shotgun : BaseDmWeapon
 			if ( ammo == 0 )
 				return;
 
-			AmmoClip += ammo;
-
 			if ( AmmoClip < ClipSize )
 			{
 				Reload();
@@ -143,6 +146,8 @@ partial class Shotgun : BaseDmWeapon
 			{
 				FinishReload();
 			}
+
+			AmmoClip += ammo;
 		}
 	}
 

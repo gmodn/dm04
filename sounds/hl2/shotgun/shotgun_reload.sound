@@ -2,16 +2,18 @@
 {
 	data = 
 	{
-		sounds = 
-		[
-			"sounds/hl2/ar2/fire1.vsnd",
-		]
 		ui = false
 		volume = 1.0
 		volumerandom = 0.0
 		pitch = 1.0
-		pitchrandom = 0.15
+		pitchrandom = 0.0
 		distancemax = 2000.0
+		sounds = 
+		[
+			"sounds/hl2/shotgun/shotgun_reload1.vsnd",
+			"sounds/hl2/shotgun/shotgun_reload2.vsnd",
+			"sounds/hl2/shotgun/shotgun_reload3.vsnd",
+		]
 		selectionmode = "3"
 	}
 }

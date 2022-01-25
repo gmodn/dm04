@@ -43,7 +43,7 @@ partial class Magnum : BaseDmWeapon
 		}
 
 		ShootEffects();
-		PlaySound( "357_fire" + Rand.Int(2,3).ToString() );
+		PlaySound( "357_fire" );
 		
 		if ( Owner == Local.Pawn )
 			new Sandbox.ScreenShake.Perlin( 0.5f, 2.0f, 5.0f, 1.5f );

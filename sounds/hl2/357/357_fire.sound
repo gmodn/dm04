@@ -4,7 +4,8 @@
 	{
 		sounds = 
 		[
-			"sounds/hl2/ar2/fire1.vsnd",
+			"sounds/hl2/357/357_fire2.vsnd",
+			"sounds/hl2/357/357_fire3.vsnd",
 		]
 		ui = false
 		volume = 1.0

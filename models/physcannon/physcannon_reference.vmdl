@@ -166,7 +166,7 @@
 						weight_list_name = ""
 						fade_in_time = 0.2
 						fade_out_time = 0.2
-						looping = true
+						looping = false
 						delta = false
 						worldSpace = false
 						hidden = false
@@ -182,6 +182,21 @@
 					{
 						_class = "AnimFile"
 						name = "ProngsOpen"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 0
+								event_keys = 
+								{
+									name = "physcannon_claws_open"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -193,7 +208,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/physcannon/v_physcannon_anims/ProngsOpen.smd"
+						source_filename = "models/physcannon/v_physcannon_anims/prongsopen.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -203,6 +218,21 @@
 					{
 						_class = "AnimFile"
 						name = "ProngsShut"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 0
+								event_keys = 
+								{
+									name = "physcannon_claws_close"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -214,7 +244,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/physcannon/v_physcannon_anims/ProngsShut.smd"
+						source_filename = "models/physcannon/v_physcannon_anims/prongsshut.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0

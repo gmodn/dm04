@@ -169,7 +169,7 @@
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "reload2"
-				m_playbackSpeed = 1.0
+				m_playbackSpeed = 1.15
 				m_bLoop = false
 			}
 		},
@@ -182,7 +182,7 @@
 			{
 				_class = "CRootAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ 176.0, -240.0 ]
+				m_vecPosition = [ 192.0, -240.0 ]
 				m_nNodeID = 
 				{
 					m_id = 206872258
@@ -213,7 +213,7 @@
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "reload1"
-				m_playbackSpeed = 1.0
+				m_playbackSpeed = 1.15
 				m_bLoop = false
 			}
 		},
@@ -257,7 +257,7 @@
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "reload3"
-				m_playbackSpeed = 1.0
+				m_playbackSpeed = 1.15
 				m_bLoop = false
 			}
 		},
@@ -279,7 +279,7 @@
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "draw"
-				m_playbackSpeed = 2.0
+				m_playbackSpeed = 1.5
 				m_bLoop = false
 			}
 		},
@@ -323,7 +323,7 @@
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "fire01"
-				m_playbackSpeed = 1.0
+				m_playbackSpeed = 0.85
 				m_bLoop = false
 			}
 		},

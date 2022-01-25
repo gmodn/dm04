@@ -41,6 +41,7 @@ partial class GravGun : BaseDmWeapon
 
 		CollisionGroup = CollisionGroup.Weapon;
 		SetInteractsAs( CollisionLayer.Debris );
+		ViewModelEntity?.SetAnimBool( "openProngs", false );
 	}
 
 	public override void Simulate( Client client )
@@ -107,7 +108,10 @@ partial class GravGun : BaseDmWeapon
 				.Run();
 
 			if ( !tr.Hit || !tr.Body.IsValid() || !tr.Entity.IsValid() || tr.Entity.IsWorld )
+			{
+				ViewModelEntity?.SetAnimBool( "openProngs", false );
 				return;
+			}
 
 			if ( tr.Entity.PhysicsGroup == null )
 				return;
@@ -115,6 +119,8 @@ partial class GravGun : BaseDmWeapon
 			var modelEnt = tr.Entity as ModelEntity;
 			if ( !modelEnt.IsValid() )
 				return;
+
+			ViewModelEntity?.SetAnimBool( "openProngs", true );
 
 			var body = tr.Body;
 
@@ -143,10 +149,12 @@ partial class GravGun : BaseDmWeapon
 				{
 					var holdDistance = HoldDistance + attachPos.Distance( body.MassCenter );
 					GrabStart( modelEnt, body, eyePos + eyeDir * holdDistance, eyeRot );
+					PlaySound( "physcannon_pickup" );
 				}
 				else if ( !IsBodyGrabbed( body ) )
 				{
 					physicsGroup.ApplyImpulse( eyeDir * -PullForce, true );
+					PlaySound( "physcannon_tooheavy" );
 				}
 			}
 		}
