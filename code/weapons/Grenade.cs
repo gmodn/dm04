@@ -8,7 +8,7 @@ partial class Grenade : BaseDmWeapon
 	
 	//TODO: Fix animations they are shit lol
 
-	public override string ViewModelPath => "models/grenade/grenade_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/grenade/grenade_reference.vmdl";
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;

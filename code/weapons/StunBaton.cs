@@ -3,7 +3,7 @@ using Sandbox;
 [Library("dm04_stunbaton", Title = "Stun Stick", Spawnable = true)]
 partial class StunBaton : BaseDmWeapon
 {
-	public override string ViewModelPath => "models/stunbaton/stunbaton_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/stunbaton/stunbaton_reference.vmdl";
 
 	public override int Bucket => 0;
 	public override AmmoType AmmoType => AmmoType.None;

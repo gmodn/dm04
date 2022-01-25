@@ -5,7 +5,7 @@
 [Hammer.EditorModel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" )]
 partial class Shotgun : BaseDmWeapon
 { 
-	public override string ViewModelPath => "models/shotgun/shotgun_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/shotgun/shotgun_reference.vmdl";
 	public override float PrimaryRate => 1;
 	public override float SecondaryRate => 1;
 	public override AmmoType AmmoType => AmmoType.Buckshot;

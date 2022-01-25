@@ -5,7 +5,7 @@
 [Hammer.EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
 partial class Magnum : BaseDmWeapon
 {
-	public override string ViewModelPath => "models/357/python_357_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/357/python_357_reference.vmdl";
 
 	public override float PrimaryRate => 1.4f;
 

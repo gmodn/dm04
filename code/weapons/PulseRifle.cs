@@ -5,7 +5,7 @@ using System;
 [Hammer.EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
 partial class PulseSMG : BaseDmWeapon
 {
-	public override string ViewModelPath => "models/irifle/irifle_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/irifle/irifle_reference.vmdl";
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
@@ -55,6 +55,7 @@ partial class PulseSMG : BaseDmWeapon
 		TimeSinceSecondaryAttack = 0f;
 
 		//PlaySound( "rust_pumpshotgun.shoot" );
+		ViewModelEntity?.SetAnimBool("alt-fire", true);
 		ShootBalls();
 	}
 

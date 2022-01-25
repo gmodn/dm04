@@ -42,8 +42,8 @@ Layer0
 	g_flSelfIllumBrightness "2.951"
 	g_flSelfIllumScale "1.000"
 	g_vSelfIllumScrollSpeed "[0.000 0.000]"
-	g_vSelfIllumTint "[1.000000 1.000000 1.000000 0.000000]"
-	TextureSelfIllumMask "materials/v_crossbow/crossbow dirtmap_glow.tga"
+	g_vSelfIllumTint "[0.658824 0.000000 0.000000 0.000000]"
+	TextureSelfIllumMask "materials/v_crossbow/crossbow dirtmap_selfillum.tga"
 
 	//---- Texture Coordinates ----
 	g_nScaleTexCoordUByModelScaleAxis "0"
