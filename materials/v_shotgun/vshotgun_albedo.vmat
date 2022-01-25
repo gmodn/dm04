@@ -34,7 +34,7 @@ Layer0
 	TextureNormal "materials/v_shotgun/vshotgun_normal.tga"
 
 	//---- Roughness ----
-	TextureRoughness "materials/v_shotgun/vshotgun_exponent.tga"
+	TextureRoughness "[0.618000 0.618000 0.618000 0.000000]"
 
 	//---- Texture Coordinates ----
 	g_nScaleTexCoordUByModelScaleAxis "0"
