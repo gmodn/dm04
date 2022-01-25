@@ -3,7 +3,7 @@ using Sandbox;
 [Library("dm04_crowbar", Title = "Crowbar", Spawnable = true)]
 partial class Crowbar : BaseDmWeapon
 {
-	public override string ViewModelPath => "models/crowbar/crowbar_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/crowbar/crowbar_reference.vmdl";
 
 	public override int Bucket => 0;
 	public override AmmoType AmmoType => AmmoType.None;

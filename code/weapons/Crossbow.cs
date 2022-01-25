@@ -4,7 +4,7 @@
 [Hammer.EditorModel( "weapons/rust_crossbow/rust_crossbow.vmdl" )]
 partial class Crossbow : BaseDmWeapon
 { 
-	public override string ViewModelPath => "models/crossbow/crossbow_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/crossbow/crossbow_reference.vmdl";
 
 	public override float PrimaryRate => 1;
 	public override int Bucket => 3;

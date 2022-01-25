@@ -5,7 +5,7 @@
 [Hammer.EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
 partial class Pistol : BaseDmWeapon
 { 
-	public override string ViewModelPath => "models/pistol/pistol_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/pistol/pistol_reference.vmdl";
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
