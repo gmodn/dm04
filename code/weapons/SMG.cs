@@ -10,6 +10,7 @@ partial class SMG : BaseDmWeapon
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
 	public override int ClipSize => 45;
+	public override AmmoType AmmoType => AmmoType.SMG;
 	public override float ReloadTime => 1.5f;
 	public override int Bucket => 2;
 

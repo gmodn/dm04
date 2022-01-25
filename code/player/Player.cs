@@ -44,10 +44,12 @@ partial class DeathmatchPlayer : Player
 		Inventory.Add( new StunBaton() );
 		Inventory.Add( new Grenade() );
 
-		GiveAmmo( AmmoType.Pistol, 100 );
+		GiveAmmo( AmmoType.Pistol, 150 );
+		GiveAmmo( AmmoType.SMG, 225 );
+		GiveAmmo( AmmoType.Pulse, 60 );
 		GiveAmmo( AmmoType.Magnum, 12 );
-		GiveAmmo( AmmoType.Buckshot, 12 );
-		GiveAmmo( AmmoType.Crossbow, 3 );
+		GiveAmmo( AmmoType.Buckshot, 30 );
+		GiveAmmo( AmmoType.Crossbow, 4 );
 
 		SupressPickupNotices = false;
 		Health = 100;
