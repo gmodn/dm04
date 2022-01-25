@@ -51,7 +51,7 @@ partial class DeathmatchPlayer : Player
 		GiveAmmo( AmmoType.Buckshot, 30 );
 		GiveAmmo( AmmoType.Crossbow, 4 );
 		GiveAmmo( AmmoType.Grenade, 3 );
-		GiveAmmo( AmmoType.None, 0 );
+		GiveAmmo( AmmoType.None, 1 );
 
 		SupressPickupNotices = false;
 		Health = 100;

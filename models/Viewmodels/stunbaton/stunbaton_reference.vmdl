@@ -89,7 +89,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/stunbaton/Stunbaton_reference.smd"
+						filename = "models/viewmodels/stunbaton/stunbaton_reference.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -150,7 +150,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/stunbaton/v_stunbaton_anims/attackch.smd"
+						source_filename = "models/viewmodels/stunbaton/v_stunbaton_anims/attackch.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -186,7 +186,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/stunbaton/v_stunbaton_anims/attackcm.smd"
+						source_filename = "models/viewmodels/stunbaton/v_stunbaton_anims/attackcm.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -207,7 +207,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/stunbaton/v_stunbaton_anims/draw.smd"
+						source_filename = "models/viewmodels/stunbaton/v_stunbaton_anims/draw.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -228,7 +228,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/stunbaton/v_stunbaton_anims/idle01.smd"
+						source_filename = "models/viewmodels/stunbaton/v_stunbaton_anims/idle01.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -241,6 +241,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = "models/stunbaton/v_stunbaton.vanmgrph"
+		anim_graph_name = "animgraphs/weapons/stunbaton_reference.vanmgrph"
 	}
 }

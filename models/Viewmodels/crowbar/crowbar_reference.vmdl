@@ -37,7 +37,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/crowbar/crowbar_reference.smd"
+						filename = "models/viewmodels/crowbar/crowbar_reference.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -252,6 +252,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = "models/crowbar/v_crowbar.vanmgrph"
+		anim_graph_name = "animgraphs/weapons/crowbar_reference.vanmgrph"
 	}
 }

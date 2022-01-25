@@ -33,7 +33,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/pistol/Pistol_reference.smd"
+						filename = "models/viewmodels/pistol/pistol_reference.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -67,7 +67,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/draw.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/draw.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -88,7 +88,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/drawempty.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/drawempty.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -109,7 +109,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/fire.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/fire.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -130,7 +130,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/fire1.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/fire1.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -151,7 +151,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/fire2.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/fire2.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -172,7 +172,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/fire3.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/fire3.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -193,7 +193,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/fireempty.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/fireempty.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -214,7 +214,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/holster.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/holster.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -235,7 +235,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/holsterempty.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/holsterempty.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -256,7 +256,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/idle01.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/idle01.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -277,7 +277,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/idle01empty.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/idle01empty.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -298,7 +298,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/idletolow.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/idletolow.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -319,7 +319,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/lowidle.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/lowidle.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -340,7 +340,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/lowtoidle.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/lowtoidle.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -376,7 +376,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/pistol/v_pistol_anims/reload.smd"
+						source_filename = "models/viewmodels/pistol/v_pistol_anims/reload.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -404,6 +404,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = "models/pistol/v_pistol.vanmgrph"
+		anim_graph_name = "animgraphs/weapons/pistol_reference.vanmgrph"
 	}
 }

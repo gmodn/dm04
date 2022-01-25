@@ -41,7 +41,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/smg1/Smg1_reference.smd"
+						filename = "models/viewmodels/smg1/smg1_reference.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -75,7 +75,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/altfire.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/altfire.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -96,7 +96,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/draw.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/draw.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -117,7 +117,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/dryfire.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/dryfire.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -138,7 +138,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/fire01.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/fire01.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -159,7 +159,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/fire02.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/fire02.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -180,7 +180,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/fire03.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/fire03.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -201,7 +201,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/fire04.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/fire04.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -222,7 +222,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/idle01.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/idle01.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -243,7 +243,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/idletolow.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/idletolow.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -264,7 +264,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/lowidle.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/lowidle.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -285,7 +285,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/lowtoidle.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/lowtoidle.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -321,7 +321,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "models/smg1/v_smg1_anims/reload.smd"
+						source_filename = "models/viewmodels/smg1/v_smg1_anims/reload.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -358,6 +358,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = "models/smg1/v_smg.vanmgrph"
+		anim_graph_name = "animgraphs/weapons/smg1_reference.vanmgrph"
 	}
 }
