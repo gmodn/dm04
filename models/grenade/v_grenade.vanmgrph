@@ -95,7 +95,7 @@
 	}
 	m_previewModels = 
 	[
-		"models/pistol/pistol_reference.vmdl",
+		"models/grenade/grenade_reference.vmdl",
 	]
 	m_nodes = 
 	[
@@ -138,7 +138,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "reload"
+				m_sequenceName = "lob"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}
@@ -182,7 +182,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "fire"
+				m_sequenceName = "throw"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}

@@ -14,7 +14,7 @@ partial class Grenade : BaseDmWeapon
 	public override float SecondaryRate => 1.0f;
 	public override float ReloadTime => 1.0f;
 
-	public override AmmoType AmmoType => AmmoType.Pistol;
+	public override AmmoType AmmoType => AmmoType.Grenade;
 	public override int ClipSize => 3;
 
 	public override int Bucket => 4;

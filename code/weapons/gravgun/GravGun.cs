@@ -69,11 +69,13 @@ partial class GravGun : BaseDmWeapon
 						// Don't throw ragdolls as hard
 						HeldBody.PhysicsGroup.ApplyImpulse( eyeDir * (ThrowForce * 0.5f), true );
 						HeldBody.PhysicsGroup.ApplyAngularImpulse( Vector3.Random * ThrowForce, true );
+						ViewModelEntity?.SetAnimBool( "reload", true );
 					}
 					else
 					{
 						HeldBody.ApplyImpulse( eyeDir * (HeldBody.Mass * ThrowForce) );
 						HeldBody.ApplyAngularImpulse( Vector3.Random * (HeldBody.Mass * ThrowForce) );
+						ViewModelEntity?.SetAnimBool( "reload", true );
 					}
 
 					GrabEnd();
@@ -83,6 +85,8 @@ partial class GravGun : BaseDmWeapon
 					timeSinceDrop = 0;
 
 					GrabEnd();
+
+					ViewModelEntity?.SetAnimBool( "fire", true );
 				}
 				else
 				{

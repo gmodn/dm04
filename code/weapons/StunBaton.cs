@@ -6,6 +6,7 @@ partial class StunBaton : BaseDmWeapon
 	public override string ViewModelPath => "models/stunbaton/stunbaton_reference.vmdl";
 
 	public override int Bucket => 0;
+	public override AmmoType AmmoType => AmmoType.None;
 	public override float PrimaryRate => 2.5f;
 	public override float SecondaryRate => 2.0f;
 

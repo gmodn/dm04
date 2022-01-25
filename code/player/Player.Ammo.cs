@@ -65,5 +65,7 @@ public enum AmmoType
 	SMG,
 	Pulse,
 	Buckshot,
-	Crossbow
+	Crossbow,
+	Grenade,
+	None
 }
