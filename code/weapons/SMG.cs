@@ -53,7 +53,9 @@ partial class SMG : BaseDmWeapon
 		TimeSincePrimaryAttack = 0f;
 		TimeSinceSecondaryAttack = 0f;
 
-		PlaySound( "rust_pumpshotgun.shoot" );
+		ViewModelEntity?.SetAnimBool("alt_fire", true);
+
+		PlaySound( "ar2_altfire" );
 		ShootGrenade();
 	}
 

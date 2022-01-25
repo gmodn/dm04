@@ -481,7 +481,7 @@
 										m_bIsFinished = true
 									},
 								]
-								m_blendDuration = 0.2
+								m_blendDuration = 0.0
 								m_destState = 
 								{
 									m_id = 1877739030
@@ -761,7 +761,7 @@
 										}
 									},
 								]
-								m_blendDuration = 0.2
+								m_blendDuration = 0.0
 								m_destState = 
 								{
 									m_id = 1322014162
@@ -797,10 +797,10 @@
 									{
 										_class = "CTimeCondition"
 										m_comparisonOp = 3
-										m_comparisonValue = 0.75
+										m_comparisonValue = 0.55
 									},
 								]
-								m_blendDuration = 0.2
+								m_blendDuration = 0.0
 								m_destState = 
 								{
 									m_id = 697224620
@@ -864,10 +864,10 @@
 									{
 										_class = "CTimeCondition"
 										m_comparisonOp = 3
-										m_comparisonValue = 0.75
+										m_comparisonValue = 0.55
 									},
 								]
-								m_blendDuration = 0.2
+								m_blendDuration = 0.0
 								m_destState = 
 								{
 									m_id = 697224620
@@ -901,7 +901,7 @@
 										}
 									},
 								]
-								m_blendDuration = 0.2
+								m_blendDuration = 0.0
 								m_destState = 
 								{
 									m_id = 1877739030
@@ -956,7 +956,7 @@
 										m_bIsFinished = true
 									},
 								]
-								m_blendDuration = 0.2
+								m_blendDuration = 0.0
 								m_destState = 
 								{
 									m_id = 1361374698

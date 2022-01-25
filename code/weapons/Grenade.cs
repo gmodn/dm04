@@ -61,7 +61,7 @@ partial class Grenade : BaseDmWeapon
 
 		AltToss();
 
-		ViewModelEntity?.SetAnimBool( "reload", true );
+		ViewModelEntity?.SetAnimBool( "lob", true );
 	}
 
 	public override void Reload()
