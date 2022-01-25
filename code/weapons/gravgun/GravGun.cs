@@ -6,7 +6,7 @@ using System.Linq;
 [Library( "dm04_gravgun", Title = "Pistol")]
 partial class GravGun : BaseDmWeapon
 {
-	public override string ViewModelPath => "models/physcannon/physcannon_reference.vmdl";
+	public override string ViewModelPath => "models/viewmodels/physcannon/physcannon_reference.vmdl";
 
 	private PhysicsBody holdBody;
 	private WeldJoint holdJoint;
@@ -61,6 +61,7 @@ partial class GravGun : BaseDmWeapon
 				if ( holdJoint.IsValid && !holdJoint.IsActive )
 				{
 					GrabEnd();
+					ViewModelEntity?.SetAnimBool("prong_open", true);
 				}
 				else if ( Input.Pressed( InputButton.Attack1 ) )
 				{
@@ -69,13 +70,13 @@ partial class GravGun : BaseDmWeapon
 						// Don't throw ragdolls as hard
 						HeldBody.PhysicsGroup.ApplyImpulse( eyeDir * (ThrowForce * 0.5f), true );
 						HeldBody.PhysicsGroup.ApplyAngularImpulse( Vector3.Random * ThrowForce, true );
-						ViewModelEntity?.SetAnimBool( "reload", true );
+						ViewModelEntity?.SetAnimBool( "altfire", true );
 					}
 					else
 					{
 						HeldBody.ApplyImpulse( eyeDir * (HeldBody.Mass * ThrowForce) );
 						HeldBody.ApplyAngularImpulse( Vector3.Random * (HeldBody.Mass * ThrowForce) );
-						ViewModelEntity?.SetAnimBool( "reload", true );
+						ViewModelEntity?.SetAnimBool( "altfire", true );
 					}
 
 					GrabEnd();
