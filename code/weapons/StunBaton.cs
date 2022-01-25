@@ -1,6 +1,6 @@
 using Sandbox;
 
-[Library("weapon_stunbaton", Title = "Stun Stick", Spawnable = true)]
+[Library("dm04_stunbaton", Title = "Stun Stick", Spawnable = true)]
 partial class StunBaton : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/stunbaton/stunbaton_reference.vmdl";

@@ -1,6 +1,6 @@
 using Sandbox;
 
-[Library("weapon_crowbar", Title = "Crowbar", Spawnable = true)]
+[Library("dm04_crowbar", Title = "Crowbar", Spawnable = true)]
 partial class Crowbar : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/crowbar/crowbar_reference.vmdl";

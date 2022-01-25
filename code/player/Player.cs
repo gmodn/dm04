@@ -42,6 +42,7 @@ partial class DeathmatchPlayer : Player
 		Inventory.Add( new PulseSMG() );
 		Inventory.Add( new Crowbar() );
 		Inventory.Add( new StunBaton() );
+		Inventory.Add( new Grenade() );
 
 		GiveAmmo( AmmoType.Pistol, 100 );
 		GiveAmmo( AmmoType.Magnum, 12 );
