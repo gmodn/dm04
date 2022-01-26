@@ -24,7 +24,7 @@ public partial class DeathmatchHud : HudEntity<RootPanel>
 		RootPanel.AddChild<InventoryBar>();
 		RootPanel.AddChild<PickupFeed>();
 		
-		RootPanel.AddChild<ChatBox>();
+		RootPanel.AddChild<ChatBoxPlus>();
 		RootPanel.AddChild<KillFeed>();
 		RootPanel.AddChild<Scoreboard>();
 		RootPanel.AddChild<VoiceList>();
