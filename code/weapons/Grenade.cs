@@ -12,10 +12,10 @@ partial class Grenade : BaseDmWeapon
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
-	public override float ReloadTime => 1.0f;
+	public override float ReloadTime => 1f;
 
 	public override AmmoType AmmoType => AmmoType.Grenade;
-	public override int ClipSize => 3;
+	public override int ClipSize => 1;
 
 	public override int Bucket => 4;
 
@@ -24,7 +24,7 @@ partial class Grenade : BaseDmWeapon
 		base.Spawn();
 
 		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
-		AmmoClip = 3;
+		AmmoClip = 1;
 	}
 
 	public override bool CanPrimaryAttack()
@@ -45,7 +45,7 @@ partial class Grenade : BaseDmWeapon
 
 		ShootGrenade();
 
-		ViewModelEntity?.SetAnimBool( "fire", true );
+		ViewModelEntity?.SetAnimBool( "throw", true );
 	}
 
 	public override void AttackSecondary()
@@ -66,12 +66,18 @@ partial class Grenade : BaseDmWeapon
 
 	public override void Reload()
 	{
-		//unused
+		//NOT unused
+		base.Reload();
 	}
 
 	public override void Simulate( Client cl )
 	{
 		base.Simulate( cl );
+
+		if (AmmoClip == 0) 
+		{
+			Reload();
+		}
 	}
 
 	private void ShootGrenade()
