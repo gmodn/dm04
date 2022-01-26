@@ -109,7 +109,7 @@
 	}
 	m_previewModels = 
 	[
-		"models/physcannon/physcannon_reference.vmdl",
+		"models/viewmodels/physcannon/physcannon_reference.vmdl",
 	]
 	m_nodes = 
 	[
