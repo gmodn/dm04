@@ -244,7 +244,7 @@
 							{
 								_class = "AnimEvent"
 								event_class = "AE_CL_PLAYSOUND"
-								event_frame = 95
+								event_frame = 92
 								event_keys = 
 								{
 									name = "357_spin1"
