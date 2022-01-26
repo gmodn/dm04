@@ -2,7 +2,7 @@
 using System;
 
 [Library( "dm04_grenade", Title = "Grenade" )]
-[Hammer.EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
+[Hammer.EditorModel("models/worldmodels/grenade_reference.vmdl")]
 partial class Grenade : BaseDmWeapon
 {
 	
@@ -23,7 +23,7 @@ partial class Grenade : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel("models/worldmodels/grenade_reference.vmdl");
 		AmmoClip = 1;
 	}
 
@@ -89,11 +89,10 @@ partial class Grenade : BaseDmWeapon
 		{
 			Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
 			Rotation = Owner.EyeRot,
-			Scale = 0.25f
 		};
 
 		//TODO: Should be replaced with an actual grenade model
-		grenade.SetModel( "models/rust_props/barrels/fuel_barrel.vmdl" );
+		grenade.SetModel("models/worldmodels/grenade_reference.vmdl");
 		grenade.Velocity = Owner.EyeRot.Forward * 1000;
 
 		grenade.ExplodeAsync( 4f );
@@ -109,11 +108,10 @@ partial class Grenade : BaseDmWeapon
 		{
 			Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
 			Rotation = Owner.EyeRot,
-			Scale = 0.25f
 		};
 
 		//TODO: Should be replaced with an actual grenade model
-		grenade.SetModel( "models/rust_props/barrels/fuel_barrel.vmdl" );
+		grenade.SetModel("models/worldmodels/grenade_reference.vmdl");
 		grenade.Velocity = Owner.EyeRot.Forward * 400;
 
 		grenade.ExplodeAsync( 4f );

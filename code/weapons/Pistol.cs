@@ -2,7 +2,7 @@
 
 
 [Library( "dm04_pistol", Title = "Pistol" )]
-[Hammer.EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
+[Hammer.EditorModel("models/worldmodels/pistol_reference.vmdl")]
 partial class Pistol : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/viewmodels/pistol/pistol_reference.vmdl";
@@ -20,7 +20,7 @@ partial class Pistol : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel("models/worldmodels/pistol_reference.vmdl");
 		AmmoClip = ClipSize;
 	}
 

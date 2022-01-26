@@ -2,7 +2,7 @@
 using System;
 
 [Library( "dm04_pulsesmg", Title = "Pulse SMG" )]
-[Hammer.EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
+[Hammer.EditorModel("models/worldmodels/w_irifle_reference.vmdl")]
 partial class PulseSMG : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/viewmodels/irifle/irifle_reference.vmdl";
@@ -19,7 +19,7 @@ partial class PulseSMG : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_smg/rust_smg.vmdl" );
+		SetModel("models/worldmodels/w_irifle_reference.vmdl");
 		AmmoClip = 30;
 	}
 

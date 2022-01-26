@@ -13,7 +13,7 @@ partial class Crowbar : BaseDmWeapon
 	public override void Spawn()
 	{
 		base.Spawn();
-		SetModel("models/citizen_props/crowbar01.vmdl");
+		SetModel("models/worldmodels/w_crowbar_reference.vmdl");
 	}
 
 	public override void AttackPrimary()

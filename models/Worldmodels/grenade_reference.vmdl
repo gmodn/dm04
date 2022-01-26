@@ -45,6 +45,69 @@
 					},
 				]
 			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "explosion_behavior"
+						game_keys = 
+						{
+							explosion_custom_sound = "rust_pumpshotgun.shootdouble"
+							explosion_custom_effect = resource:""
+							explosive_damage = 200.0
+							explosive_radius = 250.0
+							explosive_force = 5.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							allowstatic = false
+							bakelighting = true
+							spawn_motion_disabled = false
+							health = 10.0
+							min_impact_damage_speed = 750.0
+							impact_damage = 10.0
+							parent_bodygroup_name = ""
+							parent_bodygroup_value = 0
+						}
+					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "hand_r"
+						origin = [ -5.265898, -2.178964, -0.0 ]
+						angles = [ 0.0, 0.0, 90.0 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsHullFromRender"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						faceMergeAngle = 20.0
+						maxHullVertices = 32
+					},
+				]
+			},
 		]
 		model_archetype = ""
 		primary_associated_entity = ""

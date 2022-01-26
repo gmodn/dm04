@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 [Library( "dm04_crossbow", Title = "Crossbow" )]
-[Hammer.EditorModel( "weapons/rust_crossbow/rust_crossbow.vmdl" )]
+[Hammer.EditorModel("models/worldmodels/w_crossbow_reference.vmdl")]
 partial class Crossbow : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/viewmodels/crossbow/crossbow_reference.vmdl";
@@ -19,7 +19,7 @@ partial class Crossbow : BaseDmWeapon
 		base.Spawn();
 
 		AmmoClip = 1;
-		SetModel( "weapons/rust_crossbow/rust_crossbow.vmdl" );
+		SetModel("models/worldmodels/w_crossbow_reference.vmdl");
 	}
 
 	public override void AttackPrimary()

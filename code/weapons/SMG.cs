@@ -2,7 +2,7 @@
 using System;
 
 [Library( "dm04_smg", Title = "SMG" )]
-[Hammer.EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
+[Hammer.EditorModel("models/worldmodels/smg1_reference.vmdl")]
 partial class SMG : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/viewmodels/smg1/smg1_reference.vmdl";
@@ -18,7 +18,7 @@ partial class SMG : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_smg/rust_smg.vmdl" );
+		SetModel("models/worldmodels/smg1_reference.vmdl");
 		AmmoClip = 45;
 	}
 
@@ -101,11 +101,10 @@ partial class SMG : BaseDmWeapon
 		{
 			Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
 			Rotation = Owner.EyeRot,
-			Scale = 0.25f
 		};
 
 		//TODO: Should be replaced with an actual grenade model
-		grenade.SetModel( "models/rust_props/barrels/fuel_barrel.vmdl" );
+		grenade.SetModel("models/worldmodels/grenade_reference.vmdl");
 		grenade.Velocity = Owner.EyeRot.Forward * 1000;
 
 		grenade.ExplodeAsync( 1f );

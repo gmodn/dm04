@@ -37,7 +37,7 @@ partial class GravGun : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel("models/worldmodels/w_physics_reference.vmdl");
 
 		CollisionGroup = CollisionGroup.Weapon;
 		SetInteractsAs( CollisionLayer.Debris );

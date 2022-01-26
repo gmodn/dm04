@@ -2,7 +2,7 @@
 
 
 [Library( "dm04_357", Title = ".357 Magnum" )]
-[Hammer.EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
+[Hammer.EditorModel("models/worldmodels/w_357_reference.vmdl")]
 partial class Magnum : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/viewmodels/357/python_357_reference.vmdl";
@@ -22,7 +22,7 @@ partial class Magnum : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel("models/worldmodels/w_357_reference.vmdl");
 		AmmoClip = 6;
 	}
 
