@@ -14,6 +14,7 @@ partial class Crowbar : BaseDmWeapon
 	{
 		base.Spawn();
 		SetModel("models/worldmodels/w_crowbar_reference.vmdl");
+		AmmoClip = 1;
 	}
 
 	public override void AttackPrimary()

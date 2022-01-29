@@ -5,9 +5,6 @@ using System;
 [Hammer.EditorModel("models/worldmodels/grenade_reference.vmdl")]
 partial class Grenade : BaseDmWeapon
 {
-	
-	//TODO: Fix animations they are shit lol
-
 	public override string ViewModelPath => "models/viewmodels/grenade/grenade_reference.vmdl";
 
 	public override float PrimaryRate => 15.0f;
@@ -116,6 +113,12 @@ partial class Grenade : BaseDmWeapon
 
 		grenade.ExplodeAsync( 4f );
 
+	}
+	public override void SimulateAnimator( PawnAnimator anim )
+	{
+		anim.SetParam( "holdtype", 4 );
+		anim.SetParam( "aimat_weight", 1.0f );
+		anim.SetParam( "holdtype_handedness", 1 );
 	}
 
 }

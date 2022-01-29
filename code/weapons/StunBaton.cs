@@ -14,6 +14,7 @@ partial class StunBaton : BaseDmWeapon
 	{
 		base.Spawn();
 		SetModel("models/worldmodels/stunbaton_reference.vmdl");
+		AmmoClip = 1;
 	}
 
 	public override void AttackPrimary()
