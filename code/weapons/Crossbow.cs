@@ -7,6 +7,8 @@ partial class Crossbow : BaseDmWeapon
 	public override string ViewModelPath => "models/viewmodels/crossbow/crossbow_reference.vmdl";
 
 	public override float PrimaryRate => 1;
+
+	public override float ReloadTime => 1.0f;
 	public override int Bucket => 3;
 	public override int ClipSize => 1;
 	public override AmmoType AmmoType => AmmoType.Crossbow;
