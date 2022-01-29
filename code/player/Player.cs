@@ -19,7 +19,7 @@ partial class DeathmatchPlayer : Player
 	{
 		SetModel( "models/citizen/citizen.vmdl" );
 
-		Controller = new WalkController();
+		Controller = new DM04WalkController();
 		Animator = new StandardPlayerAnimator();
 		Camera = new FirstPersonCamera();
 		  
