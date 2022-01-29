@@ -41,7 +41,7 @@ ammo {
 	}
 
 	.Ammo {
-		right: 207px;
+		right: 37px;
 		bottom: 27px;
 		width: 287px;
 		height: 81px;
@@ -72,22 +72,7 @@ ammo {
 		font-weight: 700;
 		color: yellow;
 	}
-
-	.Alt {
-		right: 22px;
-		bottom: 27px;
-		width: 162px;
-		height: 81px;
-
-		.AmmoText {
-			left: 18px;
-			bottom: 11px;
-		}
-
-		.Counter {
-			left: 68px;
-		}
-	}
+}
 
 	.Empty {
 		color: "#FF0000";
