@@ -13,11 +13,21 @@ public partial class HealthVial : Prop, IUse, IRespawnableEntity
 		base.Spawn();
 
 		SetModel( "models/healthvial.vmdl" );
+		PickupTrigger = new PickupTrigger();
+		PickupTrigger.Parent = this;
+		PickupTrigger.Position = Position;
 	}
 
 	public bool IsUsable( Entity user )
 	{
-		return true;
+		if ( user.Health > 100 )
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 	public bool OnUse( Entity user )
 	{
@@ -26,9 +36,13 @@ public partial class HealthVial : Prop, IUse, IRespawnableEntity
 			player.Health += 10;
 
 			Delete();
+			Sound.FromScreen( "smallmedkit1" );
 		}
 
-		Sound.FromScreen( "ui.button.press" );
+		if ( user.Health > 100 )
+		{
+			
+		}
 
 		return false;
 	}

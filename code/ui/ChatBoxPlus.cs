@@ -18,7 +18,7 @@ namespace Sandbox.UI
 		{
 			Current = this;
 
-			StyleSheet.Load( "ui/ChatPlus/ChatBoxPlus.scss" );
+			StyleSheet.Load( "ui/ChatBoxPlus.scss" );
 
 			Canvas = Add.Panel( "chat_canvas" );
 

@@ -136,6 +136,12 @@ partial class DeathmatchPlayer : Player
 		{
 			SwitchToBestWeapon();
 		}
+
+		//
+		// Everytime the health reaches a value over 100 set it back to 100. Calculate this every tick.
+		//
+		if ( Health > 100 )
+			Health = 100;
 	}
 
 	public void SwitchToBestWeapon()

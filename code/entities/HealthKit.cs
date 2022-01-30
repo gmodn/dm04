@@ -17,18 +17,29 @@ public partial class HealthKit: Prop, IUse, IRespawnableEntity
 
 	public bool IsUsable( Entity user )
 	{
-		return true;
+		if ( user.Health > 100 )
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 	public bool OnUse( Entity user )
 	{
 		if ( user is Player player )
 		{
-			player.Health += 25;
+			player.Health += 10;
 
 			Delete();
+			Sound.FromScreen( "smallmedkit1" );
 		}
 
-		Sound.FromScreen( "ui.button.press" );
+		if ( user.Health > 100 )
+		{
+			Health = 100;
+		}
 
 		return false;
 	}
