@@ -168,7 +168,7 @@ metadata
 @PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_irifle_reference.vmdl" ) 
 metadata
 {
-	entity_tool_name = "Pulse SMG"
+	entity_tool_name = "Pulse Rifle"
 	entity_tool_group = "DM:04"
 }
 = dm04_pulsesmg : ""
