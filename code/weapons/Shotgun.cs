@@ -3,6 +3,7 @@
 
 [Library( "dm04_shotgun", Title = "Shotgun" )]
 [Hammer.EditorModel("models/worldmodels/shotgun_reference.vmdl")]
+[Hammer.EntityTool( "Shotgun", "DM:04" )]
 partial class Shotgun : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/viewmodels/shotgun/shotgun_reference.vmdl";

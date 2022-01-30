@@ -3,6 +3,7 @@ using System;
 
 [Library( "dm04_grenade", Title = "Grenade" )]
 [Hammer.EditorModel("models/worldmodels/grenade_reference.vmdl")]
+[Hammer.EntityTool( "Grenade", "DM:04" )]
 partial class Grenade : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/viewmodels/grenade/grenade_reference.vmdl";

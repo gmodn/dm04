@@ -2,6 +2,7 @@
 
 [Library( "dm04_crossbow", Title = "Crossbow" )]
 [Hammer.EditorModel("models/worldmodels/w_crossbow_reference.vmdl")]
+[Hammer.EntityTool( "Crossbow", "DM:04" )]
 partial class Crossbow : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/viewmodels/crossbow/crossbow_reference.vmdl";

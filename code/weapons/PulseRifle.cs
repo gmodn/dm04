@@ -3,6 +3,7 @@ using System;
 
 [Library( "dm04_pulsesmg", Title = "Pulse SMG" )]
 [Hammer.EditorModel("models/worldmodels/w_irifle_reference.vmdl")]
+[Hammer.EntityTool( "Pulse SMG", "DM:04" )]
 partial class PulseSMG : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/viewmodels/irifle/irifle_reference.vmdl";

@@ -1,10 +1,10 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "dm08_healthkit", Title = "Health Kit" )]
-[Hammer.EditorModel( "models/items/healthkit.vmdl" )]
-[Hammer.EntityTool( "Health Kit", "DM:04" )]
-public partial class HealthKit: Prop, IUse, IRespawnableEntity
+[Library( "dm08_healthvial", Title = "Health Kit" )]
+[Hammer.EditorModel( "models/healthvial.vmdl" )]
+[Hammer.EntityTool( "Health Vial", "DM:04" )]
+public partial class HealthVial : Prop, IUse, IRespawnableEntity
 {
 	public PickupTrigger PickupTrigger { get; protected set; }
 
@@ -12,7 +12,7 @@ public partial class HealthKit: Prop, IUse, IRespawnableEntity
 	{
 		base.Spawn();
 
-		SetModel( "models/items/healthkit.vmdl" );
+		SetModel( "models/healthvial.vmdl" );
 	}
 
 	public bool IsUsable( Entity user )
@@ -23,7 +23,7 @@ public partial class HealthKit: Prop, IUse, IRespawnableEntity
 	{
 		if ( user is Player player )
 		{
-			player.Health += 25;
+			player.Health += 10;
 
 			Delete();
 		}

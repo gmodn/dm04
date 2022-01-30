@@ -23,7 +23,47 @@
 //
 // HealthKit
 //
-@PointClass base(BaseProperties_gman_dm04) tags( Physics ) model() = dm08_healthkit : ""
+@PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/items/healthkit.vmdl" ) model() 
+metadata
+{
+	entity_tool_name = "Health Kit"
+	entity_tool_group = "DM:04"
+}
+= dm08_healthkit : ""
+[
+	model(resource:vmdl) { report = true hide_when_solid = true }: "World Model" : "" : "The model this entity should use."
+	skin(materialgroup) { group = "Rendering" hide_when_solid = true } : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
+	bodygroups(bodygroupchoices) { group = "Rendering" hide_when_solid = true } : "Body Groups" : "" : "Some models have multiple variations of certain items, such as characters having different hair styles, etc."
+	rendercolor(color255) { alpha = true } : "Color (R G B A)" : "255 255 255 255" : "The color tint of this entity."
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
+		-1 : "UNUSED"
+		0 : "COLLISION GROUP ALWAYS"
+		1 : "COLLISION GROUP NONPHYSICAL"
+		4 : "COLLISION GROUP DEFAULT"
+		5 : "COLLISION GROUP DEBRIS"
+		14 : "COLLISION GROUP WEAPON"
+	]
+	static(boolean) : "Static" : 0 : "If set, the prop will spawn with motion disabled and will act as a nav blocker until broken."
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input Break(void) : "Causes this prop to break, regardless if it is actually breakable or not. (i.e. ignores health and whether the model has gibs)"
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+
+	output OnDamaged(void) : "Fired when the entity gets damaged."
+	output OnBreak(void) : "Fired when the entity gets destroyed."
+]
+
+//
+// HealthVial
+//
+@PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/healthvial.vmdl" ) model() 
+metadata
+{
+	entity_tool_name = "Health Vial"
+	entity_tool_group = "DM:04"
+}
+= dm08_healthvial : ""
 [
 	model(resource:vmdl) { report = true hide_when_solid = true }: "World Model" : "" : "The model this entity should use."
 	skin(materialgroup) { group = "Rendering" hide_when_solid = true } : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
@@ -51,7 +91,13 @@
 //
 // Crossbow
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_crossbow_reference.vmdl" ) = dm04_crossbow : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_crossbow_reference.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Crossbow"
+	entity_tool_group = "DM:04"
+}
+= dm04_crossbow : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -71,7 +117,13 @@
 //
 // Grenade
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/grenade_reference.vmdl" ) = dm04_grenade : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/grenade_reference.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Grenade"
+	entity_tool_group = "DM:04"
+}
+= dm04_grenade : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -81,7 +133,13 @@
 //
 // Magnum
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_357_reference.vmdl" ) = dm04_357 : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_357_reference.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Magnum"
+	entity_tool_group = "DM:04"
+}
+= dm04_357 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -91,7 +149,13 @@
 //
 // Pistol
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/pistol_reference.vmdl" ) = dm04_pistol : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/pistol_reference.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Pistol"
+	entity_tool_group = "DM:04"
+}
+= dm04_pistol : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -101,7 +165,13 @@
 //
 // PulseSMG
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_irifle_reference.vmdl" ) = dm04_pulsesmg : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_irifle_reference.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Pulse SMG"
+	entity_tool_group = "DM:04"
+}
+= dm04_pulsesmg : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -111,7 +181,13 @@
 //
 // Shotgun
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/shotgun_reference.vmdl" ) = dm04_shotgun : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/shotgun_reference.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Shotgun"
+	entity_tool_group = "DM:04"
+}
+= dm04_shotgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -121,7 +197,13 @@
 //
 // SMG
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/smg1_reference.vmdl" ) = dm04_smg : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/smg1_reference.vmdl" ) 
+metadata
+{
+	entity_tool_name = "SMG"
+	entity_tool_group = "DM:04"
+}
+= dm04_smg : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
