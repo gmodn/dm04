@@ -2,14 +2,16 @@
 {
 	data = 
 	{
-		volume = 1.0
 		sounds = 
 		[
-			"sounds/pickup/ui-pickup-gun-1.vsnd",
+			"sounds/hl2/ui/buttonclickrelease.vsnd",
 		]
-		VolumeRandom = 0.0
-		Pitch = 1.0
-		PitchRandom = 0.0
-		DistanceMax = 1000.0
+		ui = true
+		volume = 1.0
+		volumerandom = 0.0
+		pitch = 1.0
+		pitchrandom = 0.0
+		distancemax = 2000.0
+		selectionmode = "3"
 	}
 }
