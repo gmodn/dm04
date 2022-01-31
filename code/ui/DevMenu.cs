@@ -31,6 +31,7 @@ using Sandbox.UI.Construct;
 			Add.Label( "Suicide", "button" ).AddEventListener( "onclick", () =>
 			{
 				ConsoleSystem.Run( "kill" );
+				Sound.FromScreen( "buttonclick" );
 			} );
 
 		//
@@ -42,31 +43,37 @@ using Sandbox.UI.Construct;
 		Add.Label( "Create USP", "button" ).AddEventListener( "onclick", () =>
 		{
 			ConsoleSystem.Run( "ent_create dm04_pistol" );
+			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create Python", "button" ).AddEventListener( "onclick", () =>
 		{
 			ConsoleSystem.Run( "ent_create dm04_python" );
+			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create GravGun", "button" ).AddEventListener( "onclick", () =>
 		{
 			ConsoleSystem.Run( "ent_create dm04_gravgun" );
+			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create Shotgun", "button" ).AddEventListener( "onclick", () =>
 		{
 			ConsoleSystem.Run( "ent_create dm04_shotgun" );
+			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create SMG", "button" ).AddEventListener( "onclick", () =>
 		{
 			ConsoleSystem.Run( "ent_create dm04_smg" );
+			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create Crossbow", "button" ).AddEventListener( "onclick", () =>
 		{
 			ConsoleSystem.Run( "ent_create dm04_crossbow" );
+			Sound.FromScreen( "buttonclick" );
 		} );
 		}
 	}
