@@ -39,7 +39,7 @@
 						placement_attach = ""
 						is_ragdoll = false
 						collision_group = "default"
-						offset = [ 0.0, 0.0, 0.0 ]
+						offset = [ 0.0, 0.0, -5.0 ]
 						fadetime = 20.0
 						fade_min_dist = 0.0
 						fade_max_dist = 0.0
@@ -79,7 +79,7 @@
 						placement_attach = ""
 						is_ragdoll = false
 						collision_group = "default"
-						offset = [ 0.0, 0.0, 0.0 ]
+						offset = [ 0.0, -5.0, 0.0 ]
 						fadetime = 20.0
 						fade_min_dist = 0.0
 						fade_max_dist = 0.0
@@ -279,7 +279,7 @@
 						placement_attach = ""
 						is_ragdoll = false
 						collision_group = "default"
-						offset = [ 0.0, 0.0, 0.0 ]
+						offset = [ 0.0, 5.0, 0.0 ]
 						fadetime = 20.0
 						fade_min_dist = 0.0
 						fade_max_dist = 0.0
@@ -319,7 +319,7 @@
 						placement_attach = ""
 						is_ragdoll = false
 						collision_group = "default"
-						offset = [ 0.0, 0.0, 0.0 ]
+						offset = [ 0.0, 0.0, 15.0 ]
 						fadetime = 20.0
 						fade_min_dist = 0.0
 						fade_max_dist = 0.0
@@ -438,7 +438,7 @@
 							allowstatic = false
 							bakelighting = true
 							spawn_motion_disabled = false
-							health = 70.0
+							health = 50.0
 							min_impact_damage_speed = -1.0
 							impact_damage = -1.0
 							parent_bodygroup_name = ""
