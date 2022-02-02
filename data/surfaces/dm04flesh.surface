@@ -1,0 +1,34 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		basesurface = "data/surfaces/dm04flesh.surface"
+		description = "DM04 flesh surface"
+		friction = 0.8
+		elasticity = 0.25
+		density = 2000.0
+		thickness = 10.5
+		dampening = 7.5
+		bouncethreshold = 30.8
+		impacteffects = 
+		{
+			bulletdecal = 
+			[
+				"data/decals/blood.decal",
+			]
+			bullet = [  ]
+		}
+		sounds = 
+		{
+			impacthard = "flesh_hit_hard"
+			impactsoft = "flesh_hit_soft"
+			footleft = "flesh_hit_soft"
+			footright = "flesh_hit_soft"
+			footlaunch = "flesh_hit_soft"
+			footland = "flesh_hit_hard"
+			bullet = "flesh_hit_bullet"
+			smoothscrape = "flesh_drag_smooth"
+			roughscrape = "flesh_drag_rough"
+		}
+	}
+}
