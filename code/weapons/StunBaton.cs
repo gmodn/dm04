@@ -31,6 +31,8 @@ partial class StunBaton : BaseDmWeapon
 			OnMeleeMiss();
 		}
 
+		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+
 		PlaySound("rust_flashlight.attack");
 	}
 

@@ -43,6 +43,8 @@ partial class Magnum : BaseDmWeapon
 			return;
 		}
 
+		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+
 		ShootEffects();
 		PlaySound( "357_fire" );
 		

@@ -41,6 +41,8 @@ partial class Pistol : BaseDmWeapon
 			return;
 		}
 
+		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+
 		ShootEffects();
 		PlaySound( "pistol_fire" );
 

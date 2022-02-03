@@ -31,6 +31,8 @@ partial class Crowbar : BaseDmWeapon
 			OnMeleeMiss();
 		}
 
+		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+
 		PlaySound( "iceaxe_swing1" );
 	}
 
@@ -105,7 +107,7 @@ partial class Crowbar : BaseDmWeapon
 
 	public override void SimulateAnimator(PawnAnimator anim)
 	{
-		anim.SetParam("holdtype", 4);
+		anim.SetParam("holdtype", 0);
 		anim.SetParam("aimat_weight", 1.0f);
 		anim.SetParam("holdtype_handedness", 1);
 	}

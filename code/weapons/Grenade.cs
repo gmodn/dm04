@@ -41,6 +41,8 @@ partial class Grenade : BaseDmWeapon
 			return;
 		}
 
+		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+
 		ShootGrenade();
 
 		ViewModelEntity?.SetAnimBool( "throw", true );

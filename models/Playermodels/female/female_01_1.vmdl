@@ -10509,6 +10509,469 @@
 					},
 				]
 			},
+			{
+				_class = "WeightListList"
+				children = 
+				[
+					{
+						_class = "WeightList"
+						name = "Only_Upperbody"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_spine"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+					{
+						_class = "WeightList"
+						name = "Only_Arms"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_clavicle"
+								weight = 1.0
+							},
+							{
+								bone = "bip01_r_clavicle"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+					{
+						_class = "WeightList"
+						name = "Melee_Movement"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_clavicle"
+								weight = 0.477387
+							},
+							{
+								bone = "bip01_r_clavicle"
+								weight = 0.778894
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+					{
+						_class = "WeightList"
+						name = "Melee_Attack"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_thigh"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_pelvis"
+								weight = 0.119792
+							},
+							{
+								bone = "bip01_r_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_thigh"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_spine"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+					{
+						_class = "WeightList"
+						name = "Pistol_Attack"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_clavicle"
+								weight = 1.0
+							},
+							{
+								bone = "bip01_l_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_clavicle"
+								weight = 1.0
+							},
+							{
+								bone = "bip01_r_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_spine"
+								weight = 0.651042
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+					{
+						_class = "WeightList"
+						name = "Pistol_Movement"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_clavicle"
+								weight = 0.885417
+							},
+							{
+								bone = "bip01_l_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_clavicle"
+								weight = 0.869792
+							},
+							{
+								bone = "bip01_r_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_spine"
+								weight = 0.145833
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+					{
+						_class = "WeightList"
+						name = "Pistol_Reload"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_latt"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_pectoral"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_spine"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "LookAtChain"
+						name = "AimChain"
+						lookat_chain = 
+						{
+							name = ""
+							bones = 
+							[
+								{
+									name = "bip01_spine2"
+									weight = 1.0
+								},
+								{
+									name = "bip01_spine1"
+									weight = 0.7
+								},
+								{
+									name = "bip01_spine"
+									weight = 0.45
+								},
+								{
+									name = "bip01_pelvis"
+									weight = 0.2
+								},
+							]
+						}
+					},
+					{
+						_class = "LookAtChain"
+						name = "LookChain"
+						lookat_chain = 
+						{
+							name = ""
+							bones = 
+							[
+								{
+									name = "bip01_head1"
+									weight = 0.6
+								},
+								{
+									name = "bip01_neck1"
+									weight = 0.35
+								},
+							]
+						}
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "forward_reference"
+						parent_bone = "forward"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
 		]
 		model_archetype = ""
 		primary_associated_entity = ""

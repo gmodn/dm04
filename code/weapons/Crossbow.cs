@@ -35,6 +35,8 @@ partial class Crossbow : BaseDmWeapon
 
 		ShootEffects();
 
+		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+
 		if ( IsServer )
 		using ( Prediction.Off() )
 		{
