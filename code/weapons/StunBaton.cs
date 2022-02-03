@@ -107,7 +107,7 @@ partial class StunBaton : BaseDmWeapon
 
 	public override void SimulateAnimator(PawnAnimator anim)
 	{
-		anim.SetParam("holdtype", 4);
+		anim.SetParam("holdtype", 0);
 		anim.SetParam("aimat_weight", 1.0f);
 		anim.SetParam("holdtype_handedness", 1);
 	}
