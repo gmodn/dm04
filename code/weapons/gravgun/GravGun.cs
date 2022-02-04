@@ -72,12 +72,14 @@ partial class GravGun : BaseDmWeapon
 						HeldBody.PhysicsGroup.ApplyImpulse( eyeDir * (ThrowForce * 0.5f), true );
 						HeldBody.PhysicsGroup.ApplyAngularImpulse( Vector3.Random * ThrowForce, true );
 						ViewModelEntity?.SetAnimBool( "altfire", true );
+						PlaySound("superphys_launch");
 					}
 					else
 					{
 						HeldBody.ApplyImpulse( eyeDir * (HeldBody.Mass * ThrowForce) );
 						HeldBody.ApplyAngularImpulse( Vector3.Random * (HeldBody.Mass * ThrowForce) );
 						ViewModelEntity?.SetAnimBool( "altfire", true );
+						PlaySound("superphys_launch");
 					}
 
 					GrabEnd();
@@ -131,11 +133,20 @@ partial class GravGun : BaseDmWeapon
 				{
 					var pushScale = 1.0f - Math.Clamp( tr.Distance / MaxPushDistance, 0.0f, 1.0f );
 					body.ApplyImpulseAt( tr.EndPos, eyeDir * (body.Mass * (PushForce * pushScale)) );
+					PlaySound("superphys_launch");
 				}
 			}
 			else if ( Input.Down( InputButton.Attack2 ) )
 			{
 				var physicsGroup = tr.Entity.PhysicsGroup;
+
+				int distantPickup = 0;
+
+				if (distantPickup < 1)
+				{
+					PlaySound( "physcannon_pickup" );
+					distantPickup++;
+				}
 
 				if ( physicsGroup.BodyCount > 1 )
 				{
@@ -150,7 +161,6 @@ partial class GravGun : BaseDmWeapon
 				{
 					var holdDistance = HoldDistance + attachPos.Distance( body.MassCenter );
 					GrabStart( modelEnt, body, eyePos + eyeDir * holdDistance, eyeRot );
-					PlaySound( "physcannon_pickup" );
 				}
 				else if ( !IsBodyGrabbed( body ) )
 				{
