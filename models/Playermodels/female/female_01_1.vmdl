@@ -10941,7 +10941,7 @@
 							},
 							{
 								bone = "bip01_l_clavicle"
-								weight = 0.960317
+								weight = 1.0
 							},
 							{
 								bone = "bip01_l_elbow"
@@ -10969,7 +10969,7 @@
 							},
 							{
 								bone = "bip01_r_clavicle"
-								weight = 0.960317
+								weight = 1.0
 							},
 							{
 								bone = "bip01_r_elbow"
@@ -10993,7 +10993,7 @@
 							},
 							{
 								bone = "bip01_spine"
-								weight = 0.5
+								weight = 0.388889
 							},
 						]
 						master_morph_weight = -1.0
