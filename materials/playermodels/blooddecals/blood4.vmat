@@ -19,7 +19,7 @@ Layer0
 	//---- Lighting ----
 	g_flDirectionalLightmapMinZ "0.050"
 	g_flDirectionalLightmapStrength "1.000"
-	g_flGlossiness "0.500"
+	g_flGlossiness "0.743"
 
 	//---- Metalness ----
 	TextureMetalness "materials/default/default_metal.tga"
