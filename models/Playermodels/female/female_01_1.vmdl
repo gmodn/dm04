@@ -10903,6 +10903,102 @@
 						master_morph_weight = -1.0
 						morph_weights = [  ]
 					},
+					{
+						_class = "WeightList"
+						name = "Only_Legs"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_thigh"
+								weight = 1.0
+							},
+							{
+								bone = "bip01_pelvis"
+								weight = 1.0
+							},
+							{
+								bone = "bip01_r_thigh"
+								weight = 1.0
+							},
+							{
+								bone = "bip01_spine"
+								weight = 0.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+					{
+						_class = "WeightList"
+						name = "AR2_Movement"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_clavicle"
+								weight = 0.960317
+							},
+							{
+								bone = "bip01_l_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_l_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_bicep"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_clavicle"
+								weight = 0.960317
+							},
+							{
+								bone = "bip01_r_elbow"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_shoulder"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_trapezius"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_ulna"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_r_wrist"
+								weight = 0.0
+							},
+							{
+								bone = "bip01_spine"
+								weight = 0.5
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
 				]
 			},
 			{
