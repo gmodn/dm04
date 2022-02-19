@@ -1,8 +1,9 @@
 {
-  "Title": "DM04 DEV BUILD",
+  "SharedAssets": "*.*",
+  "Title": "DM04",
   "Type": "game",
   "Org": "gman",
-  "Ident": "",
+  "Ident": "dm04",
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",

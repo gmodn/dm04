@@ -14,6 +14,13 @@
 ]
 
 //
+// DeathmatchGame
+//
+@PointClass base(BaseProperties_gman_dm04) = dm04 : "This is the heart of the gamemode. It's responsible for creating the player and stuff."
+[
+]
+
+//
 // HealthKit
 //
 @PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/items/healthkit.vmdl" ) model() 
