@@ -23,22 +23,16 @@ using Sandbox.UI.Construct;
 	{
 		public DevMenuButtons()
 		{
-		//
-		// General
-		//
-		Add.Label( "General", "section" );
+			//
+			// General
+			//
+			Add.Label( "General", "section" );
 
-		Add.Label( "Suicide", "button" ).AddEventListener( "onclick", () =>
-		{
+			Add.Label( "Suicide", "button" ).AddEventListener( "onclick", () =>
+			{
 				ConsoleSystem.Run( "kill" );
 				Sound.FromScreen( "buttonclick" );
-		} );
-
-		Add.Label( "Regenerate", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_impulse" );
-			Sound.FromScreen( "buttonclick" );
-		} );
+			} );
 
 		//
 		// Weapons
@@ -48,43 +42,37 @@ using Sandbox.UI.Construct;
 
 		Add.Label( "Create USP", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "dm04_giveweapon_pistol" );
+			ConsoleSystem.Run( "ent_create dm04_pistol" );
 			Sound.FromScreen( "buttonclick" );
 		} );
 
-		Add.Label( "Create Magnum", "button" ).AddEventListener( "onclick", () =>
+		Add.Label( "Create Python", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "dm04_giveweapon_magnum" );
+			ConsoleSystem.Run( "ent_create dm04_python" );
 			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create GravGun", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "edm04_giveweapon_gravgun" );
+			ConsoleSystem.Run( "ent_create dm04_gravgun" );
 			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create Shotgun", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "dm04_giveweapon_shotgun" );
+			ConsoleSystem.Run( "ent_create dm04_shotgun" );
 			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create SMG", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "dm04_giveweapon_smg" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-		
-		Add.Label( "Create Pulse Rifle", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_pulsesmg" );
+			ConsoleSystem.Run( "ent_create dm04_smg" );
 			Sound.FromScreen( "buttonclick" );
 		} );
 
 		Add.Label( "Create Crossbow", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "dm04_giveweapon_crossbow" );
+			ConsoleSystem.Run( "ent_create dm04_crossbow" );
 			Sound.FromScreen( "buttonclick" );
 		} );
 		}
