@@ -33,17 +33,6 @@ partial class DeathmatchPlayer : Player
 
 		SupressPickupNotices = true;
 
-		Inventory.Add( new Pistol(), true );
-		Inventory.Add( new Shotgun() );
-		Inventory.Add( new SMG() );
-		Inventory.Add( new Crossbow() );
-		Inventory.Add( new GravGun());
-		Inventory.Add( new Magnum() );
-		Inventory.Add( new PulseSMG() );
-		Inventory.Add( new Crowbar() );
-		Inventory.Add( new StunBaton() );
-		Inventory.Add( new Grenade() );
-
 		GiveAmmo( AmmoType.Pistol, 150 );
 		GiveAmmo( AmmoType.SMG, 225 );
 		GiveAmmo( AmmoType.Pulse, 60 );
@@ -98,18 +87,6 @@ partial class DeathmatchPlayer : Player
 			return;
 
 		TickPlayerUse();
-
-		if ( Input.Pressed( InputButton.View ) )
-		{
-			if ( Camera is ThirdPersonCamera )
-			{
-				Camera = new FirstPersonCamera();
-			}
-			else
-			{
-				Camera = new ThirdPersonCamera();
-			}
-		}
 
 		if ( Input.Pressed( InputButton.Drop ) )
 		{
