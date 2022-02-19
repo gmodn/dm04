@@ -1,5 +1,5 @@
 
-@BaseClass = BaseProperties_gman_dm04
+@BaseClass = BaseProperties_gman_
 [
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	parentAttachmentName(parentAttachment) [ group="Hierarchy" ] : "Parent Model Bone/Attachment Name" : : "The name of the bone or attachment to attach to on the entity's parent in the movement hierarchy. Use !bonemerge to use bone-merge style attachment."
@@ -16,7 +16,7 @@
 //
 // HealthKit
 //
-@PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/items/healthkit.vmdl" ) model() 
+@PointClass base(BaseProperties_gman_) tags( Physics ) editormodel( "models/items/healthkit.vmdl" ) model() 
 metadata
 {
 	entity_tool_name = "Health Kit"
@@ -50,7 +50,7 @@ metadata
 //
 // HealthVial
 //
-@PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/healthvial.vmdl" ) model() 
+@PointClass base(BaseProperties_gman_) tags( Physics ) editormodel( "models/healthvial.vmdl" ) model() 
 metadata
 {
 	entity_tool_name = "Health Vial"
@@ -84,7 +84,7 @@ metadata
 //
 // Crossbow
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_crossbow_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_) editormodel( "models/worldmodels/w_crossbow_reference.vmdl" ) 
 metadata
 {
 	entity_tool_name = "Crossbow"
@@ -100,7 +100,7 @@ metadata
 //
 // Crowbar
 //
-@PointClass base(BaseProperties_gman_dm04) = dm04_crowbar : ""
+@PointClass base(BaseProperties_gman_) = dm04_crowbar : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -110,7 +110,7 @@ metadata
 //
 // Grenade
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/grenade_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_) editormodel( "models/worldmodels/grenade_reference.vmdl" ) 
 metadata
 {
 	entity_tool_name = "Grenade"
@@ -126,7 +126,7 @@ metadata
 //
 // Magnum
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_357_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_) editormodel( "models/worldmodels/w_357_reference.vmdl" ) 
 metadata
 {
 	entity_tool_name = "Magnum"
@@ -142,7 +142,7 @@ metadata
 //
 // Pistol
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/pistol_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_) editormodel( "models/worldmodels/pistol_reference.vmdl" ) 
 metadata
 {
 	entity_tool_name = "Pistol"
@@ -158,7 +158,7 @@ metadata
 //
 // PulseSMG
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_irifle_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_) editormodel( "models/worldmodels/w_irifle_reference.vmdl" ) 
 metadata
 {
 	entity_tool_name = "Pulse Rifle"
@@ -174,7 +174,7 @@ metadata
 //
 // Shotgun
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/shotgun_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_) editormodel( "models/worldmodels/shotgun_reference.vmdl" ) 
 metadata
 {
 	entity_tool_name = "Shotgun"
@@ -190,7 +190,7 @@ metadata
 //
 // SMG
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/smg1_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_) editormodel( "models/worldmodels/smg1_reference.vmdl" ) 
 metadata
 {
 	entity_tool_name = "SMG"
@@ -206,7 +206,7 @@ metadata
 //
 // StunBaton
 //
-@PointClass base(BaseProperties_gman_dm04) = dm04_stunbaton : ""
+@PointClass base(BaseProperties_gman_) = dm04_stunbaton : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -216,7 +216,7 @@ metadata
 //
 // GravGun
 //
-@PointClass base(BaseProperties_gman_dm04) = dm04_gravgun : ""
+@PointClass base(BaseProperties_gman_) = dm04_gravgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
