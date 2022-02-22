@@ -1,15 +1,12 @@
 {
-  "SharedAssets": "*.*",
-  "Title": "DM04",
+  "Title": "Deathmatch: 2004",
   "Type": "game",
   "Org": "gman",
   "Ident": "dm04",
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
-  "ResourcePaths": [
-    "/ui/*"
-  ],
+  "ResourcePaths": null,
   "HasCode": true,
   "CodePath": "code",
   "RootNamespace": "Dm04"
