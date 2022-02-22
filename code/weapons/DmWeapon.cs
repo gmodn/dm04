@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 {
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
+
+	public virtual AmmoType SecondaryAmmo => AmmoType.None;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
 	public virtual int Bucket => 1;
@@ -29,7 +31,6 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 
 	public PickupTrigger PickupTrigger { get; protected set; }
-
 
 	public int AvailableAmmo()
 	{
@@ -66,7 +67,10 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			return;
 
 		if ( AmmoClip >= ClipSize )
+		{
+			ViewModelEntity?.SetAnimBool( "inspect", true );
 			return;
+		}	
 
 		TimeSinceReload = 0;
 
@@ -98,10 +102,12 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			OnReloadFinish();
 		}
 
-		if (AmmoClip == 0 && TimeSincePrimaryAttack > 0.2f)
+		//Sprint Animation System
+		if ( Owner is DeathmatchPlayer player )
 		{
-			Reload();
-		}
+			ViewModelEntity?.SetAnimFloat( "speed", Owner.Velocity.Length.LerpInverse( 0, 320 ) );
+			return;
+		}	
 	}
 
 	public virtual void OnReloadFinish()
@@ -122,7 +128,6 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	public virtual void StartReloadEffects()
 	{
 		ViewModelEntity?.SetAnimBool( "reload", true );
-
 		// TODO - player third person model reload
 	}
 
@@ -130,6 +135,35 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	{
 		TimeSincePrimaryAttack = 0;
 		TimeSinceSecondaryAttack = 0;
+		//
+		// Tell the clients to play the shoot effects
+		//
+		ShootEffects();
+
+		//
+		// ShootBullet is coded in a way where we can have bullets pass through shit
+		// or bounce off shit, in which case it'll return multiple results
+		//
+		foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + Owner.EyeRotation.Forward * 5000 ) )
+		{
+			tr.Surface.DoBulletImpact( tr );
+
+			if ( !IsServer ) continue;
+			if ( !tr.Entity.IsValid() ) continue;
+
+			//
+			// We turn predictiuon off for this, so aany exploding effects don't get culled etc
+			//
+			using ( Prediction.Off() )
+			{
+				var damage = DamageInfo.FromBullet( tr.EndPos, Owner.EyeRotation.Forward * 100, 15 )
+					.UsingTraceResult( tr )
+					.WithAttacker( Owner )
+					.WithWeapon( this );
+
+				tr.Entity.TakeDamage( damage );
+			}
+		}
 	}
 
 	[ClientRpc]
@@ -137,12 +171,12 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	{
 		Host.AssertClient();
 
-		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
+		//Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
-		if ( IsLocalPawn )
-		{
-			new Sandbox.ScreenShake.Perlin();
-		}
+		//if ( IsLocalPawn )
+		//{
+		//	new Sandbox.ScreenShake.Perlin();
+		//}
 
 		ViewModelEntity?.SetAnimBool( "fire", true );
 		CrosshairPanel?.CreateEvent( "fire" );
@@ -151,30 +185,28 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	/// <summary>
 	/// Shoot a single bullet
 	/// </summary>
-	public virtual void ShootBullet( float spread, float force, float damage, float bulletSize, int bulletCount = 1 )
+	public virtual void ShootBullet( float spread, float force, float damage, float bulletSize )
 	{
-		//
-		// Seed rand using the tick, so bullet cones match on client and server
-		//
-		Rand.SetSeed( Time.Tick );
+		var forward = Owner.EyeRotation.Forward;
+		forward += (Vector3.Random + Vector3.Random + Vector3.Random + Vector3.Random) * spread * 0.25f;
+		forward = forward.Normal;
 
-		for ( int i = 0; i < bulletCount; i++ )
+		//
+		// ShootBullet is coded in a way where we can have bullets pass through shit
+		// or bounce off shit, in which case it'll return multiple results
+		//
+		foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + forward * 5000, bulletSize ) )
 		{
-			var forward = Owner.EyeRot.Forward;
-			forward += (Vector3.Random + Vector3.Random + Vector3.Random + Vector3.Random) * spread * 0.25f;
-			forward = forward.Normal;
+			tr.Surface.DoBulletImpact( tr );
+
+			if ( !IsServer ) continue;
+			if ( !tr.Entity.IsValid() ) continue;
 
 			//
-			// ShootBullet is coded in a way where we can have bullets pass through shit
-			// or bounce off shit, in which case it'll return multiple results
+			// We turn predictiuon off for this, so any exploding effects don't get culled etc
 			//
-			foreach ( var tr in TraceBullet( Owner.EyePos, Owner.EyePos + forward * 5000, bulletSize ) )
+			using ( Prediction.Off() )
 			{
-				tr.Surface.DoBulletImpact( tr );
-
-				if ( !IsServer ) continue;
-				if ( !tr.Entity.IsValid() ) continue;
-
 				var damageInfo = DamageInfo.FromBullet( tr.EndPos, forward * 100 * force, damage )
 					.UsingTraceResult( tr )
 					.WithAttacker( Owner )
@@ -194,11 +226,11 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		return true;
 	}
 
-	[ClientRpc]
-	public virtual void DryFire()
-	{
-		// CLICK
-	}
+	//[ClientRpc]
+	//public virtual void DryFire()
+	//{
+
+	//}
 
 	public override void CreateViewModel()
 	{
@@ -225,7 +257,13 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 	public bool IsUsable()
 	{
+		//Need to fix secondary check since it's ass
+		var owner = Owner as DeathmatchPlayer;
+		if ( owner == null ) return true;
+
 		if ( AmmoClip > 0 ) return true;
+		if ( owner.AmmoCount( SecondaryAmmo ) > 0 ) return true;
+		if ( AmmoType == AmmoType.None ) return true;
 		return AvailableAmmo() > 0;
 	}
 
@@ -248,5 +286,4 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			PickupTrigger.EnableTouch = true;
 		}
 	}
-
 }

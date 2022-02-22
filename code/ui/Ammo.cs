@@ -9,12 +9,19 @@ public class Ammo : Panel
 	private Label CounterText;
 	private Label ReserveText;
 
+	private Panel AltPanel;
+    private Label AltText;
+
 	public Ammo()
 	{
 		AmmoPanel = Add.Panel( "Ammo" );
 		AmmoPanel.Add.Label( "AMMO", "AmmoText" );
 		CounterText = AmmoPanel.Add.Label( "0", "Counter" );
 		ReserveText = AmmoPanel.Add.Label( "0", "Reserve" );
+
+		AltPanel = Add.Panel("Alt");
+        AltPanel.Add.Label("ALT", "AmmoText");
+        AltText = AltPanel.Add.Label("0", "Counter");
 	}
 
 	public override void Tick()

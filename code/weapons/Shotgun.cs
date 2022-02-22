@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 
 
 [Library( "dm04_shotgun", Title = "Shotgun" )]
@@ -32,7 +32,6 @@ partial class Shotgun : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 
@@ -48,7 +47,7 @@ partial class Shotgun : BaseDmWeapon
 		// Shoot the bullets
 		//
 		for ( int i = 0; i <= TotalShells; i++ )
-			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f, 10 );
+			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f);
 		
 	}
 
@@ -59,7 +58,6 @@ partial class Shotgun : BaseDmWeapon
 
 		if ( !TakeAmmo( 2 ) )
 		{
-			DryFire();
 			return;
 		}
 
@@ -75,7 +73,7 @@ partial class Shotgun : BaseDmWeapon
 		// Shoot the bullets
 		//
 		for ( int i = 0; i <= TotalShells * 2; i++ )
-			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f, 10 );
+			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f );
 	}
 
 	public override void Simulate(Client cl) 

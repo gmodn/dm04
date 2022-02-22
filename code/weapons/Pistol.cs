@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 
 
 [Library( "dm04_pistol", Title = "Pistol" )]
@@ -37,7 +37,6 @@ partial class Pistol : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 

@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 
 
 [Library( "dm04_357", Title = ".357 Magnum" )]
@@ -39,7 +39,6 @@ partial class Magnum : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 
@@ -50,12 +49,6 @@ partial class Magnum : BaseDmWeapon
 			new Sandbox.ScreenShake.Perlin( 0.5f, 2.0f, 5.0f, 1.5f );
 
 		ShootBullet( 0.2f, 1.5f, 75.0f, 3.0f );
-	}
-
-	[ClientRpc]
-	public override void DryFire()
-	{
-		
 	}
 
 	public override void Reload()

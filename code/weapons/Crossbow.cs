@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 
 [Library( "dm04_crossbow", Title = "Crossbow" )]
 [Hammer.EditorModel("models/worldmodels/w_crossbow_reference.vmdl")]
@@ -29,7 +29,6 @@ partial class Crossbow : BaseDmWeapon
 	{
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 

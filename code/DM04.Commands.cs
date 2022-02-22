@@ -24,6 +24,9 @@ namespace DM04
 			caller.Inventory.Add( new SMG(), true );
 			caller.Inventory.Add( new PulseSMG(), true );
 			caller.Inventory.Add( new Grenade(), true );
+			caller.Inventory.Add( new Grenade(), true );
+			caller.Inventory.Add( new Grenade(), true );
+			caller.Inventory.Add( new Grenade(), true );
 			caller.Health += 100;
 		}
 
@@ -92,12 +95,12 @@ namespace DM04
 			caller.Inventory.Add( new Grenade(), true );
 		}
 
-		[ServerCmd( "dm04_giveweapon_gravgun" )]
-		public static void GiveGravgun()
+		[ServerCmd( "dm04_devweapons" )]
+		public static void GiveDev()
 		{
 			var caller = ConsoleSystem.Caller.Pawn;
 			if ( caller == null ) return;
-			caller.Inventory.Add( new GravGun(), true );
+			caller.Inventory.Add( new devgun(), true );
 		}
 	}
 }

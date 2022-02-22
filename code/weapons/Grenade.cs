@@ -37,7 +37,6 @@ partial class Grenade : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 
@@ -53,7 +52,6 @@ partial class Grenade : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 

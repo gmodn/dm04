@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 using System;
 
 [Library( "dm04_smg", Title = "SMG" )]
@@ -30,7 +30,6 @@ partial class SMG : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 

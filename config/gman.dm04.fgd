@@ -115,6 +115,16 @@ metadata
 ]
 
 //
+// devgun
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" ) = devgun : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // Grenade
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/grenade_reference.vmdl" ) 

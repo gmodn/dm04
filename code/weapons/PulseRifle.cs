@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 using System;
 
 [Library( "dm04_pulsesmg", Title = "Pulse Rifle" )]
@@ -14,7 +14,7 @@ partial class PulseSMG : BaseDmWeapon
 	public override float ReloadTime => 1.5f;
 	public override int Bucket => 2;
 
-	public override AmmoType AmmoType => AmmoType.Pulse;
+	public override AmmoType AmmoType => AmmoType.AR2;
 
 	public override void Spawn()
 	{
@@ -31,7 +31,6 @@ partial class PulseSMG : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
-			DryFire();
 			return;
 		}
 
