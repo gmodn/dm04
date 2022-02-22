@@ -33,25 +33,33 @@ partial class DeathmatchPlayer : Player
 
 		SupressPickupNotices = true;
 
-		Inventory.Add( new Pistol(), true );
-		Inventory.Add( new Shotgun() );
-		Inventory.Add( new SMG() );
-		Inventory.Add( new Crossbow() );
-		Inventory.Add( new GravGun());
-		Inventory.Add( new Magnum() );
-		Inventory.Add( new PulseSMG() );
-		Inventory.Add( new Crowbar() );
-		Inventory.Add( new StunBaton() );
-		Inventory.Add( new Grenade() );
+		Inventory.Add(new devgun(), true);
 
-		GiveAmmo( AmmoType.Pistol, 150 );
-		GiveAmmo( AmmoType.SMG, 225 );
-		GiveAmmo( AmmoType.AR2, 60 );
-		GiveAmmo( AmmoType.Magnum, 12 );
-		GiveAmmo( AmmoType.Buckshot, 30 );
-		GiveAmmo( AmmoType.Crossbow, 4 );
-		GiveAmmo( AmmoType.Grenade, 3 );
-		GiveAmmo( AmmoType.None, 1 );
+		//HL2 Arsenal
+		Inventory.Add(new hl2_crowbar(), true);
+		Inventory.Add(new hl2_uspmatch(), true);
+		Inventory.Add(new hl2_357(), true);
+		Inventory.Add(new hl2_smg1(), true);
+		Inventory.Add(new hl2_ar2(), true);
+		Inventory.Add(new hl2_spas12(), true);
+		Inventory.Add(new hl2_crossbow(), true);
+		Inventory.Add(new hl2_grenade(), true);
+		Inventory.Add(new hl2_rpg(), true);
+		Inventory.Add(new hl2_slam(), true);
+		Inventory.Add(new OLD_gravgun(), true);
+
+		//Give Max Ammo
+		GiveAmmo(AmmoType.Pistol, 150);
+		GiveAmmo(AmmoType.Magnum, 12);
+		GiveAmmo(AmmoType.SMG, 225);
+		GiveAmmo(AmmoType.SMG_grenade, 3);
+		GiveAmmo(AmmoType.AR2, 60);
+		GiveAmmo(AmmoType.AR2_ball, 3);
+		GiveAmmo(AmmoType.Buckshot, 30);
+		GiveAmmo(AmmoType.Crossbow, 40);
+		GiveAmmo(AmmoType.Grenade, 5);
+		GiveAmmo(AmmoType.RPG, 300);
+		GiveAmmo(AmmoType.SLAM, 5);
 
 		SupressPickupNotices = false;
 		Health = 100;
