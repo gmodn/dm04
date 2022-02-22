@@ -14,19 +14,18 @@ namespace DM04
 		{
 			var caller = ConsoleSystem.Caller.Pawn;
 			if ( caller == null ) return;
-			caller.Inventory.Add( new GravGun(), true );
-			caller.Inventory.Add( new Crowbar(), true );
-			caller.Inventory.Add( new StunBaton(), true );
-			caller.Inventory.Add( new Pistol(), true );
-			caller.Inventory.Add( new Magnum(), true );
-			caller.Inventory.Add( new Shotgun(), true );
-			caller.Inventory.Add( new Crossbow(), true );
-			caller.Inventory.Add( new SMG(), true );
-			caller.Inventory.Add( new PulseSMG(), true );
-			caller.Inventory.Add( new Grenade(), true );
-			caller.Inventory.Add( new Grenade(), true );
-			caller.Inventory.Add( new Grenade(), true );
-			caller.Inventory.Add( new Grenade(), true );
+			caller.Inventory.Add( new OLD_gravgun(), true );
+			caller.Inventory.Add( new hl2_crowbar(), true );
+			//caller.Inventory.Add( new hl2_stunbaton(), true );
+			caller.Inventory.Add( new hl2_uspmatch(), true );
+			caller.Inventory.Add( new hl2_357(), true );
+			caller.Inventory.Add( new hl2_smg1(), true );
+			caller.Inventory.Add( new hl2_ar2(), true );
+			caller.Inventory.Add( new hl2_spas12(), true );
+			caller.Inventory.Add( new hl2_crossbow(), true );
+			caller.Inventory.Add( new hl2_grenade(), true );
+			caller.Inventory.Add( new hl2_rpg(), true );
+			caller.Inventory.Add( new hl2_slam(), true );
 			caller.Health += 100;
 		}
 
@@ -39,12 +38,20 @@ namespace DM04
 		}
 
 		//Weapon specific commands
+		[ServerCmd("dm04_giveweapon_crowbar")]
+		public static void GiveCrowbar()
+		{
+			var caller = ConsoleSystem.Caller.Pawn;
+			if (caller == null) return;
+			caller.Inventory.Add(new hl2_crowbar(), true);
+		}
+
 		[ServerCmd( "dm04_giveweapon_pistol" )]
 		public static void GivePistol()
 		{
 			var caller = ConsoleSystem.Caller.Pawn;
 			if ( caller == null ) return;
-			caller.Inventory.Add( new Pistol(), true );
+			caller.Inventory.Add( new hl2_uspmatch(), true );
 		}
 
 		[ServerCmd( "dm04_giveweapon_magnum" )]
@@ -52,23 +59,7 @@ namespace DM04
 		{
 			var caller = ConsoleSystem.Caller.Pawn;
 			if ( caller == null ) return;
-			caller.Inventory.Add( new Magnum(), true );
-		}
-
-		[ServerCmd( "dm04_giveweapon_shotgun" )]
-		public static void GiveShotgun()
-		{
-			var caller = ConsoleSystem.Caller.Pawn;
-			if ( caller == null ) return;
-			caller.Inventory.Add( new Shotgun(), true );
-		}
-
-		[ServerCmd( "dm04_giveweapon_crossbow" )]
-		public static void GiveCrossbow()
-		{
-			var caller = ConsoleSystem.Caller.Pawn;
-			if ( caller == null ) return;
-			caller.Inventory.Add( new Crossbow(), true );
+			caller.Inventory.Add( new hl2_357(), true );
 		}
 
 		[ServerCmd( "dm04_giveweapon_smg" )]
@@ -76,7 +67,7 @@ namespace DM04
 		{
 			var caller = ConsoleSystem.Caller.Pawn;
 			if ( caller == null ) return;
-			caller.Inventory.Add( new SMG(), true );
+			caller.Inventory.Add( new hl2_smg1(), true );
 		}
 
 		[ServerCmd( "dm04_giveweapon_pulsesmg" )]
@@ -84,7 +75,23 @@ namespace DM04
 		{
 			var caller = ConsoleSystem.Caller.Pawn;
 			if ( caller == null ) return;
-			caller.Inventory.Add( new PulseSMG(), true );
+			caller.Inventory.Add( new hl2_ar2(), true );
+		}
+
+		[ServerCmd("dm04_giveweapon_shotgun")]
+		public static void GiveShotgun()
+		{
+			var caller = ConsoleSystem.Caller.Pawn;
+			if (caller == null) return;
+			caller.Inventory.Add(new hl2_spas12(), true);
+		}
+
+		[ServerCmd("dm04_giveweapon_crossbow")]
+		public static void GiveCrossbow()
+		{
+			var caller = ConsoleSystem.Caller.Pawn;
+			if (caller == null) return;
+			caller.Inventory.Add(new hl2_crossbow(), true);
 		}
 
 		[ServerCmd( "dm04_giveweapon_grenade" )]
@@ -92,7 +99,23 @@ namespace DM04
 		{
 			var caller = ConsoleSystem.Caller.Pawn;
 			if ( caller == null ) return;
-			caller.Inventory.Add( new Grenade(), true );
+			caller.Inventory.Add( new hl2_grenade(), true );
+		}
+
+		[ServerCmd("dm04_giveweapon_rpg")]
+		public static void GiveRPG()
+		{
+			var caller = ConsoleSystem.Caller.Pawn;
+			if (caller == null) return;
+			caller.Inventory.Add(new hl2_rpg(), true);
+		}
+
+		[ServerCmd("dm04_giveweapon_slam")]
+		public static void GiveSlam()
+		{
+			var caller = ConsoleSystem.Caller.Pawn;
+			if (caller == null) return;
+			caller.Inventory.Add(new hl2_slam(), true);
 		}
 
 		[ServerCmd( "dm04_devweapons" )]
