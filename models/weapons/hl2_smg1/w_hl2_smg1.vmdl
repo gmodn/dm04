@@ -1,0 +1,125 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "hold_R"
+						origin = [ 10.0, 0.0, -2.0 ]
+						angles = [ 0.0, 180.0, 0.0 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "v_smg1_body.vmat"
+								to = "materials/models/weapons/hl2_smg1/hl2_smg1_body.vmat"
+							},
+							{
+								from = "v_smg1_chrome.vmat"
+								to = "materials/models/weapons/hl2_smg1/hl2_smg1_chrome.vmat"
+							},
+							{
+								from = "v_smg1_glass.vmat"
+								to = "materials/models/weapons/hl2_smg1/hl2_smg1_glass.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeCylinder"
+						parent_bone = "weapon_bone"
+						surface_prop = "metal.weapon"
+						collision_prop = "default"
+						radius = 0.62973
+						point0 = [ 9.685151, -0.077288, -2.325222 ]
+						point1 = [ 15.025658, -0.043492, -3.348495 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "weapon_bone"
+						surface_prop = "metal.weapon"
+						collision_prop = "default"
+						origin = [ 0.494995, -0.095216, -0.40744 ]
+						angles = [ 11.0, 0.0, -5.0 ]
+						dimensions = [ 19.910269, 1.900797, 3.518111 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "weapon_bone"
+						surface_prop = "plastic"
+						collision_prop = "default"
+						origin = [ -1.160557, 0.296718, 3.936389 ]
+						angles = [ 11.0, 0.0, -5.0 ]
+						dimensions = [ 3.032058, 1.189662, 5.435367 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "weapon_bone"
+						surface_prop = "plastic"
+						collision_prop = "default"
+						origin = [ 1.659481, 0.140786, 1.544846 ]
+						angles = [ 11.0, 0.0, -5.0 ]
+						dimensions = [ 4.077626, 0.51803, 1.802926 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "weapon_bone"
+						surface_prop = "plastic"
+						collision_prop = "default"
+						origin = [ 9.63414, 0.306377, 1.950586 ]
+						angles = [ 11.0, 0.0, -5.0 ]
+						dimensions = [ 1.841949, 1.189662, 5.657024 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/weapons/hl2_smg1/w_hl2_smg1.smd"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}
