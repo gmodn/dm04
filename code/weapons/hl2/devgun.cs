@@ -5,7 +5,7 @@
 [Hammer.EditorModel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" )]
 partial class devgun : BaseDmWeapon
 { 
-	public override string ViewModelPath => "models/viewmodels/pistol/pistol_reference.vmdl";
+	public override string ViewModelPath => "models/weapons/dev/v_devgun.vmdl";
 
 	public override float PrimaryRate => 20.0f;
 	public override float SecondaryRate => 1.0f;
@@ -55,7 +55,7 @@ partial class devgun : BaseDmWeapon
 	
 	public override void StartReloadEffects()
 	{
-		ViewModelEntity?.SetAnimBool( "reload", true );
+		ViewModelEntity?.SetAnimParameter( "reload", true );
 		PlaySound( "hl2_uspmatch.reload" );
 	}
 	

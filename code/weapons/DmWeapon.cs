@@ -68,7 +68,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 		if ( AmmoClip >= ClipSize )
 		{
-			ViewModelEntity?.SetAnimBool( "inspect", true );
+			ViewModelEntity?.SetAnimParameter( "inspect", true );
 			return;
 		}	
 
@@ -82,7 +82,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 		IsReloading = true;
 
-		(Owner as AnimEntity).SetAnimBool( "b_reload", true );
+		(Owner as AnimEntity).SetAnimParameter( "b_reload", true );
 
 		StartReloadEffects();
 	}
@@ -105,7 +105,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		//Sprint Animation System
 		if ( Owner is DeathmatchPlayer player )
 		{
-			ViewModelEntity?.SetAnimFloat( "speed", Owner.Velocity.Length.LerpInverse( 0, 320 ) );
+			ViewModelEntity?.SetAnimParameter( "speed", Owner.Velocity.Length.LerpInverse( 0, 320 ) );
 			return;
 		}	
 	}
@@ -127,7 +127,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	[ClientRpc]
 	public virtual void StartReloadEffects()
 	{
-		ViewModelEntity?.SetAnimBool( "reload", true );
+		ViewModelEntity?.SetAnimParameter( "reload", true );
 		// TODO - player third person model reload
 	}
 
@@ -156,7 +156,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			//
 			using ( Prediction.Off() )
 			{
-				var damage = DamageInfo.FromBullet( tr.EndPos, Owner.EyeRotation.Forward * 100, 15 )
+				var damage = DamageInfo.FromBullet( tr.EndPosition, Owner.EyeRotation.Forward * 100, 15 )
 					.UsingTraceResult( tr )
 					.WithAttacker( Owner )
 					.WithWeapon( this );
@@ -178,7 +178,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		//	new Sandbox.ScreenShake.Perlin();
 		//}
 
-		ViewModelEntity?.SetAnimBool( "fire", true );
+		ViewModelEntity?.SetAnimParameter( "fire", true );
 		CrosshairPanel?.CreateEvent( "fire" );
 	}
 
@@ -207,7 +207,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			//
 			using ( Prediction.Off() )
 			{
-				var damageInfo = DamageInfo.FromBullet( tr.EndPos, forward * 100 * force, damage )
+				var damageInfo = DamageInfo.FromBullet( tr.EndPosition, forward * 100 * force, damage )
 					.UsingTraceResult( tr )
 					.WithAttacker( Owner )
 					.WithWeapon( this );

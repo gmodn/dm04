@@ -1,28 +1,25 @@
-using Sandbox;
+﻿using Sandbox;
 
 
-[Library( "dm04_shotgun", Title = "Shotgun" )]
-[Hammer.EditorModel("models/worldmodels/shotgun_reference.vmdl")]
-[Hammer.EntityTool( "Shotgun", "DM:04" )]
-partial class Shotgun : BaseDmWeapon
+[Library( "hl2_spas12", Title = "SHOTGUN" )]
+[Hammer.EditorModel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" )]
+partial class hl2_spas12 : BaseDmWeapon
 { 
-	public override string ViewModelPath => "models/viewmodels/shotgun/shotgun_reference.vmdl";
-	public override float PrimaryRate => 1;
-	public override float SecondaryRate => 1;
+	public override string ViewModelPath => "models/weapons/hl2_spas12/v_hl2_spas12.vmdl";
+	public override float PrimaryRate => 1.13f;
+	public override float SecondaryRate => 0.96f;
 	public override AmmoType AmmoType => AmmoType.Buckshot;
 	public override int ClipSize => 6;
-	public override float ReloadTime => 0.5f;
+	public override float ReloadTime => 0.6f;
 	public override int Bucket => 3;
-
-	private int TotalShells = 7;
 
 	public override void Spawn()
 	{
 		base.Spawn();
 
-		SetModel("models/worldmodels/shotgun_reference.vmdl");  
+		SetModel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" );
 
-		AmmoClip = ClipSize;
+		AmmoClip = 6;
 	}
 
 	public override void AttackPrimary() 
@@ -32,23 +29,27 @@ partial class Shotgun : BaseDmWeapon
 
 		if ( !TakeAmmo( 1 ) )
 		{
+			Reload();
+			PlaySound( "hl2_spas12.empty" );
 			return;
 		}
 
-		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+		//(Owner as AnimEntity).SetAnimParameter( "b_attack", true );
 
 		//
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "shotgun_fire7" );
+		PlaySound( "hl2_spas12.fire" );
 
 		//
 		// Shoot the bullets
 		//
-		for ( int i = 0; i <= TotalShells; i++ )
-			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f);
-		
+		Rand.SetSeed( Time.Tick );
+		for ( int i = 0; i < 7; i++ )
+		{
+			ShootBullet( 0.1f, 0.3f, 9f, 3.0f );
+		}
 	}
 
 	public override void AttackSecondary()
@@ -58,33 +59,26 @@ partial class Shotgun : BaseDmWeapon
 
 		if ( !TakeAmmo( 2 ) )
 		{
+			AttackPrimary();
 			return;
 		}
 
-		(Owner as AnimEntity).SetAnimBool( "b_attack", true );
+		//(Owner as AnimEntity).SetAnimParameter( "altfire", true );
 
 		//
 		// Tell the clients to play the shoot effects
 		//
 		DoubleShootEffects();
-		PlaySound( "shotgun_dbl_fire" );
+		PlaySound( "hl2_spas12.dbl_fire" );
 
 		//
 		// Shoot the bullets
 		//
-		for ( int i = 0; i <= TotalShells * 2; i++ )
-			ShootBullet( 0.15f, 0.3f, 9.0f, 3.0f );
-	}
-
-	public override void Simulate(Client cl) 
-	{
-		if (AmmoClip == 0 && TimeSincePrimaryAttack > 0.5f)
+		Rand.SetSeed( Time.Tick );
+		for ( int i = 0; i < 12; i++ )
 		{
-			Reload();
-			StartReloadEffects();
+			ShootBullet( 0.2f, 0.3f, 9f, 3.0f );
 		}
-		
-		base.Simulate(cl);
 	}
 
 	[ClientRpc]
@@ -95,14 +89,15 @@ partial class Shotgun : BaseDmWeapon
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 		Particles.Create( "particles/pistol_ejectbrass.vpcf", EffectEntity, "ejection_point" );
 
-		ViewModelEntity?.SetAnimBool( "fire", true );
+		ViewModelEntity?.SetAnimParameter( "fire", true );
 
 		if ( IsLocalPawn )
 		{
-			new Sandbox.ScreenShake.Perlin(1.0f, 1.5f, 2.0f);
+			new Sandbox.ScreenShake.Perlin(0.5f, 1.0f, 2.0f);
 		}
 
 		CrosshairPanel?.CreateEvent( "fire" );
+		
 	}
 
 	[ClientRpc]
@@ -112,13 +107,18 @@ partial class Shotgun : BaseDmWeapon
 
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
-		ViewModelEntity?.SetAnimBool( "altfire", true );
+		ViewModelEntity?.SetAnimParameter( "fire_alt", true );
 		CrosshairPanel?.CreateEvent( "fire" );
 
 		if ( IsLocalPawn )
 		{
-			new Sandbox.ScreenShake.Perlin(3.0f, 3.0f, 3.0f);
+			new Sandbox.ScreenShake.Perlin(0.7f, 1.5f, 3.0f);
 		}
+	}
+
+	public override void StartReloadEffects()
+	{
+		ViewModelEntity?.SetAnimParameter( "reload", true );
 	}
 
 	public override void OnReloadFinish()
@@ -137,6 +137,8 @@ partial class Shotgun : BaseDmWeapon
 			if ( ammo == 0 )
 				return;
 
+			AmmoClip += ammo;
+
 			if ( AmmoClip < ClipSize )
 			{
 				Reload();
@@ -145,26 +147,28 @@ partial class Shotgun : BaseDmWeapon
 			{
 				FinishReload();
 			}
-
-			AmmoClip += ammo;
 		}
 	}
 
-	[ClientRpc]
-	public override void StartReloadEffects() 
-	{
-		base.StartReloadEffects();
-	}
 
 	[ClientRpc]
 	protected virtual void FinishReload()
 	{
-		ViewModelEntity?.SetAnimBool( "reload_end", true );
+		ViewModelEntity?.SetAnimParameter( "reload_finished", true );
 	}
 
 	public override void SimulateAnimator( PawnAnimator anim )
 	{
-		anim.SetParam( "holdtype", 1 ); // TODO this is shit
-		anim.SetParam( "aimat_weight", 1.0f );
+		anim.SetAnimParameter( "holdtype", 2 ); // TODO this is shit
+		//anim.SetAnimParameter( "aimat_weight", 1.0f );
+	}
+
+	public override void ActiveStart( Entity ent )
+	{
+		base.ActiveStart( ent );
+
+		TimeSinceDeployed = 0;
+
+		IsReloading = false;
 	}
 }
