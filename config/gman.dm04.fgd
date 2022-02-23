@@ -89,32 +89,6 @@ metadata
 ]
 
 //
-// Crossbow
-//
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_crossbow_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Crossbow"
-	entity_tool_group = "DM:04"
-}
-= dm04_crossbow : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
-// Crowbar
-//
-@PointClass base(BaseProperties_gman_dm04) = dm04_crowbar : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
 // devgun
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" ) = devgun : ""
@@ -125,15 +99,9 @@ metadata
 ]
 
 //
-// Grenade
+// hl2_357
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/grenade_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Grenade"
-	entity_tool_group = "DM:04"
-}
-= dm04_grenade : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) = hl2_357 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -141,15 +109,9 @@ metadata
 ]
 
 //
-// Magnum
+// hl2_ar2
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_357_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Magnum"
-	entity_tool_group = "DM:04"
-}
-= dm04_357 : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" ) = hl2_ar2 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -157,15 +119,9 @@ metadata
 ]
 
 //
-// Pistol
+// hl2_crossbow
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/pistol_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Pistol"
-	entity_tool_group = "DM:04"
-}
-= dm04_pistol : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" ) = hl2_crossbow : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -173,15 +129,9 @@ metadata
 ]
 
 //
-// PulseSMG
+// hl2_crowbar
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_irifle_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Pulse Rifle"
-	entity_tool_group = "DM:04"
-}
-= dm04_pulsesmg : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) = hl2_crowbar : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -189,15 +139,9 @@ metadata
 ]
 
 //
-// Shotgun
+// hl2_grenade
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/shotgun_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Shotgun"
-	entity_tool_group = "DM:04"
-}
-= dm04_shotgun : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) = hl2_grenade : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -205,15 +149,9 @@ metadata
 ]
 
 //
-// SMG
+// hl2_rpg
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/smg1_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "SMG"
-	entity_tool_group = "DM:04"
-}
-= dm04_smg : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_rpg/w_hl2_rpg.vmdl" ) = hl2_rpg : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -221,9 +159,9 @@ metadata
 ]
 
 //
-// StunBaton
+// hl2_slam
 //
-@PointClass base(BaseProperties_gman_dm04) = dm04_stunbaton : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) = hl2_slam : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -231,9 +169,39 @@ metadata
 ]
 
 //
-// GravGun
+// hl2_smg1
 //
-@PointClass base(BaseProperties_gman_dm04) = dm04_gravgun : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" ) = hl2_smg1 : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_spas12
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" ) = hl2_spas12 : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_uspmatch
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" ) = hl2_uspmatch : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// OLD_gravgun
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" ) = OLD_gravgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 

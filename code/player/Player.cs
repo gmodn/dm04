@@ -21,7 +21,7 @@ partial class DeathmatchPlayer : Player
 
 		Controller = new DM04WalkController();
 		Animator = new StandardPlayerAnimator();
-		Camera = new FirstPersonCamera();
+		CameraMode = new FirstPersonCamera();
 		  
 		EnableAllCollisions = true; 
 		EnableDrawing = true; 
