@@ -1,6 +1,8 @@
 Credits:
 
 IanSource2: ADD STUFF YOU DID HERE
+OMGOMGplays: ADD STUFF YOU DID HERE
+ItsRifter: ADD STUFF YOU DID HERE
 Lokiv: ADD STUFF YOU DID HERE
 idk who else worked on this so pls add them here
 Super Smol: Programming, weapon model porting, materials.
