@@ -34,6 +34,12 @@ public class Ammo : Panel
 
 		if ( weapon == null ) return;
 
+		//temp hide ui if ammotype = none (I'm sure there's a better way to do this)
+		if ( weapon.AmmoType == AmmoType.None ) AmmoPanel.Style.Display = DisplayMode.None;
+		else AmmoPanel.Style.Display = DisplayMode.Flex;
+		if (weapon.SecondaryAmmo == AmmoType.None) AltPanel.Style.Display = DisplayMode.None;
+		else AltPanel.Style.Display = DisplayMode.Flex;
+
 		CounterText.Text = $"{weapon.AmmoClip}";
 		AltText.Text = $"{weapon.SecondaryAmmoClip}";
 
