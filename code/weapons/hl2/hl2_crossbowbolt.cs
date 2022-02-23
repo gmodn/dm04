@@ -51,6 +51,7 @@ partial class hl2_crossbowbolt : ModelEntity
 					Velocity = Vector3.Reflect( Rotation.Forward, tr.Normal ) * Speed;
 					Rotation = Rotation.From(Vector3.VectorAngle(Velocity));
 
+					//do spark sfx
 					PlaySound( "hl2_crossbow.hit" );
 					return;
 				}
@@ -59,12 +60,6 @@ partial class hl2_crossbowbolt : ModelEntity
 			Stuck = true;
 			Position = tr.EndPosition + Rotation.Forward * -8;
 
-			//
-			// Surface impact effect
-			//
-			tr.Normal = Rotation.Forward * 2;
-			tr.Surface.DoBulletImpact( tr );
-			Velocity = default;
 
 			if ( tr.Entity.IsValid() )
 			{
@@ -77,13 +72,24 @@ partial class hl2_crossbowbolt : ModelEntity
 
 				PlaySound( "hl2_crossbow.skewer" );
 
-				if ( (tr.Entity.GetType() == typeof( Sandbox.Prop )) && (tr.Entity.Health == -1) )
-				{
-					SetParent( tr.Entity );
-					Owner = null;
-				}
+				//if ( (tr.Entity.GetType() == typeof( Sandbox.Prop )) && (tr.Entity.Health == -1) )
+				//{
+				//	SetParent( tr.Entity );
+				//	Owner = null;
+				//}
 			}
-			// delete self in 60 seconds
+
+			SetParent( tr.Entity, tr.Bone );
+			Owner = null;
+
+			//
+			// Surface impact effect
+			//
+			tr.Normal = Rotation.Forward * 2;
+			tr.Surface.DoBulletImpact(tr);
+			Velocity = default;
+
+			// delete self in 30 seconds
 			_ = DeleteAsync( 30.0f );
 		}
 		else
