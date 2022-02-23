@@ -1,6 +1,6 @@
 Credits:
 
-IanSource2: ADD STUFF YOU DID HERE
+IanSource2: Programming, UI.
 OMGOMGplays: ADD STUFF YOU DID HERE
 ItsRifter: ADD STUFF YOU DID HERE
 Lokiv: ADD STUFF YOU DID HERE
