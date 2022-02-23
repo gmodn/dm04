@@ -21,7 +21,7 @@ public class Ammo : Panel
 
 		AltPanel = Add.Panel("Alt");
         AltPanel.Add.Label("ALT", "AmmoText");
-        AltText = AltPanel.Add.Label("69", "Counter");
+        AltText = AltPanel.Add.Label("0", "Counter");
 		//Fix the alt ammo counter plz
 	}
 
@@ -36,6 +36,7 @@ public class Ammo : Panel
 		if ( weapon == null ) return;
 
 		CounterText.Text = $"{weapon.AmmoClip}";
+		AltText.Text = $"{weapon.SecondaryAmmoClip}";
 
 		var inv = weapon.AvailableAmmo();
 		ReserveText.Text = $"{inv}";

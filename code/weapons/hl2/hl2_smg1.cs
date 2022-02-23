@@ -22,6 +22,7 @@ partial class hl2_smg1 : BaseDmWeapon
 		SetModel( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" );
 
 		AmmoClip = 45;
+		SecondaryAmmoClip = 3;
 	}
 	public override bool CanSecondaryAttack()
 	{
@@ -70,6 +71,7 @@ partial class hl2_smg1 : BaseDmWeapon
 				PlaySound( "hl2_smg1.glauncher" );
 				ViewModelEntity?.SetAnimParameter( "fire_alt", true );
 				player.TakeAmmo( SecondaryAmmo, 1 );
+				SecondaryAmmoClip = player.AmmoCount(SecondaryAmmo);
 
 				if ( IsServer )
 					using ( Prediction.Off() )

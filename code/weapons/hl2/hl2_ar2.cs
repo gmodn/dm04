@@ -24,6 +24,7 @@ partial class hl2_ar2 : BaseDmWeapon
 		SetModel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" );
 
 		AmmoClip = 30;
+		SecondaryAmmoClip = 3;
 	}
 	public override bool CanSecondaryAttack()
 	{
@@ -78,6 +79,8 @@ partial class hl2_ar2 : BaseDmWeapon
 				//wait and then play next sound - TODO
 
 				player.TakeAmmo( SecondaryAmmo, 1 );
+				SecondaryAmmoClip = player.AmmoCount(SecondaryAmmo);
+
 				if ( IsServer )
 					using ( Prediction.Off() )
 					{

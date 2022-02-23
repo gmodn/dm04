@@ -21,6 +21,9 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	public int AmmoClip { get; set; }
 
 	[Net, Predicted]
+	public int SecondaryAmmoClip { get; set; }
+
+	[Net, Predicted]
 	public TimeSince TimeSinceReload { get; set; }
 
 	[Net, Predicted]
