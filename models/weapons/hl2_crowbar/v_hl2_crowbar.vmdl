@@ -81,7 +81,7 @@
 								event_keys = 
 								{
 									name = "hl2_crowbar.deploy"
-									stop_on_seq_change = false
+									stop_on_seq_change = true
 									use_layer_sequence = false
 									tags = ""
 								}

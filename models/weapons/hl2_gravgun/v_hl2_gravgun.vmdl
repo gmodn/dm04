@@ -83,6 +83,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -103,11 +104,27 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
 						_class = "AnimFile"
 						name = "draw"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 0
+								event_keys = 
+								{
+									name = "hl2_gravgun.deploy"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -123,6 +140,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -143,6 +161,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -163,6 +182,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -183,6 +203,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -203,6 +224,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -223,6 +245,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -243,6 +266,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -263,6 +287,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -283,6 +308,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -303,6 +329,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -323,6 +350,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -357,6 +385,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 				]
