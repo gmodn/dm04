@@ -67,7 +67,7 @@ partial class hl2_ar2 : BaseDmWeapon
 		{
 			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )
 			{
-				PlaySound( "hl2_uspmatch.empty" );
+				PlaySound( "hl2_ar2.empty" );
 				return;
 			}
 			else
