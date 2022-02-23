@@ -22,7 +22,6 @@ public class Ammo : Panel
 		AltPanel = Add.Panel("Alt");
         AltPanel.Add.Label("ALT", "AmmoText");
         AltText = AltPanel.Add.Label("0", "Counter");
-		//Fix the alt ammo counter plz
 	}
 
 	public override void Tick()
