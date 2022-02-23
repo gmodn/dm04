@@ -41,11 +41,11 @@ partial class hl2_rpg : BaseDmWeapon
 		if ( IsServer )
 		using ( Prediction.Off() )
 		{
-			var bolt = new hl2_rpgmissile();
-			bolt.Position = Owner.EyePosition;
-			bolt.Rotation = Owner.EyeRotation;
-			bolt.Owner = Owner;
-			bolt.Velocity = Owner.EyeRotation.Forward * 15;
+			var missle = new hl2_rpgmissile();
+			missle.Position = Owner.EyePosition;
+			missle.Rotation = Owner.EyeRotation;
+			missle.Owner = Owner;
+			missle.Velocity = Owner.EyeRotation.Forward * 1000;
 		}
 	}
 
