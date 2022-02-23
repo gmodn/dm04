@@ -16,7 +16,7 @@ public class InventoryBar : Panel
 
 	public InventoryBar()
 	{
-		for ( int i=0; i<5; i++ )
+		for ( int i = 0; i < 6; i++ )
 		{
 			var icon = new InventoryColumn( i, this );
 			columns.Add( icon );
@@ -49,6 +49,7 @@ public class InventoryBar : Panel
 	public void ProcessClientInput( InputBuilder input )
 	{
 		bool wantOpen = IsOpen;
+		var localPlayer = Local.Pawn as Player;
 
 		// If we're not open, maybe this input has something that will 
 		// make us want to start being open?
@@ -58,6 +59,7 @@ public class InventoryBar : Panel
 		wantOpen = wantOpen || input.Pressed( InputButton.Slot3 );
 		wantOpen = wantOpen || input.Pressed( InputButton.Slot4 );
 		wantOpen = wantOpen || input.Pressed( InputButton.Slot5 );
+		wantOpen = wantOpen || input.Pressed( InputButton.Slot6 );
 
 		if ( Weapons.Count == 0 )
 		{
@@ -68,7 +70,7 @@ public class InventoryBar : Panel
 		// We're not open, but we want to be
 		if ( IsOpen != wantOpen )
 		{
-			SelectedWeapon = Local.Pawn.ActiveChild as BaseDmWeapon;
+			SelectedWeapon = localPlayer?.ActiveChild as BaseDmWeapon;
 			IsOpen = true;
 		}
 
@@ -83,7 +85,7 @@ public class InventoryBar : Panel
 			input.SuppressButton( InputButton.Attack1 );
 			input.ActiveChild = SelectedWeapon;
 			IsOpen = false;
-			Sound.FromScreen( "buttonclickrelease" );
+			Sound.FromScreen("ui.hudoff");
 			return;
 		}
 
@@ -98,16 +100,16 @@ public class InventoryBar : Panel
 
 		SelectedWeapon = Weapons[SelectedIndex];
 
-		for ( int i = 0; i < 5; i++ )
+		for ( int i = 0; i < 6; i++ )
 		{
 			columns[i].TickSelection( SelectedWeapon );
 		}
 
 		input.MouseWheel = 0;
 
-		if ( oldSelected  != SelectedWeapon )
+		if ( oldSelected != SelectedWeapon )
 		{
-			Sound.FromScreen( "buttonrollover" );
+			Sound.FromScreen( "ui.moveselect" );
 		}
 	}
 
@@ -120,6 +122,7 @@ public class InventoryBar : Panel
 		if ( input.Pressed( InputButton.Slot3 ) ) columninput = 2;
 		if ( input.Pressed( InputButton.Slot4 ) ) columninput = 3;
 		if ( input.Pressed( InputButton.Slot5 ) ) columninput = 4;
+		if ( input.Pressed( InputButton.Slot6 ) ) columninput = 5;
 
 		if ( columninput == -1 ) return SelectedIndex;
 
@@ -130,7 +133,7 @@ public class InventoryBar : Panel
 
 		// Are we already selecting a weapon with this column?
 		var firstOfColumn = Weapons.Where( x => x.Bucket == columninput ).OrderBy( x => x.BucketWeight ).FirstOrDefault();
-		if ( firstOfColumn  == null )
+		if ( firstOfColumn == null )
 		{
 			// DOOP sound
 			return SelectedIndex;
