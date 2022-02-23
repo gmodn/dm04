@@ -75,7 +75,7 @@ partial class DeathmatchPlayer : Player
 		BecomeRagdollOnClient( LastDamage.Force, GetHitboxBone( LastDamage.HitboxIndex ) );
 
 		Controller = null;
-		Camera = new SpectateRagdollCamera();
+		CameraMode = new SpectateRagdollCamera();
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
@@ -109,13 +109,13 @@ partial class DeathmatchPlayer : Player
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
-			if ( Camera is ThirdPersonCamera )
+			if ( CameraMode is ThirdPersonCamera )
 			{
-				Camera = new FirstPersonCamera();
+				CameraMode = new FirstPersonCamera();
 			}
 			else
 			{
-				Camera = new ThirdPersonCamera();
+				CameraMode = new ThirdPersonCamera();
 			}
 		}
 
@@ -126,7 +126,7 @@ partial class DeathmatchPlayer : Player
 			{
 				if ( dropped.PhysicsGroup != null )
 				{
-					dropped.PhysicsGroup.Velocity = Velocity + (EyeRot.Forward + EyeRot.Up) * 300;
+					dropped.PhysicsGroup.Velocity = Velocity + (EyeRotation.Forward + EyeRotation.Up) * 300;
 				}
 
 				timeSinceDropped = 0;
