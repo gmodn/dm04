@@ -139,6 +139,16 @@ metadata
 ]
 
 //
+// hl2_gravgun
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" ) = hl2_gravgun : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // hl2_grenade
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) = hl2_grenade : ""
@@ -182,6 +192,16 @@ metadata
 // hl2_spas12
 //
 @PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" ) = hl2_spas12 : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_stunstick
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) = hl2_stunstick : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
