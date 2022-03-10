@@ -37,6 +37,8 @@ partial class DeathmatchPlayer : Player
 
 		//HL2 Arsenal
 		Inventory.Add(new hl2_crowbar(), true);
+		Inventory.Add(new hl2_stunstick(), true);
+		Inventory.Add(new hl2_gravgun(), true);
 		Inventory.Add(new hl2_uspmatch(), true);
 		Inventory.Add(new hl2_357(), true);
 		Inventory.Add(new hl2_smg1(), true);
