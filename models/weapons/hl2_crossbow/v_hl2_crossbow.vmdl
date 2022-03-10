@@ -434,12 +434,12 @@
 							{
 								_class = "AnimEvent"
 								event_class = "AE_GENERIC_EVENT"
-								event_frame = 120
+								event_frame = 125
 								event_keys = 
 								{
-									TypeName = ""
+									TypeName = "glow"
 									Int = 0
-									Float = 0.1
+									Float = 5.0
 									Vector = [ 0.0, 0.0, 0.0 ]
 									StringData = ""
 								}
@@ -447,7 +447,7 @@
 							{
 								_class = "AnimEvent"
 								event_class = "AE_CL_PLAYSOUND"
-								event_frame = 120
+								event_frame = 125
 								event_keys = 
 								{
 									name = "hl2_crossbow.load"
