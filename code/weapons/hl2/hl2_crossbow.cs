@@ -123,10 +123,8 @@ partial class hl2_crossbow : BaseDmWeapon
 	}
 
 	//how the FUCK do I get this to work
-
 	public override void OnAnimEventGeneric( string name, int intData, float floatData, Vector3 vectorData, string stringData )
 	{
-		ConsoleSystem.Run( "say " + name );
 		ViewModelEntity?.SceneObject.Attributes.Set( "glow", 10 );
 	}
 }
