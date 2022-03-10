@@ -39,3 +39,6 @@ HL2:MMod Team (Weapon animations, and sounds) [https://www.moddb.com/mods/hl2-ep
 	ModDB - Hosting, promotion, home of HL2MMod.
 
 Shadow_RUN (Rigging Juniez's models to MMod animations) [https://gamebanana.com/members/1389410]
+
+Half-Life 2: Remade Assets (Models) [https://steamcommunity.com/workshop/filedetails/?id=2438227263]
+
