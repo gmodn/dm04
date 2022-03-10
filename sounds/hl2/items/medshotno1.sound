@@ -4,7 +4,7 @@
 	{
 		sounds = 
 		[
-			"sounds/hl2/items/medshot4.vsnd",
+			"sounds/hl2/items/medshotno1.vsnd",
 		]
 		ui = true
 		volume = 1.0
