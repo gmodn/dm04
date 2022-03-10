@@ -8,7 +8,7 @@ partial class OLD_gravgun : BaseDmWeapon
 	public override string ViewModelPath => "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl";
 	public override float PrimaryRate => 2.0f;
 	public override AmmoType AmmoType => AmmoType.None;
-	public override int Bucket => 0;
+	public override int Bucket => 5;
 
 
 	public override void Spawn()
