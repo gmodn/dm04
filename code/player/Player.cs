@@ -17,10 +17,10 @@ partial class DeathmatchPlayer : Player
 
 	public override void Respawn()
 	{
-		SetModel( "models/citizen/citizen.vmdl" );
+		SetModel( "models/playermodels/female/female_01_1.vmdl" );
 
 		Controller = new DM04WalkController();
-		Animator = new StandardPlayerAnimator();
+		Animator = new DM09PlayerAnimator();
 		CameraMode = new FirstPersonCamera();
 		  
 		EnableAllCollisions = true; 
@@ -29,7 +29,7 @@ partial class DeathmatchPlayer : Player
 		EnableShadowInFirstPerson = true;
 
 		ClearAmmo();
-		Clothing.DressEntity( this );
+		//Clothing.DressEntity( this );
 
 		SupressPickupNotices = true;
 
