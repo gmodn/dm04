@@ -4,7 +4,7 @@
 	{
 		sounds = 
 		[
-			"sounds/weapons/hl2_stunstick/hl2_stunstick.stunstick_fleshhit1.vsnd",
+			"sounds/weapons/hl2_stunstick/hl2_stunstick.fleshhit1.wav",
 			"sounds/weapons/hl2_stunstick/hl2_stunstick.fleshhit2.wav",
 			"sounds/weapons/hl2_stunstick/hl2_stunstick.fleshhit3.wav",
 		]
