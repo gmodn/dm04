@@ -21,6 +21,22 @@
 ]
 
 //
+// HealthCharger
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/props_combine/suit_charger001.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Health Charger"
+	entity_tool_group = "DM:04"
+}
+= dm08_healthcharger : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // HealthKit
 //
 @PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/items/healthkit.vmdl" ) model() 
