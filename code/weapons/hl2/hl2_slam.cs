@@ -5,7 +5,7 @@
 [Hammer.EditorModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" )]
 partial class hl2_slam : BaseDmWeapon
 {
-	public override string ViewModelPath => "models/weapons/hl2_grenade/v_hl2_grenade.vmdl";
+	public override string ViewModelPath => "models/weapons/hl2_slam/v_slam.vmdl";
 	public override float PrimaryRate => 1.0f;
 	public override int ClipSize => 1;
 	public override AmmoType AmmoType => AmmoType.SLAM;

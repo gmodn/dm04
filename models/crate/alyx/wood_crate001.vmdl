@@ -1,0 +1,783 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "BreakPieceList"
+				children = 
+				[
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_0"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_01"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece1.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece1_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_02"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece2.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece2_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_03"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece3.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece3_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_04"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece4.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece4_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_05"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece5.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece5_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_06"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece6.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece6_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_07"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece7.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece7_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_08"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece8.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece8_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_09"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece9.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece9_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_010"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece10.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece10_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_011"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece11.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece11_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_012"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece12.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece12_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_013"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece13.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece13_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_014"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece14.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece14_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceEmbedded"
+						name = "piece_015"
+						children = 
+						[
+							{
+								_class = "RenderMeshFile"
+								filename = "models/crate/alyx/piece15.dmx"
+								import_translation = [ 0.0, 0.0, 0.0 ]
+								import_rotation = [ 0.0, 0.0, 0.0 ]
+								import_scale = 1.0
+								align_origin_x_type = "None"
+								align_origin_y_type = "None"
+								align_origin_z_type = "None"
+								parent_bone = ""
+								import_filter = 
+								{
+									exclude_by_default = true
+									exception_list = 
+									[
+										"piece15_vmdl_c_Embedded_1",
+									]
+								}
+							},
+						]
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						manual_mode = false
+						surface_prop_override = ""
+					},
+					{
+						_class = "BreakPieceSimpleParticles"
+						name = "break_particles"
+						filename = "models/crate/alyx/break_particles.dmx"
+						particle_system = "particles/dev/default_break_particles.vpcf"
+						import_scale = 1.0
+						merge_meshes = false
+						damage_position_cp = -1
+						damage_direction_cp = -1
+						velocity_cp = -1
+						angular_velocity_cp = -1
+						local_gravity_cp = -1
+						tint_cp = -1
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							allowstatic = false
+							bakelighting = true
+							spawn_motion_disabled = false
+							health = 5.0
+							min_impact_damage_speed = -1.0
+							impact_damage = -1.0
+							parent_bodygroup_name = ""
+							parent_bodygroup_value = 0
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "materials/error.vmat"
+								to = "materials/models/crate/alyx/woodcrates01a.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+					{
+						_class = "MaterialGroup"
+						name = "Painted"
+						remaps = 
+						[
+							{
+								from = "materials/models/crate/alyx/woodcrates01a.vmat"
+								to = "materials/models/crate/alyx/woodcrates01a_painted.vmat"
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsHullFile"
+						name = "wood_crate001a"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						recenter_on_parent_bone = false
+						offset_origin = [ 0.0, 0.0, 0.0 ]
+						offset_angles = [ 0.0, 0.0, 0.0 ]
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						filename = "models/crate/alyx/wood_crate001a.dmx"
+						import_scale = 1.0
+						faceMergeAngle = 10.0
+						maxHullVertices = 0
+						import_mode = "SingleHull"
+						optimization_algorithm = "QEM"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/crate/alyx/wood_crate001a.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

@@ -12,8 +12,8 @@ partial class hl2_ar2ball : ModelEntity
 		base.Spawn();
 
 		SetModel( "models/weapons/hl2_ar2/hl2_ar2_ball.vmdl" );
-
-		_ = DeleteAsync( 5.0f );
+		Particles Sprite = Particles.Create( "particles/combineball.vpcf",this,true );
+		
 	}
 
 
