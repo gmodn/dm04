@@ -6,11 +6,5 @@
 		[
 			"sounds/weapons/hl2_ar2ball/hl2_ar2ball.explosion.vsnd",
 		]
-		UI = false
-		Volume = 1.0
-		VolumeRandom = 0.0
-		Pitch = 1.0
-		PitchRandom = 0.0
-		DistanceMax = 1500.0
 	}
 }
