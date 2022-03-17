@@ -1,16 +1,13 @@
-﻿using Sandbox;
-using Sandbox.HoldTypes;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 
-
+namespace Sandbox
+{
 	public class DM09PlayerAnimator : PawnAnimator
 	{
-		public Rotation targetRot;
+		TimeSince TimeSinceFootShuffle = 60;
 
-		private Rotation lerpRotation;
+
+		float duck;
 
 		public override void Simulate()
 		{
@@ -23,78 +20,103 @@ using System.Linq;
 			//
 			// Let the animation graph know some shit
 			//
+			bool sitting = HasTag( "sitting" );
+			bool noclip = HasTag( "noclip" ) && !sitting;
 
-			SetAnimParameter( "b_grounded", GroundEntity != null );
-			SetAnimParameter( "b_sit", HasTag( "sitting" ) );
-			SetAnimParameter( "b_swim", Pawn.WaterLevel > 0.5f && !HasTag( "sitting" ) );
+			SetAnimParameter( "b_grounded", GroundEntity != null || noclip || sitting );
+			///SetAnimParameter( "b_swim", Pawn.WaterLevel > 0.5f && !sitting );
 
-			//local vec = (position - bot:GetPos() ):GetNormal():Angle().y
-			//local myAngle = bot:EyeAngles().y
+			if ( Host.IsClient && Client.IsValid() )
+			{
+				SetAnimParameter( "voice", Client.TimeSinceLastVoice < 0.5f ? Client.VoiceLevel : 0.0f );
+			}
 
-			float modelRotation = Rotation.Forward.Normal.EulerAngles.yaw;
-			float lookRotation = Input.Rotation.Forward.Normal.EulerAngles.yaw;
+			Vector3 aimPos = Pawn.EyePosition + Input.Rotation.Forward * 200;
+			Vector3 lookPos = aimPos;
 
-			float rotationDifference = modelRotation - lookRotation;
+			//
+			// Look in the direction what the player's input is facing
+			//
 
-			if ( rotationDifference > 180 )
-				rotationDifference -= 360;
-			if ( rotationDifference < -180 )
-				rotationDifference += 360;
+			SetLookAt( "aim_head", lookPos );
+			SetLookAt( "aim_body", aimPos );
 
-			//Log.Info( modelRotation + " : " + lookRotation + " :: " + rotationDifference );
-			//Log.Info( Input.Rotation.Pitch() );
+			if ( HasTag( "ducked" ) ) duck = duck.LerpTo( 1.0f, Time.Delta * 10.0f );
+			else duck = duck.LerpTo( 0.0f, Time.Delta * 5.0f );
 
-			SetAnimParameter( "aim_pitch", Input.Rotation.Pitch() );
-			SetAnimParameter( "aim_yaw", rotationDifference );
-
-			SetAnimParameter( "b_crouch", HasTag( "ducked" ) );
+			SetAnimParameter( "duck", duck );
 
 			if ( player != null && player.ActiveChild is BaseCarriable carry )
+			{
 				carry.SimulateAnimator( this );
+			}
 			else
-				SetAnimParameter( "holdtype", (int)HoldType.Normal );
+			{
+				SetAnimParameter( "holdtype", 0 );
+				SetAnimParameter( "aim_body_weight", 0.5f );
+			}
+
 		}
 
 		public virtual void DoRotation( Rotation idealRotation )
 		{
-			float turnSpeed = 10.0f;
+			var player = Pawn as Player;
 
 			//
 			// Our ideal player model rotation is the way we're facing
 			//
-			var allowYawDiff = 60;
+			var allowYawDiff = player?.ActiveChild == null ? 90 : 50;
+
+			float turnSpeed = 0.01f;
+			if ( HasTag( "ducked" ) ) turnSpeed = 0.1f;
 
 			//
 			// If we're moving, rotate to our ideal rotation
 			//
-			if ( Velocity.Length <= 0 && GroundEntity != null )
-			{
-				if ( Vector3.GetAngle( Rotation.Forward, idealRotation.Forward ) > allowYawDiff )
-					lerpRotation = idealRotation;
-			}
-			else
-				lerpRotation = idealRotation;
+			Rotation = Rotation.Slerp( Rotation, idealRotation, WishVelocity.Length * Time.Delta * turnSpeed );
 
-			Rotation = Rotation.Lerp( Rotation, lerpRotation, turnSpeed * Time.Delta );
+			//
+			// Clamp the foot rotation to within 120 degrees of the ideal rotation
+			//
+			Rotation = Rotation.Clamp( idealRotation, allowYawDiff, out var change );
+
+			//
+			// If we did restrict, and are standing still, add a foot shuffle
+			//
+
 		}
 
 		void DoWalk()
 		{
 			// Move Speed
+			{
+				var dir = Velocity;
+				var forward = Rotation.Forward.Dot( dir );
+				var sideward = Rotation.Right.Dot( dir );
 
-			var dir = Velocity;
-			var forward = Rotation.Forward.Dot( dir );
-			var sideward = Rotation.Right.Dot( dir );
+				var angle = MathF.Atan2( sideward, forward ).RadianToDegree().NormalizeDegrees();
 
-			var angle = MathF.Atan2( sideward, forward ).RadianToDegree().NormalizeDegrees();
+				SetAnimParameter( "move_direction", angle );
+				SetAnimParameter( "move_speed", Velocity.Length );
 
-			SetAnimParameter( "move_direction", angle );
-			//SetParam( "move_speed", Velocity.Length );
-			SetAnimParameter( "move_groundspeed", Velocity.WithZ( 0 ).Length );
-			//SetParam( "move_y", sideward );
-			//SetParam( "move_x", forward );
-			//SetParam( "move_z", Velocity.z );
+				SetAnimParameter( "move_y", sideward );
+				SetAnimParameter( "move_x", forward );
+				SetAnimParameter( "move_z", Velocity.z );
+			}
 
-			//Log.Info( Velocity.Length );
+
+		}
+
+		public override void OnEvent( string name )
+		{
+			// DebugOverlay.Text( Pos + Vector3.Up * 100, name, 5.0f );
+
+			if ( name == "jump" )
+			{
+				Trigger( "b_jump" );
+			}
+
+			base.OnEvent( name );
 		}
 	}
+}
