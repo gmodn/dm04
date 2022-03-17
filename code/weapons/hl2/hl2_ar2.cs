@@ -16,7 +16,9 @@ partial class hl2_ar2 : BaseDmWeapon
 	public override int Bucket => 2;
 
 	float glow = 0f;
-
+	/// <summary>
+	/// bug if you have no ammo in the alt fire but right click you have to wait before you can primary fire
+	/// </summary>
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -75,7 +77,10 @@ partial class hl2_ar2 : BaseDmWeapon
 				PlaySound( "hl2_ar2.secondary_fire" );
 				ViewModelEntity?.SetAnimParameter( "fire_alt", true );
 				glow = 20;
-
+				if ( IsLocalPawn )
+				{
+					new Sandbox.ScreenShake.Perlin();
+				}
 				//wait and then play next sound - TODO
 
 				player.TakeAmmo( SecondaryAmmo, 1 );
@@ -115,10 +120,6 @@ partial class hl2_ar2 : BaseDmWeapon
 		Particles.Create( "particles/casings/hl2_ar2_casing.vpcf", EffectEntity, "ejection_point" );
 		
 
-		//if ( IsLocalPawn )
-		//{
-		//	new Sandbox.ScreenShake.Perlin();
-		//}
 
 		ViewModelEntity?.SetAnimParameter( "fire", true );
 		CrosshairPanel?.CreateEvent( "fire" );

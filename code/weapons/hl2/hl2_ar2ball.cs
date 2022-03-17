@@ -6,7 +6,7 @@
 partial class hl2_ar2ball : ModelEntity
 {
 	float Speed = 1000.0f;
-
+	TimeSince LifeSpan = 0;
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -22,7 +22,7 @@ partial class hl2_ar2ball : ModelEntity
 	{
 		if ( !IsServer )
 			return;
-
+		
 		Velocity = Rotation.Forward * Speed;
 
 		var start = Position;
@@ -35,8 +35,7 @@ partial class hl2_ar2ball : ModelEntity
 				.Ignore( this )
 				.Size( 8 )
 				.Run();
-
-
+		
 		if ( tr.Hit )
 		{
 			//ConsoleSystem.Run( "say " + tr.Entity.GetType()  ); //testing
@@ -62,11 +61,13 @@ partial class hl2_ar2ball : ModelEntity
 		}
 
 		else Position = end;
+		if ( LifeSpan >= 4.27f ) Explode();
+		Log.Info( LifeSpan );
 	}
 
 	public virtual void Explode()
 	{
-		Sound.FromWorld( "hl2_ar2ball.explosion", PhysicsBody.MassCenter );
+		//Sound.FromWorld( "hl2_ar2ball.explosion", PhysicsBody.MassCenter ); this causes server.tick error
 
 		Delete();
 	}
