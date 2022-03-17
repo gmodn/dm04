@@ -17,7 +17,7 @@ partial class DeathmatchPlayer : Player
 
 	public override void Respawn()
 	{
-		SetModel( "models/playermodels/gmodbase/gmod_base.vmdl" );
+		SetModel( "models/player/hevsuit_white.vmdl" );
 
 		Controller = new DM04WalkController();
 		Animator = new DM09PlayerAnimator();
@@ -264,5 +264,31 @@ partial class DeathmatchPlayer : Player
 		//DebugOverlay.Sphere( pos, 5.0f, Color.Red, false, 50.0f );
 
 		DamageIndicator.Current?.OnHit( pos );
+	}
+
+	[ClientCmd("dm04_impulse")]
+	public static void ImpulseCMD(int impulseCMD)
+	{
+		Event.Run( "rc_evnt_impulse", impulseCMD);
+	}
+
+	[Event("dm04_evnt_impulse")]
+	public void Impulse(int impulse)
+	{
+		if ( impulse == 101 )
+		{
+			Inventory.Add( new OLD_gravgun(), true );
+			Inventory.Add( new hl2_crowbar(), true );
+			Inventory.Add( new hl2_stunstick(), true );
+			Inventory.Add( new hl2_uspmatch(), true );
+			Inventory.Add( new hl2_357(), true );
+			Inventory.Add( new hl2_smg1(), true );
+			Inventory.Add( new hl2_ar2(), true );
+			Inventory.Add( new hl2_spas12(), true );
+			Inventory.Add( new hl2_crossbow(), true );
+			Inventory.Add( new hl2_grenade(), true );
+			Inventory.Add( new hl2_rpg(), true );
+			Inventory.Add( new hl2_slam(), true );
+		}
 	}
 }

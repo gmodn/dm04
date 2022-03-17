@@ -13,7 +13,10 @@
 						_class = "PhysicsShapeSphere"
 						parent_bone = ""
 						surface_prop = "default"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						radius = 9.979726
 						center = [ 0.0, 0.0, 0.0 ]
 					},
@@ -27,7 +30,7 @@
 						_class = "RenderPrimitiveSphere"
 						name = "ball"
 						parent_bone = ""
-						material_name = "materials/dev/debug_wireframe.vmat"
+						material_name = "materials/tools/toolstrigger.vmat"
 						origin = [ 0.0, 0.0, 0.0 ]
 						angles = [ 0.0, 0.0, 0.0 ]
 						max_u = 1.0

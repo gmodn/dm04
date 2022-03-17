@@ -36,57 +36,9 @@ using Sandbox.UI.Construct;
 
 		Add.Label( "Regenerate", "button" ).AddEventListener( "onclick", () =>
 		{
-			ConsoleSystem.Run( "dm04_impulse" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-
-		//
-		// Weapons
-		//
-
-		Add.Label( "Weapons", "section" );
-
-		Add.Label( "Give USP", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_pistol" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-
-		Add.Label( "Give Magnum", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_magnum" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-
-		Add.Label( "Give Shotgun", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_shotgun" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-
-		Add.Label( "Give SMG", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_smg" );
+			ConsoleSystem.Run( "dm04_impulse 101" );
 			Sound.FromScreen( "buttonclick" );
 		} );
 		
-		Add.Label( "Give Pulse Rifle", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_pulsesmg" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-
-		Add.Label( "Give Crossbow", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_crossbow" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-
-		Add.Label( "Give Grenade", "button" ).AddEventListener( "onclick", () =>
-		{
-			ConsoleSystem.Run( "dm04_giveweapon_grenade" );
-			Sound.FromScreen( "buttonclick" );
-		} );
-
 		}
 	}

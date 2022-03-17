@@ -67,7 +67,7 @@ partial class hl2_ar2ball : ModelEntity
 
 	public virtual void Explode()
 	{
-		//Sound.FromWorld( "hl2_ar2ball.explosion", PhysicsBody.MassCenter ); this causes server.tick error
+		PlaySound("hl2_ar2ball.explosion");
 
 		Delete();
 	}
