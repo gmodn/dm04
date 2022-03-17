@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "dm08_healthcharger", Title = "Health Charger" )]
+[Library( "dm04_healthcharger", Title = "Health Charger" )]
 [Hammer.EditorModel( "models/props_combine/suit_charger001.vmdl" )]
 [Hammer.EntityTool( "Health Charger", "DM:04" )]
 public partial class HealthCharger: ModelEntity, IUse
