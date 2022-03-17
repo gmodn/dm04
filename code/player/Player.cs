@@ -62,6 +62,12 @@ partial class DeathmatchPlayer : Player
 		GiveAmmo(AmmoType.RPG, 300);
 		GiveAmmo(AmmoType.SLAM, 5);
 
+
+		holdBody = new PhysicsBody( Map.Physics )
+		{
+			BodyType = PhysicsBodyType.Keyframed
+		};
+
 		SupressPickupNotices = false;
 		Health = 100;
 
@@ -107,6 +113,12 @@ partial class DeathmatchPlayer : Player
 			return;
 
 		TickPlayerUse();
+		SimulateGrabbing();
+
+		if ( Input.ActiveChild != null && !HeldBody.IsValid() )
+		{
+			ActiveChild = Input.ActiveChild;
+		}
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
