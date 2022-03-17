@@ -1113,8 +1113,8 @@
 				}
 				m_blendDuration = 0.2
 				m_tagBehavior = "SelectorTagBehavior_OffWhenFinished"
-				m_bResetOnChange = false
-				m_bSyncCyclesOnChange = false
+				m_bResetOnChange = true
+				m_bSyncCyclesOnChange = true
 				m_blendCurve = 
 				{
 					m_vControlPoint1 = [ 0.5, 0.0 ]

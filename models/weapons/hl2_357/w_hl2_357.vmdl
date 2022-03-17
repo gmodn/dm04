@@ -1,0 +1,107 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "hold_R"
+						origin = [ 5.0, 0.0, -2.0 ]
+						angles = [ 0.0, 180.0, 0.0 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "v_357_body.vmat"
+								to = "materials/models/weapons/hl2_357/hl2_357_body.vmat"
+							},
+							{
+								from = "v_357_brass.vmat"
+								to = "materials/models/weapons/hl2_357/hl2_357_chrome.vmat"
+							},
+							{
+								from = "v_357_chrome.vmat"
+								to = "materials/models/weapons/hl2_357/hl2_357_chrome.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/weapons/hl2_357/w_hl2_357.smd"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeCylinder"
+						parent_bone = "weapon_bone"
+						surface_prop = "metal.weapon"
+						collision_prop = "default"
+						radius = 0.944105
+						point0 = [ -0.851437, -0.62823, 0.800289 ]
+						point1 = [ 9.138675, -0.806214, -0.178428 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "weapon_bone"
+						surface_prop = "metal.weapon"
+						collision_prop = "default"
+						origin = [ -2.201092, -0.320214, 3.843457 ]
+						angles = [ -25.0, 0.0, -6.0 ]
+						dimensions = [ 2.725125, 1.392373, 4.697947 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "weapon_bone"
+						surface_prop = "metal.weapon"
+						collision_prop = "default"
+						origin = [ 0.230799, -0.447706, 1.979714 ]
+						angles = [ 5.0, 0.0, -6.0 ]
+						dimensions = [ 5.526346, 1.097469, 1.867646 ]
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

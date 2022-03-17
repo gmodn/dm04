@@ -15,33 +15,31 @@ public partial class HealthKit: Prop, IUse, IRespawnableEntity
 		SetModel( "models/items/healthkit.vmdl" );
 	}
 
-	public bool IsUsable( Entity user )
+	public bool IsUsable(Entity user)
 	{
-		if ( user.Health > 100 )
+		if (user is Player player)
 		{
-			return false;
+			if (player.Health < 100)
+			{
+				return true;
+			}
+			else
+				return false;
 		}
 		else
 		{
-			return true;
+			return false;
 		}
 	}
-	public bool OnUse( Entity user )
+	public bool OnUse(Entity user)
 	{
-		if ( user is Player player )
+		if (user is Player player)
 		{
-			player.Health += 10;
+			player.Health += 25;
 
 			Delete();
 			Sound.FromScreen( "smallmedkit1" );
 		}
-
-		if ( user.Health > 100 )
-		{
-			Health = 100;
-		}
-
 		return false;
 	}
-
 }

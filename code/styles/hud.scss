@@ -41,9 +41,9 @@ ammo {
 	}
 
 	.Ammo {
-		right: 37px;
+		right: 190px;
 		bottom: 27px;
-		width: 287px;
+		width: 297px;
 		height: 81px;
 	}
 
@@ -72,6 +72,22 @@ ammo {
 		font-weight: 700;
 		color: yellow;
 	}
+
+	.Alt {
+		right: 22px;
+		bottom: 27px;
+		width: 162px;
+		height: 81px;
+
+		.AmmoText {
+			left: 18px;
+			bottom: 11px;
+		}
+
+		.Counter {
+			left: 58px;
+		}
+	}
 }
 
 	.Empty {
@@ -80,42 +96,58 @@ ammo {
 }
 
 
-.dm04_pistol .icon {
-	background-image: url( ui/weapons/Usp_match_hud_icon-modified.png );
+.hl2_crowbar .icon {
+	background-image: url( /ui/weapons/hl2_crowbar.png );
 }
 
-.dm04_shotgun .icon {
-	background-image: url( /ui/weapons/Spas-12_hud_icon-modified.png );
+.hl2_stunstick .icon {
+	background-image: url( /ui/weapons/hl2_stunstick.png );
 }
 
-.dm04_smg .icon {
-	background-image: url( /ui/weapons/Mp7_hud_icon-modified.png );
+.hl2_gravgun .icon, .OLD_gravgun .icon {
+	background-image: url( /ui/weapons/hl2_gravgun.png );
 }
 
-.dm04_crowbar .icon {
-	background-image: url( /ui/weapons/Crowbar_hud_icon-modified.png );
+.hl2_uspmatch .icon {
+	background-image: url( /ui/weapons/hl2_uspmatch.png );
 }
 
-.dm04_stunbaton .icon {
-	background-image: url( /ui/weapons/Stunstick_hud_icon-modified.png );
+.hl2_357 .icon {
+	background-image: url( /ui/weapons/hl2_357.png );
 }
 
-.dm04_gravgun .icon {
-	background-image: url( /ui/weapons/Gravity_Gun_hud_icon-modified.png );
+.hl2_smg1 .icon {
+	background-image: url( /ui/weapons/hl2_smg1.png );
 }
 
-.dm04_crossbow .icon, .crossbow_bolt .icon {
-	background-image: url( /ui/weapons/Crossbow_hud_icon-modified.png );
+.hl2_ar2 .icon {
+	background-image: url( /ui/weapons/hl2_ar2.png );
 }
 
-.dm04_357 .icon {
-	background-image: url( /ui/weapons/357_hud_icon-modified.png );
+.hl2_ar2ball .icon {
+	background-image: url( /ui/weapons/hl2_ar2ball.png );
 }
 
-.dm04_grenade .icon {
-	background-image: url( /ui/weapons/MK3A2_hud_icon-modified.png );
+.hl2_spas12 .icon {
+	background-image: url( /ui/weapons/hl2_spas12.png );
 }
 
-.dm04_pulsesmg .icon {
-	background-image: url( /ui/weapons/AR2_hud_icon-modified.png );
+.hl2_crossbow .icon, .hl2_crossbowbolt .icon {
+	background-image: url( /ui/weapons/hl2_crossbow.png );
+}
+
+.hl2_grenade .icon {
+	background-image: url( /ui/weapons/hl2_grenade.png );
+}
+
+.hl2_slam .icon {
+	background-image: url( /ui/weapons/hl2_slam.png );
+}
+
+.hl2_rpg .icon {
+	background-image: url( /ui/weapons/hl2_rpg.png );
+}
+
+.devgun .icon {
+	background-image: url( /ui/weapons/devgun.png );
 }

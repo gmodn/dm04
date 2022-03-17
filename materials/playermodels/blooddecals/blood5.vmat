@@ -2,16 +2,23 @@
 
 Layer0
 {
-	shader "projected_decals.vfx"
+	shader "complex.vfx"
 
-	//---- Specular ----
-	F_SPECULAR 1
+	//---- Translucent ----
+	F_TRANSLUCENT 1
 
 	//---- Ambient Occlusion ----
+	g_flAmbientOcclusionDirectDiffuse "0.000"
+	g_flAmbientOcclusionDirectSpecular "0.000"
 	TextureAmbientOcclusion "materials/default/default_ao.tga"
 
 	//---- Color ----
+	g_flModelTintAmount "1.000"
+	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
 	TextureColor "materials/playermodels/blooddecals/blood5.tga"
+
+	//---- Fade ----
+	g_flFadeExponent "1.000"
 
 	//---- Fog ----
 	g_bFogEnabled "1"
@@ -19,11 +26,24 @@ Layer0
 	//---- Lighting ----
 	g_flDirectionalLightmapMinZ "0.050"
 	g_flDirectionalLightmapStrength "1.000"
-	g_flGlossiness "0.743"
 
 	//---- Metalness ----
-	TextureMetalness "materials/default/default_metal.tga"
+	g_flMetalness "0.000"
+
+	//---- Normal ----
+	TextureNormal "materials/default/default_normal.tga"
+
+	//---- Roughness ----
+	TextureRoughness "materials/default/default_rough.tga"
+
+	//---- Texture Coordinates ----
+	g_nScaleTexCoordUByModelScaleAxis "0"
+	g_nScaleTexCoordVByModelScaleAxis "0"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	g_vTexCoordScrollSpeed "[0.000 0.000]"
 
 	//---- Translucent ----
+	g_flOpacityScale "1.000"
 	TextureTranslucency "materials/playermodels/blooddecals/blood5_trans.tga"
 }

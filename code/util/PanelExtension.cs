@@ -14,8 +14,8 @@ namespace Sandbox.UI
 		{
 			if ( !player.IsValid() ) return;
 
-			var eyePos = player.EyePos;
-			var eyeRot = player.EyeRot;
+			var eyePos = player.EyePosition;
+			var eyeRot = player.EyeRotation;
 
 			var tr = Trace.Ray( eyePos, eyePos + eyeRot.Forward * 2000 )
 							.Size( 1.0f )
@@ -23,7 +23,7 @@ namespace Sandbox.UI
 							.UseHitboxes()
 							.Run();
 
-			panel.PositionAtWorld( tr.EndPos );
+			panel.PositionAtWorld( tr.EndPosition );
 			
 		}
 

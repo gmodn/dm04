@@ -17,11 +17,11 @@ partial class DeathmatchPlayer : Player
 
 	public override void Respawn()
 	{
-		SetModel( "models/playermodels/female/female_01_1.vmdl" );
+		SetModel( "models/player/hevsuit_white.vmdl" );
 
 		Controller = new DM04WalkController();
-		Animator = new StandardPlayerAnimator();
-		Camera = new FirstPersonCamera();
+		Animator = new DM09PlayerAnimator();
+		CameraMode = new FirstPersonCamera();
 		  
 		EnableAllCollisions = true; 
 		EnableDrawing = true; 
@@ -29,29 +29,44 @@ partial class DeathmatchPlayer : Player
 		EnableShadowInFirstPerson = true;
 
 		ClearAmmo();
-		// Clothing.DressEntity( this );
+		//Clothing.DressEntity( this );
 
 		SupressPickupNotices = true;
 
-		Inventory.Add( new Pistol(), true );
-		Inventory.Add( new Shotgun() );
-		Inventory.Add( new SMG() );
-		Inventory.Add( new Crossbow() );
-		Inventory.Add( new GravGun());
-		Inventory.Add( new Magnum() );
-		Inventory.Add( new PulseSMG() );
-		Inventory.Add( new Crowbar() );
-		Inventory.Add( new StunBaton() );
-		Inventory.Add( new Grenade() );
+		Inventory.Add(new devgun(), true);
 
-		GiveAmmo( AmmoType.Pistol, 150 );
-		GiveAmmo( AmmoType.SMG, 225 );
-		GiveAmmo( AmmoType.Pulse, 60 );
-		GiveAmmo( AmmoType.Magnum, 12 );
-		GiveAmmo( AmmoType.Buckshot, 30 );
-		GiveAmmo( AmmoType.Crossbow, 4 );
-		GiveAmmo( AmmoType.Grenade, 3 );
-		GiveAmmo( AmmoType.None, 1 );
+		//HL2 Arsenal
+		Inventory.Add(new hl2_crowbar(), true);
+		Inventory.Add(new hl2_stunstick(), true);
+		Inventory.Add(new hl2_gravgun(), true);
+		Inventory.Add(new hl2_uspmatch(), true);
+		Inventory.Add(new hl2_357(), true);
+		Inventory.Add(new hl2_smg1(), true);
+		Inventory.Add(new hl2_ar2(), true);
+		Inventory.Add(new hl2_spas12(), true);
+		Inventory.Add(new hl2_crossbow(), true);
+		Inventory.Add(new hl2_grenade(), true);
+		Inventory.Add(new hl2_rpg(), true);
+		Inventory.Add(new hl2_slam(), true);
+
+		//Give Max Ammo
+		GiveAmmo(AmmoType.Pistol, 150);
+		GiveAmmo(AmmoType.Magnum, 12);
+		GiveAmmo(AmmoType.SMG, 225);
+		GiveAmmo(AmmoType.SMG_grenade, 3);
+		GiveAmmo(AmmoType.AR2, 60);
+		GiveAmmo(AmmoType.AR2_ball, 3);
+		GiveAmmo(AmmoType.Buckshot, 30);
+		GiveAmmo(AmmoType.Crossbow, 40);
+		GiveAmmo(AmmoType.Grenade, 5);
+		GiveAmmo(AmmoType.RPG, 300);
+		GiveAmmo(AmmoType.SLAM, 5);
+
+
+		holdBody = new PhysicsBody( Map.Physics )
+		{
+			BodyType = PhysicsBodyType.Keyframed
+		};
 
 		SupressPickupNotices = false;
 		Health = 100;
@@ -67,7 +82,7 @@ partial class DeathmatchPlayer : Player
 		BecomeRagdollOnClient( LastDamage.Force, GetHitboxBone( LastDamage.HitboxIndex ) );
 
 		Controller = null;
-		Camera = new SpectateRagdollCamera();
+		CameraMode = new SpectateRagdollCamera();
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
@@ -98,16 +113,22 @@ partial class DeathmatchPlayer : Player
 			return;
 
 		TickPlayerUse();
+		SimulateGrabbing();
+
+		if ( Input.ActiveChild != null && !HeldBody.IsValid() )
+		{
+			ActiveChild = Input.ActiveChild;
+		}
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
-			if ( Camera is ThirdPersonCamera )
+			if ( CameraMode is ThirdPersonCamera )
 			{
-				Camera = new FirstPersonCamera();
+				CameraMode = new FirstPersonCamera();
 			}
 			else
 			{
-				Camera = new ThirdPersonCamera();
+				CameraMode = new ThirdPersonCamera();
 			}
 		}
 
@@ -118,7 +139,7 @@ partial class DeathmatchPlayer : Player
 			{
 				if ( dropped.PhysicsGroup != null )
 				{
-					dropped.PhysicsGroup.Velocity = Velocity + (EyeRot.Forward + EyeRot.Up) * 300;
+					dropped.PhysicsGroup.Velocity = Velocity + (EyeRotation.Forward + EyeRotation.Up) * 300;
 				}
 
 				timeSinceDropped = 0;
@@ -201,38 +222,6 @@ partial class DeathmatchPlayer : Player
 
 	private void AddCameraEffects( ref CameraSetup setup )
 	{
-		var speed = Velocity.Length.LerpInverse( 0, 320 );
-		var forwardspeed = Velocity.Normal.Dot( setup.Rotation.Forward );
-
-		var left = setup.Rotation.Left;
-		var up = setup.Rotation.Up;
-
-		if ( GroundEntity != null )
-		{
-			walkBob += Time.Delta * 25.0f * speed;
-		}
-
-		setup.Position += up * MathF.Sin( walkBob ) * speed * 2;
-		setup.Position += left * MathF.Sin( walkBob * 0.6f ) * speed * 1;
-
-		// Camera lean
-		lean = lean.LerpTo( Velocity.Dot( setup.Rotation.Right ) * 0.03f, Time.Delta * 15.0f );
-
-		var appliedLean = lean;
-		appliedLean += MathF.Sin( walkBob ) * speed * 0.2f;
-		setup.Rotation *= Rotation.From( 0, 0, appliedLean );
-
-		speed = (speed - 0.7f).Clamp( 0, 1 ) * 3.0f;
-
-		fov = fov.LerpTo( speed * 20 * MathF.Abs( forwardspeed ), Time.Delta * 2.0f );
-
-		setup.FieldOfView += fov;
-
-	//	var tx = new Sandbox.UI.PanelTransform();
-	//	tx.AddRotation( 0, 0, lean * -0.1f );
-
-	//	Hud.CurrentPanel.Style.Transform = tx;
-	//	Hud.CurrentPanel.Style.Dirty(); 
 
 	}
 
@@ -275,5 +264,31 @@ partial class DeathmatchPlayer : Player
 		//DebugOverlay.Sphere( pos, 5.0f, Color.Red, false, 50.0f );
 
 		DamageIndicator.Current?.OnHit( pos );
+	}
+
+	[ClientCmd("dm04_impulse")]
+	public static void ImpulseCMD(int impulseCMD)
+	{
+		Event.Run( "rc_evnt_impulse", impulseCMD);
+	}
+
+	[Event("dm04_evnt_impulse")]
+	public void Impulse(int impulse)
+	{
+		if ( impulse == 101 )
+		{
+			Inventory.Add( new OLD_gravgun(), true );
+			Inventory.Add( new hl2_crowbar(), true );
+			Inventory.Add( new hl2_stunstick(), true );
+			Inventory.Add( new hl2_uspmatch(), true );
+			Inventory.Add( new hl2_357(), true );
+			Inventory.Add( new hl2_smg1(), true );
+			Inventory.Add( new hl2_ar2(), true );
+			Inventory.Add( new hl2_spas12(), true );
+			Inventory.Add( new hl2_crossbow(), true );
+			Inventory.Add( new hl2_grenade(), true );
+			Inventory.Add( new hl2_rpg(), true );
+			Inventory.Add( new hl2_slam(), true );
+		}
 	}
 }

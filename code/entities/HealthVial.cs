@@ -18,33 +18,31 @@ public partial class HealthVial : Prop, IUse, IRespawnableEntity
 		PickupTrigger.Position = Position;
 	}
 
-	public bool IsUsable( Entity user )
+	public bool IsUsable(Entity user)
 	{
-		if ( user.Health > 100 )
+		if (user is Player player)
 		{
-			return false;
+			if (player.Health < 100)
+			{
+				return true;
+			}
+			else
+				return false;
 		}
 		else
 		{
-			return true;
+			return false;
 		}
 	}
-	public bool OnUse( Entity user )
+	public bool OnUse(Entity user)
 	{
-		if ( user is Player player )
+		if (user is Player player)
 		{
 			player.Health += 10;
 
 			Delete();
-			Sound.FromScreen( "smallmedkit1" );
+			Sound.FromScreen( "medshot4" );
 		}
-
-		if ( user.Health > 100 )
-		{
-			
-		}
-
 		return false;
 	}
-
 }
