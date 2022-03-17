@@ -10,7 +10,7 @@ public partial class DeathmatchPlayer
 	public Rotation HeldRot { get; private set; }
 	public ModelEntity HeldEntity { get; private set; }
 
-	private float CarryLimit = 1200.0f;
+	private float CarryLimit = 2200.0f;
 
 	private TimeSince timeSinceDrop;
 
@@ -113,7 +113,7 @@ public partial class DeathmatchPlayer
 
 		holdBody.Position = grabPos;
 		holdBody.Rotation = HeldBody.Rotation;
-
+		
 		HeldBody.Sleeping = false;
 		HeldBody.AutoSleep = false;
 
