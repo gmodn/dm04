@@ -48,7 +48,6 @@ partial class DeathmatchPlayer : Player
 		Inventory.Add(new hl2_grenade(), true);
 		Inventory.Add(new hl2_rpg(), true);
 		Inventory.Add(new hl2_slam(), true);
-		Inventory.Add(new OLD_gravgun(), true);
 
 		//Give Max Ammo
 		GiveAmmo(AmmoType.Pistol, 150);
