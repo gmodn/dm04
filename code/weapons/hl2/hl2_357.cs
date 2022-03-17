@@ -65,4 +65,13 @@ partial class hl2_357 : BaseDmWeapon
 
 		IsReloading = false;
 	}
+	public override void SimulateAnimator( PawnAnimator anim )
+	{
+		anim.SetAnimParameter( "holdtype", 18 ); // TODO this is shit
+												//anim.SetAnimParameter( "aimat_weight", 1.0f );
+		if ( Input.Pressed( InputButton.Reload ) )
+		{
+			ViewModelEntity?.SetAnimParameter( "inspect", true );
+		}
+	}
 }
