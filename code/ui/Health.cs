@@ -4,32 +4,36 @@ using Sandbox.UI.Construct;
 
 	public partial class Health : Panel
 	{
-		private Label HealthText;
-
-		public Health()
-		{
-			StyleSheet.Load("/ui/Health.scss");
-			Panel healthBackground = Add.Panel();
-			healthBackground.Add.Label("HEALTH", "HealthTextName");
-			HealthText = Add.Label("100", "HealthText");
-		}
-
-		public override void Tick()
-		{
-			base.Tick();
-			AddClass("Hidden");
-			DeathmatchPlayer player = Local.Pawn as DeathmatchPlayer;
-			if (player == null)
-				return;
-
-			if (player.Health <= 0 || player.LifeState != LifeState.Alive)
-				return;
-
-			RemoveClass("Hidden");
-			HealthText.Text = player.Health.CeilToInt().ToString();
-
-			if (player.Health.CeilToInt() < 20)
-				Style.FontColor = "#FF0000";
-		}
+	public Label Label;
+	public Label Label2;
+	public float prevHealth = 0;
+	public Health()
+	{
+		Label2 = Add.Label( "HEALTH", "text" );
+		//Label2.Text = "HEALTH";
+		Label = Add.Label( "100", "value" );
+		StyleSheet.Load( "/ui/Health.scss" );
 	}
+
+	public override void Tick()
+	{
+
+		var player = Local.Pawn;
+		if ( player == null ) return;
+
+
+
+
+		Label.Text = $"{player.Health.CeilToInt()}";
+		Label.SetClass( "danger", (player.Health < 30.0f) );
+		Label.SetClass( "value", player.Health > 30.0f );
+
+		Label2.SetClass( "dangerMini", (player.Health < 30.0f) );
+		Label2.SetClass( "text", player.Health > 30.0f );
+
+		Label.SetClass( "glow", player.Health != prevHealth );
+		Label.SetClass( "value", player.Health == prevHealth );
+		prevHealth = player.Health;
+	}
+}
 

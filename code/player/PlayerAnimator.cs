@@ -2,7 +2,7 @@
 
 namespace Sandbox
 {
-	public class DM09PlayerAnimator : PawnAnimator
+	public class DM04PlayerAnimator : PawnAnimator
 	{
 		TimeSince TimeSinceFootShuffle = 60;
 

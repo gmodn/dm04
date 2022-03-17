@@ -20,7 +20,7 @@ partial class DeathmatchPlayer : Player
 		SetModel( "models/player/hevsuit_white.vmdl" );
 
 		Controller = new DM04WalkController();
-		Animator = new DM09PlayerAnimator();
+		Animator = new DM04PlayerAnimator();
 		CameraMode = new FirstPersonCamera();
 		  
 		EnableAllCollisions = true; 
