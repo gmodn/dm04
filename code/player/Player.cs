@@ -48,7 +48,6 @@ partial class DeathmatchPlayer : Player
 		Inventory.Add(new hl2_grenade(), true);
 		Inventory.Add(new hl2_rpg(), true);
 		Inventory.Add(new hl2_slam(), true);
-		Inventory.Add(new OLD_gravgun(), true);
 
 		//Give Max Ammo
 		GiveAmmo(AmmoType.Pistol, 150);
@@ -62,6 +61,12 @@ partial class DeathmatchPlayer : Player
 		GiveAmmo(AmmoType.Grenade, 5);
 		GiveAmmo(AmmoType.RPG, 300);
 		GiveAmmo(AmmoType.SLAM, 5);
+
+
+		holdBody = new PhysicsBody( Map.Physics )
+		{
+			BodyType = PhysicsBodyType.Keyframed
+		};
 
 		SupressPickupNotices = false;
 		Health = 100;
@@ -108,6 +113,12 @@ partial class DeathmatchPlayer : Player
 			return;
 
 		TickPlayerUse();
+		SimulateGrabbing();
+
+		if ( Input.ActiveChild != null && !HeldBody.IsValid() )
+		{
+			ActiveChild = Input.ActiveChild;
+		}
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
