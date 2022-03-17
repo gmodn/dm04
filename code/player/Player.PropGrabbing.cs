@@ -23,6 +23,9 @@ public partial class DeathmatchPlayer
 
 		if ( Input.Pressed( InputButton.Use ) && !HeldBody.IsValid())
 		{
+			if( HeldBody.IsValid() )
+				GrabEnd();
+			
 			using ( Prediction.Off() )
 			{
 				if ( timeSinceDrop < 0.5f )
