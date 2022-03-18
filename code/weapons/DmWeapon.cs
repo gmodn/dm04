@@ -19,6 +19,8 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 	public virtual string AmmoIcon => "p";
 
+	public virtual string AltIcon => "z";
+
 	[Net, Predicted]
 	public int AmmoClip { get; set; }
 

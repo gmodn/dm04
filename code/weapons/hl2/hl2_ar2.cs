@@ -12,7 +12,7 @@ partial class hl2_ar2 : BaseDmWeapon
 	public override int ClipSize => 30;
 	public override AmmoType AmmoType => AmmoType.AR2;
 	public override AmmoType SecondaryAmmo => AmmoType.AR2_ball; //Secondary Ammo Type
-	public override string AmmoIcon => "z";
+	public override string AmmoIcon => "u";
 	public override float ReloadTime => 1.7f;
 	public override int Bucket => 2;
 

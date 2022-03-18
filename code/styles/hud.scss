@@ -57,7 +57,7 @@ ammo {
 	}
 
 	.Counter {
-		left: 90px;
+		left: 105px;
 		bottom: 5px;
 		font-family: HalfLife2;
 		font-size: 61px;
@@ -97,7 +97,19 @@ ammo {
 		}
 
 		.Counter {
-			left: 58px;
+			left: 88px;
+		}
+
+		.icon {
+			width: 0px;
+			transition: all 0.5s ease-in;
+			font-family: HalfLife2;
+			font-weight: 100;
+			top: -7px;
+			left: 18px;
+			font-size: 64px;
+			text-shadow: 0 0 0px rgba(255, 220, 0, 0.0);
+			color: yellow;
 		}
 	}
 }
