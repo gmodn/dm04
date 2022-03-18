@@ -55,6 +55,25 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		IsReloading = false;
 	}
 
+	public override void StartTouch( Entity other )
+	{
+		if ( other is DeathmatchPlayer player )
+		{
+			if(!player.Inventory.Contains(this))
+				base.StartTouch( other );
+
+			if ( (player.AmmoCount( AmmoType ) + ClipSize) > player.AmmoLimit[(int)AmmoType] )
+			{
+				AmmoClip = player.AmmoLimit[(int)AmmoType] - player.AmmoCount( AmmoType );
+			}
+			else if ( player.AmmoCount( AmmoType ) >= player.AmmoLimit[(int)AmmoType] )
+			{
+				return;
+			}
+		}
+
+		base.StartTouch( other );
+	}
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
 	public override void Spawn()

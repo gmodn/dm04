@@ -10799,6 +10799,15 @@
 						weight = 1.0
 						ignore_rotation = false
 					},
+					{
+						_class = "Attachment"
+						name = "hat"
+						parent_bone = "bip01_head1"
+						relative_origin = [ 5.288136, 2.254683, -0.948951 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
 				]
 			},
 			{

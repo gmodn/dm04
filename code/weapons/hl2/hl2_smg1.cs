@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "hl2_smg1", Title = "SMG (SUBMACHINE GUN)" )]
+[Library( "hl2_smg1", Title = "SMG" )]
 [Hammer.EditorModel( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" )]
 partial class hl2_smg1 : BaseDmWeapon
 { 

@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 
-[Library( "hl2_stunstick", Title = "STUCKSTICK" )]
+[Library( "hl2_stunstick", Title = "STUNSTICK" )]
 [Hammer.EditorModel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" )]
 partial class hl2_stunstick : BaseDmWeapon
 {

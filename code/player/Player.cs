@@ -132,7 +132,8 @@ partial class DeathmatchPlayer : Player
 			}
 		}
 
-		if ( Input.Pressed( InputButton.Drop ) )
+		//Shouldn't be able to drop weapons in HL2 DM
+		/*if ( Input.Pressed( InputButton.Drop ) )
 		{
 			var dropped = Inventory.DropActive();
 			if ( dropped != null )
@@ -145,7 +146,7 @@ partial class DeathmatchPlayer : Player
 				timeSinceDropped = 0;
 				SwitchToBestWeapon();
 			}
-		}
+		}*/
 
 		SimulateActiveChild( cl, ActiveChild );
 
@@ -180,6 +181,12 @@ partial class DeathmatchPlayer : Player
 	public override void StartTouch( Entity other )
 	{
 		if ( timeSinceDropped < 1 ) return;
+
+		if ( other is BaseDmWeapon weapon )
+		{
+			if ( AmmoCount( weapon.AmmoType ) >= AmmoLimit[(int)weapon.AmmoType] )
+				return;
+		}
 
 		base.StartTouch( other );
 	}
