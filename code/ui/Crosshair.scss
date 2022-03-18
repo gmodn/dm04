@@ -1,0 +1,27 @@
+Crosshair {
+    align-content: center;
+    align-items: baseline;
+    align-self: center;
+    vertical-align: bottom;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 110px;
+    height: 120px;
+    overflow: hidden;
+    left: 8px;
+    letter-spacing: 10px;
+    font-family: HalfLife2;
+    color: yellow;  
+    font-size: 108px;
+
+    .crosshair {
+        top: -18px;
+        font-family: HalfLife2;
+        font-size: 52px;
+    }
+}

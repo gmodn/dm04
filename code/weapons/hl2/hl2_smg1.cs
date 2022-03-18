@@ -12,6 +12,8 @@ partial class hl2_smg1 : BaseDmWeapon
 	public override int ClipSize => 45;
 	public override AmmoType AmmoType => AmmoType.SMG;
 	public override AmmoType SecondaryAmmo => AmmoType.SMG_grenade; //Secondary Ammo Type
+	public override string AmmoIcon => "r";
+	public override string AltIcon => "t";
 	public override float ReloadTime => 1.7f;
 	public override int Bucket => 2;
 

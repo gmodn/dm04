@@ -25,11 +25,11 @@ using Sandbox.UI.Construct;
 
 
 		Label.Text = $"{player.Health.CeilToInt()}";
-		Label.SetClass( "danger", (player.Health < 30.0f) );
-		Label.SetClass( "value", player.Health > 30.0f );
+		Label.SetClass( "danger", (player.Health <= 20.0f) );
+		Label.SetClass( "value", player.Health >= 20.0f );
 
-		Label2.SetClass( "dangerMini", (player.Health < 30.0f) );
-		Label2.SetClass( "text", player.Health > 30.0f );
+		Label2.SetClass( "dangerMini", (player.Health <= 20.0f) );
+		Label2.SetClass( "text", player.Health >= 20.0f );
 
 		Label.SetClass( "glow", player.Health != prevHealth );
 		Label.SetClass( "value", player.Health == prevHealth );

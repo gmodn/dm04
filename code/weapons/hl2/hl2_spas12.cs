@@ -9,6 +9,7 @@ partial class hl2_spas12 : BaseDmWeapon
 	public override float PrimaryRate => 1.13f;
 	public override float SecondaryRate => 0.96f;
 	public override AmmoType AmmoType => AmmoType.Buckshot;
+	public override string AmmoIcon => "s";
 	public override int ClipSize => 6;
 	public override float ReloadTime => 0.6f;
 	public override int Bucket => 3;

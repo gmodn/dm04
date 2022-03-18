@@ -9,6 +9,7 @@ partial class hl2_slam : BaseDmWeapon
 	public override float PrimaryRate => 1.0f;
 	public override int ClipSize => 1;
 	public override AmmoType AmmoType => AmmoType.SLAM;
+	public override string AmmoIcon => "v";
 
 	public override int Bucket => 4;
 

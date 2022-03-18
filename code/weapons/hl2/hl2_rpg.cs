@@ -10,6 +10,7 @@ partial class hl2_rpg : BaseDmWeapon
 	public override float ReloadTime => 2.8f;
 	public override int Bucket => 4;
 	public override AmmoType AmmoType => AmmoType.RPG;
+	public override string AmmoIcon => "x";
 	public override int ClipSize => 1;
 	public bool targeting = true;
 

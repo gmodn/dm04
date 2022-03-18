@@ -10,6 +10,7 @@ partial class hl2_crossbow : BaseDmWeapon
 	public override float ReloadTime => 3.8f;
 	public override int Bucket => 3;
 	public override AmmoType AmmoType => AmmoType.Crossbow;
+	public override string AmmoIcon => "w";
 	public override int ClipSize => 1;
 
 	float glow = 0f;

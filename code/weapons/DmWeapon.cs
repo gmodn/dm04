@@ -17,6 +17,10 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	public virtual int Bucket => 1;
 	public virtual int BucketWeight => 100;
 
+	public virtual string AmmoIcon => "p";
+
+	public virtual string AltIcon => "z";
+
 	[Net, Predicted]
 	public int AmmoClip { get; set; }
 
