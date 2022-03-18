@@ -23,13 +23,13 @@ namespace Sandbox
 			bool sitting = HasTag( "sitting" );
 			bool noclip = HasTag( "noclip" ) && !sitting;
 
-			SetAnimParameter( "b_grounded", GroundEntity != null || noclip || sitting );
-			///SetAnimParameter( "b_swim", Pawn.WaterLevel > 0.5f && !sitting );
+			// SetAnimParameter( "b_grounded", GroundEntity != null || noclip || sitting );
+			// SetAnimParameter( "b_swim", Pawn.WaterLevel > 0.5f && !sitting );
 
-			if ( Host.IsClient && Client.IsValid() )
-			{
-				SetAnimParameter( "voice", Client.TimeSinceLastVoice < 0.5f ? Client.VoiceLevel : 0.0f );
-			}
+			// if ( Host.IsClient && Client.IsValid() )
+			// {
+			// 	SetAnimParameter( "voice", Client.TimeSinceLastVoice < 0.5f ? Client.VoiceLevel : 0.0f );
+			// }
 
 			Vector3 aimPos = Pawn.EyePosition + Input.Rotation.Forward * 200;
 			Vector3 lookPos = aimPos;
@@ -96,12 +96,12 @@ namespace Sandbox
 
 				var angle = MathF.Atan2( sideward, forward ).RadianToDegree().NormalizeDegrees();
 
-				SetAnimParameter( "move_direction", angle );
+				// SetAnimParameter( "move_direction", angle );
 				SetAnimParameter( "move_speed", Velocity.Length );
 
 				SetAnimParameter( "move_y", sideward );
 				SetAnimParameter( "move_x", forward );
-				SetAnimParameter( "move_z", Velocity.z );
+				// SetAnimParameter( "move_z", Velocity.z );
 			}
 
 

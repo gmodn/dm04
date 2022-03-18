@@ -257,9 +257,7 @@
 	}
 	m_previewModels = 
 	[
-		"models/playermodels/female/female_01/female_01.vmdl",
 		"models/playermodels/female/female_02/female_02.vmdl",
-		"models/playermodels/female/female_01/female_01.vmdl",
 	]
 	m_nodes = 
 	[
@@ -2241,7 +2239,7 @@
 							m_id = 1556408142
 						}
 						m_name = "Crouching"
-						m_blendValue = 0.5
+						m_blendValue = 1.0
 					},
 				]
 				m_blendValueSource = "Parameter"
@@ -3753,7 +3751,7 @@
 							m_id = 2087068352
 						}
 						m_name = "Crouching"
-						m_blendValue = 0.5
+						m_blendValue = 1.0
 					},
 				]
 				m_blendValueSource = "Parameter"
@@ -5046,7 +5044,7 @@
 							m_id = 1709625094
 						}
 						m_name = "Crouching"
-						m_blendValue = 0.5
+						m_blendValue = 1.0
 					},
 				]
 				m_blendValueSource = "Parameter"
