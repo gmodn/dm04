@@ -108,6 +108,20 @@
 					},
 				]
 			},
+			{
+				_class = "BoneMarkupList"
+				children = 
+				[
+					{
+						_class = "BoneMarkup"
+						target_bone = "bip01_r_hand"
+						ignore_Translation = false
+						ignore_rotation = false
+						do_not_discard = true
+					},
+				]
+				bone_cull_type = "Aggressive"
+			},
 		]
 		model_archetype = ""
 		primary_associated_entity = ""

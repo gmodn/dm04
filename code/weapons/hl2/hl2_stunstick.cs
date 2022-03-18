@@ -96,7 +96,7 @@ partial class hl2_stunstick : BaseDmWeapon
 
 	public override void SimulateAnimator( PawnAnimator anim )
 	{
-		anim.SetAnimParameter( "holdtype", 1 ); // TODO this is shit
+		anim.SetAnimParameter( "holdtype", 0 ); // TODO this is shit
 		//anim.SetAnimParameter( "aimat_weight", 1.0f );
 		if ( Input.Pressed( InputButton.Reload ) )
 		{

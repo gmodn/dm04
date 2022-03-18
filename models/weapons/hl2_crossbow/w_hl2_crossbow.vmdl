@@ -52,7 +52,10 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						origin = [ 0.000907, 2.277035, 11.732435 ]
 						angles = [ 0.0, 0.0, -2.0 ]
 						dimensions = [ 2.224754, 2.103431, 23.360706 ]
@@ -61,7 +64,10 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						origin = [ 0.006642, 2.378126, -9.958148 ]
 						angles = [ 0.0, 0.0, -2.0 ]
 						dimensions = [ 1.719347, 5.34394, 2.581695 ]
@@ -70,7 +76,10 @@
 						_class = "PhysicsShapeCylinder"
 						parent_bone = "bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						radius = 0.291554
 						point0 = [ 0.0, 1.210654, -8.843707 ]
 						point1 = [ 0.0, 1.480487, 0.27748 ]
@@ -79,7 +88,10 @@
 						_class = "PhysicsShapeCylinder"
 						parent_bone = "bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						radius = 0.229469
 						point0 = [ 0.0, 3.8, -8.84371 ]
 						point1 = [ 0.0, 4.1, 0.27748 ]
@@ -88,7 +100,10 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						origin = [ 0.000907, 3.955187, 3.200727 ]
 						angles = [ 0.0, 0.0, -2.0 ]
 						dimensions = [ 2.224754, 1.860407, 6.424832 ]
@@ -116,6 +131,20 @@
 						}
 					},
 				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = 
+				[
+					{
+						_class = "BoneMarkup"
+						target_bone = "bip01_r_hand"
+						ignore_Translation = false
+						ignore_rotation = false
+						do_not_discard = true
+					},
+				]
+				bone_cull_type = "Aggressive"
 			},
 		]
 		model_archetype = ""

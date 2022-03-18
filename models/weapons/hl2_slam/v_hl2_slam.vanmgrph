@@ -332,7 +332,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "altfire"
+				m_sequenceName = "tripmine_to_throw"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}
@@ -1256,7 +1256,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "throw_idle_ND"
+				m_sequenceName = "throw_detonate"
 				m_playbackSpeed = 1.0
 				m_bLoop = true
 			}

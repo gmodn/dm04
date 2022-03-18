@@ -1,0 +1,154 @@
+
+$SectionFrames 30 150
+
+$PoseParameter "active" 0 1 loop 0
+
+$WeightList "weights_prong_blend" {
+	 "Base" 0
+	 "Prong_B" 1
+	 "Base_B" 1
+	 "Tip_B" 1
+	 "Prong_A" 1
+	 "Base_A" 1
+	 "Tip_A" 1
+	 "Doodad_4" 0
+	 "Doodad_3" 0
+	 "Doodad_2" 0
+	 "Doodad_1" 0
+	 "Handle" 0
+	 "Muzzle" 0
+	 "square" 0
+}
+
+$Animation "ProngsShut" "v_physcannon_anims\ProngsShut.smd" {
+	fps 30
+	weightlist "weights_prong_blend"
+}
+
+$Animation "ProngsOpen" "v_physcannon_anims\ProngsOpen.smd" {
+	fps 30
+	weightlist "weights_prong_blend"
+}
+
+$Sequence "idle" {
+	"v_physcannon_anims\idle.smd"
+	activity "ACT_VM_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 24
+	loop
+}
+
+$Sequence "hold_idle" {
+	"v_physcannon_anims\hold_idle.smd"
+	activity "ACT_VM_RELOAD" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 24
+	loop
+}
+
+$Sequence "draw" {
+	"v_physcannon_anims\draw.smd"
+	activity "ACT_VM_DRAW" 1
+	{ event 5004 0 "Weapon_Physcannon.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 24
+}
+
+$Sequence "holster" {
+	"v_physcannon_anims\holster.smd"
+	activity "ACT_VM_HOLSTER" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 24
+}
+
+$Sequence "fire" {
+	"v_physcannon_anims\fire.smd"
+	activity "ACT_VM_PRIMARYATTACK" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 24
+}
+
+$Sequence "altfire" {
+	"v_physcannon_anims\altfire.smd"
+	activity "ACT_VM_SECONDARYATTACK" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 24
+}
+
+$Sequence "chargeup" {
+	"v_physcannon_anims\chargeup.smd"
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "prong_blend" {
+	"ProngsShut"
+	"ProngsOpen"
+	autoplay
+	blend "active" 0 1
+	blendwidth 2
+	fadein 0.2
+	fadeout 0.2
+}
+
+$Sequence "Sprint" {
+	"v_physcannon_anims\Sprint.smd"
+	activity "ACT_VM_SPRINT" 1
+	{ event 5004 1 "Weapon_Generic.Sprint1" }
+	{ event 5004 11 "Weapon_Generic.Sprint2" }
+	fadein 0.35
+	fadeout 0.35
+	fps 30
+	loop
+}
+
+$Sequence "walk" {
+	"v_physcannon_anims\walk.smd"
+	activity "ACT_VM_WALK" 1
+	{ event 5004 0 "Weapon_Generic.Walk1" }
+	{ event 5004 13 "Weapon_Generic.Walk2" }
+	fadein 0.35
+	fadeout 0.35
+	fps 30
+	loop
+}
+
+$Sequence "idletolow" {
+	"v_physcannon_anims\idletolow.smd"
+	activity "ACT_VM_LOWERED_TO_IDLE" 1
+	fadein 0.3
+	fadeout 0.3
+	transition "Ready" "Low"
+	fps 30
+}
+
+$Sequence "lowtoidle" {
+	"v_physcannon_anims\lowtoidle.smd"
+	activity "ACT_VM_IDLE_TO_LOWERED" 1
+	fadein 0.3
+	fadeout 0.3
+	transition "Low" "Ready"
+	fps 30
+}
+
+$Sequence "lowidle" {
+	"v_physcannon_anims\lowidle.smd"
+	activity "ACT_VM_IDLE_LOWERED" 1
+	fadein 0.3
+	fadeout 0.3
+	node "Low"
+	fps 3
+	loop
+}

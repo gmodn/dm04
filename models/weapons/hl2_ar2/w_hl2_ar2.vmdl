@@ -74,7 +74,10 @@
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "weapon_bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						radius = 1.495855
 						point0 = [ -12.83066, 1.422429, 2.339553 ]
 						point1 = [ 19.310272, 0.627134, -4.336516 ]
@@ -83,7 +86,10 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "weapon_bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						origin = [ -1.195552, 0.8691, 4.846715 ]
 						angles = [ 0.0, -5.0, 2.0 ]
 						dimensions = [ 2.189184, 1.045293, 4.980843 ]
@@ -92,12 +98,29 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "weapon_bone"
 						surface_prop = "metal.weapon"
-						collision_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
 						origin = [ 3.314588, 0.763666, 0.676803 ]
 						angles = [ 14.0, 0.0, 2.0 ]
 						dimensions = [ 15.268124, 2.02317, 2.466386 ]
 					},
 				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = 
+				[
+					{
+						_class = "BoneMarkup"
+						target_bone = "bip01_r_hand"
+						ignore_Translation = false
+						ignore_rotation = false
+						do_not_discard = false
+					},
+				]
+				bone_cull_type = "Aggressive"
 			},
 		]
 		model_archetype = ""

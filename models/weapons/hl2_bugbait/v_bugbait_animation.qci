@@ -1,0 +1,103 @@
+
+$Sequence "drawback" {
+	"v_bugbait_anims\drawback.smd"
+	activity "ACT_VM_HAULBACK" 1
+	{ event 3900 4 "" }
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw" {
+	"v_bugbait_anims\throw.smd"
+	activity "ACT_VM_THROW" 1
+	{ event 3005 1 "" }
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "idle01" {
+	"v_bugbait_anims\idle01.smd"
+	activity "ACT_VM_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+	loop
+}
+
+$Sequence "draw" {
+	"v_bugbait_anims\draw.smd"
+	activity "ACT_VM_DRAW" 1
+	{ event 5004 0 "Weapon_Bugbait.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "holster" {
+	"v_bugbait_anims\holster.smd"
+	activity "ACT_VM_HOLSTER" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "squeeze" {
+	"v_bugbait_anims\squeeze.smd"
+	activity "ACT_VM_SECONDARYATTACK" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "walk" {
+	"v_bugbait_anims\walk.smd"
+	activity "ACT_VM_WALK" 1
+	{ event 5004 3 "Weapon_Generic.Walk1" }
+	{ event 5004 15 "Weapon_Generic.Walk2" }
+	fadein 0.35
+	fadeout 0.35
+	fps 30
+	loop
+}
+
+$Sequence "sprint" {
+	"v_bugbait_anims\sprint.smd"
+	activity "ACT_VM_SPRINT" 1
+	{ event 5004 2 "Weapon_Generic.Sprint1" }
+	{ event 5004 22 "Weapon_Generic.Sprint2" }
+	fadein 0.35
+	fadeout 0.35
+	fps 50
+	loop
+}
+
+$Sequence "idletolow" {
+	"v_bugbait_anims\idletolow.smd"
+	activity "ACT_VM_LOWERED_TO_IDLE" 1
+	fadein 0.65
+	fadeout 0.65
+	transition "Ready" "Low"
+	fps 30
+}
+
+$Sequence "lowtoidle" {
+	"v_bugbait_anims\lowtoidle.smd"
+	activity "ACT_VM_IDLE_TO_LOWERED" 1
+	fadein 0.65
+	fadeout 0.65
+	transition "Low" "Ready"
+	fps 30
+}
+
+$Sequence "lowidle" {
+	"v_bugbait_anims\lowidle.smd"
+	activity "ACT_VM_IDLE_LOWERED" 1
+	fadein 0.65
+	fadeout 0.65
+	node "Low"
+	fps 3
+	loop
+}

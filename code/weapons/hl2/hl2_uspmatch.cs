@@ -83,4 +83,14 @@ partial class hl2_uspmatch : BaseDmWeapon
 
 		IsReloading = false;
 	}
+	public override void SimulateAnimator( PawnAnimator anim )
+	{
+		anim.SetAnimParameter( "holdtype", 1 ); // TODO this is shit
+												//anim.SetAnimParameter( "aimat_weight", 1.0f );
+		anim.SetAnimParameter( "holdtype_handedness", 1 );
+		if ( Input.Pressed( InputButton.Reload ) )
+		{
+			ViewModelEntity?.SetAnimParameter( "inspect", true );
+		}
+	}
 }
