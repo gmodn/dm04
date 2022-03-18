@@ -8,6 +8,7 @@ public class Ammo : Panel
 	private Panel AmmoPanel;
 	private Label CounterText;
 	private Label ReserveText;
+	public Label Icon;
 
 	private Panel AltPanel;
     private Label AltText;
@@ -16,6 +17,7 @@ public class Ammo : Panel
 	{
 		AmmoPanel = Add.Panel( "Ammo" );
 		AmmoPanel.Add.Label( "AMMO", "AmmoText" );
+		Icon = AmmoPanel.Add.Label( "p", "icon" );
 		CounterText = AmmoPanel.Add.Label( "0", "Counter" );
 		ReserveText = AmmoPanel.Add.Label( "0", "Reserve" );
 
@@ -42,6 +44,7 @@ public class Ammo : Panel
 
 		CounterText.Text = $"{weapon.AmmoClip}";
 		AltText.Text = $"{weapon.SecondaryAmmoClip}";
+		Icon.Text = $"{weapon.AmmoIcon}";
 
 		var inv = weapon.AvailableAmmo();
 		ReserveText.Text = $"{inv}";

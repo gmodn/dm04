@@ -8,19 +8,23 @@ public class Crosshair : Panel
 {
 	int fireCounter;
 
+	// Quick info crosshair
+	public Label LeftFull;
+
+	public Label centre;
+	public Label RightFull;
+
 	public Crosshair()
 	{
-		for( int i=0; i<5; i++ )
-		{
-			var p = Add.Panel( "element" );
-			p.AddClass( $"el{i}" );
-		}
+		StyleSheet.Load( "ui/Crosshair.scss" );
+		centre = Add.Label( "{", "crosshairBracket" );
+		LeftFull = Add.Label( "Q", "crosshair" );
+		RightFull = Add.Label( "}", "crosshairBracket" );
 	}
 
 	public override void Tick()
 	{
 		base.Tick();
-		this.PositionAtCrosshair();
 
 		SetClass( "fire", fireCounter > 0 );
 

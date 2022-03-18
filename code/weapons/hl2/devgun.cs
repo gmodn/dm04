@@ -9,6 +9,7 @@ partial class devgun : BaseDmWeapon
 
 	public override float PrimaryRate => 20.0f;
 	public override float SecondaryRate => 1.0f;
+	public override string AmmoIcon => "fug";
 	public override int ClipSize => 1;
 	public override float ReloadTime => 1f;
 
