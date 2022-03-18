@@ -13,6 +13,7 @@ public partial class PickupFeed : Panel
 
 	public PickupFeed()
 	{
+		StyleSheet.Load( "styles/_pickupfeed.scss" );
 		Current = this;
 	}
 
@@ -22,16 +23,24 @@ public partial class PickupFeed : Panel
 	[ClientRpc]
 	public static void OnPickup( string text )
 	{
-		// TODO - icons for weapons?
-		// TOPO - icons for ammo?
+		if(text.Contains("+"))
+			Current?.AddEntry( $"\n{text}" );
 
-		Current?.AddEntry( $"\n{text}" );		
+		Current?.AddIcon(text);
+	}
+
+	private async Task AddIcon(string icon)
+	{
+		var wepIcon = Current.Add.Image($"/ui/weapons/hl2_{icon}.png", "wepIcon");
+		await Task.Delay( 2500 );
+		wepIcon.Delete();
 	}
 
 	/// <summary>
 	/// Spawns a label, waits for half a second and then deletes it
 	/// The :outro style in the scss keeps it alive and fades it out
 	/// </summary>
+	
 	private async Task AddEntry( string text )
 	{
 		var panel = Current.Add.Label( text );

@@ -1,6 +1,6 @@
 ﻿using Sandbox;
 
-[Library( "hl2_rpg", Title = "RPG (ROCKET PROPELLED GRENADE)" )]
+[Library( "hl2_rpg", Title = "RPG" )]
 [Hammer.EditorModel( "models/weapons/hl2_rpg/w_hl2_rpg.vmdl" )]
 partial class hl2_rpg : BaseDmWeapon
 { 

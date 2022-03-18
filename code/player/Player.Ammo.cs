@@ -8,6 +8,35 @@ partial class DeathmatchPlayer
 	[Net]
 	public IList<int> Ammo { get; set; }
 
+	//In order using AmmoType
+	public int[] AmmoLimit = new int[12]
+	{
+		//None
+		0,
+		//Pistol
+		150,
+		//357
+		12,
+		//SMG
+		225,
+		//SMG Nades
+		3,
+		//AR2
+		60,
+		//AR2 Ball
+		3,
+		//Shotgun
+		30,
+		//Crossbow
+		10,
+		//RPG Rockets
+		3,
+		//Grenades
+		5,
+		//SLAM
+		5,
+	};
+
 	public void ClearAmmo()
 	{
 		Ammo.Clear();
@@ -57,7 +86,6 @@ partial class DeathmatchPlayer
 		return amount;
 	}
 }
-
 public enum AmmoType
 {
 	None,

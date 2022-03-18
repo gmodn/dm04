@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "hl2_ar2", Title = "OVERWATCH STANDARD ISSUE (PULSE-RIFLE)" )]
+[Library( "hl2_ar2", Title = "AR2" )]
 [Hammer.EditorModel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" )]
 partial class hl2_ar2 : BaseDmWeapon
 { 
