@@ -258,6 +258,8 @@
 	m_previewModels = 
 	[
 		"models/playermodels/female/female_01/female_01.vmdl",
+		"models/playermodels/female/female_02/female_02.vmdl",
+		"models/playermodels/female/female_01/female_01.vmdl",
 	]
 	m_nodes = 
 	[
