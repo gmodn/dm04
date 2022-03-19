@@ -27,6 +27,36 @@
 						master_morph_weight = -1.0
 						morph_weights = [  ]
 					},
+					{
+						_class = "WeightList"
+						name = "Detenator"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "bip01_l_clavicle"
+								weight = 1.0
+							},
+							{
+								bone = "bip01_r_finger11"
+								weight = 0.0
+							},
+							{
+								bone = "detonator"
+								weight = 1.0
+							},
+							{
+								bone = "rig_base"
+								weight = 0.0
+							},
+							{
+								bone = "slam_base"
+								weight = 0.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
 				]
 			},
 			{

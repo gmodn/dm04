@@ -5,6 +5,7 @@
 [Hammer.Skip]
 partial class hl2_ar2ball : ModelEntity
 {
+	public Particles Sprite;
 	float Speed = 1000.0f;
 	TimeSince LifeSpan = 0;
 	public override void Spawn()
@@ -12,7 +13,7 @@ partial class hl2_ar2ball : ModelEntity
 		base.Spawn();
 
 		SetModel( "models/weapons/hl2_ar2/hl2_ar2_ball.vmdl" );
-		Particles Sprite = Particles.Create( "particles/combineball.vpcf",this,true );
+		Sprite = Particles.Create( "particles/combineball.vpcf",this,true );
 		
 	}
 
@@ -68,7 +69,7 @@ partial class hl2_ar2ball : ModelEntity
 	public virtual void Explode()
 	{
 		PlaySound("hl2_ar2ball.explosion");
-
+		Sprite.Destroy(true);
 		Delete();
 	}
 }
