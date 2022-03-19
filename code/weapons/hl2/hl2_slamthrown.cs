@@ -43,7 +43,7 @@ partial class hl2_slamthrown : ModelEntity
 		{
 
 			Entity.Surface.DoBulletImpact( Entity );
-			DebugOverlay.Sphere( this.Position, 100, Color.Red, true, 100 );
+			//DebugOverlay.Sphere( this.Position, 100, Color.Red, true, 100 );
 
 			//
 			// We turn predictiuon off for this, so aany exploding effects don't get culled etc
