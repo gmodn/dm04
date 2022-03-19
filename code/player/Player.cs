@@ -59,7 +59,7 @@ partial class DeathmatchPlayer : Player
 		GiveAmmo(AmmoType.Buckshot, 30);
 		GiveAmmo(AmmoType.Crossbow, 40);
 		GiveAmmo(AmmoType.Grenade, 5);
-		GiveAmmo(AmmoType.RPG, 300);
+		GiveAmmo(AmmoType.RPG, 3);
 		GiveAmmo(AmmoType.SLAM, 5);
 
 
