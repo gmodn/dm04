@@ -38,9 +38,7 @@ partial class hl2_ar2ball : ModelEntity
 				.Run();
 		
 		if ( tr.Hit )
-		{
-			//ConsoleSystem.Run( "say " + tr.Entity.GetType()  ); //testing
-			
+		{	
 			if ( (tr.Entity.IsValid()) && (!tr.Entity.IsWorld) )
 			{
 				var damageInfo = DamageInfo.FromBullet( tr.EndPosition, tr.Direction * 300, 500 )
@@ -63,7 +61,6 @@ partial class hl2_ar2ball : ModelEntity
 
 		else Position = end;
 		if ( LifeSpan >= 4.27f ) Explode();
-		Log.Info( LifeSpan );
 	}
 
 	public virtual void Explode()
