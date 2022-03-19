@@ -144,6 +144,10 @@ ammo {
 	background-image: url( /ui/weapons/hl2_smg.png );
 }
 
+.hl2_smg1grenade .icon {
+	background-image: url( /ui/weapons/hl2_smg.png ); //todo: add smg grenade icon and make it use that instead
+}
+
 .hl2_ar2 .icon {
 	background-image: url( /ui/weapons/hl2_ar2.png );
 }
@@ -160,15 +164,15 @@ ammo {
 	background-image: url( /ui/weapons/hl2_crossbow.png );
 }
 
-.hl2_grenade .icon {
+.hl2_grenade .icon, .hl2_grenadethrown .icon {
 	background-image: url( /ui/weapons/hl2_grenade.png );
 }
 
-.hl2_slam .icon {
+.hl2_slam .icon, .hl2_slamthrown .icon, .hl2_slammounted .icon {
 	background-image: url( /ui/weapons/hl2_slam.png );
 }
 
-.hl2_rpg .icon {
+.hl2_rpg .icon, .hl2_rpgmissile .icon {
 	background-image: url( /ui/weapons/hl2_rpg.png );
 }
 
