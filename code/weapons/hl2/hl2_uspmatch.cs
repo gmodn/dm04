@@ -71,6 +71,8 @@ partial class hl2_uspmatch : BaseDmWeapon
 		//	new Sandbox.ScreenShake.Perlin();
 		//}
 
+		base.ShootEffects();
+
 		ViewModelEntity?.SetAnimParameter( "fire", true );
 		CrosshairPanel?.CreateEvent( "fire" );
 	}

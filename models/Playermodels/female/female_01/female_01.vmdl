@@ -270,6 +270,26 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 11
+								tail_frame = 22
+								end_frame = 23
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 30
+								end_frame = 30
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -304,6 +324,26 @@
 								quadratic = false
 								root_bone_name = ""
 								motion_type = "Single"
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 8
+								tail_frame = 15
+								end_frame = 16
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 30
+								end_frame = 30
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
 							},
 						]
 						activity_name = ""
@@ -340,6 +380,26 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 8
+								tail_frame = 13
+								end_frame = 14
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 28
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -374,6 +434,26 @@
 								quadratic = false
 								root_bone_name = ""
 								motion_type = "Single"
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 8
+								tail_frame = 13
+								end_frame = 14
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 28
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
 							},
 						]
 						activity_name = ""
@@ -410,6 +490,36 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 11
+								tail_frame = 22
+								end_frame = 23
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 7
+								end_frame = 8
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 26
+								tail_frame = 30
+								end_frame = 30
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -444,6 +554,36 @@
 								quadratic = false
 								root_bone_name = ""
 								motion_type = "Single"
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 11
+								tail_frame = 22
+								end_frame = 23
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 7
+								end_frame = 8
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 26
+								tail_frame = 30
+								end_frame = 30
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
 							},
 						]
 						activity_name = ""
@@ -480,6 +620,36 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 11
+								tail_frame = 21
+								end_frame = 22
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 7
+								end_frame = 8
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 26
+								tail_frame = 30
+								end_frame = 30
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -514,6 +684,36 @@
 								quadratic = false
 								root_bone_name = ""
 								motion_type = "Single"
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 8
+								tail_frame = 14
+								end_frame = 15
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 7
+								end_frame = 8
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 27
+								tail_frame = 30
+								end_frame = 30
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
 							},
 						]
 						activity_name = ""
@@ -4288,6 +4488,26 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 6
+								tail_frame = 8
+								end_frame = 9
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 15
+								tail_frame = 18
+								end_frame = 18
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -4323,6 +4543,26 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 7
+								tail_frame = 8
+								end_frame = 9
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 16
+								tail_frame = 18
+								end_frame = 18
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -4357,6 +4597,16 @@
 								quadratic = false
 								root_bone_name = ""
 								motion_type = "Single"
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 6
+								tail_frame = 7
+								end_frame = 8
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
 							},
 						]
 						activity_name = ""
@@ -4428,6 +4678,26 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 8
+								tail_frame = 11
+								end_frame = 12
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -4462,6 +4732,36 @@
 								quadratic = false
 								root_bone_name = ""
 								motion_type = "Single"
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 8
+								tail_frame = 11
+								end_frame = 12
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 17
+								tail_frame = 18
+								end_frame = 18
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
 							},
 						]
 						activity_name = ""
@@ -4498,6 +4798,26 @@
 								root_bone_name = ""
 								motion_type = "Single"
 							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 17
+								tail_frame = 18
+								end_frame = 18
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -4532,6 +4852,26 @@
 								quadratic = false
 								root_bone_name = ""
 								motion_type = "Single"
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 6
+								tail_frame = 8
+								end_frame = 9
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 15
+								tail_frame = 18
+								end_frame = 18
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
 							},
 						]
 						activity_name = ""
@@ -8188,6 +8528,29 @@
 					{
 						_class = "AnimFile"
 						name = "cidle_ar2"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8209,6 +8572,29 @@
 					{
 						_class = "AnimFile"
 						name = "cidle_crossbow"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8230,6 +8616,29 @@
 					{
 						_class = "AnimFile"
 						name = "cidle_gravgun"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8293,6 +8702,29 @@
 					{
 						_class = "AnimFile"
 						name = "cidle_pistol"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8314,6 +8746,29 @@
 					{
 						_class = "AnimFile"
 						name = "cidle_rpg"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8335,6 +8790,29 @@
 					{
 						_class = "AnimFile"
 						name = "cidle_shotgun"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8377,6 +8855,29 @@
 					{
 						_class = "AnimFile"
 						name = "cidle_smg1"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8748,6 +9249,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_ar2"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8769,6 +9293,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_crossbow"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8790,6 +9337,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_gravgun"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8811,6 +9381,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_grenade"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8832,6 +9425,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_melee"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8853,6 +9469,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_pistol"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8874,6 +9513,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_rpg"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8895,6 +9557,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_shotgun"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8916,6 +9601,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_slam"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8937,6 +9645,29 @@
 					{
 						_class = "AnimFile"
 						name = "idle_smg1"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 29
+								end_frame = 29
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8958,6 +9689,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_ar2"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -8979,6 +9743,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_crossbow"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9000,6 +9797,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_gravgun"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9021,6 +9851,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_grenade"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9042,6 +9905,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_melee"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9063,6 +9959,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_pistol"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9084,6 +10013,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_rpg"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9105,6 +10067,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_shotgun"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9126,6 +10121,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_slam"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9147,6 +10175,39 @@
 					{
 						_class = "AnimFile"
 						name = "jump_smg1"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 3
+								tail_frame = 4
+								end_frame = 5
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 23
+								tail_frame = 26
+								end_frame = 26
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9168,6 +10229,29 @@
 					{
 						_class = "AnimFile"
 						name = "reference"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 100
+								end_frame = 100
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 100
+								end_frame = 100
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9189,6 +10273,79 @@
 					{
 						_class = "AnimFile"
 						name = "reload_ar2"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 10
+								tail_frame = 16
+								end_frame = 17
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 19
+								tail_frame = 53
+								end_frame = 54
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 64
+								tail_frame = 65
+								end_frame = 65
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 18
+								tail_frame = 55
+								end_frame = 56
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 64
+								tail_frame = 65
+								end_frame = 65
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9210,6 +10367,79 @@
 					{
 						_class = "AnimFile"
 						name = "reload_pistol"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 4
+								tail_frame = 6
+								end_frame = 7
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 15
+								tail_frame = 22
+								end_frame = 23
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 26
+								tail_frame = 40
+								end_frame = 40
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 5
+								tail_frame = 7
+								end_frame = 8
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 15
+								tail_frame = 40
+								end_frame = 40
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9231,6 +10461,79 @@
 					{
 						_class = "AnimFile"
 						name = "reload_shotgun"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 10
+								tail_frame = 16
+								end_frame = 17
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 19
+								tail_frame = 53
+								end_frame = 54
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 64
+								tail_frame = 65
+								end_frame = 65
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 18
+								tail_frame = 55
+								end_frame = 56
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 64
+								tail_frame = 65
+								end_frame = 65
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9252,6 +10555,79 @@
 					{
 						_class = "AnimFile"
 						name = "reload_smg1"
+						children = 
+						[
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 10
+								tail_frame = 16
+								end_frame = 17
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 19
+								tail_frame = 53
+								end_frame = 54
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_L_IK"
+								start_frame = 64
+								tail_frame = 65
+								end_frame = 65
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 0
+								tail_frame = 1
+								end_frame = 2
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 18
+								tail_frame = 55
+								end_frame = 56
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+							{
+								_class = "IKLock"
+								chain_name = "Leg_R_IK"
+								start_frame = 64
+								tail_frame = 65
+								end_frame = 65
+								create_footstep_anim_event = true
+								walktorunspeeddetermination = "Auto"
+								overridewalktorunspeed = -1.0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -9798,6 +11174,10 @@
 								weight = 0.0
 							},
 							{
+								bone = "bip01_l_thigh"
+								weight = 1.0
+							},
+							{
 								bone = "bip01_l_trapezius"
 								weight = 0.0
 							},
@@ -9808,6 +11188,10 @@
 							{
 								bone = "bip01_l_wrist"
 								weight = 0.0
+							},
+							{
+								bone = "bip01_pelvis"
+								weight = 0.3
 							},
 							{
 								bone = "bip01_r_bicep"
@@ -9834,6 +11218,10 @@
 								weight = 0.0
 							},
 							{
+								bone = "bip01_r_thigh"
+								weight = 1.0
+							},
+							{
 								bone = "bip01_r_trapezius"
 								weight = 0.0
 							},
@@ -9847,7 +11235,7 @@
 							},
 							{
 								bone = "bip01_spine"
-								weight = 0.651042
+								weight = 1.0
 							},
 						]
 						master_morph_weight = -1.0
@@ -10164,6 +11552,37 @@
 								},
 							]
 						}
+					},
+					{
+						_class = "Feet"
+						children = 
+						[
+							{
+								_class = "Foot"
+								name = "Foot_L"
+								anklebone = "bip01_l_foot"
+								toebone = "bip01_l_toe0"
+								balloffset = [ 0.582179, 4.801503, 0.184941 ]
+								heeloffset = [ 8.907907, -1.217553, 0.808585 ]
+								autolevel = true
+								traceheight = 40.0
+								traceradius = 4.0
+							},
+							{
+								_class = "Foot"
+								name = "Foot_R"
+								anklebone = "bip01_r_foot"
+								toebone = "bip01_r_toe0"
+								balloffset = [ 0.538859, 4.824456, -0.86162 ]
+								heeloffset = [ 8.893883, -1.21628, -0.660322 ]
+								autolevel = true
+								traceheight = 40.0
+								traceradius = 4.0
+							},
+						]
+						locktolerance = 0.6
+						heighttolerance = 2.0
+						sanitizetrajectories = true
 					},
 				]
 			},
@@ -11065,6 +12484,205 @@
 								hitbox_maxs = [ 9.219509, 4.820984, 1.806093 ]
 							},
 						]
+					},
+				]
+			},
+			{
+				_class = "IKData"
+				children = 
+				[
+					{
+						_class = "IKChain"
+						name = "leg_l"
+						children = 
+						[
+							{
+								_class = "IKChainJoint"
+								name = "bip01_l_thigh"
+								children = 
+								[
+									{
+										_class = "IKChainJoint"
+										name = "bip01_l_calf"
+										children = 
+										[
+											{
+												_class = "IKChainJoint"
+												name = "bip01_l_foot"
+												children = 
+												[
+													{
+														_class = "IKJointConstraint_Hinge"
+														constrained_joint = ""
+														hinge_axis = "Up"
+														min_radians = 0.0
+														max_radians = 3.054326
+													},
+												]
+												bone = "bip01_l_foot"
+											},
+										]
+										bone = "bip01_l_calf"
+									},
+								]
+								bone = "bip01_l_thigh"
+							},
+						]
+						m_bDoBonesOrientAlongPositiveX = true
+						"m_DefaultSolverSettings.m_nNumIterations" = 6
+						"m_DefaultSolverSettings.m_SolverType " = "IKSOLVER_TwoBone"
+						"m_DefaultTargetSettings.m_Bone" = 
+						{
+							m_Name = "bip01_l_foot"
+						}
+						"m_DefaultTargetSettings.m_TargetSource" = "Bone"
+						"m_Data.m_DefaultTargetSettings.m_AnimgraphParameterNamePosition" = 
+						{
+							m_id = 4294967295
+						}
+						"m_Data.m_EndEffectorFixedOffsetAttachment" = 
+						{
+							m_Name = ""
+						}
+						"m_Data.m_bParentJointRequiresAlignment" = true
+					},
+					{
+						_class = "IKChain"
+						name = "leg_r"
+						children = 
+						[
+							{
+								_class = "IKChainJoint"
+								name = "bip01_r_thigh"
+								children = 
+								[
+									{
+										_class = "IKChainJoint"
+										name = "bip01_r_calf"
+										children = 
+										[
+											{
+												_class = "IKChainJoint"
+												name = "bip01_r_foot"
+												children = 
+												[
+													{
+														_class = "IKJointConstraint_Hinge"
+														constrained_joint = ""
+														hinge_axis = "Up"
+														min_radians = 0.0
+														max_radians = 3.054326
+													},
+												]
+												bone = "bip01_r_foot"
+											},
+										]
+										bone = "bip01_r_calf"
+									},
+								]
+								bone = "bip01_r_thigh"
+							},
+						]
+						m_bDoBonesOrientAlongPositiveX = true
+						"m_DefaultSolverSettings.m_nNumIterations" = 6
+						"m_DefaultSolverSettings.m_SolverType " = "IKSOLVER_TwoBone"
+						"m_DefaultTargetSettings.m_Bone" = 
+						{
+							m_Name = "bip01_r_foot"
+						}
+						"m_DefaultTargetSettings.m_TargetSource" = "Bone"
+						"m_Data.m_DefaultTargetSettings.m_AnimgraphParameterNamePosition" = 
+						{
+							m_id = 4294967295
+						}
+						"m_Data.m_EndEffectorFixedOffsetAttachment" = 
+						{
+							m_Name = ""
+						}
+						"m_Data.m_bParentJointRequiresAlignment" = true
+					},
+					{
+						_class = "IKRigBiped"
+						children = 
+						[
+							{
+								_class = "IKChainOld"
+								name = "Leg_L_IK"
+								children = 
+								[
+									{
+										_class = "IKRuleGround"
+										trace_height = -1.0
+										trace_radius = -1.0
+										z_spring_strength = -1.0
+										normal_spring_strength = -1.0
+									},
+									{
+										_class = "IKJointConstraint_Hinge"
+										constrained_joint = "bip01_l_foot"
+										hinge_axis = "Up"
+										min_radians = 0.0
+										max_radians = 2.617994
+									},
+								]
+								end_effector_bone = "bip01_l_foot"
+								root_bone = ""
+								end_effector_target_bone = "bip01_l_foot"
+								reverse_footlock_bone = ""
+								max_lock_distance_to_target = 6.0
+								footstep_footstep_sound_type = "Left"
+								footstep_sound = ""
+								footstep_attachment = ""
+								solver = "IKSOLVER_TwoBone"
+								hyperextension_release_dot_threshold = 0.937995
+								use_target_instead_of_lock_threshold = 0.01
+								break_restoration_time = 0.15
+								soften_time = 0.5
+								soften_percentage = 0.1
+							},
+							{
+								_class = "IKChainOld"
+								name = "Leg_R_IK"
+								children = 
+								[
+									{
+										_class = "IKRuleGround"
+										trace_height = -1.0
+										trace_radius = -1.0
+										z_spring_strength = -1.0
+										normal_spring_strength = -1.0
+									},
+									{
+										_class = "IKJointConstraint_Hinge"
+										constrained_joint = "bip01_l_foot"
+										hinge_axis = "Up"
+										min_radians = 0.0
+										max_radians = 2.617994
+									},
+								]
+								end_effector_bone = "bip01_r_foot"
+								root_bone = ""
+								end_effector_target_bone = "bip01_r_foot"
+								reverse_footlock_bone = ""
+								max_lock_distance_to_target = 6.0
+								footstep_footstep_sound_type = "Right"
+								footstep_sound = ""
+								footstep_attachment = ""
+								solver = "IKSOLVER_TwoBone"
+								hyperextension_release_dot_threshold = 0.937995
+								use_target_instead_of_lock_threshold = 0.01
+								break_restoration_time = 0.15
+								soften_time = 0.5
+								soften_percentage = 0.1
+							},
+						]
+						initial_master_blend_amount = 1.0
+						abs_origin_drop_height = 24.0
+						abs_origin_drop_height_spring_strength = 500.0
+						default_tilt_spring_strength = 5.0
+						tilt_bone = ""
+						animgraph_master_blend_parameter_name = ""
+						system = "IKSYSTEMTYPE_Animgraph"
 					},
 				]
 			},
