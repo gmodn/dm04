@@ -99,7 +99,7 @@ partial class hl2_crossbow : BaseDmWeapon
 	protected override void ShootEffects()
 	{
 		Host.AssertClient();
-
+		///doesnt work when you use the fire event for animgraph so jsut leave it without one it looks fine without it
 		if ( Owner == Local.Pawn )
 		{
 			new Sandbox.ScreenShake.Perlin( 0.5f, 4.0f, 1.0f, 0.5f );

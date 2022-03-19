@@ -33,21 +33,21 @@ partial class DeathmatchPlayer : Player
 
 		SupressPickupNotices = true;
 
-		Inventory.Add(new devgun());
+		Inventory.Add(new devgun(), true);
 
 		//HL2 Arsenal
 		Inventory.Add(new hl2_crowbar(), true);
-		Inventory.Add(new hl2_stunstick());
-		Inventory.Add(new hl2_gravgun());
-		Inventory.Add(new hl2_uspmatch());
-		Inventory.Add(new hl2_357());
-		Inventory.Add(new hl2_smg1());
-		Inventory.Add(new hl2_ar2());
-		Inventory.Add(new hl2_spas12());
-		Inventory.Add(new hl2_crossbow());
-		Inventory.Add(new hl2_grenade());
-		Inventory.Add(new hl2_rpg());
-		Inventory.Add(new hl2_slam());
+		Inventory.Add(new hl2_stunstick(), true);
+		Inventory.Add(new hl2_gravgun(), true);
+		Inventory.Add(new hl2_uspmatch(), true);
+		Inventory.Add(new hl2_357(), true);
+		Inventory.Add(new hl2_smg1(), true);
+		Inventory.Add(new hl2_ar2(), true);
+		Inventory.Add(new hl2_spas12(), true);
+		Inventory.Add(new hl2_crossbow(), true);
+		Inventory.Add(new hl2_grenade(), true);
+		Inventory.Add(new hl2_rpg(), true);
+		Inventory.Add(new hl2_slam(), true);
 
 		//Give Max Ammo
 		GiveAmmo(AmmoType.Pistol, 150);
@@ -132,8 +132,7 @@ partial class DeathmatchPlayer : Player
 			}
 		}
 
-		//Shouldn't be able to drop weapons in HL2 DM
-		/*if ( Input.Pressed( InputButton.Drop ) )
+		if ( Input.Pressed( InputButton.Drop ) )
 		{
 			var dropped = Inventory.DropActive();
 			if ( dropped != null )
@@ -146,7 +145,7 @@ partial class DeathmatchPlayer : Player
 				timeSinceDropped = 0;
 				SwitchToBestWeapon();
 			}
-		}*/
+		}
 
 		SimulateActiveChild( cl, ActiveChild );
 
@@ -181,12 +180,6 @@ partial class DeathmatchPlayer : Player
 	public override void StartTouch( Entity other )
 	{
 		if ( timeSinceDropped < 1 ) return;
-
-		if ( other is BaseDmWeapon weapon )
-		{
-			if ( AmmoCount( weapon.AmmoType ) >= AmmoLimit[(int)weapon.AmmoType] )
-				return;
-		}
 
 		base.StartTouch( other );
 	}
@@ -273,29 +266,5 @@ partial class DeathmatchPlayer : Player
 		DamageIndicator.Current?.OnHit( pos );
 	}
 
-	[ClientCmd("dm04_impulse")]
-	public static void ImpulseCMD(int impulseCMD)
-	{
-		Event.Run( "rc_evnt_impulse", impulseCMD);
-	}
-
-	[Event("dm04_evnt_impulse")]
-	public void Impulse(int impulse)
-	{
-		if ( impulse == 101 )
-		{
-			Inventory.Add( new OLD_gravgun(), true );
-			Inventory.Add( new hl2_crowbar(), true );
-			Inventory.Add( new hl2_stunstick(), true );
-			Inventory.Add( new hl2_uspmatch(), true );
-			Inventory.Add( new hl2_357(), true );
-			Inventory.Add( new hl2_smg1(), true );
-			Inventory.Add( new hl2_ar2(), true );
-			Inventory.Add( new hl2_spas12(), true );
-			Inventory.Add( new hl2_crossbow(), true );
-			Inventory.Add( new hl2_grenade(), true );
-			Inventory.Add( new hl2_rpg(), true );
-			Inventory.Add( new hl2_slam(), true );
-		}
-	}
+	
 }

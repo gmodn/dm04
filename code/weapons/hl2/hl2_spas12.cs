@@ -86,7 +86,7 @@ partial class hl2_spas12 : BaseDmWeapon
 	protected override void ShootEffects()
 	{
 		Host.AssertClient();
-
+		(Owner as AnimEntity).SetAnimParameter( "b_attack", true );
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 		Particles.Create( "particles/pistol_ejectbrass.vpcf", EffectEntity, "ejection_point" );
 

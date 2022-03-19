@@ -27,6 +27,9 @@ public partial class DeathmatchGame
 			caller.Inventory.Add( new hl2_spas12() );
 			caller.Inventory.Add( new hl2_crossbow() );
 			caller.Inventory.Add( new hl2_rpg() );
+			caller.Inventory.Add( new hl2_gauss() );
+			caller.Inventory.Add( new hl2_egon() );
+			caller.Inventory.Add( new hl2_bugbait() );
 
 			caller.SetAmmo( AmmoType.Pistol, 150 );
 			caller.SetAmmo( AmmoType.Magnum, 12 );

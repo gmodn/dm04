@@ -76,6 +76,7 @@ partial class hl2_crowbar : BaseDmWeapon
 		//{
 		//	_ = new Sandbox.ScreenShake.Perlin();
 		//}
+		(Owner as AnimEntity).SetAnimParameter( "b_attack", true );
 
 		ViewModelEntity?.SetAnimParameter( "miss", true );
 	}
@@ -89,7 +90,7 @@ partial class hl2_crowbar : BaseDmWeapon
 		//{
 		//	_ = new Sandbox.ScreenShake.Perlin( 1.0f, 1.0f, 3.0f );
 		//}
-
+		(Owner as AnimEntity).SetAnimParameter( "b_attack", true );
 		ViewModelEntity?.SetAnimParameter( "hit", true );
 	}
 

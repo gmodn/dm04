@@ -11,13 +11,7 @@
 				[
 					{
 						_class = "DefaultMaterialGroup"
-						remaps = 
-						[
-							{
-								from = "v_crowbar_m.vmat"
-								to = "materials/models/weapons/hl2_crowbar/hl2_crowbar.vmat"
-							},
-						]
+						remaps = [  ]
 						use_global_default = false
 						global_default_material = ""
 					},
@@ -70,39 +64,39 @@
 				[
 					{
 						_class = "PhysicsShapeCapsule"
-						parent_bone = "cbar"
+						parent_bone = "bip01_r_hand"
 						surface_prop = "metal.weapon"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
 						collision_interact_exclude = ""
 						radius = 0.570949
-						point0 = [ -15.131195, 0.3, 0.0 ]
-						point1 = [ 12.555141, 0.3, 0.0 ]
+						point0 = [ 1.609323, -2.977118, -22.743416 ]
+						point1 = [ 3.531492, -1.049556, 4.226896 ]
 					},
 					{
 						_class = "PhysicsShapeCapsule"
-						parent_bone = "cbar"
+						parent_bone = "bip01_r_hand"
 						surface_prop = "metal.weapon"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
 						collision_interact_exclude = ""
 						radius = 0.570949
-						point0 = [ 11.395041, 5.157435, 0.0 ]
-						point1 = [ 13.5, 2.0, 0.0 ]
+						point0 = [ 4.093266, -1.23565, 3.26173 ]
+						point1 = [ 3.388679, -1.441632, 8.428086 ]
 					},
 					{
 						_class = "PhysicsShapeCapsule"
-						parent_bone = "cbar"
+						parent_bone = "bip01_r_hand"
 						surface_prop = "metal.weapon"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
 						collision_interact_exclude = ""
 						radius = 0.557125
-						point0 = [ 11.87661, 0.320699, 0.058477 ]
-						point1 = [ 13.488259, 1.179732, 0.059719 ]
+						point0 = [ 2.068519, -3.227498, -22.86108 ]
+						point1 = [ 3.155299, -1.456073, -26.476688 ]
 					},
 				]
 			},

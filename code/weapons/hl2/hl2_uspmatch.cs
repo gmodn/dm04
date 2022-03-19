@@ -62,7 +62,9 @@ partial class hl2_uspmatch : BaseDmWeapon
 	protected override void ShootEffects()
 	{
 		Host.AssertClient();
-
+		(Owner as AnimEntity).SetAnimParameter( "b_attack", true );
+		ViewModelEntity?.SetAnimParameter( "fire", true );
+		CrosshairPanel?.CreateEvent( "fire" );
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 		Particles.Create( "particles/casings/hl2_uspmatch_casing.vpcf", EffectEntity, "ejection_point" );
 
@@ -71,8 +73,7 @@ partial class hl2_uspmatch : BaseDmWeapon
 		//	new Sandbox.ScreenShake.Perlin();
 		//}
 
-		ViewModelEntity?.SetAnimParameter( "fire", true );
-		CrosshairPanel?.CreateEvent( "fire" );
+		
 	}
 
 	public override void ActiveStart( Entity ent )

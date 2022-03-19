@@ -1,11 +1,11 @@
 ﻿using Sandbox;
 
 
-[Library( "hl2_grenade", Title = "GRENADE" )]
+[Library( "hl2_bugbait", Title = "BugBait" )]
 [Hammer.EditorModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" )]
-partial class hl2_grenade : BaseDmWeapon
+partial class hl2_bugbait : BaseDmWeapon
 {
-	public override string ViewModelPath => "models/weapons/hl2_grenade/v_hl2_grenade.vmdl";
+	public override string ViewModelPath => "models/weapons/hl2_bugbait/v_hl2_bugbait.vmdl";
 	public override float PrimaryRate => 0.1f;
 	public override int ClipSize => 1;
 	public override AmmoType AmmoType => AmmoType.Grenade;
@@ -17,7 +17,7 @@ partial class hl2_grenade : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" );
+		SetModel( "models/worldmodels/w_bugbait_reference.vmdl" );
 	}
 
 	public override bool CanReload()
@@ -40,13 +40,12 @@ partial class hl2_grenade : BaseDmWeapon
 			//}
 			ShootEffects();
 			PlaySound( "hl2_grenade.throw" );
-			ViewModelEntity?.SetAnimParameter( "fire_alt", true );
 			player.TakeAmmo( SecondaryAmmo, 1 );
 
 			if ( IsServer )
 				using ( Prediction.Off() )
 				{
-					var grenade = new hl2_grenadethrown();
+					var grenade = new hl2_bugbaitthrown();
 					grenade.Position = Owner.EyePosition;
 					grenade.Rotation += Owner.EyeRotation;
 					grenade.Owner = Owner;
@@ -69,7 +68,6 @@ partial class hl2_grenade : BaseDmWeapon
 
 
 	}
-
 	public override void ActiveStart( Entity ent )
 	{
 		base.ActiveStart( ent );

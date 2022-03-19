@@ -135,6 +135,16 @@ metadata
 ]
 
 //
+// hl2_bugbait
+//
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) = hl2_bugbait : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // hl2_crossbow
 //
 @PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" ) = hl2_crossbow : ""
@@ -148,6 +158,26 @@ metadata
 // hl2_crowbar
 //
 @PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) = hl2_crowbar : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_egon
+//
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) = hl2_egon : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_gauss
+//
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) = hl2_gauss : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 

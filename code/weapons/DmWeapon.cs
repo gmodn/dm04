@@ -203,7 +203,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		//{
 		//	new Sandbox.ScreenShake.Perlin();
 		//}
-
+		(Owner as AnimEntity).SetAnimParameter( "b_attack", true );
 		ViewModelEntity?.SetAnimParameter( "fire", true );
 		CrosshairPanel?.CreateEvent( "fire" );
 	}
