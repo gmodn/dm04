@@ -23,7 +23,10 @@ using Sandbox.UI.Construct;
 			Add.Label( "Kirk", "text" );
 
 			Add.Label( "Special thanks to", "header" );
-			Add.Label( "Gunship Mark II for the MMOD animations", "text" );
+			Add.Label( "Gunship Mark II and the HL2:MMod Team for Animations and Sound Effects", "text" );
+			Add.Label( "Jun Choi for the Remade Weapon Models", "text" );
+			Add.Label( "Shadow_RUN for the Viewmodel Rigging", "text" );
+			Add.Label( "The Half-Life 2: Remade Assets Team for Models", "text" );
 			Add.Label( "Vod Mesa for the Terry HEV suit", "text" );
 			Add.Label( "You for supporting me for the past year", "text" );
 
