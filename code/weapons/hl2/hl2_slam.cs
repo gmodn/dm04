@@ -88,8 +88,10 @@ partial class hl2_slam : BaseDmWeapon
 		if (IsServer)
 			using ( Prediction.Off() )
 			{
-
-				slamthrown.Explode();
+				if ( slamthrown.IsValid() )
+				{
+					slamthrown.Explode();
+				}
 			}
 	}
 
