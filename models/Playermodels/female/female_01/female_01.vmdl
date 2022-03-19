@@ -27,7 +27,7 @@
 							},
 							{
 								from = "joey_facemap.vmat"
-								to = "materials/raw/citizen_sheetf/morcustomer/female_01/joeyr_carermfape.vmat"
+								to = "materials/playermodels/female/joey_facemap.vmat"
 							},
 							{
 								from = "citizen_sheet.vmat"
