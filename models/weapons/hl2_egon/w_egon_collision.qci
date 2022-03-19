@@ -1,0 +1,10 @@
+
+$CollisionModel "w_egon_physics.smd"
+{
+	$mass 30
+	$inertia 1
+	$damping 0
+	$rotdamping 0
+	$rootbone " "
+
+}

@@ -1,0 +1,170 @@
+
+$Sequence "idle01" {
+	"v_gauss_anims\idle01.smd"
+	activity "ACT_VM_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	node "0"
+	fps 24
+	loop
+}
+
+$Sequence "idle01_is" {
+	"v_gauss_anims\idle01_is.smd"
+	activity "ACT_VM_IDLE_SILENCED" 1
+	fadein 0.2
+	fadeout 0.2
+	node "0"
+	fps 3
+	loop
+}
+
+$Sequence "holster" {
+	"v_gauss_anims\holster.smd"
+	activity "ACT_VM_HOLSTER" 1
+	fadein 0.2
+	fadeout 0.2
+	node "0"
+	fps 24
+}
+
+$Sequence "fire1" {
+	"v_gauss_anims\fire1.smd"
+	activity "ACT_VM_PRIMARYATTACK" 1
+	{ event AE_MUZZLEFLASH 0 "PISTOL MUZZLE" }
+	fadein 0.2
+	fadeout 0.2
+	node "2"
+	snap
+	fps 40
+}
+
+$Sequence "fire2" {
+	"v_gauss_anims\fire2.smd"
+	activity "ACT_VM_RECOIL1" 1
+	{ event AE_MUZZLEFLASH 0 "PISTOL MUZZLE" }
+	fadein 0.2
+	fadeout 0.2
+	node "2"
+	snap
+	fps 40
+}
+
+$Sequence "fire3" {
+	"v_gauss_anims\fire3.smd"
+	activity "ACT_VM_RECOIL2" 1
+	{ event AE_MUZZLEFLASH 0 "PISTOL MUZZLE" }
+	fadein 0.2
+	fadeout 0.2
+	node "2"
+	snap
+	fps 40
+}
+
+$Sequence "draw" {
+	"v_gauss_anims\draw.smd"
+	activity "ACT_VM_DRAW" 1
+	{ event 5004 1 "Weapon_Gauss.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	node "0"
+	snap
+	fps 40
+}
+
+$Sequence "idletolow" {
+	"v_gauss_anims\idletolow.smd"
+	activity "ACT_VM_LOWERED_TO_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	node "Fire"
+	fps 30
+}
+
+$Sequence "lowtoidle" {
+	"v_gauss_anims\lowtoidle.smd"
+	activity "ACT_VM_IDLE_TO_LOWERED" 1
+	fadein 0.2
+	fadeout 0.2
+	node "Fire"
+	fps 30
+}
+
+$Sequence "lowidle" {
+	"v_gauss_anims\lowidle.smd"
+	activity "ACT_VM_IDLE_LOWERED" 1
+	fadein 0.2
+	fadeout 0.2
+	node "Fire"
+	fps 30
+	loop
+}
+
+$Sequence "Walk" {
+	"v_gauss_anims\Walk.smd"
+	activity "ACT_VM_WALK" 1
+	{ event 5004 1 "Weapon_Generic.Walk1" }
+	{ event 5004 19 "Weapon_Generic.Walk2" }
+	fadein 0.35
+	fadeout 0.35
+	transition "Ready" "Motion"
+	fps 37
+	loop
+}
+
+$Sequence "Sprint" {
+	"v_gauss_anims\Sprint.smd"
+	activity "ACT_VM_SPRINT" 1
+	{ event 5004 4 "Weapon_Generic.Sprint1" }
+	{ event 5004 19 "Weapon_Generic.Sprint2" }
+	fadein 0.35
+	fadeout 0.35
+	transition "Ready" "Motion"
+	fps 47
+	loop
+}
+
+$Sequence "inspect1" {
+	"v_gauss_anims\inspect1.smd"
+	activity "ACT_VM_INSPECT" 1
+	{ event 5004 19 "Weapon_Gauss.FidgetSpin" }
+	{ event 5004 1 "Weapon_Generic.Movement2" }
+	{ event 5004 11 "Weapon_Generic.Movement4" }
+	{ event 5004 30 "Weapon_Generic.Movement5" }
+	fadein 0.4
+	fadeout 0.4
+	node "Ready"
+	fps 30
+}
+
+$Sequence "inspect2" {
+	"v_gauss_anims\inspect2.smd"
+	activity "ACT_VM_INSPECT_ALT" 1
+	{ event 5004 19 "Weapon_Gauss.FidgetSpin" }
+	{ event 5004 1 "Weapon_Generic.Movement2" }
+	{ event 5004 11 "Weapon_Generic.Movement4" }
+	{ event 5004 30 "Weapon_Generic.Movement5" }
+	fadein 0.4
+	fadeout 0.4
+	node "Ready"
+	fps 30
+}
+
+$Sequence "charged_fire" {
+	"v_gauss_anims\charged_fire.smd"
+	activity "ACT_VM_SECONDARYATTACK" 1
+	{ event AE_MUZZLEFLASH 0 "PISTOL MUZZLE" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "shake" {
+	"v_gauss_anims\shake.smd"
+	activity "ACT_VM_PULLBACK" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+	loop
+}

@@ -8,20 +8,24 @@ public class Ammo : Panel
 	private Panel AmmoPanel;
 	private Label CounterText;
 	private Label ReserveText;
+	public Label AmmoIcon;
 
 	private Panel AltPanel;
     private Label AltText;
+	public Label AltIcon;
 
 	public Ammo()
 	{
 		AmmoPanel = Add.Panel( "Ammo" );
 		AmmoPanel.Add.Label( "AMMO", "AmmoText" );
+		AmmoIcon = AmmoPanel.Add.Label( "p", "icon" );
 		CounterText = AmmoPanel.Add.Label( "0", "Counter" );
 		ReserveText = AmmoPanel.Add.Label( "0", "Reserve" );
 
 		AltPanel = Add.Panel("Alt");
         AltPanel.Add.Label("ALT", "AmmoText");
         AltText = AltPanel.Add.Label("0", "Counter");
+		AltIcon = AltPanel.Add.Label( "p", "icon" );
 	}
 
 	public override void Tick()
@@ -42,6 +46,8 @@ public class Ammo : Panel
 
 		CounterText.Text = $"{weapon.AmmoClip}";
 		AltText.Text = $"{weapon.SecondaryAmmoClip}";
+		AmmoIcon.Text = $"{weapon.AmmoIcon}";
+		AltIcon.Text = $"{weapon.AltIcon}";
 
 		var inv = weapon.AvailableAmmo();
 		ReserveText.Text = $"{inv}";

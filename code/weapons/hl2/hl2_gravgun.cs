@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-[Library("hl2_gravgun", Title = "ZERO-POINT ENERGY GUN (GRAVITY GUN)")]
+[Library("hl2_gravgun", Title = "gravgun" )]
 [Hammer.EditorModel("models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl")]
 partial class hl2_gravgun : BaseDmWeapon
 {

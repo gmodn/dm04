@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 
-[Library( "hl2_357", Title = ".357 MAGNUM" )]
+[Library( "hl2_357", Title = "357" )]
 [Hammer.EditorModel( "models/weapons/hl2_357/w_hl2_357.vmdl" )]
 partial class hl2_357 : BaseDmWeapon
 { 
@@ -9,6 +9,7 @@ partial class hl2_357 : BaseDmWeapon
 	public override float PrimaryRate => 1.3f;
 	public override int ClipSize => 6;
 	public override AmmoType AmmoType => AmmoType.Magnum;
+	public override string AmmoIcon => "q";
 	public override float ReloadTime => 4f;
 	public override int Bucket => 1;
 

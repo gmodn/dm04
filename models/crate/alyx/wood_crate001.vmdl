@@ -682,7 +682,7 @@
 							allowstatic = false
 							bakelighting = true
 							spawn_motion_disabled = false
-							health = 5.0
+							health = 50.0
 							min_impact_damage_speed = -1.0
 							impact_damage = -1.0
 							parent_bodygroup_name = ""
@@ -728,7 +728,7 @@
 						_class = "PhysicsHullFile"
 						name = "wood_crate001a"
 						parent_bone = ""
-						surface_prop = "default"
+						surface_prop = "wood"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""

@@ -9,6 +9,7 @@ partial class hl2_grenade : BaseDmWeapon
 	public override float PrimaryRate => 0.1f;
 	public override int ClipSize => 1;
 	public override AmmoType AmmoType => AmmoType.Grenade;
+	public override string AmmoIcon => "v";
 
 	public override int Bucket => 4;
 

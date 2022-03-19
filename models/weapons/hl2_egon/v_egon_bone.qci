@@ -1,0 +1,15 @@
+
+$DefineBone "Bip01" "" 0 3.72426 39.395706 0 -89.999927 0 0 0 0 0 0 0
+$DefineBone "Bip01 Pelvis" "Bip01" 0 0 0 -89.980215 -89.999927 0 0 0 0 0 0 0
+$DefineBone "Bip01 Spine" "Bip01 Pelvis" 1.326317 -0.003921 0.000002 -0.000057 0.045607 -0.000229 0 0 0 0 0 0
+$DefineBone "Bip01 Spine1" "Bip01 Spine" 4.926308 -0.003923 0 0 0 0 0 0 0 0 0 0
+$DefineBone "Bip01 Spine2" "Bip01 Spine1" 4.926308 -0.003923 0 0 0 0 0 0 0 0 0 0
+$DefineBone "Bip01 Spine3" "Bip01 Spine2" 4.926319 -0.003923 0 0 0 0 0 0 0 0 0 0
+$DefineBone "Bip01 Neck" "Bip01 Spine3" 4.926365 -0.001508 0 0 1.718873 0 0 0 0 0 0 0
+$DefineBone "Bip01 R Arm" "Bip01 Neck" 0.000011 0.001514 -1.894737 78.540823 178.234743 -0.000802 0 0 0 0 0 0
+$DefineBone "Bip01 R Arm1" "Bip01 R Arm" 4.926317 0 0 -57.460845 65.641485 -66.121969 0 0 0 0 0 0
+$DefineBone "Bip01 R Arm2" "Bip01 R Arm1" 11.368431 0 0 0.000001 -109.383314 -0.000001 0 0 0 0 0 0
+$DefineBone "Bip01 R Hand" "Bip01 R Arm2" 11.368423 -0.000011 0 0.000001 -0.000003 89.954377 0 0 0 0 0 0
+$DefineBone "egon" "Bip01 R Hand" 0.032969 1.150015 5.622997 -1.833925 86.456808 79.9923 0 0 0 0 0 0
+$DefineBone "handle" "egon" 0 0.000015 7.94651 0 0.000001 0.000003 0 0 0 0 0 0
+

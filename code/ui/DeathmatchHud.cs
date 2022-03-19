@@ -18,9 +18,6 @@ public partial class DeathmatchHud : HudEntity<RootPanel>
 		RootPanel.AddChild<Health>();
 		RootPanel.AddChild<Ammo>();
 
-		RootPanel.AddChild<DamageIndicator>();
-		RootPanel.AddChild<HitIndicator>();
-
 		RootPanel.AddChild<InventoryBar>();
 		RootPanel.AddChild<PickupFeed>();
 		

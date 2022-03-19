@@ -32,7 +32,7 @@ ammo {
 
 	Panel {
 		position: absolute;
-		background-color: rgba(0, 0, 0, 0.3);
+		background-color: rgba( 0, 0, 0, 0.6 );
 		border-radius: 7px;
 	}
 
@@ -57,7 +57,7 @@ ammo {
 	}
 
 	.Counter {
-		left: 90px;
+		left: 105px;
 		bottom: 5px;
 		font-family: HalfLife2;
 		font-size: 61px;
@@ -73,6 +73,18 @@ ammo {
 		color: yellow;
 	}
 
+	.icon {
+		width: 0px;
+		transition: all 0.5s ease-in;
+		font-family: HalfLife2;
+		font-weight: 100;
+		top: -10px;
+		left: 16px;
+		font-size: 64px;
+		text-shadow: 0 0 0px rgba(255, 220, 0, 0.0);
+		color: yellow;
+	}
+
 	.Alt {
 		right: 22px;
 		bottom: 27px;
@@ -85,7 +97,19 @@ ammo {
 		}
 
 		.Counter {
-			left: 58px;
+			left: 88px;
+		}
+
+		.icon {
+			width: 0px;
+			transition: all 0.5s ease-in;
+			font-family: HalfLife2;
+			font-weight: 100;
+			top: -7px;
+			left: 18px;
+			font-size: 64px;
+			text-shadow: 0 0 0px rgba(255, 220, 0, 0.0);
+			color: yellow;
 		}
 	}
 }
@@ -117,7 +141,7 @@ ammo {
 }
 
 .hl2_smg1 .icon {
-	background-image: url( /ui/weapons/hl2_smg1.png );
+	background-image: url( /ui/weapons/hl2_smg.png );
 }
 
 .hl2_ar2 .icon {
@@ -129,7 +153,7 @@ ammo {
 }
 
 .hl2_spas12 .icon {
-	background-image: url( /ui/weapons/hl2_spas12.png );
+	background-image: url( /ui/weapons/hl2_shotgun.png );
 }
 
 .hl2_crossbow .icon, .hl2_crossbowbolt .icon {

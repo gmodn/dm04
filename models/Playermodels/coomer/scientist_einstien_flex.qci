@@ -1,0 +1,11 @@
+
+	flexfile "scientist_einstien_01.vta" 
+	{
+		defaultflex frame 0
+		flex "Mouth-Lower" frame 1
+		flex "jaw_drop" frame 2
+	}
+
+	flexcontroller Mouth-Lower range 0 1 "Mouth-Lower"
+
+	%Mouth-Lower = Mouth-Lower

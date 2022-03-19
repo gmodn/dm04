@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "hl2_ar2", Title = "OVERWATCH STANDARD ISSUE (PULSE-RIFLE)" )]
+[Library( "hl2_ar2", Title = "AR2" )]
 [Hammer.EditorModel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" )]
 partial class hl2_ar2 : BaseDmWeapon
 { 
@@ -12,6 +12,7 @@ partial class hl2_ar2 : BaseDmWeapon
 	public override int ClipSize => 30;
 	public override AmmoType AmmoType => AmmoType.AR2;
 	public override AmmoType SecondaryAmmo => AmmoType.AR2_ball; //Secondary Ammo Type
+	public override string AmmoIcon => "u";
 	public override float ReloadTime => 1.7f;
 	public override int Bucket => 2;
 

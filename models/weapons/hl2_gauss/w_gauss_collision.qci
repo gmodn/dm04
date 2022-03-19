@@ -1,0 +1,12 @@
+
+$CollisionModel "w_gauss_physics.smd"
+{
+	$mass 10
+	$inertia 1
+	$damping 0
+	$rotdamping 0
+	$rootbone " "
+	$concave
+	$maxconvexpieces 13
+
+}

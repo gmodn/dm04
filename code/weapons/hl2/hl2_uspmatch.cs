@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 
-[Library( "hl2_uspmatch", Title = "9MM PISTOL" )]
+[Library( "hl2_uspmatch", Title = "USP" )]
 [Hammer.EditorModel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" )]
 partial class hl2_uspmatch : BaseDmWeapon
 { 
@@ -82,5 +82,15 @@ partial class hl2_uspmatch : BaseDmWeapon
 		TimeSinceDeployed = 0;
 
 		IsReloading = false;
+	}
+	public override void SimulateAnimator( PawnAnimator anim )
+	{
+		anim.SetAnimParameter( "holdtype", 1 ); // TODO this is shit
+												//anim.SetAnimParameter( "aimat_weight", 1.0f );
+		anim.SetAnimParameter( "holdtype_handedness", 1 );
+		if ( Input.Pressed( InputButton.Reload ) )
+		{
+			ViewModelEntity?.SetAnimParameter( "inspect", true );
+		}
 	}
 }

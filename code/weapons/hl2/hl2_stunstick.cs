@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 
-[Library( "hl2_stunstick", Title = "STUCKSTICK" )]
+[Library( "hl2_stunstick", Title = "STUNSTICK" )]
 [Hammer.EditorModel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" )]
 partial class hl2_stunstick : BaseDmWeapon
 {
@@ -96,7 +96,7 @@ partial class hl2_stunstick : BaseDmWeapon
 
 	public override void SimulateAnimator( PawnAnimator anim )
 	{
-		anim.SetAnimParameter( "holdtype", 1 ); // TODO this is shit
+		anim.SetAnimParameter( "holdtype", 0 ); // TODO this is shit
 		//anim.SetAnimParameter( "aimat_weight", 1.0f );
 		if ( Input.Pressed( InputButton.Reload ) )
 		{
