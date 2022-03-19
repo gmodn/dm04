@@ -17,6 +17,38 @@
 								from = "v_hand_sheet.vmat"
 								to = "materials/models/weapons/hl2_hands/hl2_hands.vmat"
 							},
+							{
+								from = "back.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "capacitor.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "coils.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "details1.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "generator.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "glowchrome.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "spindle.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "supportarm.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""

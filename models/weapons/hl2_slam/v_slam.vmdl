@@ -1282,6 +1282,18 @@
 								from = "v_hand_sheet_is_unused.vmat"
 								to = "materials/models/weapons/hl2_hands/hl2_hands.vmat"
 							},
+							{
+								from = "new_light2_is_unused.vmat"
+								to = "materials/dev/primary_red.vmat"
+							},
+							{
+								from = "new_light1_is_unused.vmat"
+								to = "materials/dev/primary_red.vmat"
+							},
+							{
+								from = "v_slam_is_unused.vmat"
+								to = "materials/dev/dev_measuregeneric01.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""

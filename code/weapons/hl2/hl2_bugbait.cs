@@ -80,7 +80,7 @@ partial class hl2_bugbait : BaseDmWeapon
 	{
 		anim.SetAnimParameter( "holdtype", 3 ); // TODO this is shit
 												//anim.SetAnimParameter( "aimat_weight", 1.0f );
-		if ( Input.Pressed( InputButton.Reload ) )
+		if ( Input.Pressed( InputButton.Attack2 ) )
 		{
 			ViewModelEntity?.SetAnimParameter( "inspect", true );
 		}

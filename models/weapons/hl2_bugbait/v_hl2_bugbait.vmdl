@@ -11,8 +11,22 @@
 				[
 					{
 						_class = "DefaultMaterialGroup"
-						remaps = [  ]
-						use_global_default = true
+						remaps = 
+						[
+							{
+								from = "bugbait_inside.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "bugbait_sheet.vmat"
+								to = "dev/helper/testgrid.vmat"
+							},
+							{
+								from = "v_hand_sheet.vmat"
+								to = "materials/models/weapons/hl2_hands/hl2_hands.vmat"
+							},
+						]
+						use_global_default = false
 						global_default_material = "materials/models/humans/female/group03/chau_facemap.vmat"
 					},
 				]
