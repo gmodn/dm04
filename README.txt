@@ -1,11 +1,13 @@
 Credits:
 
-IanSource2: Programming, UI.
+IanSource2: Programming, UI, Lead
 OMGOMGplays: ADD STUFF YOU DID HERE
 ItsRifter: ADD STUFF YOU DID HERE
 Lokiv: ADD STUFF YOU DID HERE
-idk who else worked on this so pls add them here
-Super Smol: Programming, Weapon Model Porting.
+TheBoxTrot: ADD STUFF YOU DID HERE
+Meetle Meek: Mapping
+Rice: Mapping
+Super Smol: Programming, Weapon Model Porting
 
 Juniez (Weapon models and textures) [https://www.artstation.com/juniez]:
 	Hello, please enjoy this.
