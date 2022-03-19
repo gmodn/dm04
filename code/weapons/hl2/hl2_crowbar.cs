@@ -64,6 +64,8 @@ partial class hl2_crowbar : BaseDmWeapon
 			}
 		}
 
+		(Owner as AnimEntity).SetAnimParameter("b_attack", true);
+
 		return hit;
 	}
 

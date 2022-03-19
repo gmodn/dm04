@@ -17,7 +17,7 @@ partial class DeathmatchPlayer : Player
 
 	public override void Respawn()
 	{
-		SetModel( "models/playermodels/coomer/drcoomer.vmdl" );
+		SetModel( "models/playermodels/female/female_01/female_01.vmdl" );
 
 		Controller = new DM04WalkController();
 		Animator = new DM04PlayerAnimator();
