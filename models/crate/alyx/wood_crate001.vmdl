@@ -649,25 +649,6 @@
 						manual_mode = false
 						surface_prop_override = ""
 					},
-					{
-						_class = "BreakPieceSimpleParticles"
-						name = "break_particles"
-						filename = "models/crate/alyx/break_particles.dmx"
-						particle_system = "particles/dev/default_break_particles.vpcf"
-						import_scale = 1.0
-						merge_meshes = false
-						damage_position_cp = -1
-						damage_direction_cp = -1
-						velocity_cp = -1
-						angular_velocity_cp = -1
-						local_gravity_cp = -1
-						tint_cp = -1
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
 				]
 			},
 			{
