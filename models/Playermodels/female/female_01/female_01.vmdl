@@ -27,11 +27,11 @@
 							},
 							{
 								from = "joey_facemap.vmat"
-								to = "materials/playermodels/female/joey_facemap.vmat"
+								to = "materials/raw/citizen_sheetf/morcustomer/female_01/joeyr_carermfape.vmat"
 							},
 							{
 								from = "citizen_sheet.vmat"
-								to = "materials/playermodels/female/citizen_sheetf.vmat"
+								to = "materials/raw/citizen_sheetf/morcustomer/citizen_morcystoemr.vmat"
 							},
 						]
 						use_global_default = false
