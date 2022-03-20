@@ -33,7 +33,7 @@ partial class DeathmatchPlayer : Player
 
 		SupressPickupNotices = true;
 
-		Inventory.Add(new devgun(), true);
+		//Inventory.Add(new devgun(), true);
 
 		//HL2 Arsenal
 		Inventory.Add(new hl2_crowbar(), true);

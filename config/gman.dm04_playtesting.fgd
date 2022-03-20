@@ -117,7 +117,13 @@ metadata
 //
 // hl2_357
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) = hl2_357 : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) 
+metadata
+{
+	entity_tool_name = "357"
+	entity_tool_group = "DM:04"
+}
+= hl2_357 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -127,7 +133,13 @@ metadata
 //
 // hl2_ar2
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" ) = hl2_ar2 : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" ) 
+metadata
+{
+	entity_tool_name = "AR2"
+	entity_tool_group = "DM:04"
+}
+= hl2_ar2 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -137,7 +149,13 @@ metadata
 //
 // hl2_bugbait
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) = hl2_bugbait : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Bugbait"
+	entity_tool_group = "DM:04"
+}
+= hl2_bugbait : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -147,7 +165,13 @@ metadata
 //
 // hl2_crossbow
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" ) = hl2_crossbow : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Crossbow"
+	entity_tool_group = "DM:04"
+}
+= hl2_crossbow : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -157,7 +181,13 @@ metadata
 //
 // hl2_crowbar
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) = hl2_crowbar : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Crowbar"
+	entity_tool_group = "DM:04"
+}
+= hl2_crowbar : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -167,7 +197,13 @@ metadata
 //
 // hl2_egon
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) = hl2_egon : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Egon"
+	entity_tool_group = "DM:04"
+}
+= hl2_egon : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -177,7 +213,13 @@ metadata
 //
 // hl2_gauss
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) = hl2_gauss : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Gauss"
+	entity_tool_group = "DM:04"
+}
+= hl2_gauss : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -187,7 +229,13 @@ metadata
 //
 // hl2_gravgun
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" ) = hl2_gravgun : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" ) 
+metadata
+{
+	entity_tool_name = "GravGun"
+	entity_tool_group = "DM:04"
+}
+= hl2_gravgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -197,7 +245,13 @@ metadata
 //
 // hl2_grenade
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) = hl2_grenade : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Grenade"
+	entity_tool_group = "DM:04"
+}
+= hl2_grenade : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -207,7 +261,13 @@ metadata
 //
 // hl2_rpg
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_rpg/w_hl2_rpg.vmdl" ) = hl2_rpg : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_rpg/w_hl2_rpg.vmdl" ) 
+metadata
+{
+	entity_tool_name = "RPG"
+	entity_tool_group = "DM:04"
+}
+= hl2_rpg : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -217,7 +277,13 @@ metadata
 //
 // hl2_slam
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) = hl2_slam : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) 
+metadata
+{
+	entity_tool_name = "SLAM"
+	entity_tool_group = "DM:04"
+}
+= hl2_slam : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -227,7 +293,13 @@ metadata
 //
 // hl2_smg1
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" ) = hl2_smg1 : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" ) 
+metadata
+{
+	entity_tool_name = "SMG"
+	entity_tool_group = "DM:04"
+}
+= hl2_smg1 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -237,7 +309,13 @@ metadata
 //
 // hl2_spas12
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" ) = hl2_spas12 : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Shotgun"
+	entity_tool_group = "DM:04"
+}
+= hl2_spas12 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -247,7 +325,13 @@ metadata
 //
 // hl2_stunstick
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) = hl2_stunstick : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Stunbaton"
+	entity_tool_group = "DM:04"
+}
+= hl2_stunstick : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -257,7 +341,13 @@ metadata
 //
 // hl2_uspmatch
 //
-@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" ) = hl2_uspmatch : ""
+@PointClass base(BaseProperties_gman_dm04_playtesting) editormodel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" ) 
+metadata
+{
+	entity_tool_name = "USP Match"
+	entity_tool_group = "DM:04"
+}
+= hl2_uspmatch : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 

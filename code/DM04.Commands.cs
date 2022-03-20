@@ -48,5 +48,23 @@ public partial class DeathmatchGame
 			caller.SetAmmo( AmmoType.Bugbait, 95 );
 		}
 	}
+	[ServerCmd( "Coomer" )]
+	public static void coomer()
+	{
+		var caller = ConsoleSystem.Caller.Pawn as Player;
+
+		if ( caller == null ) return;
+
+		caller.SetModel( "models/playermodels/coomer/drcoomer.vmdl" );
+	}
+	[ServerCmd( "terry" )]
+	public static void terry()
+	{
+		var caller = ConsoleSystem.Caller.Pawn as Player;
+
+		if ( caller == null ) return;
+
+		caller.SetModel( "models/player/hevsuit_white.vmdl" );
+	}
 }
 
