@@ -3,6 +3,7 @@
 
 [Library( "hl2_uspmatch", Title = "USP" )]
 [Hammer.EditorModel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" )]
+[Hammer.EntityTool( "USP Match", "DM:04" )]
 partial class hl2_uspmatch : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_uspmatch/v_hl2_uspmatch.vmdl";

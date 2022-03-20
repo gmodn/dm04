@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 [Library( "hl2_slam", Title = "S.L.A.M (Selectable Lightweight Attack Munition" )]
 [Hammer.EditorModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" )]
+[Hammer.EntityTool( "SLAM", "DM:04" )]
 partial class hl2_slam : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_slam/v_slam.vmdl";
@@ -20,7 +21,7 @@ partial class hl2_slam : BaseDmWeapon
 	{
 		base.Spawn();
 
-		SetModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" );
+		SetModel( "models/weapons/hl2_slam/w_slam.vmdl" );
 	}
 
 	public override bool CanReload()

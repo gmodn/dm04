@@ -3,6 +3,7 @@ using System;
 
 [Library( "hl2_ar2", Title = "AR2" )]
 [Hammer.EditorModel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" )]
+[Hammer.EntityTool( "AR2", "DM:04" )]
 partial class hl2_ar2 : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_ar2/v_hl2_ar2.vmdl";

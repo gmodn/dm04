@@ -4,6 +4,7 @@ using System.Linq;
 
 [Library("hl2_gravgun", Title = "gravgun" )]
 [Hammer.EditorModel("models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl")]
+[Hammer.EntityTool( "GravGun", "DM:04" )]
 partial class hl2_gravgun : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl";
