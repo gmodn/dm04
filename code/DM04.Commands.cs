@@ -45,6 +45,8 @@ public partial class DeathmatchGame
 
 			caller.SetAmmo( AmmoType.RPG, 3 );
 			caller.SetAmmo( AmmoType.Grenade, 5 );
+
+			caller.Health += 25;
 		}
 	}
 }
