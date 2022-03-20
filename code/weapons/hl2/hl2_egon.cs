@@ -3,6 +3,7 @@
 
 [Library( "hl2_egon", Title = "egon" )]
 [Hammer.EditorModel( "models/weapons/hl2_357/w_hl2_357.vmdl" )]
+[Hammer.EntityTool( "Egon", "DM:04" )]
 partial class hl2_egon : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_egon/v_hl2_egon.vmdl";

@@ -2,6 +2,7 @@
 
 [Library( "hl2_rpg", Title = "RPG" )]
 [Hammer.EditorModel( "models/weapons/hl2_rpg/w_hl2_rpg.vmdl" )]
+[Hammer.EntityTool( "RPG", "DM:04" )]
 partial class hl2_rpg : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_rpg/v_hl2_rpg.vmdl";

@@ -3,6 +3,7 @@
 
 [Library( "hl2_stunstick", Title = "STUNSTICK" )]
 [Hammer.EditorModel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" )]
+[Hammer.EntityTool( "Stunbaton", "DM:04" )]
 partial class hl2_stunstick : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_stunstick/v_stunbaton.vmdl";

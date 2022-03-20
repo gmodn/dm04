@@ -3,6 +3,7 @@
 
 [Library( "hl2_gauss", Title = "gauss" )]
 [Hammer.EditorModel( "models/weapons/hl2_357/w_hl2_357.vmdl" )]
+[Hammer.EntityTool( "Gauss", "DM:04" )]
 partial class hl2_gauss : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_gauss/v_hl2_gauss.vmdl";

@@ -3,6 +3,7 @@
 
 [Library( "hl2_spas12", Title = "SHOTGUN" )]
 [Hammer.EditorModel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" )]
+[Hammer.EntityTool( "Shotgun", "DM:04" )]
 partial class hl2_spas12 : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_spas12/v_hl2_spas12.vmdl";
