@@ -6,10 +6,10 @@
 partial class hl2_bugbait : BaseDmWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_bugbait/v_hl2_bugbait.vmdl";
-	public override float PrimaryRate => 0.1f;
+	public override float PrimaryRate => 1f;
 	public override int ClipSize => 1;
-	public override AmmoType AmmoType => AmmoType.Grenade;
-	public override string AmmoIcon => "v";
+	public override AmmoType AmmoType => AmmoType.Bugbait;
+	public override string AmmoIcon => "j";
 
 	public override int Bucket => 4;
 

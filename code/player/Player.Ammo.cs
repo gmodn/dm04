@@ -9,7 +9,7 @@ partial class DeathmatchPlayer
 	public IList<int> Ammo { get; set; }
 
 	//In order using AmmoType
-	public int[] AmmoLimit = new int[12]
+	public int[] AmmoLimit = new int[13]
 	{
 		//None
 		0,
@@ -35,6 +35,8 @@ partial class DeathmatchPlayer
 		5,
 		//SLAM
 		5,
+		//bugbait
+		99,
 	};
 
 	public void ClearAmmo()
@@ -99,5 +101,6 @@ public enum AmmoType
 	Crossbow,
 	RPG,
 	Grenade,
-	SLAM
+	SLAM,
+	Bugbait
 }

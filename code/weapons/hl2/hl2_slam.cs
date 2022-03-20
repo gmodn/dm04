@@ -94,7 +94,7 @@ partial class hl2_slam : BaseDmWeapon
 		if (IsServer)
 			using ( Prediction.Off() )
 			{
-				if ( slamthrown.IsValid())
+				if ( slamthrown.IsValid() || slammounted.IsValid())
 				{
 					
 					foreach(var active in slamsactive )

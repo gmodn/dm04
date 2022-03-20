@@ -29,6 +29,15 @@
 				[
 					{
 						_class = "RenderMeshFile"
+						children = 
+						[
+							{
+								_class = "RenameBonePrefix"
+								prefix_to_match = "sphere"
+								replacement = "bip01_r_hand"
+								allow_nonmatching_bones = false
+							},
+						]
 						filename = "models/Worldmodels/w_bugbait_reference.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
@@ -42,6 +51,38 @@
 							exclude_by_default = false
 							exception_list = [  ]
 						}
+					},
+				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = 
+				[
+					{
+						_class = "BoneMarkup"
+						name = "bip01_r_hand"
+						target_bone = "sphere"
+						ignore_Translation = false
+						ignore_rotation = false
+						do_not_discard = false
+					},
+				]
+				bone_cull_type = "Aggressive"
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeSphere"
+						parent_bone = "bip01_r_hand"
+						surface_prop = "default"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						radius = 4.0
+						center = [ 0.0, 0.0, 0.0 ]
 					},
 				]
 			},
