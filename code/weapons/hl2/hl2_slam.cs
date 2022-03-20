@@ -1,5 +1,6 @@
 ﻿using Sandbox;
-
+using System;
+using System.Collections.Generic;
 
 [Library( "hl2_slam", Title = "S.L.A.M (Selectable Lightweight Attack Munition" )]
 [Hammer.EditorModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" )]
@@ -10,11 +11,11 @@ partial class hl2_slam : BaseDmWeapon
 	public override int ClipSize => 1;
 	public override AmmoType AmmoType => AmmoType.SLAM;
 	public override string AmmoIcon => "v";
-
+	List<Entity> slamsactive = new List<Entity>();
 	public override int Bucket => 4;
 
 	private hl2_slamthrown slamthrown;
-
+	private hl2_slamthrown slammounted;
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -54,6 +55,7 @@ partial class hl2_slam : BaseDmWeapon
 						using (Prediction.Off())
 						{
 							slamthrown = new hl2_slamthrown();
+							slamsactive.Add( slamthrown );
 							slamthrown.Position = Owner.EyePosition;
 							slamthrown.Rotation += Owner.EyeRotation;
 							slamthrown.Owner = Owner;
@@ -65,7 +67,11 @@ partial class hl2_slam : BaseDmWeapon
 					if (IsServer)
 						using (Prediction.Off())
 						{
-							var slammounted = new hl2_slammounted();
+							slammounted = new hl2_slamthrown();
+							slammounted.PhysicsEnabled = false;
+							slammounted.mounted = true;
+							slammounted.SetModel( "models/weapons/hl2_slam/w_hl2_slam_open.vmdl" );
+							slamsactive.Add( slammounted );
 							slammounted.Position = tr.EndPosition;
 							slammounted.Rotation = Rotation.From(Vector3.VectorAngle(tr.Normal));
 							slammounted.Owner = Owner;
@@ -88,9 +94,20 @@ partial class hl2_slam : BaseDmWeapon
 		if (IsServer)
 			using ( Prediction.Off() )
 			{
-				if ( slamthrown.IsValid() )
+				if ( slamthrown.IsValid())
 				{
-					slamthrown.Explode();
+					
+					foreach(var active in slamsactive )
+					{
+						
+						(active as hl2_slamthrown).Explode();
+
+					}
+					slamsactive.Clear();
+					foreach ( var month in slamsactive )
+					{
+						Log.Info( month );
+					}
 				}
 			}
 	}

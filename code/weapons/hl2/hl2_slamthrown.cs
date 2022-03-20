@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 [Hammer.Skip]
 partial class hl2_slamthrown : ModelEntity
 {
+	public bool mounted { get; set; }
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -13,7 +14,14 @@ partial class hl2_slamthrown : ModelEntity
 
 		Health = 5;
 		MoveType = MoveType.Physics;
-		PhysicsEnabled = true;
+		if ( mounted == true )
+		{
+			PhysicsEnabled = false;
+		}
+		else
+		{
+			PhysicsEnabled = true;
+		}
 		UsePhysicsCollision = true;
 		SetInteractsExclude( CollisionLayer.Player );
 	}
