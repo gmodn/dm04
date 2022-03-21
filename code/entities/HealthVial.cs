@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "dm08_healthvial", Title = "Health Kit" )]
+[Library( "dm04_healthvial", Title = "Health Kit" )]
 [Hammer.EditorModel( "models/healthvial.vmdl" )]
 [Hammer.EntityTool( "Health Vial", "DM:04" )]
 public partial class HealthVial : Prop, IUse, IRespawnableEntity

@@ -8,6 +8,8 @@ partial class DeathmatchPlayer : Player
 {
 	TimeSince timeSinceDropped;
 
+	public bool DidRespawn = false;
+
 	public bool SupressPickupNotices { get; private set; }
 
 	public DeathmatchPlayer()
@@ -18,6 +20,8 @@ partial class DeathmatchPlayer : Player
 	public override void Respawn()
 	{
 		SetModel( "models/playermodels/female/female_01/female_01.vmdl" );
+
+		DidRespawn = true;
 
 		Controller = new DM04WalkController();
 		Animator = new DM04PlayerAnimator();
@@ -36,10 +40,10 @@ partial class DeathmatchPlayer : Player
 		//Inventory.Add(new devgun(), true);
 
 		//HL2 Arsenal
-		Inventory.Add(new hl2_crowbar(), true);
+		//Inventory.Add(new hl2_crowbar(), true);
 		//Inventory.Add(new hl2_stunstick(), true);
 		Inventory.Add(new hl2_gravgun(), true);
-		Inventory.Add(new hl2_uspmatch(), true);
+		//Inventory.Add(new hl2_uspmatch(), true);
 		//Inventory.Add(new hl2_357(), true);
 		//Inventory.Add(new hl2_smg1(), true);
 		//Inventory.Add(new hl2_ar2(), true);
