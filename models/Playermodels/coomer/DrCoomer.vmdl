@@ -10536,7 +10536,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_pelvis"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10548,7 +10548,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_l_thigh"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10560,7 +10560,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_l_calf"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10572,7 +10572,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_l_foot"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10584,7 +10584,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_r_thigh"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10596,7 +10596,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_r_calf"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10608,7 +10608,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_r_foot"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10620,7 +10620,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						parent_bone = "bip01_spine"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10632,7 +10632,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						parent_bone = "bip01_spine1"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10644,7 +10644,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						parent_bone = "bip01_spine2"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10656,7 +10656,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_spine4"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10668,7 +10668,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_l_clavicle"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10680,7 +10680,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_l_upperarm"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10692,7 +10692,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_l_forearm"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10704,7 +10704,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_l_hand"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10716,7 +10716,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_neck1"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10728,7 +10728,7 @@
 					{
 						_class = "PhysicsShapeSphere"
 						parent_bone = "bip01_head1"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10739,7 +10739,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_r_clavicle"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10751,7 +10751,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_r_upperarm"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10763,7 +10763,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_r_forearm"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
@@ -10775,7 +10775,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						parent_bone = "bip01_r_hand"
-						surface_prop = "dm04flesh"
+						surface_prop = "flesh"
 						collision_group = ""
 						collision_interact_as = ""
 						collision_interact_with = ""
