@@ -4,7 +4,7 @@
 	/// Base entity with phyiscal properties, enables imapct damage and the like
 	/// </summary>
 	[Library( "prop_physics_respawnable", Title = "prop_physics_respawnable", Spawnable = true )]
-	[Hammer.EntityTool( "prop_physics_respawnable", "DM:04" )]
+	[Hammer.EntityTool( "Respawnable Prop", "DM:04" )]
 	[Hammer.Model]
 	public partial class BasePhysics : ModelEntity, IRespawnableEntity
 	{

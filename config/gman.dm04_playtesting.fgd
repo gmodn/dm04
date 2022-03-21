@@ -405,7 +405,7 @@ metadata
 @PointClass base(BaseProperties_gman_dm04_playtesting) model() 
 metadata
 {
-	entity_tool_name = "prop_physics_respawnable"
+	entity_tool_name = "Respawnable Prop"
 	entity_tool_group = "DM:04"
 }
 = prop_physics_respawnable : "Base entity with phyiscal properties, enables imapct damage and the like"
