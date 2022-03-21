@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 public partial class DeathmatchGame
 {
-	[ServerCmd("dm04_impulse")]
+	[ServerCmd("impulse")]
 	public static void Impulse(int impulse)
 	{
 		var caller = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
@@ -27,6 +27,8 @@ public partial class DeathmatchGame
 			caller.Inventory.Add( new hl2_spas12() );
 			caller.Inventory.Add( new hl2_crossbow() );
 			caller.Inventory.Add( new hl2_rpg() );
+			caller.Inventory.Add( new hl2_grenade() );
+			caller.Inventory.Add( new hl2_slam() );
 			caller.Inventory.Add( new hl2_gauss() );
 			caller.Inventory.Add( new hl2_egon() );
 			caller.Inventory.Add( new hl2_bugbait() );
@@ -41,10 +43,12 @@ public partial class DeathmatchGame
 			caller.SetAmmo( AmmoType.AR2_ball, 3 );
 
 			caller.SetAmmo( AmmoType.Buckshot, 30 );
-			caller.SetAmmo( AmmoType.Crossbow, 10 );
+			caller.SetAmmo( AmmoType.Crossbow, 4 );
 
 			caller.SetAmmo( AmmoType.RPG, 3 );
 			caller.SetAmmo( AmmoType.Grenade, 5 );
+			caller.SetAmmo( AmmoType.SLAM, 5 );
+
 			caller.SetAmmo( AmmoType.Bugbait, 95 );
 		}
 	}

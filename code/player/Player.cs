@@ -51,16 +51,16 @@ partial class DeathmatchPlayer : Player
 
 		//Give Max Ammo
 		GiveAmmo( AmmoType.Pistol, 150);
-		GiveAmmo(AmmoType.Magnum, 12);
-		GiveAmmo(AmmoType.SMG, 225);
-		GiveAmmo(AmmoType.SMG_grenade, 3);
-		GiveAmmo(AmmoType.AR2, 60);
-		GiveAmmo(AmmoType.AR2_ball, 3);
-		GiveAmmo(AmmoType.Buckshot, 30);
-		GiveAmmo(AmmoType.Crossbow, 4);
-		GiveAmmo(AmmoType.Grenade, 5);
-		GiveAmmo(AmmoType.RPG, 3);
-		GiveAmmo(AmmoType.SLAM, 5);
+		//GiveAmmo(AmmoType.Magnum, 12);
+		//GiveAmmo(AmmoType.SMG, 225);
+		//GiveAmmo(AmmoType.SMG_grenade, 3);
+		//GiveAmmo(AmmoType.AR2, 60);
+		//GiveAmmo(AmmoType.AR2_ball, 3);
+		//GiveAmmo(AmmoType.Buckshot, 30);
+		//GiveAmmo(AmmoType.Crossbow, 4);
+		//GiveAmmo(AmmoType.Grenade, 5);
+		//GiveAmmo(AmmoType.RPG, 3);
+		//GiveAmmo(AmmoType.SLAM, 5);
 
 
 		holdBody = new PhysicsBody( Map.Physics )
