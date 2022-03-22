@@ -2294,7 +2294,7 @@
 				m_sNote = ""
 				m_childID = 
 				{
-					m_id = 789447430
+					m_id = 1733617024
 				}
 			}
 		},
@@ -4837,6 +4837,27 @@
 					m_fMinSpeed = 10.0
 					m_fMaxTension = 1000.0
 				}
+			}
+		},
+		{
+			key = 
+			{
+				m_id = 1553137999
+			}
+			value = 
+			{
+				_class = "CCommentAnimNode"
+				m_sName = "Who the fuck commented this"
+				m_vecPosition = [ 816.0, -976.0 ]
+				m_nNodeID = 
+				{
+					m_id = 1553137999
+				}
+				m_networkMode = "ServerAuthoritative"
+				m_sNote = ""
+				m_commentText = ""
+				m_size = [ 560.0, 32.0 ]
+				m_color = [ 255, 0, 0, 255 ]
 			}
 		},
 		{
