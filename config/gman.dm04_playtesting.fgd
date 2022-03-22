@@ -126,6 +126,7 @@ metadata
 	givegrenade(boolean) : "Should Give Grenade" : 0 : "Give the Grenades on player spawn"
 	giverpg(boolean) : "Should Give RPG" : 0 : "Give the RPG on player spawn"
 	giveslam(boolean) : "Should Give Slam" : 0 : "Give the SLAM on player spawn"
+	givebugbaitwip(boolean) : "Should Give Bugbait" : 0 : "Give the Bugbait on player spawn"
 	givepistolammo(integer) { min = 0 max = 150 } : "Pistol Ammo To Give" : 0 : "How much Pistol ammo to give on player spawn (Limit is 150)"
 	givemagnumammo(integer) { min = 0 max = 12 } : "Magnum Ammo To Give" : 0 : "How much Magnum ammo to give on player spawn (Limit is 12)"
 	givesmgammo(integer) { min = 0 max = 225 } : "SMG Ammo To Give" : 0 : "How much SMG ammo to give on player spawn (Limit is 225)"
@@ -136,7 +137,8 @@ metadata
 	givecrossbowbolts(integer) { min = 0 max = 4 } : "Crossbow Ammo To Give" : 0 : "How much Crossbow bolts to give on player spawn (Limit is 4)"
 	givegrenades(integer) { min = 0 max = 5 } : "Grenades To Give" : 0 : "How many Grenades to give on player spawn (Limit is 5)"
 	giverpgrockets(integer) { min = 0 max = 3 } : "RPG Ammo To Give" : 0 : "How many RPG rockets to give on player spawn (Limit is 3)"
-	giveslams(integer) { min = 0 max = 5 } : "Slams To Give" : 0 : "How many SLAMs to give on player spawn (Limit is 225)"
+	giveslams(integer) { min = 0 max = 5 } : "Slams To Give" : 0 : "How many SLAMs to give on player spawn (Limit is 5)"
+	givebugbait(integer) { min = 0 max = 5 } : "Bugbaits To Give" : 0 : "How many Bugbaits to give on player spawn (Limit is 5)"
 ]
 
 //

@@ -45,6 +45,9 @@ public partial class PlayerSetup : Entity
 	[Property( "GiveSlam" ), Description( "Give the SLAM on player spawn" )]
 	public bool Should_Give_Slam { get; set; } = false;
 
+	[Property( "GiveBugbaitWIP" ), Description( "Give the Bugbait on player spawn" )]
+	public bool Should_Give_Bugbait { get; set; } = false;
+
 	[Property( "GivePistolAmmo" ), Description( "How much Pistol ammo to give on player spawn (Limit is 150)" )]
 	[MinMax( 0, 150 )]
 	public int Pistol_Ammo_To_Give { get; set; } = 0;
@@ -85,9 +88,13 @@ public partial class PlayerSetup : Entity
 	[MinMax( 0, 3 )]
 	public int RPG_Ammo_To_Give { get; set; } = 0;
 
-	[Property( "GiveSlams" ), Description( "How many SLAMs to give on player spawn (Limit is 225)" )]
+	[Property( "GiveSlams" ), Description( "How many SLAMs to give on player spawn (Limit is 5)" )]
 	[MinMax( 0, 5 )]
 	public int Slams_To_Give { get; set; } = 0;
+
+	[Property( "GiveBugbait" ), Description( "How many Bugbaits to give on player spawn (Limit is 5)" )]
+	[MinMax( 0, 5 )]
+	public int Bugbaits_To_Give { get; set; } = 0;
 
 	private List<BaseDmWeapon> weaponsToGive;
 
@@ -125,6 +132,11 @@ public partial class PlayerSetup : Entity
 
 		if ( Should_Give_Slam )
 			weaponsToGive.Add( Library.Create<BaseDmWeapon>( "hl2_slam" ) );
+
+		//Anything below here is wip weapons.
+
+		if ( Should_Give_Bugbait )
+			weaponsToGive.Add( Library.Create<BaseDmWeapon>( "hl2_bugbait" ) );
 	}
 
 	[Event.Tick.Server]
@@ -153,6 +165,7 @@ public partial class PlayerSetup : Entity
 				player.SetAmmo( AmmoType.RPG, RPG_Ammo_To_Give );
 				player.SetAmmo( AmmoType.Grenade, Grenades_To_Give );
 				player.SetAmmo( AmmoType.SLAM, Slams_To_Give );
+				player.SetAmmo( AmmoType.Bugbait, Bugbaits_To_Give );
 
 
 				player.ActiveChild = player.Inventory.GetSlot( Rand.Int( 0, player.Inventory.Count() - 1 ) );
