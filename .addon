@@ -8,7 +8,11 @@
   "AssetsPath": "",
   "ResourcePaths": [
     "/ui/*",
+<<<<<<< Updated upstream
     "/font/*"
+=======
+    "/fonts/*"
+>>>>>>> Stashed changes
   ],
   "HasCode": true,
   "CodePath": "code",
