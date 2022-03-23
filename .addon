@@ -2,17 +2,12 @@
   "Title": "Deathmatch: 2004",
   "Type": "game",
   "Org": "gman",
-  "Ident": "dm04_playtesting",
+  "Ident": "dm04",
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
   "ResourcePaths": [
-    "/ui/*",
-<<<<<<< Updated upstream
-    "/font/*"
-=======
     "/fonts/*"
->>>>>>> Stashed changes
   ],
   "HasCode": true,
   "CodePath": "code",
