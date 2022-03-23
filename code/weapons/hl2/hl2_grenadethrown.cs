@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 [Library( "hl2_grenadethrown" )]
 [Hammer.Skip]
-partial class hl2_grenadethrown : ModelEntity
+partial class hl2_grenadethrown : Prop
 {
 	private PointLightEntity bleepLight;
 	int bleeps = 0;
-
+	bool blowingup;
 	private PointLightEntity CreateLight()
 	{
 		var light = new PointLightEntity
@@ -58,44 +58,37 @@ partial class hl2_grenadethrown : ModelEntity
 			bleeps += 1;
 			Bleep();
 		}
-		else Explode();
-	}
-
-	public virtual void Explode()
-	{
-		bool InWater = Map.Physics.IsPointWater( this.Position );
-
-		var tr = Trace.Sphere(100, this.Position, this.Position )
-				.UseHitboxes()
-
-				.HitLayer( CollisionLayer.Water, !InWater )
-				.HitLayer( CollisionLayer.Debris )
-				///.Ignore( Owner )
-				.Ignore( this )
-				
-				.RunAll();
-		foreach (var Entity in tr )
+		else if ( blowingup == false )
 		{
-
-			Entity.Surface.DoBulletImpact( Entity );
-			//DebugOverlay.Sphere( this.Position, 100, Color.Red, true, 100 );
-
-			//
-			// We turn predictiuon off for this, so aany exploding effects don't get culled etc
-			//
-			using ( Prediction.Off() )
-			{
-				Log.Info( Entity.Entity );
-				var damage = DamageInfo.Explosion( this.Position, 100, 15 )
-					.UsingTraceResult( Entity )
-					.WithAttacker( Owner )
-					.WithWeapon( this );
-
-				Entity.Entity.TakeDamage( damage );
-			}
+			DoExplosion();
 		}
-		Sound.FromWorld( "hl2_spas12.fire", PhysicsBody.MassCenter );
+	}
+	public void DoExplosion()
+	{
+		blowingup = true;
+		if ( Model == null || Model.IsError )
+			return;
 
-		Delete();
+		if ( !Model.HasExplosionBehavior() )
+			return;
+
+		var srcPos = Position;
+		if ( PhysicsBody.IsValid() ) srcPos = PhysicsBody.MassCenter;
+
+		var explosionBehavior = Model.GetExplosionBehavior();
+
+		// Damage and push away all other entities
+		if ( explosionBehavior.Radius > 0.0f )
+		{
+			new ExplosionEntity
+			{
+				Position = srcPos,
+				Radius = explosionBehavior.Radius,
+				Damage = explosionBehavior.Damage,
+				ForceScale = explosionBehavior.Force,
+				ParticleOverride = explosionBehavior.Effect,
+				SoundOverride = explosionBehavior.Sound
+			}.Explode( this );
+		}
 	}
 }

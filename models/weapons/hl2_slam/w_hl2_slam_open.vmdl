@@ -99,9 +99,42 @@
 					},
 				]
 			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "explosion_behavior"
+						game_keys = 
+						{
+							explosion_custom_sound = "BaseExplosionEffect.Sound"
+							explosion_custom_effect = resource:"particles/explosion/barrel_explosion/explosion_barrel.vpcf"
+							explosive_damage = 100.0
+							explosive_radius = 186.235
+							explosive_force = 100.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							allowstatic = false
+							bakelighting = true
+							spawn_motion_disabled = false
+							health = -1.0
+							min_impact_damage_speed = -1.0
+							impact_damage = -1.0
+							parent_bodygroup_name = ""
+							parent_bodygroup_value = 0
+						}
+					},
+				]
+			},
 		]
-		model_archetype = ""
-		primary_associated_entity = ""
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
 		anim_graph_name = ""
 	}
 }

@@ -101,7 +101,7 @@ partial class hl2_slam : BaseDmWeapon
 					foreach(var active in slamsactive )
 					{
 						
-						(active as hl2_slamthrown).Explode();
+						(active as hl2_slamthrown).DoExplosion();
 
 					}
 					slamsactive.Clear();

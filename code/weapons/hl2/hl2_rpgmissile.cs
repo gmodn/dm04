@@ -3,7 +3,7 @@
 
 [Library( "hl2_rpgmissile" )]
 [Hammer.Skip]
-partial class hl2_rpgmissile : ModelEntity
+partial class hl2_rpgmissile : Prop
 {
 	public override void Spawn()
 	{
@@ -33,7 +33,7 @@ partial class hl2_rpgmissile : ModelEntity
 
 		if ( tr.Hit )
 		{
-			Explode();
+			DoExplosion();
 		}
 		else
 		{
@@ -41,10 +41,31 @@ partial class hl2_rpgmissile : ModelEntity
 		}
 	}
 
-	public virtual void Explode()
+	public void DoExplosion()
 	{
-		PlaySound( "hl2_spas12.fire" );
+		if ( Model == null || Model.IsError )
+			return;
 
-		Delete();
+		if ( !Model.HasExplosionBehavior() )
+			return;
+
+		var srcPos = Position;
+		if ( PhysicsBody.IsValid() ) srcPos = PhysicsBody.MassCenter;
+
+		var explosionBehavior = Model.GetExplosionBehavior();
+
+		// Damage and push away all other entities
+		if ( explosionBehavior.Radius > 0.0f )
+		{
+			new ExplosionEntity
+			{
+				Position = srcPos,
+				Radius = explosionBehavior.Radius,
+				Damage = explosionBehavior.Damage,
+				ForceScale = explosionBehavior.Force,
+				ParticleOverride = explosionBehavior.Effect,
+				SoundOverride = explosionBehavior.Sound
+			}.Explode( this );
+		}
 	}
 }
