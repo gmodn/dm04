@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 public partial class DeathmatchGame
 {
-	[ServerCmd("impulse")]
+	[ServerCmd("")]
 	public static void Impulse(int impulse)
 	{
 		var caller = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
@@ -44,6 +44,8 @@ public partial class DeathmatchGame
 
 			caller.SetAmmo( AmmoType.Buckshot, 30 );
 			caller.SetAmmo( AmmoType.Crossbow, 4 );
+			caller.SetAmmo( AmmoType.Crossbow, 4 );
+			caller.SetAmmo( AmmoType.Egon, 300 );
 
 			caller.SetAmmo( AmmoType.RPG, 3 );
 			caller.SetAmmo( AmmoType.Grenade, 5 );

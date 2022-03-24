@@ -7,11 +7,11 @@
 partial class hl2_egon : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_egon/v_hl2_egon.vmdl";
-	public override float PrimaryRate => 1.3f;
-	public override int ClipSize => 6;
-	public override AmmoType AmmoType => AmmoType.Magnum;
+	public override float PrimaryRate => 0f;
+	public override int ClipSize => 200;
+	public override AmmoType AmmoType => AmmoType.Egon;
 	public override string AmmoIcon => "q";
-	public override float ReloadTime => 4f;
+	public override float ReloadTime => 0f;
 	public override int Bucket => 1;
 
 	public override void Spawn()
@@ -23,10 +23,10 @@ partial class hl2_egon : BaseDmWeapon
 		AmmoClip = 6;
 	}
 
-	public override bool CanPrimaryAttack()
-	{
-		return base.CanPrimaryAttack() && Input.Pressed( InputButton.Attack1 );
-	}
+	//	public override bool CanPrimaryAttack()
+	//	{
+	//	return base.CanPrimaryAttack() && Input.Pressed( InputButton.Attack1 );
+	///}
 
 	public override void AttackPrimary()
 	{
