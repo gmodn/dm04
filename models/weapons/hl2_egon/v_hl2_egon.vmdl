@@ -269,6 +269,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = ""
+		anim_graph_name = "models/weapons/hl2_egon/v_hl2_egon.vanmgrph"
 	}
 }
