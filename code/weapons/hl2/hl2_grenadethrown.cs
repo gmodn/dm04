@@ -41,7 +41,7 @@ partial class hl2_grenadethrown : Prop
 		PhysicsEnabled = true;
 		UsePhysicsCollision = true;
 		SetInteractsExclude( CollisionLayer.Player );
-		//Particles.Create( "particles/weapons/hl2_grenade_trail.vpcf", this, "light" );
+		Particles.Create( "particles/weapons/hl2_grenade_trail.vpcf", this, "light" );
 		Bleep();
 	}
 
@@ -90,5 +90,6 @@ partial class hl2_grenadethrown : Prop
 				SoundOverride = explosionBehavior.Sound
 			}.Explode( this );
 		}
+		Delete();
 	}
 }
