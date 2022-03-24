@@ -102,5 +102,6 @@ public enum AmmoType
 	RPG,
 	Grenade,
 	SLAM,
-	Bugbait
+	Bugbait,
+	Egon
 }

@@ -13,7 +13,7 @@ partial class hl2_gravgun : BaseDmWeapon
 
 	private PhysicsBody holdBody;
 	private FixedJoint holdJoint;
-
+	public BaseDmWeapon weaponpickup;
 	public PhysicsBody HeldBody { get; private set; }
 	public Rotation HeldRot { get; private set; }
 	public ModelEntity HeldEntity { get; private set; }
@@ -238,25 +238,34 @@ partial class hl2_gravgun : BaseDmWeapon
 		holdJoint.Strength = HeldBody.Mass * BreakLinearForce;
 
 		HeldEntity = entity;
-
+		if ( HeldEntity is BaseDmWeapon weapon )
+		{
+			weaponpickup = weapon;
+			weapon.gravhitbox();
+		}
 		Client?.Pvs.Add(HeldEntity);
+		
 	}
 
 	private void GrabEnd()
 	{
 		holdJoint?.Remove();
 		holdJoint = null;
-
+		
 		if (HeldBody.IsValid())
 		{
 			HeldBody.AutoSleep = true;
+			if (weaponpickup.IsValid() ) {
+				weaponpickup.gravhitboxremove();
+				
+			}
 		}
 
 		if (HeldEntity.IsValid())
 		{
 			Client?.Pvs.Remove(HeldEntity);
 		}
-
+		
 		HeldBody = null;
 		HeldRot = Rotation.Identity;
 		HeldEntity = null;

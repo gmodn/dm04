@@ -38,6 +38,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 
 	public PickupTrigger PickupTrigger { get; protected set; }
+	public PickupTrigger GravPickupTrigger { get; protected set; }
 
 	public int AvailableAmmo()
 	{
@@ -54,7 +55,20 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 		IsReloading = false;
 	}
+	
+	public void gravhitbox()
+	{
+		GravPickupTrigger = new PickupTrigger();
+		GravPickupTrigger.SetTriggerSize( 64 );
+		GravPickupTrigger.Parent = this;
+		GravPickupTrigger.Position = Position;
 
+	}
+	public void gravhitboxremove()
+	{
+		GravPickupTrigger.Delete();
+
+	}
 	public override void StartTouch( Entity other )
 	{
 		if ( other is DeathmatchPlayer player )
@@ -83,6 +97,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
 
 		PickupTrigger = new PickupTrigger();
+		PickupTrigger.SetTriggerSize( 16 );
 		PickupTrigger.Parent = this;
 		PickupTrigger.Position = Position;
 	}

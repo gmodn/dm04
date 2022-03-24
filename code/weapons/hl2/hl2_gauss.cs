@@ -7,7 +7,7 @@
 partial class hl2_gauss : BaseDmWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_gauss/v_hl2_gauss.vmdl";
-	public override float PrimaryRate => 1.3f;
+	public override float PrimaryRate => 100f;
 	public override int ClipSize => 6;
 	public override AmmoType AmmoType => AmmoType.Magnum;
 	public override string AmmoIcon => "q";
