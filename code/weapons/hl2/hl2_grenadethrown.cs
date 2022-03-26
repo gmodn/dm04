@@ -30,6 +30,7 @@ partial class hl2_grenadethrown : Prop
 
 	public override void Spawn()
 	{
+		Tags.Add( "projectile" );
 		base.Spawn();
 		SetModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" );
 

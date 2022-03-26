@@ -7,6 +7,7 @@ partial class hl2_smg1grenade : ModelEntity
 {
 	public override void Spawn()
 	{
+		Tags.Add( "projectile" );
 		base.Spawn();
 		SetModel( "models/weapons/hl2_smg1/hl2_smg1_grenade.vmdl" );
 

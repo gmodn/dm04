@@ -10,6 +10,7 @@ partial class hl2_crossbowbolt : ModelEntity
 
 	public override void Spawn()
 	{
+		Tags.Add( "projectile" );
 		base.Spawn();
 
 		SetModel( "models/weapons/hl2_crossbow/hl2_crossbow_bolt.vmdl" );

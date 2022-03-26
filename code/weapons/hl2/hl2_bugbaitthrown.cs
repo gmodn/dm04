@@ -9,6 +9,7 @@ partial class hl2_bugbaitthrown : ModelEntity
 
 	public override void Spawn()
 	{
+		Tags.Add( "projectile" );
 		base.Spawn();
 		SetModel( "models/worldmodels/w_bugbait_reference.vmdl" );
 

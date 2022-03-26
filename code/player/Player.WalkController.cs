@@ -332,7 +332,7 @@ namespace Sandbox
 		public virtual void Move()
 		{
 			MoveHelper mover = new MoveHelper( Position, Velocity );
-			mover.Trace = mover.Trace.Size( mins, maxs ).Ignore( Pawn );
+			mover.Trace = mover.Trace.Size( mins, maxs ).Ignore( Pawn ).WithoutTags( "projectile" );
 			mover.MaxStandableAngle = GroundAngle;
 
 			mover.TryMove( Time.Delta );

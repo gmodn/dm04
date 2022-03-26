@@ -4,11 +4,12 @@ using System.Threading.Tasks;
 
 [Library( "hl2_slamthrown" )]
 [Hammer.Skip]
-partial class hl2_slamthrown : ModelEntity
+partial class hl2_slamthrown : Prop
 {
 	public bool mounted { get; set; }
 	public override void Spawn()
 	{
+		Tags.Add( "projectile" );
 		base.Spawn();
 		SetModel( "models/weapons/hl2_slam/w_hl2_slam_closed.vmdl" );
 

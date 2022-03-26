@@ -7,6 +7,7 @@ partial class hl2_rpgmissile : Prop
 {
 	public override void Spawn()
 	{
+		Tags.Add( "projectile" );
 		base.Spawn();
 
 		SetModel( "models/weapons/hl2_rpg/hl2_rpg_missile.vmdl" );
