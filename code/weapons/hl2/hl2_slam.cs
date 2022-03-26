@@ -48,10 +48,14 @@ partial class hl2_slam : BaseDmWeapon
 
 			var forward = Owner.EyeRotation.Forward;
 
-			foreach (var tr in TraceBullet(Owner.EyePosition, Owner.EyePosition + forward * 40, 1.5f))
+			TraceResult tr = Trace.Ray( Owner.EyePosition, Owner.EyePosition + forward * 40 )
+			.Radius( 1.5f )
+			.Ignore( Owner )
+			.Run();
+
+
+			if (!tr.Entity.IsValid())
             {
-				if (!tr.Entity.IsValid())
-                {
 					if (IsServer)
 						using (Prediction.Off())
 						{
@@ -62,7 +66,7 @@ partial class hl2_slam : BaseDmWeapon
 							slamthrown.Owner = Owner;
 							slamthrown.Velocity = Owner.EyeRotation.Forward * 450;
 						}
-				}
+			}
 				else
                 {
 					if (IsServer)
@@ -79,7 +83,7 @@ partial class hl2_slam : BaseDmWeapon
 							slammounted.SetParent(tr.Entity);
 						}
 				}
-			}
+			
 		}
 	}
 
