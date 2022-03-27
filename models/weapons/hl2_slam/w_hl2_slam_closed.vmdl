@@ -15,15 +15,15 @@
 						[
 							{
 								from = "v_slam.vmat"
-								to = "materials/dev/dev_measuregeneric01.vmat"
+								to = "materials/models/weapons/hl2_slam/v_slam.vmat"
 							},
 							{
 								from = "new light2.vmat"
-								to = "materials/dev/primary_red.vmat"
+								to = "materials/models/weapons/hl2_slam/new_light_2.vmat"
 							},
 							{
 								from = "new light1.vmat"
-								to = "materials/dev/primary_red.vmat"
+								to = "materials/models/weapons/hl2_slam/new_light_1.vmat"
 							},
 						]
 						use_global_default = false

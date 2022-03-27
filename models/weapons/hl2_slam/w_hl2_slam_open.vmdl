@@ -15,15 +15,15 @@
 						[
 							{
 								from = "v_slam.vmat"
-								to = "materials/dev/dev_measuregeneric01.vmat"
+								to = "materials/models/weapons/hl2_slam/v_slam.vmat"
 							},
 							{
 								from = "new light2.vmat"
-								to = "materials/dev/primary_red.vmat"
+								to = "materials/models/weapons/hl2_slam/new_light_2.vmat"
 							},
 							{
 								from = "new light1.vmat"
-								to = "materials/dev/primary_red.vmat"
+								to = "materials/models/weapons/hl2_slam/new_light_1.vmat"
 							},
 						]
 						use_global_default = false
@@ -57,7 +57,7 @@
 						_class = "RenderMeshFile"
 						filename = "models/weapons/hl2_slam/w_hl2_slam_open.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 90.0, 0.0, 0.0 ]
+						import_rotation = [ 270.0, 180.0, 0.0 ]
 						import_scale = 1.0
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
@@ -93,6 +93,15 @@
 						name = "light"
 						parent_bone = "hold_R"
 						relative_origin = [ 0.8, 0.86, 3.8 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "laser"
+						parent_bone = "hold_R"
+						relative_origin = [ 0.409679, 1.274494, 2.263608 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false

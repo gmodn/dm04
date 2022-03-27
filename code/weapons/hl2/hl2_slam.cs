@@ -33,6 +33,9 @@ partial class hl2_slam : BaseDmWeapon
 	{
 		if ( Owner is DeathmatchPlayer player )
 		{
+			
+
+			
 			//TimeSincePrimaryAttack = 0;
 
 			//if (TimeSinceSecondaryAttack < 0.5) return;
@@ -81,7 +84,8 @@ partial class hl2_slam : BaseDmWeapon
 							slammounted.Rotation = Rotation.From(Vector3.VectorAngle(tr.Normal));
 							slammounted.Owner = Owner;
 							slammounted.SetParent(tr.Entity);
-						}
+						_ = slammounted.Arm( 3f );
+					}
 				}
 			
 		}

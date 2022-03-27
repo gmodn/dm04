@@ -220,15 +220,15 @@
 						[
 							{
 								from = "new_light1_is_unused.vmat"
-								to = "materials/dev/primary_red.vmat"
+								to = "materials/models/weapons/hl2_slam/new_light_1.vmat"
 							},
 							{
 								from = "v_slam_is_unused.vmat"
-								to = "materials/dev/dev_measuregeneric01.vmat"
+								to = "materials/models/weapons/hl2_slam/v_slam.vmat"
 							},
 							{
 								from = "new_light2_is_unused.vmat"
-								to = "materials/dev/primary_red.vmat"
+								to = "materials/models/weapons/hl2_slam/new_light_2.vmat"
 							},
 						]
 						use_global_default = false

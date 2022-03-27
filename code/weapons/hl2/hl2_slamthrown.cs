@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 [Hammer.Skip]
 partial class hl2_slamthrown : Prop
 {
+	Particles LaserParticle;
 	public bool mounted { get; set; }
+	public bool armed { get; set; }
 	public override void Spawn()
+	
 	{
 		Tags.Add( "projectile" );
 		base.Spawn();
@@ -27,6 +30,37 @@ partial class hl2_slamthrown : Prop
 		SetInteractsExclude( CollisionLayer.Player );
 	}
 
+	public async Task Arm( float seconds )
+	{
+		// arming noise
+
+		await GameTask.DelaySeconds( seconds );
+
+		LaserParticle = Particles.Create( "particles/weapons/hl2_slamthrown.vpcf", this, "laser", true );
+		//LaserParticle.SetPosition( 1, Position );
+		armed = true;
+		
+
+		// armed chirp
+
+		
+	}
+	[Event.Tick.Server]
+	protected virtual async Task OnTickAsync()
+	{
+		if ( armed == true)
+		{
+			var tr = Trace.Ray( Position, Position + Rotation.Forward * 4000.0f )
+				.Ignore( this )
+				.Run();
+			LaserParticle.SetPosition( 3, tr.EndPosition );
+			if ( tr.Entity != null && tr.Entity is not WorldEntity )
+			{
+				await TriggeredExplosion( 0.5f );
+			}
+
+		}
+	}
 	public override void OnKilled()
 	{
 		base.OnKilled();
@@ -35,6 +69,19 @@ partial class hl2_slamthrown : Prop
 		PlaySound("balloon_pop_cute");
 	}
 
+	async Task TriggeredExplosion( float delay )
+	{
+		await Task.DelaySeconds( delay );
+
+		if ( !IsValid ) return;
+		Sound.FromWorld( "rust_pumpshotgun.shootdouble", Position );
+		DoExplosion();
+
+		LaserParticle?.Destroy( true );
+		LaserParticle = null;
+
+		Delete();
+	}
 	public void DoExplosion()
 	{
 		if ( Model == null || Model.IsError )
@@ -60,6 +107,7 @@ partial class hl2_slamthrown : Prop
 				ParticleOverride = explosionBehavior.Effect,
 				SoundOverride = explosionBehavior.Sound
 			}.Explode( this );
+			Delete();
 		}
 	}
 }

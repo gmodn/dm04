@@ -15,11 +15,11 @@
 						[
 							{
 								from = "bugbait_inside.vmat"
-								to = "dev/helper/testgrid.vmat"
+								to = "materials/models/weapons/hl2_bugbait/bugbait_inside.vmat"
 							},
 							{
 								from = "bugbait_sheet.vmat"
-								to = "dev/helper/testgrid.vmat"
+								to = "materials/models/weapons/hl2_bugbait/bugbait_sheet.vmat"
 							},
 							{
 								from = "v_hand_sheet.vmat"

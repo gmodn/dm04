@@ -1005,7 +1005,7 @@
 							},
 							{
 								from = "materials/models/weapons/v_stunstick/v_stunstick_diffuse.vmat"
-								to = "materials/dev/dev_measuregeneric01b.vmat"
+								to = "materials/models/weapons/hl2_stunstick/v_stunstick_diffuse.vmat"
 							},
 						]
 						use_global_default = false
