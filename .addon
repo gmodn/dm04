@@ -16,9 +16,7 @@
   "Metadata": {
     "MaxPlayers": 1000,
     "MinPlayers": 1,
-    "MapList": [
-      "gmodn.halls"
-    ],
-    "MapSelect": 0
+    "MapList": [],
+    "MapSelect": 2
   }
 }
