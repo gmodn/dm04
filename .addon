@@ -7,13 +7,16 @@
   "HasAssets": true,
   "AssetsPath": "",
   "ResourcePaths": [
-    "/fonts/*"
+    "/fonts/*",
+    "/ui/*"
   ],
   "HasCode": true,
   "CodePath": "code",
   "RootNamespace": "Dm04",
   "Metadata": {
     "MaxPlayers": 1000,
-    "MinPlayers": 2
+    "MinPlayers": 1,
+    "MapList": [],
+    "MapSelect": 2
   }
 }
