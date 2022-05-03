@@ -9,4 +9,5 @@ dm98.csproj
 Properties/launchSettings.json
 *.csproj
 .vs
+*.generated.vtex_c
 models/weapons/hl2_stunStick/v_stunbaton.vmdl_c
