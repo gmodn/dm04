@@ -1,10 +1,5 @@
-﻿
-using Sandbox;
-using Sandbox.UI;
+﻿using Sandbox.UI;
 using Sandbox.UI.Construct;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 public class InventoryColumn : Panel
 {
@@ -19,10 +14,10 @@ public class InventoryColumn : Panel
 	{
 		Parent = parent;
 		Column = i;
-		Header = Add.Label( $"{i+1}", "slot-number" );
+		Header = Add.Label( $"{i + 1}", "slot-number" );
 	}
 
-	internal void UpdateWeapon( BaseDmWeapon weapon )
+	internal void UpdateWeapon( DeathmatchWeapon weapon )
 	{
 		var icon = ChildrenOfType<InventoryIcon>().FirstOrDefault( x => x.Weapon == weapon );
 		if ( icon == null )
@@ -31,16 +26,28 @@ public class InventoryColumn : Panel
 			icon.Parent = this;
 			Icons.Add( icon );
 		}
+
+
 	}
 
-	internal void TickSelection( BaseDmWeapon selectedWeapon )
+	internal void TickSelection( DeathmatchWeapon selectedWeapon )
 	{
 		SetClass( "active", selectedWeapon?.Bucket == Column );
 
-		for ( int i=0; i< Icons.Count; i++ )
+		for ( int i = 0; i < Icons.Count; i++ )
 		{
 			Icons[i].TickSelection( selectedWeapon );
 		}
+
+		SortChildren( p =>
+		{
+			if ( p is InventoryIcon icon )
+			{
+				return icon.Weapon?.BucketWeight ?? 0;
+			}
+
+			return 0;
+		} );
 
 	}
 }

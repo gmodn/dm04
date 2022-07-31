@@ -1,0 +1,104 @@
+
+$Sequence "idle1" {
+	"v_egon_anims\idle1.smd"
+	activity "ACT_VM_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	node "Ready"
+	fps 30
+	loop
+}
+
+$Sequence "altfireon" {
+	"v_egon_anims\altfireon.smd"
+	activity "ACT_VM_SECONDARYATTACK" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "altfirecycle" {
+	"v_egon_anims\altfirecycle.smd"
+	activity "ACT_VM_SECONDARYATTACK" 2
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "altfireoff" {
+	"v_egon_anims\altfireoff.smd"
+	activity "ACT_VM_SECONDARYATTACK" 3
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "fire1" {
+	"v_egon_anims\fire1.smd"
+	activity "ACT_VM_PRIMARYATTACK" 1
+	fadein 0.2
+	fadeout 0.2
+	node "Fire"
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "fire2" {
+	"v_egon_anims\fire2.smd"
+	activity "ACT_VM_PRIMARYATTACK" 2
+	fadein 0.2
+	fadeout 0.2
+	node "Fire"
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "fire3" {
+	"v_egon_anims\fire3.smd"
+	activity "ACT_VM_PRIMARYATTACK" 3
+	fadein 0.2
+	fadeout 0.2
+	node "Fire"
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "fire4" {
+	"v_egon_anims\fire4.smd"
+	activity "ACT_VM_PRIMARYATTACK" 4
+	fadein 0.2
+	fadeout 0.2
+	node "Fire"
+	snap
+	fps 30
+	loop
+}
+
+$Sequence "draw" {
+	"v_egon_anims\draw.smd"
+	activity "ACT_VM_DRAW" 1
+	{ event 5004 0 "Weapon_Egon_Gun.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	node "Ready"
+	snap
+	fps 30
+}
+
+$Sequence "holster" {
+	"v_egon_anims\holster.smd"
+	activity "ACT_VM_HOLSTER" 1
+	fadein 0.2
+	fadeout 0.2
+	node "Ready"
+	fps 30
+}

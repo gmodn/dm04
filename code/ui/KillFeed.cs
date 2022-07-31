@@ -1,6 +1,4 @@
-﻿
-using Sandbox;
-using Sandbox.UI;
+﻿using Sandbox.UI;
 
 public partial class KillFeed : Sandbox.UI.KillFeed
 {

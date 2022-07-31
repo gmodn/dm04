@@ -1,0 +1,25 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		sounds = 
+		[
+			"sounds/weapons/movement/weapon_movement_sprint1.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint2.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint3.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint4.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint5.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint6.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint7.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint8.vsnd",
+			"sounds/weapons/movement/weapon_movement_sprint9.vsnd",
+		]
+		ui = false
+		volume = 1.0
+		volumerandom = 0.0
+		pitch = 1.0
+		pitchrandom = 0.0
+		distancemax = 1000.0
+		selectionmode = "3"
+	}
+}

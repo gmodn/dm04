@@ -6,8 +6,34 @@
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
-  "ResourcePaths": null,
+  "ResourcePaths": [
+    "/fonts/*",
+    "/ui/*"
+  ],
   "HasCode": true,
   "CodePath": "code",
-  "RootNamespace": "Dm04"
+  "RootNamespace": "Dm04",
+  "Metadata": {
+    "MaxPlayers": 1000,
+    "MinPlayers": 1,
+    "MapList": [],
+    "MapSelect": "Tagged",
+    "GameNetworkType": "Multiplayer",
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "GameCategory": "None",
+    "Physics": {
+      "SubSteps": 1,
+      "TimeScale": 1,
+      "Gravity": "0,0,-800",
+      "AirDensity": 1.2,
+      "SleepingEnabled": true,
+      "SimulationMode": "Continuous",
+      "PositionIterations": 2,
+      "VelocityIterations": 8,
+      "SoftBodyIterations": 1,
+      "SoftBodySubsteps": 1
+    }
+  }
 }

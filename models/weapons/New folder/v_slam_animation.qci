@@ -1,0 +1,240 @@
+
+$Sequence "throw_idle" {
+	"v_slam_anims\throw_idle.smd"
+	activity "ACT_SLAM_THROW_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_idle_ND" {
+	"v_slam_anims\throw_idle_ND.smd"
+	activity "ACT_SLAM_THROW_ND_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_throw1" {
+	"v_slam_anims\throw_throw1.smd"
+	activity "ACT_SLAM_THROW_THROW" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_throw2" {
+	"v_slam_anims\throw_throw2.smd"
+	activity "ACT_SLAM_THROW_THROW2" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_throw_ND1" {
+	"v_slam_anims\throw_throw_ND1.smd"
+	activity "ACT_SLAM_THROW_THROW_ND" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_throw_ND2" {
+	"v_slam_anims\throw_throw_ND2.smd"
+	activity "ACT_SLAM_THROW_THROW_ND2" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_draw" {
+	"v_slam_anims\throw_draw.smd"
+	activity "ACT_SLAM_THROW_DRAW" 1
+	{ event 5004 0 "Weapon_SLAM.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "throw_draw_ND" {
+	"v_slam_anims\throw_draw_ND.smd"
+	activity "ACT_SLAM_THROW_ND_DRAW" 1
+	{ event 5004 0 "Weapon_SLAM.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "throw_to_tripmine_ND" {
+	"v_slam_anims\throw_to_tripmine_ND.smd"
+	activity "ACT_SLAM_THROW_TO_TRIPMINE_ND" 1
+	{ event AE_CL_PLAYSOUND 30 "Weapon_SLAM.TripMineMode" }
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_detonate" {
+	"v_slam_anims\throw_detonate.smd"
+	activity "ACT_SLAM_THROW_DETONATE" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "throw_to_stickwall" {
+	"v_slam_anims\throw_to_stickwall.smd"
+	activity "ACT_SLAM_THROW_TO_STICKWALL" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "throw_to_stickwall_ND" {
+	"v_slam_anims\throw_to_stickwall_ND.smd"
+	activity "ACT_SLAM_THROW_TO_STICKWALL_ND" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "detonator_draw" {
+	"v_slam_anims\detonator_draw.smd"
+	activity "ACT_SLAM_DETONATOR_DRAW" 1
+	{ event 5004 0 "Weapon_SLAM.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "detonator_idle" {
+	"v_slam_anims\detonator_idle.smd"
+	activity "ACT_SLAM_DETONATOR_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "detonator_detonate" {
+	"v_slam_anims\detonator_detonate.smd"
+	activity "ACT_SLAM_DETONATOR_DETONATE" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "detonator_throw_draw" {
+	"v_slam_anims\detonator_throw_draw.smd"
+	activity "ACT_SLAM_DETONATOR_THROW_DRAW" 1
+	{ event 5004 0 "Weapon_SLAM.Draw" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "detonator_holster" {
+	"v_slam_anims\detonator_holster.smd"
+	activity "ACT_SLAM_DETONATOR_HOLSTER" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "tripmine_idle" {
+	"v_slam_anims\tripmine_idle.smd"
+	activity "ACT_SLAM_TRIPMINE_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "tripmine_draw" {
+	"v_slam_anims\tripmine_draw.smd"
+	activity "ACT_SLAM_TRIPMINE_DRAW" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "tripmine_to_throw" {
+	"v_slam_anims\tripmine_to_throw.smd"
+	activity "ACT_SLAM_TRIPMINE_TO_THROW_ND" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "tripmine_attach1" {
+	"v_slam_anims\tripmine_attach1.smd"
+	activity "ACT_SLAM_TRIPMINE_ATTACH" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "tripmine_attach2" {
+	"v_slam_anims\tripmine_attach2.smd"
+	activity "ACT_SLAM_TRIPMINE_ATTACH2" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "stickwall_idle" {
+	"v_slam_anims\stickwall_idle.smd"
+	activity "ACT_SLAM_STICKWALL_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "stickwall_idle_ND" {
+	"v_slam_anims\stickwall_idle_ND.smd"
+	activity "ACT_SLAM_STICKWALL_ND_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "stickwall_attach1" {
+	"v_slam_anims\stickwall_attach1.smd"
+	activity "ACT_SLAM_STICKWALL_ATTACH" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "stickwall_attach2" {
+	"v_slam_anims\stickwall_attach2.smd"
+	activity "ACT_SLAM_STICKWALL_ATTACH2" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "stickwall_to_throw" {
+	"v_slam_anims\stickwall_to_throw.smd"
+	activity "ACT_SLAM_STICKWALL_TO_THROW" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$Sequence "stickwall_to_throw_ND" {
+	"v_slam_anims\stickwall_to_throw_ND.smd"
+	activity "ACT_SLAM_STICKWALL_TO_THROW_ND" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}

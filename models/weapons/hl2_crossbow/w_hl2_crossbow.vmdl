@@ -1,0 +1,154 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "hold_R"
+						origin = [ 0.0, 0.0, 0.0 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "v_crossbow_body_glow.vmat"
+								to = "materials/models/weapons/hl2_crossbow/hl2_crossbow_body.vmat"
+							},
+							{
+								from = "v_crossbow_lens.vmat"
+								to = "materials/models/weapons/hl2_crossbow/hl2_crossbow_lens.vmat"
+							},
+							{
+								from = "v_crossbow_wire.vmat"
+								to = "materials/models/weapons/hl2_crossbow/hl2_crossbow_wire.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "bone"
+						surface_prop = "metal.weapon"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						origin = [ 0.000907, 2.277035, 11.732435 ]
+						angles = [ 0.0, 0.0, -2.0 ]
+						dimensions = [ 2.224754, 2.103431, 23.360706 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "bone"
+						surface_prop = "metal.weapon"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						origin = [ 0.006642, 2.378126, -9.958148 ]
+						angles = [ 0.0, 0.0, -2.0 ]
+						dimensions = [ 1.719347, 5.34394, 2.581695 ]
+					},
+					{
+						_class = "PhysicsShapeCylinder"
+						parent_bone = "bone"
+						surface_prop = "metal.weapon"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						radius = 0.291554
+						point0 = [ 0.0, 1.210654, -8.843707 ]
+						point1 = [ 0.0, 1.480487, 0.27748 ]
+					},
+					{
+						_class = "PhysicsShapeCylinder"
+						parent_bone = "bone"
+						surface_prop = "metal.weapon"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						radius = 0.229469
+						point0 = [ 0.0, 3.8, -8.84371 ]
+						point1 = [ 0.0, 4.1, 0.27748 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "bone"
+						surface_prop = "metal.weapon"
+						collision_group = ""
+						collision_interact_as = ""
+						collision_interact_with = ""
+						collision_interact_exclude = ""
+						origin = [ 0.000907, 3.955187, 3.200727 ]
+						angles = [ 0.0, 0.0, -2.0 ]
+						dimensions = [ 2.224754, 1.860407, 6.424832 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/weapons/hl2_crossbow/w_hl2_crossbow.smd"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = 
+				[
+					{
+						_class = "BoneMarkup"
+						target_bone = "bip01_r_hand"
+						ignore_Translation = false
+						ignore_rotation = false
+						do_not_discard = true
+					},
+				]
+				bone_cull_type = "Aggressive"
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

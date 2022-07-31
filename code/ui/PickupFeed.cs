@@ -1,9 +1,5 @@
-﻿
-using Sandbox;
-using Sandbox.UI;
+﻿using Sandbox.UI;
 using Sandbox.UI.Construct;
-using System;
-using System.Threading.Tasks;
 
 public partial class PickupFeed : Panel
 {
@@ -20,10 +16,16 @@ public partial class PickupFeed : Panel
 	[ClientRpc]
 	public static void OnPickup( string text )
 	{
-		// TODO - icons for weapons?
-		// TOPO - icons for ammo?
+		Current?.AddEntry( text );
+	}
 
-		Current?.AddEntry( $"\n{text}" );		
+	/// <summary>
+	/// An RPC which can be called from the server 
+	/// </summary>
+	[ClientRpc]
+	public static void OnPickupWeapon( string text )
+	{
+		Current?.AddWeaponEntry( text );
 	}
 
 	/// <summary>
@@ -32,8 +34,19 @@ public partial class PickupFeed : Panel
 	/// </summary>
 	private async Task AddEntry( string text )
 	{
-		var panel = Current.Add.Label( text );
-		await Task.Delay( 500 );
+		var panel = Current.Add.Panel( "entry" );
+
+		panel.Add.Label( text );
+		await Task.DelayRealtimeSeconds( 2.0f );
+		panel.Delete();
+	}
+
+	private async Task AddWeaponEntry( string text )
+	{
+		var panel = Current.Add.Panel( "entry" );
+		panel.AddClass( text ); ;
+		panel.Add.Panel( "icon" );
+		await Task.DelayRealtimeSeconds( 2.0f );
 		panel.Delete();
 	}
 }

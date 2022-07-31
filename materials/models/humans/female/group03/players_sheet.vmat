@@ -1,0 +1,9 @@
+// Converted with vmt_to_vmat.py
+
+Layer0
+{
+	shader "vr_complex.vfx"
+
+	F_SPECULAR 1
+	TextureRoughness "[0.5530882849207082 0.5530882849207082 0.5530882849207082 0.000]"
+}

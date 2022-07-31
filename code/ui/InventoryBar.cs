@@ -1,7 +1,4 @@
-﻿using Sandbox;
-using Sandbox.UI;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Sandbox.UI;
 
 /// <summary>
 /// The main inventory panel, top left of the screen.
@@ -9,14 +6,14 @@ using System.Linq;
 public class InventoryBar : Panel
 {
 	List<InventoryColumn> columns = new();
-	List<BaseDmWeapon> Weapons = new();
+	List<DeathmatchWeapon> Weapons = new();
 
 	public bool IsOpen;
-	BaseDmWeapon SelectedWeapon;
+	DeathmatchWeapon SelectedWeapon;
 
 	public InventoryBar()
 	{
-		for ( int i=0; i<5; i++ )
+		for ( int i = 0; i < 6; i++ )
 		{
 			var icon = new InventoryColumn( i, this );
 			columns.Add( icon );
@@ -33,7 +30,7 @@ public class InventoryBar : Panel
 		if ( player == null ) return;
 
 		Weapons.Clear();
-		Weapons.AddRange( player.Children.Select( x => x as BaseDmWeapon ).Where( x => x.IsValid() && x.IsUsable() ) );
+		Weapons.AddRange( player.Children.Select( x => x as DeathmatchWeapon ).Where( x => x.IsValid() && x.IsUsable() ) );
 
 		foreach ( var weapon in Weapons )
 		{
@@ -48,7 +45,10 @@ public class InventoryBar : Panel
 	[Event.BuildInput]
 	public void ProcessClientInput( InputBuilder input )
 	{
+		if ( DeathmatchGame.CurrentState != DeathmatchGame.GameStates.Live ) return;
+
 		bool wantOpen = IsOpen;
+		var localPlayer = Local.Pawn as Player;
 
 		// If we're not open, maybe this input has something that will 
 		// make us want to start being open?
@@ -58,6 +58,7 @@ public class InventoryBar : Panel
 		wantOpen = wantOpen || input.Pressed( InputButton.Slot3 );
 		wantOpen = wantOpen || input.Pressed( InputButton.Slot4 );
 		wantOpen = wantOpen || input.Pressed( InputButton.Slot5 );
+		wantOpen = wantOpen || input.Pressed( InputButton.Slot6 );
 
 		if ( Weapons.Count == 0 )
 		{
@@ -68,7 +69,7 @@ public class InventoryBar : Panel
 		// We're not open, but we want to be
 		if ( IsOpen != wantOpen )
 		{
-			SelectedWeapon = Local.Pawn.ActiveChild as BaseDmWeapon;
+			SelectedWeapon = localPlayer?.ActiveChild as DeathmatchWeapon;
 			IsOpen = true;
 		}
 
@@ -78,40 +79,42 @@ public class InventoryBar : Panel
 		//
 		// Fire pressed when we're open - select the weapon and close.
 		//
-		if ( input.Down( InputButton.Attack1 ) )
+		if ( input.Down( InputButton.PrimaryAttack ) )
 		{
-			input.SuppressButton( InputButton.Attack1 );
+			input.SuppressButton( InputButton.PrimaryAttack );
 			input.ActiveChild = SelectedWeapon;
 			IsOpen = false;
-			Sound.FromScreen( "buttonclickrelease" );
+			Sound.FromScreen( "dm.ui_select" );
 			return;
 		}
 
+		var sortedWeapons = Weapons.OrderBy( x => x.Order ).ToList();
+
 		// get our current index
 		var oldSelected = SelectedWeapon;
-		int SelectedIndex = Weapons.IndexOf( SelectedWeapon );
-		SelectedIndex = SlotPressInput( input, SelectedIndex );
+		int SelectedIndex = sortedWeapons.IndexOf( SelectedWeapon );
+		SelectedIndex = SlotPressInput( input, SelectedIndex, sortedWeapons );
 
 		// forward if mouse wheel was pressed
-		SelectedIndex += input.MouseWheel;
+		SelectedIndex -= input.MouseWheel;
 		SelectedIndex = SelectedIndex.UnsignedMod( Weapons.Count );
 
-		SelectedWeapon = Weapons[SelectedIndex];
+		SelectedWeapon = sortedWeapons[SelectedIndex];
 
-		for ( int i = 0; i < 5; i++ )
+		for ( int i = 0; i < 6; i++ )
 		{
 			columns[i].TickSelection( SelectedWeapon );
 		}
 
 		input.MouseWheel = 0;
 
-		if ( oldSelected  != SelectedWeapon )
+		if ( oldSelected != SelectedWeapon )
 		{
-			Sound.FromScreen( "buttonrollover" );
+			Sound.FromScreen( "dm.ui_tap" );
 		}
 	}
 
-	int SlotPressInput( InputBuilder input, int SelectedIndex )
+	int SlotPressInput( InputBuilder input, int SelectedIndex, List<DeathmatchWeapon> sortedWeapons )
 	{
 		var columninput = -1;
 
@@ -120,38 +123,39 @@ public class InventoryBar : Panel
 		if ( input.Pressed( InputButton.Slot3 ) ) columninput = 2;
 		if ( input.Pressed( InputButton.Slot4 ) ) columninput = 3;
 		if ( input.Pressed( InputButton.Slot5 ) ) columninput = 4;
+		if ( input.Pressed( InputButton.Slot6 ) ) columninput = 5;
 
 		if ( columninput == -1 ) return SelectedIndex;
 
 		if ( SelectedWeapon.IsValid() && SelectedWeapon.Bucket == columninput )
 		{
-			return NextInBucket();
+			return NextInBucket( sortedWeapons );
 		}
 
 		// Are we already selecting a weapon with this column?
-		var firstOfColumn = Weapons.Where( x => x.Bucket == columninput ).OrderBy( x => x.BucketWeight ).FirstOrDefault();
-		if ( firstOfColumn  == null )
+		var firstOfColumn = sortedWeapons.Where( x => x.Bucket == columninput ).FirstOrDefault();
+		if ( firstOfColumn == null )
 		{
 			// DOOP sound
 			return SelectedIndex;
 		}
 
-		return Weapons.IndexOf( firstOfColumn );
+		return sortedWeapons.IndexOf( firstOfColumn );
 	}
 
-	int NextInBucket()
+	int NextInBucket( List<DeathmatchWeapon> sortedWeapons )
 	{
 		Assert.NotNull( SelectedWeapon );
 
-		BaseDmWeapon first = null;
-		BaseDmWeapon prev = null;
-		foreach ( var weapon in Weapons.Where( x => x.Bucket == SelectedWeapon.Bucket ).OrderBy( x => x.BucketWeight ) )
+		DeathmatchWeapon first = null;
+		DeathmatchWeapon prev = null;
+		foreach ( var weapon in sortedWeapons.Where( x => x.Bucket == SelectedWeapon.Bucket ) )
 		{
 			if ( first == null ) first = weapon;
-			if ( prev == SelectedWeapon ) return Weapons.IndexOf( weapon );
+			if ( prev == SelectedWeapon ) return sortedWeapons.IndexOf( weapon );
 			prev = weapon;
 		}
 
-		return Weapons.IndexOf( first );
+		return sortedWeapons.IndexOf( first );
 	}
 }

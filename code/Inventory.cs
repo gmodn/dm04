@@ -1,12 +1,8 @@
-﻿using Sandbox;
-using System;
-using System.Linq;
-
-partial class DmInventory : BaseInventory
+﻿partial class DmInventory : BaseInventory
 {
 
 
-	public DmInventory( Player player ) : base ( player )
+	public DmInventory( Player player ) : base( player )
 	{
 
 	}
@@ -14,8 +10,11 @@ partial class DmInventory : BaseInventory
 	public override bool Add( Entity ent, bool makeActive = false )
 	{
 		var player = Owner as DeathmatchPlayer;
-		var weapon = ent as BaseDmWeapon;
+		var weapon = ent as DeathmatchWeapon;
 		var notices = !player.SupressPickupNotices;
+
+		if ( weapon == null )
+			return false;
 		//
 		// We don't want to pick up the same weapon twice
 		// But we'll take the ammo from it Winky Face
@@ -27,12 +26,14 @@ partial class DmInventory : BaseInventory
 
 			if ( ammo > 0 )
 			{
-				player.GiveAmmo( ammoType, ammo );
+				var taken = player.GiveAmmo( ammoType, ammo );
+				if ( taken == 0 )
+					return false;
 
-				if ( notices )
+				if ( notices && taken > 0 )
 				{
-					Sound.FromWorld( "ammo_pickup", ent.Position );
-					PickupFeed.OnPickup( To.Single( player ), $"+{ammo} {ammoType}" );
+					Sound.FromWorld( "dm.pickup_ammo", ent.Position );
+					PickupFeed.OnPickup( To.Single( player ), $"+{taken} {ammoType}" );
 				}
 			}
 
@@ -43,19 +44,24 @@ partial class DmInventory : BaseInventory
 			return false;
 		}
 
+		if ( !base.Add( ent, makeActive ) )
+			return false;
+
 		if ( weapon != null && notices )
 		{
-			Sound.FromWorld( "ammo_pickup", ent.Position );
-			PickupFeed.OnPickup( To.Single( player ), $"{ent.ClassInfo.Title}" ); 
+			var display = DisplayInfo.For( ent );
+
+			Sound.FromWorld( "dm.pickup_weapon", ent.Position );
+			PickupFeed.OnPickupWeapon( To.Single( player ), display.Name );
 		}
 
-
 		ItemRespawn.Taken( ent );
-		return base.Add( ent, makeActive );
+
+		return true;
 	}
 
 	public bool IsCarryingType( Type t )
 	{
-		return List.Any( x => x.GetType() == t );
+		return List.Any( x => x.IsValid() && x.GetType() == t );
 	}
 }

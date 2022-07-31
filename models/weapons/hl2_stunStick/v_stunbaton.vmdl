@@ -1,0 +1,1027 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "1"
+						parent_bone = "tip"
+						relative_origin = [ 1.5, 0.0, 0.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark1a"
+						parent_bone = "tip"
+						relative_origin = [ -1.0, 1.2, 0.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark1b"
+						parent_bone = "tip"
+						relative_origin = [ -1.0, -1.2, 0.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark2a"
+						parent_bone = "tip"
+						relative_origin = [ -0.9, 1.0, -0.5 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark2b"
+						parent_bone = "tip"
+						relative_origin = [ -0.9, -1.2, -0.5 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark3a"
+						parent_bone = "tip"
+						relative_origin = [ -0.9, 1.0, 0.5 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark3b"
+						parent_bone = "tip"
+						relative_origin = [ -0.9, -1.2, 0.5 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark4a"
+						parent_bone = "tip"
+						relative_origin = [ -0.449999, 1.0, 0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark4b"
+						parent_bone = "tip"
+						relative_origin = [ -0.449999, -1.2, 0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark5a"
+						parent_bone = "tip"
+						relative_origin = [ 0.0, 1.0, 1.1 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark5b"
+						parent_bone = "tip"
+						relative_origin = [ 0.0, -1.2, 1.1 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark6a"
+						parent_bone = "tip"
+						relative_origin = [ 0.0, 1.0, -1.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark6b"
+						parent_bone = "tip"
+						relative_origin = [ 0.0, -1.2, -1.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark7a"
+						parent_bone = "tip"
+						relative_origin = [ -0.450001, 1.0, -0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark7b"
+						parent_bone = "tip"
+						relative_origin = [ -0.450001, -1.2, -0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark8a"
+						parent_bone = "tip"
+						relative_origin = [ 1.0, 1.0, -0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark8b"
+						parent_bone = "tip"
+						relative_origin = [ 1.0, -1.2, -0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark9a"
+						parent_bone = "tip"
+						relative_origin = [ 1.0, 1.0, 0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Spark9b"
+						parent_bone = "tip"
+						relative_origin = [ 1.0, -1.2, 0.9 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "Sparkrear"
+						parent_bone = "tip"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "smdimport"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.2089, -1.176064, -2.577374 ]
+								hitbox_maxs = [ 1.2089, 1.176136, 16.974426 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "left_wrist"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -1.631489, -0.727292 ]
+								hitbox_maxs = [ 3.773045, 1.261464, 0.574182 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_index_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.513998, -1.34794, -0.652454 ]
+								hitbox_maxs = [ 2.00207, 0.407715, 0.50804 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_ring_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.118394, -1.503593, -0.700277 ]
+								hitbox_maxs = [ 1.984852, 0.37376, 0.503822 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_middlelow"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -1.240201, -0.73834 ]
+								hitbox_maxs = [ 2.226858, 0.393417, 0.884777 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_pinky_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.433129, -0.920723, -0.613261 ]
+								hitbox_maxs = [ 1.654254, 0.574798, 0.651671 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_thumb_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.265872, -1.731602, -1.366804 ]
+								hitbox_maxs = [ 2.313255, 0.771167, 0.717645 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_thumb_mid"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.725841, -1.428877, -0.8996 ]
+								hitbox_maxs = [ 1.461938, 0.711858, 0.492111 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_thumb_tip"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.254807, -0.804742, -0.523573 ]
+								hitbox_maxs = [ 0.694859, 0.888061, 0.533591 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "right_wrist"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -1.630608, -0.57946 ]
+								hitbox_maxs = [ 3.773535, 1.261477, 0.727354 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_thumb_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.292739, -1.774185, -0.560072 ]
+								hitbox_maxs = [ 2.157987, 0.797273, 1.653656 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_thumb_mid"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.6344, -1.04974, -0.47182 ]
+								hitbox_maxs = [ 1.460487, 0.710166, 0.954971 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_thumb_tip"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.3989, -0.841534, -0.61572 ]
+								hitbox_maxs = [ 0.567064, 0.825429, 0.462572 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_index_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.635807, -1.037503, -0.471278 ]
+								hitbox_maxs = [ 1.902623, 0.558112, 0.750861 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_middlelow"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.078369, -0.947882, -0.922834 ]
+								hitbox_maxs = [ 2.229605, 0.4704, 0.744448 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_ring_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.242699, -1.225727, -0.541502 ]
+								hitbox_maxs = [ 1.984998, 0.663821, 0.542547 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_pinky_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.617917, -0.654405, -0.739387 ]
+								hitbox_maxs = [ 1.63242, 0.893077, 0.54315 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_main-bone"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.498693, -2.613142, -4.573454 ]
+								hitbox_maxs = [ 7.920056, 0.0, 0.0 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_upperarm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.196146, -4.663191, -3.786643 ]
+								hitbox_maxs = [ 11.587134, 1.787859, 2.66834 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_forearm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.58334, -3.801058, -3.529663 ]
+								hitbox_maxs = [ 14.300879, 2.202962, 2.404502 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_wriste"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.324123, -2.179149, -1.455041 ]
+								hitbox_maxs = [ 4.62768, 2.03214, 1.764898 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_upperarm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.117738, -2.744063, -3.314924 ]
+								hitbox_maxs = [ 11.546636, 3.142478, 2.82929 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_forearm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.692619, -2.789546, -2.82046 ]
+								hitbox_maxs = [ 14.288759, 3.061757, 2.934741 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_wriste"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.351785, -2.258037, -1.730604 ]
+								hitbox_maxs = [ 4.79044, 2.066103, 1.512808 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "smdimport"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.2089, -1.176064, -2.577374 ]
+								hitbox_maxs = [ 1.2089, 1.176136, 16.974426 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "left_wrist"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -1.631489, -0.727292 ]
+								hitbox_maxs = [ 3.773045, 1.261464, 0.574182 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_index_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.513998, -1.34794, -0.652454 ]
+								hitbox_maxs = [ 2.00207, 0.407715, 0.50804 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_ring_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.118394, -1.503593, -0.700277 ]
+								hitbox_maxs = [ 1.984852, 0.37376, 0.503822 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_middlelow"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -1.240201, -0.73834 ]
+								hitbox_maxs = [ 2.226858, 0.393417, 0.884777 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_pinky_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.433129, -0.920723, -0.613261 ]
+								hitbox_maxs = [ 1.654254, 0.574798, 0.651671 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_thumb_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.265872, -1.731602, -1.366804 ]
+								hitbox_maxs = [ 2.313255, 0.771167, 0.717645 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_thumb_mid"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.725841, -1.428877, -0.8996 ]
+								hitbox_maxs = [ 1.461938, 0.711858, 0.492111 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_thumb_tip"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.254807, -0.804742, -0.523573 ]
+								hitbox_maxs = [ 0.694859, 0.888061, 0.533591 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "right_wrist"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -1.630608, -0.57946 ]
+								hitbox_maxs = [ 3.773535, 1.261477, 0.727354 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_thumb_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.292739, -1.774185, -0.560072 ]
+								hitbox_maxs = [ 2.157987, 0.797273, 1.653656 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_thumb_mid"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.6344, -1.04974, -0.47182 ]
+								hitbox_maxs = [ 1.460487, 0.710166, 0.954971 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_thumb_tip"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.3989, -0.841534, -0.61572 ]
+								hitbox_maxs = [ 0.567064, 0.825429, 0.462572 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_index_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.635807, -1.037503, -0.471278 ]
+								hitbox_maxs = [ 1.902623, 0.558112, 0.750861 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_middlelow"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.078369, -0.947882, -0.922834 ]
+								hitbox_maxs = [ 2.229605, 0.4704, 0.744448 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_ring_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.242699, -1.225727, -0.541502 ]
+								hitbox_maxs = [ 1.984998, 0.663821, 0.542547 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_pinky_low"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.617917, -0.654405, -0.739387 ]
+								hitbox_maxs = [ 1.63242, 0.893077, 0.54315 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_main-bone"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.498693, -2.613142, -4.573454 ]
+								hitbox_maxs = [ 7.920056, 0.0, 0.0 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_upperarm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.196146, -4.663191, -3.786643 ]
+								hitbox_maxs = [ 11.587134, 1.787859, 2.66834 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_forearm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.58334, -3.801058, -3.529663 ]
+								hitbox_maxs = [ 14.300879, 2.202962, 2.404502 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_r_wriste"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.324123, -2.179149, -1.455041 ]
+								hitbox_maxs = [ 4.62768, 2.03214, 1.764898 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_upperarm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.117738, -2.744063, -3.314924 ]
+								hitbox_maxs = [ 11.546636, 3.142478, 2.82929 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_forearm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.692619, -2.789546, -2.82046 ]
+								hitbox_maxs = [ 14.288759, 3.061757, 2.934741 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "frame_l_wriste"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.351785, -2.258037, -1.730604 ]
+								hitbox_maxs = [ 4.79044, 2.066103, 1.512808 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "v_stunbaton_bg_studio_lod0"
+						filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/mesh/v_stunbaton_bg_studio_lod0.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "v_stunbaton_bg_hands_lod0"
+						filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/mesh/v_stunbaton_bg_hands_lod0.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "draw"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/draw.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "hitcenter1"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/hitcenter1.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "hitcenter2"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/hitcenter2.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "hitcenter3"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/hitcenter3.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "holster"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/holster.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "idle01"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/idle01.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "idletolow"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/idletolow.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "lowidle"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/lowidle.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "lowtoidle"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/lowtoidle.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "misscenter1"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/misscenter1.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "misscenter2"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/misscenter2.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "misscenter3"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/misscenter3.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "sprint"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/sprint.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "walk"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								root_bone_name = ""
+								motion_type = "Single"
+							},
+						]
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/hl2_stunStick/v_stunbaton_fbx/anim/walk.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						take = 0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "materials/models/weapons/v_stunstick/v_hand_sheet.vmat"
+								to = "materials/models/weapons/hl2_hands/hl2_hands.vmat"
+							},
+							{
+								from = "materials/models/weapons/v_stunstick/v_stunstick_diffuse.vmat"
+								to = "materials/models/weapons/hl2_stunstick/v_stunstick_diffuse.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = "models/weapons/hl2_stunstick/v_hl2_stunstick.vanmgrph"
+		importer_notes = """
+Imported from compiled VMDL_C
+==Warnings==
+Cannot import non-trivial meshgroup: hands
+
+"""
+	}
+}

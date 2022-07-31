@@ -1,8 +1,4 @@
-﻿using Sandbox;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-/// <summary>
+﻿/// <summary>
 /// Any entities that implement this interface are added as a record and respawned
 /// So it should really just be weapons, ammo and healthpacks etc
 /// </summary>
@@ -53,7 +49,7 @@ public class ItemRespawn
 		var record = new Record
 		{
 			Transform = ent.Transform,
-			ClassName = ent.ClassInfo.Name
+			ClassName = ent.ClassName
 		};
 
 		Records[ent] = record;
@@ -76,13 +72,12 @@ public class ItemRespawn
 	/// </summary>
 	static async Task RespawnAsync( Record record )
 	{
-		// TODO - Take.Delay In Game Time 
 		await GameTask.Delay( 1000 * 30 );
 
 		// TODO - find a sound that sounds like the echoey crazy truck horn sound that played in HL1 when items spawned
 		Sound.FromWorld( "dm.item_respawn", record.Transform.Position + Vector3.Up * 50 );
 
-		var ent = Library.Create<Entity>( record.ClassName );
+		var ent = Entity.CreateByName( record.ClassName );
 		ent.Transform = record.Transform;
 
 		Records[ent] = record;

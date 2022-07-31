@@ -1,0 +1,181 @@
+﻿
+@import "_crosshair.scss";
+@import "_damageindicator.scss";
+@import "_hitindicator.scss";
+@import "_inventory.scss";
+@import "_killfeed.scss";
+@import "_pickupfeed.scss";
+@import "_scoreboard.scss";
+
+rootpanel
+{
+	background-color: rgba( #333, 0 );
+	transition: background-color 0.2s ease-in;
+	transform-origin: 50% 50%;
+
+	&.spawnmenuopen
+	{
+		transition: background-color 0.3s ease-out;
+		background-color: rgba( #333, 0.9 );
+	}
+
+	&.devcamera
+	{
+		display: none;
+	}
+}
+
+ammo {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+
+	Panel {
+		position: absolute;
+		background-color: rgba( 0, 0, 0, 0.6 );
+		border-radius: 7px;
+	}
+
+	Label {
+		position: absolute;
+	}
+
+	.Ammo {
+		right: 190px;
+		bottom: 27px;
+		width: 297px;
+		height: 81px;
+	}
+
+	.AmmoText {
+		left: 17px;
+		bottom: 15px;
+		font-family: Verdana;
+		font-size: 16.5px;
+		font-weight: 700;
+		color: yellow;
+	}
+
+	.Counter {
+		left: 105px;
+		bottom: 5px;
+		font-family: HalfLife2;
+		font-size: 61px;
+		color: yellow;
+	}
+
+	.Reserve {
+		left: 220px;
+		bottom: 8px;
+		font-family: HalfLife2;
+		font-size: 31px;
+		font-weight: 700;
+		color: yellow;
+	}
+
+	.icon {
+		width: 0px;
+		transition: all 0.5s ease-in;
+		font-family: HalfLife2;
+		font-weight: 100;
+		top: -10px;
+		left: 16px;
+		font-size: 64px;
+		text-shadow: 0 0 0px rgba(255, 220, 0, 0.0);
+		color: yellow;
+	}
+
+	.Alt {
+		right: 22px;
+		bottom: 27px;
+		width: 162px;
+		height: 81px;
+
+		.AmmoText {
+			left: 18px;
+			bottom: 11px;
+		}
+
+		.Counter {
+			left: 88px;
+		}
+
+		.icon {
+			width: 0px;
+			transition: all 0.5s ease-in;
+			font-family: HalfLife2;
+			font-weight: 100;
+			top: -7px;
+			left: 18px;
+			font-size: 64px;
+			text-shadow: 0 0 0px rgba(255, 220, 0, 0.0);
+			color: yellow;
+		}
+	}
+}
+
+	.Empty {
+		color: "#FF0000";
+	}
+}
+
+
+.hl2_crowbar .icon {
+	background-image: url( /ui/weapons/hl2_crowbar.png );
+}
+
+.hl2_stunstick .icon {
+	background-image: url( /ui/weapons/hl2_stunstick.png );
+}
+
+.hl2_gravgun .icon, .OLD_gravgun .icon {
+	background-image: url( /ui/weapons/hl2_gravgun.png );
+}
+
+.hl2_uspmatch .icon {
+	background-image: url( /ui/weapons/hl2_uspmatch.png );
+}
+
+.hl2_357 .icon {
+	background-image: url( /ui/weapons/hl2_357.png );
+}
+
+.hl2_smg1 .icon {
+	background-image: url( /ui/weapons/hl2_smg.png );
+}
+
+.hl2_smg1grenade .icon {
+	background-image: url( /ui/weapons/hl2_smg.png ); //todo: add smg grenade icon and make it use that instead
+}
+
+.hl2_ar2 .icon {
+	background-image: url( /ui/weapons/hl2_ar2.png );
+}
+
+.hl2_ar2ball .icon {
+	background-image: url( /ui/weapons/hl2_ar2ball.png );
+}
+
+.hl2_spas12 .icon {
+	background-image: url( /ui/weapons/hl2_shotgun.png );
+}
+
+.hl2_crossbow .icon, .hl2_crossbowbolt .icon {
+	background-image: url( /ui/weapons/hl2_crossbow.png );
+}
+
+.hl2_grenade .icon, .hl2_grenadethrown .icon {
+	background-image: url( /ui/weapons/hl2_grenade.png );
+}
+
+.hl2_slam .icon, .hl2_slamthrown .icon, .hl2_slammounted .icon {
+	background-image: url( /ui/weapons/hl2_slam.png );
+}
+
+.hl2_rpg .icon, .hl2_rpgmissile .icon {
+	background-image: url( /ui/weapons/hl2_rpg.png );
+}
+
+.devgun .icon {
+	background-image: url( /ui/weapons/devgun.png );
+}

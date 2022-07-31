@@ -1,47 +1,41 @@
-﻿using Sandbox;
-using System;
-
-[Library( "dm08_healthkit", Title = "Health Kit" )]
-[Hammer.EditorModel( "models/items/healthkit.vmdl" )]
-[Hammer.EntityTool( "Health Kit", "DM:04" )]
-public partial class HealthKit: Prop, IUse, IRespawnableEntity
+﻿/// <summary>
+/// Gives 25 health points.
+/// </summary>
+[Library( "dm_healthkit" ), HammerEntity]
+[EditorModel( "models/gameplay/healthkit/healthkit.vmdl" )]
+[Title(  "Health Kit" )]
+partial class HealthKit : ModelEntity, IRespawnableEntity
 {
-	public PickupTrigger PickupTrigger { get; protected set; }
+	public static readonly Model WorldModel = Model.Load( "models/gameplay/healthkit/healthkit.vmdl" );
 
 	public override void Spawn()
 	{
 		base.Spawn();
 
-		SetModel( "models/items/healthkit.vmdl" );
+		Model = WorldModel;
+
+		PhysicsEnabled = true;
+		UsePhysicsCollision = true;
+
+		CollisionGroup = CollisionGroup.Weapon;
+		SetInteractsAs( CollisionLayer.Debris );
 	}
 
-	public bool IsUsable( Entity user )
+	public override void StartTouch( Entity other )
 	{
-		if ( user.Health > 100 )
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
+		base.StartTouch( other );
+
+		if ( other is not DeathmatchPlayer pl ) return;
+		if ( pl.Health >= pl.MaxHealth ) return;
+
+		var newhealth = pl.Health + 25;
+
+		newhealth = newhealth.Clamp( 0, pl.MaxHealth );
+
+		pl.Health = newhealth;
+
+		Sound.FromWorld( "dm.item_health", Position );
+		ItemRespawn.Taken( this );
+		Delete();
 	}
-	public bool OnUse( Entity user )
-	{
-		if ( user is Player player )
-		{
-			player.Health += 10;
-
-			Delete();
-			Sound.FromScreen( "smallmedkit1" );
-		}
-
-		if ( user.Health > 100 )
-		{
-			Health = 100;
-		}
-
-		return false;
-	}
-
 }

@@ -21,15 +21,31 @@
 ]
 
 //
+// HealthCharger
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/props_combine/suit_charger001.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Health Charger"
+	entity_tool_group = "DM:04"
+}
+= dm04_healthcharger : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // HealthKit
 //
-@PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/items/healthkit.vmdl" ) model() 
+@PointClass base(BaseProperties_gman_dm04, BasePhysicsSimulated) tags( Physics ) editormodel( "models/items/healthkit.vmdl" ) model() 
 metadata
 {
 	entity_tool_name = "Health Kit"
 	entity_tool_group = "DM:04"
 }
-= dm08_healthkit : ""
+= dm04_healthkit : ""
 [
 	model(resource:vmdl) { report = true hide_when_solid = true }: "World Model" : "" : "The model this entity should use."
 	skin(materialgroup) { group = "Rendering" hide_when_solid = true } : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
@@ -57,13 +73,13 @@ metadata
 //
 // HealthVial
 //
-@PointClass base(BaseProperties_gman_dm04) tags( Physics ) editormodel( "models/healthvial.vmdl" ) model() 
+@PointClass base(BaseProperties_gman_dm04, BasePhysicsSimulated) tags( Physics ) editormodel( "models/healthvial.vmdl" ) model() 
 metadata
 {
 	entity_tool_name = "Health Vial"
 	entity_tool_group = "DM:04"
 }
-= dm08_healthvial : ""
+= dm04_healthvial : ""
 [
 	model(resource:vmdl) { report = true hide_when_solid = true }: "World Model" : "" : "The model this entity should use."
 	skin(materialgroup) { group = "Rendering" hide_when_solid = true } : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
@@ -89,29 +105,40 @@ metadata
 ]
 
 //
-// Crossbow
+// PlayerSetup
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_crossbow_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_dm04) iconsprite( "materials/dev/editor/dm04playerequip.vmat" ) 
 metadata
 {
-	entity_tool_name = "Crossbow"
+	entity_tool_name = "Player Equip"
 	entity_tool_group = "DM:04"
+	entity_tool_tip = "Manipulates the Player Arsenal"
 }
-= dm04_crossbow : ""
+= dm04_playerequip : ""
 [
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
-// Crowbar
-//
-@PointClass base(BaseProperties_gman_dm04) = dm04_crowbar : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+	givecrowbar(boolean) : "Should Give Crowbar" : 0 : "Give the Crowbar on player spawn"
+	giveusp(boolean) : "Should Give USP" : 0 : "Give the USP on player spawn"
+	giverevolver(boolean) : "Should Give Revolver" : 0 : "Give the Revolver on player spawn"
+	givesmg(boolean) : "Should Give SMG" : 0 : "Give the SMG on player spawn"
+	giveshotgun(boolean) : "Should Give Shotgun" : 0 : "Give the Shotgun on player spawn"
+	givear2(boolean) : "Should Give AR 2" : 0 : "Give the AR2 on player spawn"
+	givecrossbow(boolean) : "Should Give Bow" : 0 : "Give the Crossbow on player spawn"
+	givegrenade(boolean) : "Should Give Grenade" : 0 : "Give the Grenades on player spawn"
+	giverpg(boolean) : "Should Give RPG" : 0 : "Give the RPG on player spawn"
+	giveslam(boolean) : "Should Give Slam" : 0 : "Give the SLAM on player spawn"
+	givebugbaitwip(boolean) : "Should Give Bugbait" : 0 : "Give the Bugbait on player spawn"
+	givepistolammo(integer) { min = 0 max = 150 } : "Pistol Ammo To Give" : 0 : "How much Pistol ammo to give on player spawn (Limit is 150)"
+	givemagnumammo(integer) { min = 0 max = 12 } : "Magnum Ammo To Give" : 0 : "How much Magnum ammo to give on player spawn (Limit is 12)"
+	givesmgammo(integer) { min = 0 max = 225 } : "SMG Ammo To Give" : 0 : "How much SMG ammo to give on player spawn (Limit is 225)"
+	givesmgaltammo(integer) { min = 0 max = 3 } : "SMG Alt Ammo To Give" : 0 : "How much SMG alt ammo to give on player spawn (Limit is 3)"
+	giveshotgunammo(integer) { min = 0 max = 30 } : "Shotgun Ammo To Give" : 0 : "How much Shotgun ammo to give on player spawn (Limit is 30)"
+	givear2ammo(integer) { min = 0 max = 60 } : "AR 2 Ammo To Give" : 0 : "How much AR2 ammo to give on player spawn (Limit is 60)"
+	givear2altammo(integer) { min = 0 max = 3 } : "AR 2 Alt Ammo To Give" : 0 : "How much AR2 alt ammo to give on player spawn (Limit is 3)"
+	givecrossbowbolts(integer) { min = 0 max = 4 } : "Crossbow Ammo To Give" : 0 : "How much Crossbow bolts to give on player spawn (Limit is 4)"
+	givegrenades(integer) { min = 0 max = 5 } : "Grenades To Give" : 0 : "How many Grenades to give on player spawn (Limit is 5)"
+	giverpgrockets(integer) { min = 0 max = 3 } : "RPG Ammo To Give" : 0 : "How many RPG rockets to give on player spawn (Limit is 3)"
+	giveslams(integer) { min = 0 max = 5 } : "Slams To Give" : 0 : "How many SLAMs to give on player spawn (Limit is 5)"
+	givebugbait(integer) { min = 0 max = 5 } : "Bugbaits To Give" : 0 : "How many Bugbaits to give on player spawn (Limit is 5)"
 ]
 
 //
@@ -125,15 +152,143 @@ metadata
 ]
 
 //
-// Grenade
+// hl2_357
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/grenade_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) 
+metadata
+{
+	entity_tool_name = "357"
+	entity_tool_group = "DM:04"
+}
+= hl2_357 : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_ar2
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" ) 
+metadata
+{
+	entity_tool_name = "AR2"
+	entity_tool_group = "DM:04"
+}
+= hl2_ar2 : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_bugbait
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Bugbait"
+	entity_tool_group = "DM:04"
+}
+= hl2_bugbait : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_crossbow
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Crossbow"
+	entity_tool_group = "DM:04"
+}
+= hl2_crossbow : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_crowbar
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Crowbar"
+	entity_tool_group = "DM:04"
+}
+= hl2_crowbar : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_egon
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Egon"
+	entity_tool_group = "DM:04"
+}
+= hl2_egon : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_gauss
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_357/w_hl2_357.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Gauss"
+	entity_tool_group = "DM:04"
+}
+= hl2_gauss : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_gravgun
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" ) 
+metadata
+{
+	entity_tool_name = "GravGun"
+	entity_tool_group = "DM:04"
+}
+= hl2_gravgun : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_grenade
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) 
 metadata
 {
 	entity_tool_name = "Grenade"
 	entity_tool_group = "DM:04"
 }
-= dm04_grenade : ""
+= hl2_grenade : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -141,15 +296,15 @@ metadata
 ]
 
 //
-// Magnum
+// hl2_rpg
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_357_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_rpg/w_hl2_rpg.vmdl" ) 
 metadata
 {
-	entity_tool_name = "Magnum"
+	entity_tool_name = "RPG"
 	entity_tool_group = "DM:04"
 }
-= dm04_357 : ""
+= hl2_rpg : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -157,15 +312,15 @@ metadata
 ]
 
 //
-// Pistol
+// hl2_slam
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/pistol_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" ) 
 metadata
 {
-	entity_tool_name = "Pistol"
+	entity_tool_name = "SLAM"
 	entity_tool_group = "DM:04"
 }
-= dm04_pistol : ""
+= hl2_slam : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -173,47 +328,15 @@ metadata
 ]
 
 //
-// PulseSMG
+// hl2_smg1
 //
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/w_irifle_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Pulse Rifle"
-	entity_tool_group = "DM:04"
-}
-= dm04_pulsesmg : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
-// Shotgun
-//
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/shotgun_reference.vmdl" ) 
-metadata
-{
-	entity_tool_name = "Shotgun"
-	entity_tool_group = "DM:04"
-}
-= dm04_shotgun : ""
-[
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-//
-// SMG
-//
-@PointClass base(BaseProperties_gman_dm04) editormodel( "models/worldmodels/smg1_reference.vmdl" ) 
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" ) 
 metadata
 {
 	entity_tool_name = "SMG"
 	entity_tool_group = "DM:04"
 }
-= dm04_smg : ""
+= hl2_smg1 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -221,9 +344,15 @@ metadata
 ]
 
 //
-// StunBaton
+// hl2_spas12
 //
-@PointClass base(BaseProperties_gman_dm04) = dm04_stunbaton : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Shotgun"
+	entity_tool_group = "DM:04"
+}
+= hl2_spas12 : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
@@ -231,10 +360,61 @@ metadata
 ]
 
 //
-// GravGun
+// hl2_stunstick
 //
-@PointClass base(BaseProperties_gman_dm04) = dm04_gravgun : ""
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Stunbaton"
+	entity_tool_group = "DM:04"
+}
+= hl2_stunstick : ""
 [
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// hl2_uspmatch
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" ) 
+metadata
+{
+	entity_tool_name = "USP Match"
+	entity_tool_group = "DM:04"
+}
+= hl2_uspmatch : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// OLD_gravgun
+//
+@PointClass base(BaseProperties_gman_dm04) editormodel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" ) = OLD_gravgun : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// Sandbox.BasePhysics
+//
+@PointClass base(BaseProperties_gman_dm04) model() 
+metadata
+{
+	entity_tool_name = "Respawnable Prop"
+	entity_tool_group = "DM:04"
+}
+= prop_physics_respawnable : "Base entity with phyiscal properties, enables imapct damage and the like"
+[
+	model(resource:vmdl) { report = true hide_when_solid = true }: "World Model" : "" : "The model this entity should use."
+	skin(materialgroup) { group = "Rendering" hide_when_solid = true } : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
+	bodygroups(bodygroupchoices) { group = "Rendering" hide_when_solid = true } : "Body Groups" : "" : "Some models have multiple variations of certain items, such as characters having different hair styles, etc."
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."

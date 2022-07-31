@@ -1,0 +1,8 @@
+
+$Sequence "stayput" {
+	"w_egon_anims\stayput.smd"
+	activity "ACT_VM_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 1
+}
