@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using Sandbox;
 
-[Library("dm04_playerequip", HammerEntity )]
+[Library( "dm04_playerequip" ), HammerEntity]
+[Title( "Player Start" ), Category( "Hammer" )]
 
 public partial class PlayerSetup : Entity
 {
@@ -146,7 +147,7 @@ public partial class PlayerSetup : Entity
 				foreach (var weapon in weaponsToGive)
 				{
 					if (!player.Inventory.Contains(weapon))
-						player.Inventory.Add( TypeLibrary.Create<DeathmatchWeapon>(weapon.GetType()));
+						player.Inventory.Add(TypeLibrary.Create<DeathmatchWeapon>(weapon.GetType()));
 
 					weapon.Delete();
 				}
