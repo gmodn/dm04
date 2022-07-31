@@ -1,0 +1,12 @@
+
+$CollisionModel "suit_charger001_physics.smd"
+{
+	$mass 220
+	$inertia 1
+	$damping 0
+	$rotdamping 0
+	$rootbone " "
+	$concave
+	$maxconvexpieces 3
+
+}

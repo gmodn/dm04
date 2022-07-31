@@ -29,6 +29,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
+						disabled = true
 						filename = "models/hands/Hands_reference.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
@@ -52,6 +53,7 @@
 					{
 						_class = "AnimFile"
 						name = "admire"
+						disabled = true
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -77,5 +79,6 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = ""
+		base_model_name = ""
 	}
 }

@@ -1,0 +1,353 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "LODGroupList"
+				children = 
+				[
+					{
+						_class = "LODGroup"
+						switch_threshold = 0.0
+						meshes = 
+						[
+							"suit_charger001_bg_body_lod0",
+						]
+					},
+					{
+						_class = "LODGroup"
+						switch_threshold = 10.0
+						meshes = 
+						[
+							"suit_charger001_bg_body_lod1",
+						]
+					},
+					{
+						_class = "LODGroup"
+						switch_threshold = 20.0
+						meshes = 
+						[
+							"suit_charger001_bg_body_lod2",
+						]
+					},
+					{
+						_class = "LODGroup"
+						switch_threshold = 40.0
+						meshes = 
+						[
+							"suit_charger001_bg_body_lod3",
+						]
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "cube"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.263144, -24.083282, 0.0 ]
+								hitbox_maxs = [ 10.247434, 24.086887, 7.989123 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube2"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.754707, -0.752867, -0.575727 ]
+								hitbox_maxs = [ 0.756653, 0.758516, 0.689269 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube1"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.286329, -6.100471, -1.080575 ]
+								hitbox_maxs = [ 1.283664, 7.378435, 1.165639 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.263144, -24.083282, 0.0 ]
+								hitbox_maxs = [ 10.247434, 24.086887, 7.989123 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube2"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.754707, -0.752867, -0.575727 ]
+								hitbox_maxs = [ 0.756653, 0.758516, 0.689269 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube1"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.286329, -6.100471, -1.080575 ]
+								hitbox_maxs = [ 1.283664, 7.378435, 1.165639 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.263144, -24.083282, 0.0 ]
+								hitbox_maxs = [ 10.247434, 24.086887, 7.989123 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube2"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.754707, -0.752867, -0.575727 ]
+								hitbox_maxs = [ 0.756653, 0.758516, 0.689269 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube1"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.286329, -6.100471, -1.080575 ]
+								hitbox_maxs = [ 1.283664, 7.378435, 1.165639 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.263144, -24.083282, 0.0 ]
+								hitbox_maxs = [ 10.247434, 24.086887, 7.989123 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube2"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.754707, -0.752867, -0.575727 ]
+								hitbox_maxs = [ 0.756653, 0.758516, 0.689269 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "cube1"
+								surface_property = "metal"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.286329, -6.100471, -1.080575 ]
+								hitbox_maxs = [ 1.283664, 7.378435, 1.165639 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "suit_charger001_bg_body_lod0"
+						filename = "models/props_combine/suit_charger001_fbx/mesh/suit_charger001_bg_body_lod0.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "suit_charger001_bg_body_lod1"
+						filename = "models/props_combine/suit_charger001_fbx/mesh/suit_charger001_bg_body_lod1.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "suit_charger001_bg_body_lod2"
+						filename = "models/props_combine/suit_charger001_fbx/mesh/suit_charger001_bg_body_lod2.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "suit_charger001_bg_body_lod3"
+						filename = "models/props_combine/suit_charger001_fbx/mesh/suit_charger001_bg_body_lod3.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "idle"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/props_combine/suit_charger001_fbx/anim/idle.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 30.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "emptyclick"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/props_combine/suit_charger001_fbx/anim/emptyclick.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 6.0
+						take = 0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "empty"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/props_combine/suit_charger001_fbx/anim/empty.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 30.0
+						take = 0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsHullFile"
+						name = "suit_charger001_bg_body_lod0"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_tags = "solid"
+						recenter_on_parent_bone = false
+						offset_origin = [ 0.0, 0.0, 0.0 ]
+						offset_angles = [ 0.0, 0.0, 0.0 ]
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						filename = "models/props_combine/suit_charger001_fbx/mesh/suit_charger001_bg_body_lod0.fbx"
+						import_scale = 1.0
+						faceMergeAngle = 10.0
+						maxHullVertices = 0
+						import_mode = "SingleHull"
+						optimization_algorithm = "QEM"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		base_model_name = ""
+		importer_notes = """
+Imported from compiled VMDL_C
+==Warnings==
+Cannot import mdl file: modelsporting/models/props_combine/suit_charger001.mdl
+
+"""
+	}
+}

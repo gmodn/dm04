@@ -37,6 +37,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
+						disabled = true
 						filename = "models/rifleshell/rifleshell.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
@@ -57,5 +58,6 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = ""
+		base_model_name = ""
 	}
 }

@@ -3,7 +3,7 @@
 /// </summary>
 [Library( "dm_chargerstation" ), HammerEntity]
 [SupportsSolid]
-[EditorModel( "models/gameplay/charger/charger_station.vmdl" )]
+[EditorModel( "models/props_combine/suit_charger001.vmdl" )]
 [Title( "Charger Station" )]
 partial class ChargerStation : KeyframeEntity, IUse
 {
@@ -31,8 +31,8 @@ partial class ChargerStation : KeyframeEntity, IUse
 	[Property( "armourcharger", Title = "Is Armour Charger" )]
 	public bool IsArmourCharger { get; set; } = false;
 
-	public static readonly Model HealthChargerModel = Model.Load( "models/gameplay/charger/charger_station.vmdl" );
-	public static readonly Model ArmourChargerModel = Model.Load( "models/gameplay/charger/armour_charger_station.vmdl" );
+	public static readonly Model HealthChargerModel = Model.Load( "models/props_combine/health_charger001.vmdl" );
+	public static readonly Model ArmourChargerModel = Model.Load( "models/props_combine/suit_charger001.vmdl" );
 
 	private TimeSince TimeSinceUsed;
 
