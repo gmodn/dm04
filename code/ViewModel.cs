@@ -6,7 +6,7 @@
 	{
 		base.PostCameraSetup( ref camSetup );
 
-		// camSetup.ViewModelFieldOfView = camSetup.FieldOfView + (FieldOfView - 80);
+		//camSetup.ViewModelFieldOfView = camSetup.FieldOfView + (FieldOfView - 80);
 
 		AddCameraEffects( ref camSetup );
 	}

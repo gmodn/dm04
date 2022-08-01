@@ -3,7 +3,7 @@
 
 [Library( "hl2_crowbar", Title = "CROWBAR" )]
 [EditorModel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" )]
-partial class hl2_crowbar : DeathmatchWeapon
+partial class hl2_crowbar : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_crowbar/v_hl2_crowbar.vmdl";
 	public override float PrimaryRate => 2.0f;

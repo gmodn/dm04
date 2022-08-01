@@ -17,7 +17,7 @@ public class InventoryColumn : Panel
 		Header = Add.Label( $"{i + 1}", "slot-number" );
 	}
 
-	internal void UpdateWeapon( DeathmatchWeapon weapon )
+	internal void UpdateWeapon( HLDMWeapon weapon )
 	{
 		var icon = ChildrenOfType<InventoryIcon>().FirstOrDefault( x => x.Weapon == weapon );
 		if ( icon == null )
@@ -30,7 +30,7 @@ public class InventoryColumn : Panel
 
 	}
 
-	internal void TickSelection( DeathmatchWeapon selectedWeapon )
+	internal void TickSelection( HLDMWeapon selectedWeapon )
 	{
 		SetClass( "active", selectedWeapon?.Bucket == Column );
 

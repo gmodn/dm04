@@ -3,7 +3,7 @@
 
 [Library( "hl2_spas12", Title = "SHOTGUN" )]
 [EditorModel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" )]
-partial class hl2_spas12 : DeathmatchWeapon
+partial class hl2_spas12 : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_spas12/v_hl2_spas12.vmdl";
 	public override float PrimaryRate => 1.13f;

@@ -3,7 +3,7 @@
 
 [Library( "hl2_bugbait", Title = "BugBait" )]
 [EditorModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" )]
-partial class hl2_bugbait : DeathmatchWeapon
+partial class hl2_bugbait : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_bugbait/v_hl2_bugbait.vmdl";
 	public override float PrimaryRate => 1f;

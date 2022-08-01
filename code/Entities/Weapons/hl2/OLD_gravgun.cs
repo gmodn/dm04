@@ -3,7 +3,7 @@
 
 [Library( "OLD_gravgun", Title = "ZERO-POINT ENERGY GUN (GRAVITY GUN)" )]
 [EditorModel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" )]
-partial class OLD_gravgun : DeathmatchWeapon
+partial class OLD_gravgun : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl";
 	public override float PrimaryRate => 2.0f;

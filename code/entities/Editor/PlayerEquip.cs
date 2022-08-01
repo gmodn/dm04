@@ -94,47 +94,47 @@ public partial class PlayerSetup : Entity
 	[MinMax(0, 5)]
 	public int Bugbaits_To_Give { get; set; } = 0;
 
-	private List<DeathmatchWeapon> weaponsToGive;
+	private List<HLDMWeapon> weaponsToGive;
 
 	public override void Spawn()
 	{
 		base.Spawn();
-		weaponsToGive = new List<DeathmatchWeapon>();
+		weaponsToGive = new List<HLDMWeapon>();
 
 		if (Should_Give_Crowbar)
-			weaponsToGive.Add(TypeLibrary.Create<DeathmatchWeapon>("hl2_crowbar"));
+			weaponsToGive.Add(TypeLibrary.Create<HLDMWeapon>("hl2_crowbar"));
 
 		if (Should_Give_USP)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_uspmatch"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_uspmatch"));
 
 		if (Should_Give_Revolver)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_357"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_357"));
 
 		if (Should_Give_SMG)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_smg1"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_smg1"));
 
 		if (Should_Give_Shotgun)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_spas12"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_spas12"));
 
 		if (Should_Give_AR2)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_ar2"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_ar2"));
 
 		if (Should_Give_Bow)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_crossbow"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_crossbow"));
 
 		if (Should_Give_Grenade)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_grenade"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_grenade"));
 
 		if (Should_Give_RPG)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_rpg"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_rpg"));
 
 		if (Should_Give_Slam)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_slam"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_slam"));
 
 		//Anything below here is wip weapons.
 
 		if (Should_Give_Bugbait)
-			weaponsToGive.Add( TypeLibrary.Create<DeathmatchWeapon>("hl2_bugbait"));
+			weaponsToGive.Add( TypeLibrary.Create<HLDMWeapon>("hl2_bugbait"));
 	}
 
 	[Event.Tick.Server]
@@ -147,7 +147,7 @@ public partial class PlayerSetup : Entity
 				foreach (var weapon in weaponsToGive)
 				{
 					if (!player.Inventory.Contains(weapon))
-						player.Inventory.Add(TypeLibrary.Create<DeathmatchWeapon>(weapon.GetType()));
+						player.Inventory.Add(TypeLibrary.Create<HLDMWeapon>(weapon.GetType()));
 
 					weapon.Delete();
 				}

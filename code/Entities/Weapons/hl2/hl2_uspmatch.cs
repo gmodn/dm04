@@ -3,7 +3,7 @@
 
 [Library( "hl2_uspmatch", Title = "USP" )]
 [EditorModel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" )]
-partial class hl2_uspmatch : DeathmatchWeapon
+partial class hl2_uspmatch : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_uspmatch/v_hl2_uspmatch.vmdl";
 

@@ -2,7 +2,7 @@
 
 [Library( "hl2_rpg", Title = "RPG" )]
 [EditorModel( "models/weapons/hl2_rpg/w_hl2_rpg.vmdl" )]
-partial class hl2_rpg : DeathmatchWeapon
+partial class hl2_rpg : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_rpg/v_hl2_rpg.vmdl";
 

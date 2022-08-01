@@ -3,7 +3,7 @@
 
 [Library( "hl2_stunstick", Title = "STUNSTICK" )]
 [EditorModel( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" )]
-partial class hl2_stunstick : DeathmatchWeapon
+partial class hl2_stunstick : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_stunstick/v_stunbaton.vmdl";
 	public override float PrimaryRate => 1.0f;

@@ -3,7 +3,7 @@ using System;
 
 [Library( "hl2_ar2", Title = "AR2" )]
 [EditorModel( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" )]
-partial class hl2_ar2 : DeathmatchWeapon
+partial class hl2_ar2 : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_ar2/v_hl2_ar2.vmdl";
 

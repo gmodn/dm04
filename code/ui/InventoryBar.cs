@@ -6,10 +6,10 @@
 public class InventoryBar : Panel
 {
 	List<InventoryColumn> columns = new();
-	List<DeathmatchWeapon> Weapons = new();
+	List<HLDMWeapon> Weapons = new();
 
 	public bool IsOpen;
-	DeathmatchWeapon SelectedWeapon;
+	HLDMWeapon SelectedWeapon;
 
 	public InventoryBar()
 	{
@@ -30,7 +30,7 @@ public class InventoryBar : Panel
 		if ( player == null ) return;
 
 		Weapons.Clear();
-		Weapons.AddRange( player.Children.Select( x => x as DeathmatchWeapon ).Where( x => x.IsValid() && x.IsUsable() ) );
+		Weapons.AddRange( player.Children.Select( x => x as HLDMWeapon ).Where( x => x.IsValid() && x.IsUsable() ) );
 
 		foreach ( var weapon in Weapons )
 		{
@@ -69,7 +69,7 @@ public class InventoryBar : Panel
 		// We're not open, but we want to be
 		if ( IsOpen != wantOpen )
 		{
-			SelectedWeapon = localPlayer?.ActiveChild as DeathmatchWeapon;
+			SelectedWeapon = localPlayer?.ActiveChild as HLDMWeapon;
 			IsOpen = true;
 		}
 
@@ -114,7 +114,7 @@ public class InventoryBar : Panel
 		}
 	}
 
-	int SlotPressInput( InputBuilder input, int SelectedIndex, List<DeathmatchWeapon> sortedWeapons )
+	int SlotPressInput( InputBuilder input, int SelectedIndex, List<HLDMWeapon> sortedWeapons )
 	{
 		var columninput = -1;
 
@@ -143,12 +143,12 @@ public class InventoryBar : Panel
 		return sortedWeapons.IndexOf( firstOfColumn );
 	}
 
-	int NextInBucket( List<DeathmatchWeapon> sortedWeapons )
+	int NextInBucket( List<HLDMWeapon> sortedWeapons )
 	{
 		Assert.NotNull( SelectedWeapon );
 
-		DeathmatchWeapon first = null;
-		DeathmatchWeapon prev = null;
+		HLDMWeapon first = null;
+		HLDMWeapon prev = null;
 		foreach ( var weapon in sortedWeapons.Where( x => x.Bucket == SelectedWeapon.Bucket ) )
 		{
 			if ( first == null ) first = weapon;

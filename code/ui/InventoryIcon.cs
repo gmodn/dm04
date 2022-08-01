@@ -2,10 +2,10 @@
 
 class InventoryIcon : Panel
 {
-	public DeathmatchWeapon Weapon;
+	public HLDMWeapon Weapon;
 	public Panel Icon;
 
-	public InventoryIcon( DeathmatchWeapon weapon )
+	public InventoryIcon( HLDMWeapon weapon )
 	{
 		Weapon = weapon;
 		Icon = Add.Panel( "icon" );
@@ -13,7 +13,7 @@ class InventoryIcon : Panel
 		AddClass( weapon.ClassName );
 	}
 
-	internal void TickSelection( DeathmatchWeapon selectedWeapon )
+	internal void TickSelection( HLDMWeapon selectedWeapon )
 	{
 		SetClass( "active", selectedWeapon == Weapon );
 		SetClass( "empty", !Weapon?.IsUsable() ?? true );

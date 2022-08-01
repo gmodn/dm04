@@ -4,7 +4,7 @@ using System.Linq;
 
 [Library("hl2_gravgun", Title = "gravgun" )]
 [EditorModel("models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl")]
-partial class hl2_gravgun : DeathmatchWeapon
+partial class hl2_gravgun : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl";
 	public override AmmoType AmmoType => AmmoType.None;
@@ -12,7 +12,7 @@ partial class hl2_gravgun : DeathmatchWeapon
 
 	private PhysicsBody holdBody;
 	private FixedJoint holdJoint;
-	public DeathmatchWeapon weaponpickup;
+	public HLDMWeapon weaponpickup;
 	public PhysicsBody HeldBody { get; private set; }
 	public Rotation HeldRot { get; private set; }
 	public ModelEntity HeldEntity { get; private set; }
@@ -235,7 +235,7 @@ partial class hl2_gravgun : DeathmatchWeapon
 		holdJoint.Strength = HeldBody.Mass * BreakLinearForce;
 
 		HeldEntity = entity;
-		if ( HeldEntity is DeathmatchWeapon weapon )
+		if ( HeldEntity is HLDMWeapon weapon )
 		{
 			weaponpickup = weapon;
 			weapon.gravhitbox();

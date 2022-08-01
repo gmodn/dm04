@@ -69,13 +69,25 @@
 		ply.GiveAmmo( AmmoType.Buckshot, 1000 );
 		ply.GiveAmmo( AmmoType.Crossbow, 1000 );
 		ply.GiveAmmo( AmmoType.Grenade, 1000 );
+		ply.GiveAmmo( AmmoType.SMG, 1000 );
+		ply.GiveAmmo( AmmoType.SMG_grenade, 1000 );
+		ply.GiveAmmo( AmmoType.AR2, 1000 );
+		ply.GiveAmmo( AmmoType.AR2_ball, 1000 );
+		ply.GiveAmmo( AmmoType.SLAM, 1000 );
+		ply.GiveAmmo( AmmoType.RPG, 1000 );
+		ply.GiveAmmo( AmmoType.Magnum, 1000 );
 
 
-	
-		ply.Inventory.Add( new Shotgun() );
-		ply.Inventory.Add( new SMG() );
-		ply.Inventory.Add( new Crossbow() );
-		ply.Inventory.Add( new GrenadeWeapon() );
+
+		ply.Inventory.Add( new hl2_uspmatch() );
+		ply.Inventory.Add( new hl2_spas12() );
+		ply.Inventory.Add( new hl2_smg1() );
+		ply.Inventory.Add( new hl2_crossbow() );
+		ply.Inventory.Add( new hl2_ar2() );
+		ply.Inventory.Add( new hl2_357() );
+		ply.Inventory.Add( new hl2_stunstick() );
+		ply.Inventory.Add( new hl2_rpg() );
+		ply.Inventory.Add( new hl2_grenade() );
 	}
 
 	public override void OnKilled()
@@ -186,7 +198,7 @@
 		// If the current weapon is out of ammo and we last fired it over half a second ago
 		// lets try to switch to a better wepaon
 		//
-		if ( ActiveChild is DeathmatchWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
+		if ( ActiveChild is HLDMWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
 		{
 			SwitchToBestWeapon();
 		}
@@ -194,7 +206,7 @@
 
 	public void SwitchToBestWeapon()
 	{
-		var best = Children.Select( x => x as DeathmatchWeapon )
+		var best = Children.Select( x => x as HLDMWeapon )
 			.Where( x => x.IsValid() && x.IsUsable() )
 			.OrderByDescending( x => x.BucketWeight )
 			.FirstOrDefault();
@@ -412,7 +424,7 @@
 
 		// RenderOverlayTest( screenSize );
 
-		if ( ActiveChild is DeathmatchWeapon weapon )
+		if ( ActiveChild is HLDMWeapon weapon )
 		{
 			weapon.RenderHud( screenSize );
 		}

@@ -86,3 +86,96 @@
 		}
 	}
 }
+
+ammo {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+
+	Panel {
+		position: absolute;
+		background-color: rgba( 0, 0, 0, 0.6 );
+		border-radius: 7px;
+	}
+
+	Label {
+		position: absolute;
+	}
+
+	.Ammo {
+		right: 190px;
+		bottom: 27px;
+		width: 297px;
+		height: 81px;
+	}
+
+	.AmmoText {
+		left: 17px;
+		bottom: 15px;
+		font-family: Verdana;
+		font-size: 16.5px;
+		font-weight: 700;
+		color: yellow;
+	}
+
+	.Counter {
+		left: 105px;
+		bottom: 5px;
+		font-family: HalfLife2;
+		font-size: 61px;
+		color: yellow;
+	}
+
+	.Reserve {
+		left: 220px;
+		bottom: 8px;
+		font-family: HalfLife2;
+		font-size: 31px;
+		font-weight: 700;
+		color: yellow;
+	}
+
+	.icon {
+		width: 0px;
+		transition: all 0.5s ease-in;
+		font-family: HalfLife2;
+		font-weight: 100;
+		top: -10px;
+		left: 16px;
+		font-size: 64px;
+		text-shadow: 0 0 0px rgba(255, 220, 0, 0.0);
+		color: yellow;
+	}
+
+	.Alt {
+		right: 22px;
+		bottom: 27px;
+		width: 162px;
+		height: 81px;
+
+		.AmmoText {
+			left: 18px;
+			bottom: 11px;
+		}
+
+		.Counter {
+			left: 88px;
+		}
+
+		.icon {
+			width: 0px;
+			transition: all 0.5s ease-in;
+			font-family: HalfLife2;
+			font-weight: 100;
+			top: -7px;
+			left: 18px;
+			font-size: 64px;
+			text-shadow: 0 0 0px rgba(255, 220, 0, 0.0);
+			color: yellow;
+		}
+	}
+}
+
+.Empty {
+	color: "#FF0000";
+}

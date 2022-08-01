@@ -3,7 +3,7 @@
 [Library( "devgun" ), HammerEntity]
 [EditorModel( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" )]
 [Title( "Dev Gun" ), Category( "Weapons" )]
-partial class devgun : DeathmatchWeapon
+partial class devgun : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/dev/v_devgun.vmdl";
 

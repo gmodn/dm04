@@ -2,7 +2,7 @@
 
 [Library( "hl2_crossbow", Title = "CROSSBOW" )]
 [EditorModel( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" )]
-partial class hl2_crossbow : DeathmatchWeapon
+partial class hl2_crossbow : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_crossbow/v_hl2_crossbow.vmdl";
 

@@ -3,7 +3,7 @@
 [Library( "hl2_357" ), HammerEntity]
 [EditorModel( "models/weapons/hl2_357/w_hl2_357.vmdl" )]
 [Title( "357" ), Category( "Weapons" )]
-partial class hl2_357 : DeathmatchWeapon
+partial class hl2_357 : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_357/v_hl2_357.vmdl";
 	public override float PrimaryRate => 1.3f;

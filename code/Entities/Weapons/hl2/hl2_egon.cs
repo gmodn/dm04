@@ -3,7 +3,7 @@
 
 [Library( "hl2_egon", Title = "egon" )]
 [EditorModel( "models/weapons/hl2_357/w_hl2_357.vmdl" )]
-partial class hl2_egon : DeathmatchWeapon
+partial class hl2_egon : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_egon/v_hl2_egon.vmdl";
 	public override float PrimaryRate => 0f;

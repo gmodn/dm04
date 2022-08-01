@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 [Library( "hl2_slam", Title = "S.L.A.M (Selectable Lightweight Attack Munition" )]
 [EditorModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" )]
-partial class hl2_slam : DeathmatchWeapon
+partial class hl2_slam : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_slam/v_slam.vmdl";
 	public override float PrimaryRate => 1.0f;

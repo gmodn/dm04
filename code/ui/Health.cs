@@ -2,8 +2,8 @@
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 
-	public partial class Health : Panel
-	{
+public partial class Health : Panel
+{
 	public Label Label;
 	public Label Label2;
 	public float prevHealth = 0;
@@ -25,7 +25,7 @@ using Sandbox.UI.Construct;
 
 
 		Label.Text = $"{player.Health.CeilToInt()}";
-		Label.SetClass( "danger", (player.Health <= 20.0f) );
+		Label.SetClass( "danger", (player.Health <= 20.0f) );	
 		Label.SetClass( "value", player.Health >= 20.0f );
 
 		Label2.SetClass( "dangerMini", (player.Health <= 20.0f) );
@@ -36,4 +36,3 @@ using Sandbox.UI.Construct;
 		prevHealth = player.Health;
 	}
 }
-
