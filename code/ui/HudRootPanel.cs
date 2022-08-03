@@ -23,6 +23,7 @@ public class HudRootPanel : RootPanel
 		AddChild<Ammo>();
 		AddChild<Health>();
 		AddChild<KillFeed>();
+		AddChild<Crosshair>();
 		Scoreboard = AddChild<Scoreboard>();
 		AddChild<VoiceList>();
 	}

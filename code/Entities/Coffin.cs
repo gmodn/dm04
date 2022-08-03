@@ -1,6 +1,6 @@
 ﻿partial class Coffin : ModelEntity
 {
-	public static readonly Model WorldModel = Model.Load( "models/dm_coffin.vmdl" );
+	public static readonly Model WorldModel = Model.Load( "models/player/hev_coffin.vmdl" );
 
 	public List<string> Weapons = new List<string>();
 	public List<int> Ammos = new List<int>();

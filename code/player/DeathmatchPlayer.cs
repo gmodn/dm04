@@ -21,8 +21,7 @@
 	
 	public override void Respawn()
 	{
-		SetModel( Rand.FromList(clonedList));
-
+		SetModel( "models/player/hevsuit_white.vmdl" );
 		Controller = new WalkController
 		{
 			WalkSpeed = 270,
@@ -50,8 +49,27 @@
 		Inventory.Add( new hl2_crowbar() );
 		Inventory.Add( new hl2_gravgun() );
 		Inventory.Add( new hl2_357(), true );
+		Inventory.Add( new hl2_uspmatch() );
+		Inventory.Add( new hl2_spas12() );
+		Inventory.Add( new hl2_smg1() );
+		Inventory.Add( new hl2_crossbow() );
+		Inventory.Add( new hl2_ar2() );
+		Inventory.Add( new hl2_357() );
+		Inventory.Add( new hl2_stunstick() );
+		Inventory.Add( new hl2_rpg() );
+		Inventory.Add( new hl2_grenade() );
 
 		GiveAmmo( AmmoType.Pistol, 25 );
+		GiveAmmo( AmmoType.Buckshot, 1000 );
+		GiveAmmo( AmmoType.Crossbow, 1000 );
+		GiveAmmo( AmmoType.Grenade, 1000 );
+		GiveAmmo( AmmoType.SMG, 1000 );
+		GiveAmmo( AmmoType.SMG_grenade, 1000 );
+		GiveAmmo( AmmoType.AR2, 1000 );
+		GiveAmmo( AmmoType.AR2_ball, 1000 );
+		GiveAmmo( AmmoType.SLAM, 1000 );
+		GiveAmmo( AmmoType.RPG, 1000 );
+		GiveAmmo( AmmoType.Magnum, 1000 );
 
 		SupressPickupNotices = false;
 		Health = 100;

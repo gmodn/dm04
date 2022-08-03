@@ -10,18 +10,22 @@
 		// TODO - lets not make everyone write this shit out all the time
 		// maybe a CreateRagdoll<T>() on ModelEntity?
 		var ent = new ModelEntity();
+		ent.Tags.Add( "playerragdoll", "solid", "debris" );
 		ent.Position = Position;
 		ent.Rotation = Rotation;
-		ent.MoveType = MoveType.Physics;
+		ent.Scale = Scale;
 		ent.UsePhysicsCollision = true;
-		ent.SetInteractsAs( CollisionLayer.Debris );
-		ent.SetInteractsWith( CollisionLayer.WORLD_GEOMETRY );
-		ent.SetInteractsExclude( CollisionLayer.Player | CollisionLayer.Debris );
-
-		ent.CopyFrom( this );
+		ent.EnableAllCollisions = true;
+		ent.SetModel( GetModelName() );
 		ent.CopyBonesFrom( this );
-		ent.SetRagdollVelocityFrom( this );
-		ent.DeleteAsync( 20.0f );
+		ent.CopyBodyGroups( this );
+		ent.CopyMaterialGroup( this );
+		ent.CopyMaterialOverrides( this );
+		ent.TakeDecalsFrom( this );
+		ent.EnableAllCollisions = true;
+		ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
+		ent.RenderColor = RenderColor;
+		ent.PhysicsEnabled = true;
 
 		// Copy the clothes over
 		foreach ( var child in Children )
