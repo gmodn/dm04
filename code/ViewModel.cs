@@ -41,6 +41,6 @@
 		uitx.AddTranslateY( MathF.Sin( walkBob * 1.0f ) * speed * -4.0f );
 		uitx.AddTranslateX( MathF.Sin( walkBob * 0.5f ) * speed * -3.0f );
 
-		HudRootPanel.Current.Style.Transform = uitx;
+		DeathmatchHud.Current.Style.Transform = uitx;
 	}
 }

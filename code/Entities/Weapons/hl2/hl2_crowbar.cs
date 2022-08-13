@@ -8,6 +8,7 @@ partial class hl2_crowbar : HLDMWeapon
 	public override string ViewModelPath => "models/weapons/hl2_crowbar/v_hl2_crowbar.vmdl";
 	public override float PrimaryRate => 2.0f;
 	public override AmmoType AmmoType => AmmoType.None;
+	public override int BucketWeight => 50;
 	public override int Bucket => 0;
 
 	public override void Spawn()

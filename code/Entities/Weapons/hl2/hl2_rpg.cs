@@ -8,7 +8,8 @@ partial class hl2_rpg : HLDMWeapon
 
 	public override float PrimaryRate => 0.52f;
 	public override float ReloadTime => 2.8f;
-	public override int Bucket => 4;
+	public override int Bucket => 4; 
+	public override int BucketWeight => 50;
 	public override AmmoType AmmoType => AmmoType.RPG;
 	//public override string AmmoIcon => "x";
 	public override int ClipSize => 1;

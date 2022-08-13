@@ -27,7 +27,7 @@ partial class MapVoteEntity : Entity
 
 		Current = this;
 		Panel = new MapVotePanel();
-		HudRootPanel.Current.AddChild( Panel );
+		DeathmatchHud.Current.AddChild( Panel );
 	}
 
 	protected override void OnDestroy()

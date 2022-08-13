@@ -113,7 +113,7 @@
 						source_filename = "models/weapons/hl2_357/v_anims/draw.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 45.0
 						take = 0
 						reverse = false
 					},
@@ -134,7 +134,7 @@
 						source_filename = "models/weapons/hl2_357/v_anims/fire.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 45.0
 						take = 0
 						reverse = false
 					},
@@ -502,9 +502,25 @@
 				]
 				default_root_bone_name = ""
 			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "muzzle"
+						parent_bone = "357_cylinder_extractor_stick"
+						relative_origin = [ 6.010544, -0.88369, -0.026659 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = "models/weapons/hl2_357/v_hl2_357.vanmgrph"
+		base_model_name = ""
 	}
 }

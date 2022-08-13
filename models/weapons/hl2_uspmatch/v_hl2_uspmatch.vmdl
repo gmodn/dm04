@@ -121,7 +121,7 @@
 						source_filename = "models/weapons/hl2_uspmatch/v_anims/draw.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 45.0
 						take = 0
 						reverse = false
 					},
@@ -621,5 +621,6 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = "models/weapons/hl2_uspmatch/v_hl2_uspmatch.vanmgrph"
+		base_model_name = ""
 	}
 }

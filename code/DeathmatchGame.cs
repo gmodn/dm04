@@ -11,9 +11,6 @@ global using System.Threading.Tasks;
 /// </summary>
 partial class DeathmatchGame : Game
 {
-	[Net]
-	DeathmatchHud Hud { get; set; }
-
 	StandardPostProcess postProcess;
 	public List<string> Playermodels = new List<string>();
 	public DeathmatchGame()
@@ -24,8 +21,6 @@ partial class DeathmatchGame : Game
 		//
 		if ( IsServer )
 		{
-			Hud = new DeathmatchHud();
-
 			_ = GameLoopAsync();
 		}
 
@@ -33,6 +28,17 @@ partial class DeathmatchGame : Game
 		{
 			postProcess = new StandardPostProcess();
 			PostProcess.Add( postProcess );
+
+			_ = new DeathmatchHud();
+		}
+	}
+
+	[Event.Hotload]
+	public void HotloadDeathmatch()
+	{
+		if(IsClient)
+		{
+			_ = new DeathmatchHud();
 		}
 	}
 
@@ -103,13 +109,11 @@ partial class DeathmatchGame : Game
 		return distance;
 	}
 
-	public override void OnKilled( Client client, Entity pawn )
+	[ClientRpc]
+	public override void OnKilledMessage( long leftid, string left, long rightid, string right, string method )
 	{
-		base.OnKilled( client, pawn );
-
-		Hud.OnPlayerDied( To.Everyone, pawn as DeathmatchPlayer );
+		Sandbox.UI.KillFeed.Current?.AddEntry( leftid, left, rightid, right, method );
 	}
-
 
 	public override void FrameSimulate( Client cl )
 	{
@@ -227,12 +231,6 @@ partial class DeathmatchGame : Game
 		}
 	}
 
-	[ClientRpc]
-	public override void OnKilledMessage( long leftid, string left, long rightid, string right, string method )
-	{
-		Sandbox.UI.KillFeed.Current?.AddEntry( leftid, left, rightid, right, method );
-	}
-
 	public override void RenderHud()
 	{
 		var localPawn = Local.Pawn as DeathmatchPlayer;
@@ -252,7 +250,7 @@ partial class DeathmatchGame : Game
 			localPawn.RenderHud( screenSize );
 		}
 	}
-	[ConCmd.Admin( "" )]
+	[ConCmd.Admin( "impulse" )]
 	public static void Impulse( int impulse )
 	{
 		var caller = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
@@ -278,6 +276,7 @@ partial class DeathmatchGame : Game
 			caller.Inventory.Add( new hl2_egon() );
 			caller.Inventory.Add( new hl2_bugbait() );
 			caller.Inventory.Add( new Tripmine() );
+
 			caller.SetAmmo( AmmoType.Pistol, 150 );
 			caller.SetAmmo( AmmoType.Magnum, 12 );
 

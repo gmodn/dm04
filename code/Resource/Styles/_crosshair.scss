@@ -1,19 +1,14 @@
 ﻿Crosshair {
     align-content: center;
     align-items: baseline;
-    align-self: center;
-    vertical-align: bottom;
-    bottom: 0px;
+    position: absolute;
+    left: 47.5%;
+    top: 45%;
     background-color: rgba(0, 0, 0, 0);
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+
     width: 113px;
     height: 120px;
     overflow: hidden;
-    right: 876px;
     letter-spacing: 10px;
     font-family: HalfLife2;
     color: yellow;

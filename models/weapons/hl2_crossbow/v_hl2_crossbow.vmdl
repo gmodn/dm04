@@ -109,7 +109,7 @@
 						source_filename = "models/weapons/hl2_crossbow/v_anims/draw.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 60.0
 						take = 0
 						reverse = false
 					},
@@ -263,28 +263,6 @@
 						anim_markup_ordered = false
 						disable_compression = false
 						source_filename = "models/weapons/hl2_crossbow/v_anims/idle_empty.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "idle_is"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_crossbow/v_anims/idle_is.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -585,5 +563,6 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = "models/weapons/hl2_crossbow/v_hl2_crossbow.vanmgrph"
+		base_model_name = ""
 	}
 }

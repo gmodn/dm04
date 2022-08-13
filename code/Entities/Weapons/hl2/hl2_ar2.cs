@@ -68,35 +68,26 @@ partial class hl2_ar2 : HLDMWeapon
 	{
 		if ( Owner is DeathmatchPlayer player )
 		{
-			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )
+			if ( !TakeSecondaryAmmo( player, SecondaryAmmo ) )
 			{
-				PlaySound( "hl2_ar2.empty" );
+				PlaySound( "hl2_uspmatch.empty" );
 				return;
 			}
-			else
-			{
-				PlaySound( "hl2_ar2.secondary_fire" );
-				ViewModelEntity?.SetAnimParameter( "fire_alt", true );
-				glow = 20;
-				if ( IsLocalPawn )
+		
+			PlaySound( "hl2_ar2.secondary_fire" );
+			ViewModelEntity?.SetAnimParameter( "fire_alt", true );
+			glow = 20;
+
+			if ( IsServer )
+				using ( Prediction.Off() )
 				{
-					//new Sandbox.ScreenShake.Perlin();
-				}
-				//wait and then play next sound - TODO
-
-				player.TakeAmmo( SecondaryAmmo, 1 );
-				SecondaryAmmoClip = player.AmmoCount(SecondaryAmmo);
-
-				if ( IsServer )
-					using ( Prediction.Off() )
-					{
-						var grenade = new hl2_ar2ball();
-						grenade.Position = Owner.EyePosition;
-						grenade.Rotation = Owner.EyeRotation;
-						grenade.Owner = Owner;
-						grenade.Velocity = Owner.EyeRotation.Forward * 1000;
-					}
+					var grenade = new hl2_ar2ball();
+					grenade.Position = Owner.EyePosition;
+					grenade.Rotation = Owner.EyeRotation;
+					grenade.Owner = Owner;
+					grenade.Velocity = Owner.EyeRotation.Forward * 1000;
 			}
+			
 		}
 	}
 

@@ -9,6 +9,7 @@ partial class hl2_uspmatch : HLDMWeapon
 
 	public override float PrimaryRate => 10.0f;
 	public override float SecondaryRate => 2.0f;
+	public override int BucketWeight => 50;
 	public override int ClipSize => 18;
 	public override float ReloadTime => 1.4f;
 	public override int Bucket => 1;

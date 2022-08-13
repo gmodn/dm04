@@ -27,7 +27,6 @@
 	[Net, Predicted]
 	public TimeSince TimeSinceDeployed { get; set; }
 
-
 	public PickupTrigger PickupTrigger { get; protected set; }
 	public PickupTrigger GravPickupTrigger { get; protected set; }
 
@@ -212,6 +211,17 @@
 			return false;
 
 		AmmoClip -= amount;
+		return true;
+	}
+
+	public bool TakeSecondaryAmmo( DeathmatchPlayer player, AmmoType ammoType )
+	{
+		if ( player.AmmoCount( ammoType ) < 1 )
+			return false;
+
+		player.SetAmmo( ammoType, player.AmmoCount( ammoType ) - 1 );
+		SecondaryAmmoClip = player.AmmoCount( ammoType );
+
 		return true;
 	}
 

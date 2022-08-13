@@ -7,58 +7,75 @@ partial class hl2_smg1grenade : ModelEntity
 {
 	public override void Spawn()
 	{
-		Tags.Add( "projectile" );
 		base.Spawn();
 		SetModel( "models/weapons/hl2_smg1/hl2_smg1_grenade.vmdl" );
 
-		MoveType = MoveType.Physics;
+		Tags.Add( "projectile" );
 		PhysicsEnabled = true;
 		UsePhysicsCollision = true;
-		SetInteractsExclude( CollisionLayer.Player );
 	}
 
-	protected override void OnPhysicsCollision( CollisionEventData eventData )
+	[Event.Tick.Server]
+	public void Simulate()
 	{
-		if ( eventData.Entity == Owner ) return;
+		var trace = Trace.Ray( Position, Position )
+			.Size( 24 )
+			.Ignore( this )
+			.Ignore( Owner )
+			.Run();
 
-		Explode();
+		Position = trace.EndPosition;
+
+		if ( trace.Hit )
+		{
+			Explode();
+		}
 	}
 
 	public virtual void Explode()
 	{
-		bool InWater = Map.Physics.IsPointWater( this.Position );
+		bool InWater = Map.Physics.IsPointWater( Position );
 
-		var tr = Trace.Sphere( 100, this.Position, this.Position )
-				.UseHitboxes()
+		var overlaps = FindInSphere( Position, 64);
 
-				.HitLayer( CollisionLayer.Water, !InWater )
-				.HitLayer( CollisionLayer.Debris )
-				///.Ignore( Owner )
-				.Ignore( this )
-
-				.RunAll();
-		foreach ( var Entity in tr )
+		foreach ( var overlap in overlaps )
 		{
+			if ( overlap is not ModelEntity ent || !ent.IsValid() )
+				continue;
 
-			Entity.Surface.DoBulletImpact( Entity );
-			//DebugOverlay.Sphere( this.Position, 100, Color.Red, true, 100 );
+			if ( ent.LifeState != LifeState.Alive )
+				continue;
 
-			//
-			// We turn predictiuon off for this, so aany exploding effects don't get culled etc
-			//
-			using ( Prediction.Off() )
-			{
-				Log.Info( Entity.Entity );
-				var damage = DamageInfo.Explosion( this.Position, 100, 15 )
-					.UsingTraceResult( Entity )
-					.WithAttacker( Owner )
-					.WithWeapon( this );
+			if ( !ent.PhysicsBody.IsValid() )
+				continue;
 
-				Entity.Entity.TakeDamage( damage );
-			}
+			if ( ent.IsWorld )
+				continue;
+
+			var targetPos = ent.PhysicsBody.MassCenter;
+
+			var dist = Vector3.DistanceBetween( Position, targetPos );
+			if ( dist > 250 )
+				continue;
+
+			var tr = Trace.Ray( Position, targetPos )
+				.Ignore( this )
+				.WorldOnly()
+				.Run();
+
+			if ( tr.Fraction < 0.98f )
+				continue;
+
+			var distanceMul = 1.0f - Math.Clamp( dist / 250, 0.0f, 1.0f );
+			var dmg = 100 * distanceMul;
+			var force = (1.0f * distanceMul) * ent.PhysicsBody.Mass;
+			var forceDir = (targetPos - Position).Normal;
+
+			var damageInfo = DamageInfo.Explosion( Position, forceDir * force, dmg )
+				.WithWeapon( this )
+				.WithAttacker( Owner );
+
+			ent.TakeDamage( damageInfo );
 		}
-		Sound.FromWorld( "hl2_spas12.fire", PhysicsBody.MassCenter );
-
-		Delete();
 	}
 }

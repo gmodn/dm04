@@ -8,6 +8,7 @@ partial class hl2_stunstick : HLDMWeapon
 	public override string ViewModelPath => "models/weapons/hl2_stunstick/v_stunbaton.vmdl";
 	public override float PrimaryRate => 1.0f;
 	public override AmmoType AmmoType => AmmoType.None;
+	public override int BucketWeight => 75;
 	public override int Bucket => 0;
 
 	public override void Spawn()

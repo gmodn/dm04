@@ -11,6 +11,7 @@ partial class hl2_smg1 : HLDMWeapon
 	public override float SecondaryRate => 1.0f;
 	public override int ClipSize => 45;
 	public override AmmoType AmmoType => AmmoType.SMG;
+	public override int BucketWeight => 50;
 	public override AmmoType SecondaryAmmo => AmmoType.SMG_grenade; //Secondary Ammo Type
 	//public override string AmmoIcon => "r";
 	//public override string AltIcon => "t";
@@ -63,28 +64,23 @@ partial class hl2_smg1 : HLDMWeapon
 	{
 		if ( Owner is DeathmatchPlayer player )
 		{
-			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )
+			if ( !TakeSecondaryAmmo( player, SecondaryAmmo ) )
 			{
 				PlaySound( "hl2_uspmatch.empty" );
 				return;
 			}
-			else
-			{
-				PlaySound( "hl2_smg1.glauncher" );
-				ViewModelEntity?.SetAnimParameter( "fire_alt", true );
-				player.TakeAmmo( SecondaryAmmo, 1 );
-				SecondaryAmmoClip = player.AmmoCount(SecondaryAmmo);
-
-				if ( IsServer )
-					using ( Prediction.Off() )
-					{
-						var grenade = new hl2_smg1grenade();
-						grenade.Position = Owner.EyePosition;
-						grenade.Rotation = Owner.EyeRotation;
-						grenade.Owner = Owner;
-						grenade.Velocity = Owner.EyeRotation.Forward * 1750;
-					}
-			}
+			
+			PlaySound( "hl2_smg1.glauncher" );
+			ViewModelEntity?.SetAnimParameter( "fire_alt", true );
+			
+			if ( IsServer )
+				using ( Prediction.Off() )
+				{
+					var grenade = new hl2_smg1grenade();
+					grenade.Position = Owner.EyePosition;
+					grenade.Owner = Owner;
+					grenade.Velocity = Owner.EyeRotation.Forward * 1750;
+				}
 		}
 	}
 

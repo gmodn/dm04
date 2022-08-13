@@ -8,11 +8,15 @@ partial class hl2_spas12 : HLDMWeapon
 	public override string ViewModelPath => "models/weapons/hl2_spas12/v_hl2_spas12.vmdl";
 	public override float PrimaryRate => 1.13f;
 	public override float SecondaryRate => 0.96f;
+	public override int BucketWeight => 50;
 	public override AmmoType AmmoType => AmmoType.Buckshot;
 	//public override string AmmoIcon => "s";
 	public override int ClipSize => 6;
 	public override float ReloadTime => 0.6f;
 	public override int Bucket => 3;
+
+	[Net, Predicted]
+	public bool StopReloading { get; set; }
 
 	public override void Spawn()
 	{
@@ -21,6 +25,16 @@ partial class hl2_spas12 : HLDMWeapon
 		SetModel( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" );
 
 		AmmoClip = 6;
+	}
+
+	public override void Simulate( Client owner )
+	{
+		base.Simulate( owner );
+
+		if ( IsReloading && (Input.Pressed( InputButton.PrimaryAttack ) || Input.Pressed( InputButton.SecondaryAttack )) )
+		{
+			StopReloading = true;
+		}
 	}
 
 	public override void AttackPrimary() 
@@ -117,6 +131,7 @@ partial class hl2_spas12 : HLDMWeapon
 		}
 	}
 
+	[ClientRpc]
 	public override void StartReloadEffects()
 	{
 		ViewModelEntity?.SetAnimParameter( "reload", true );
@@ -124,6 +139,9 @@ partial class hl2_spas12 : HLDMWeapon
 
 	public override void OnReloadFinish()
 	{
+		var stop = StopReloading;
+
+		StopReloading = false;
 		IsReloading = false;
 
 		TimeSincePrimaryAttack = 0;
@@ -140,7 +158,7 @@ partial class hl2_spas12 : HLDMWeapon
 
 			AmmoClip += ammo;
 
-			if ( AmmoClip < ClipSize )
+			if ( AmmoClip < ClipSize && !stop )
 			{
 				Reload();
 			}
@@ -151,10 +169,10 @@ partial class hl2_spas12 : HLDMWeapon
 		}
 	}
 
-
 	[ClientRpc]
 	protected virtual void FinishReload()
 	{
+		ViewModelEntity?.SetAnimParameter( "reload", false );
 		ViewModelEntity?.SetAnimParameter( "reload_finished", true );
 	}
 
