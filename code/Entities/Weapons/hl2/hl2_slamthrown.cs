@@ -17,7 +17,7 @@ partial class hl2_slamthrown : Prop
 		SetModel( "models/weapons/hl2_slam/w_hl2_slam_closed.vmdl" );
 
 		Health = 5;
-		MoveType = MoveType.Physics;
+
 		if ( mounted == true )
 		{
 			PhysicsEnabled = false;
@@ -27,7 +27,6 @@ partial class hl2_slamthrown : Prop
 			PhysicsEnabled = true;
 		}
 		UsePhysicsCollision = true;
-		SetInteractsExclude( CollisionLayer.Player );
 	}
 
 	public async Task Arm( float seconds )

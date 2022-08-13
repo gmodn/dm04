@@ -14,9 +14,6 @@
 
 		PhysicsEnabled = true;
 		UsePhysicsCollision = true;
-
-		CollisionGroup = CollisionGroup.Weapon;
-		SetInteractsAs( CollisionLayer.Debris );
 	}
 
 	public override void Touch( Entity other )

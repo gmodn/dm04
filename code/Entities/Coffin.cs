@@ -11,8 +11,6 @@
 
 		Model = WorldModel;
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic );
-		CollisionGroup = CollisionGroup.Weapon;
-		SetInteractsAs( CollisionLayer.Debris );
 	}
 
 	public void Populate( DeathmatchPlayer player )

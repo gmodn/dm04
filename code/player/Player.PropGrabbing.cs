@@ -35,7 +35,6 @@ public partial class DeathmatchPlayer
 					.UseHitboxes()
 					.Ignore( this, false )
 					.Radius( 4.0f )
-					.HitLayer( CollisionLayer.Debris )
 					.Run();
 
 				if ( !tr.Entity.IsValid() )

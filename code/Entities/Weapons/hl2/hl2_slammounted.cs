@@ -12,10 +12,8 @@ partial class hl2_slammounted : Prop
 		SetModel( "models/weapons/hl2_slam/w_hl2_slam_open.vmdl" );
 
 		Health = 5;
-		MoveType = MoveType.Physics;
 		PhysicsEnabled = false;
 		UsePhysicsCollision = true;
-		SetInteractsExclude( CollisionLayer.Player );
 	}
 
 

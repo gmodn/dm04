@@ -21,7 +21,6 @@ partial class hl2_grenadethrown : Prop
 			QuadraticAttenuation = 1.0f,
 			Brightness = 2,
 			Color = Color.Red,
-			FogStength = 1.0f,
 			Owner = Owner,
 		};
 
@@ -38,10 +37,8 @@ partial class hl2_grenadethrown : Prop
 		bleepLight.SetParent( this, "light", Transform );
 		bleepLight.EnableShadowCasting = false;
 
-		MoveType = MoveType.Physics;
 		PhysicsEnabled = true;
 		UsePhysicsCollision = true;
-		SetInteractsExclude( CollisionLayer.Player );
 		Particles.Create( "particles/weapons/hl2_grenade_trail.vpcf", this, "light" );
 		Bleep();
 	}
@@ -73,9 +70,6 @@ partial class hl2_grenadethrown : Prop
 		Delete();
 		blowingup = true;
 		if ( Model == null || Model.IsError )
-			return;
-
-		//if ( !Model.HasExplosionBehavior() )
 			return;
 
 		var srcPos = Position;
