@@ -92,6 +92,16 @@
           "b": "playerragdoll"
         },
         {
+          "a": "playerragdoll",
+          "b": "projectile",
+          "r": "Ignore"
+        },
+        {
+          "a": "solid",
+          "b": "player",
+          "r": "Collide"
+        },
+        {
           "a": "player",
           "b": "player",
           "r": "Collide"
@@ -99,11 +109,6 @@
         {
           "a": "projectile",
           "b": "player",
-          "r": "Ignore"
-        },
-        {
-          "a": "projectile",
-          "b": "projectile",
           "r": "Ignore"
         }
       ]
