@@ -103,7 +103,7 @@
 						source_filename = "models/weapons/hl2_grenade/v_anims/draw.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 45.0
 						take = 0
 						reverse = false
 					},

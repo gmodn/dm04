@@ -145,7 +145,7 @@
 						source_filename = "models/weapons/hl2_crossbow/v_anims/draw_empty.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 35.0
 						take = 0
 						reverse = false
 					},
