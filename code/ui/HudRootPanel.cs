@@ -8,6 +8,12 @@ public class HudRootPanel : RootPanel
 
 	public HudRootPanel()
 	{
+		if(Current != null)
+		{
+			Current.Delete();
+			Current = null;
+		}
+
 		Current = this;
 
 		StyleSheet.Load( "/resource/styles/hud.scss" );
