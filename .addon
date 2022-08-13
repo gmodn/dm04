@@ -14,7 +14,7 @@
   "CodePath": "code",
   "RootNamespace": "Dm04",
   "Metadata": {
-    "MaxPlayers": 1000,
+    "MaxPlayers": 64,
     "MinPlayers": 1,
     "MapList": [],
     "MapSelect": "Tagged",
@@ -22,7 +22,7 @@
     "RankType": "None",
     "PerMapRanking": false,
     "LeaderboardType": "None",
-    "GameCategory": "None",
+    "GameCategory": "Shooter",
     "Physics": {
       "SubSteps": 1,
       "TimeScale": 1,
@@ -41,7 +41,9 @@
         "trigger": "Trigger",
         "ladder": "Ignore",
         "water": "Trigger",
-        "playerragdoll": "Ignore"
+        "playerragdoll": "Ignore",
+        "projectile": "Ignore",
+        "player": "Collide"
       },
       "Pairs": [
         {
@@ -88,6 +90,21 @@
         {
           "a": "water",
           "b": "playerragdoll"
+        },
+        {
+          "a": "player",
+          "b": "player",
+          "r": "Collide"
+        },
+        {
+          "a": "projectile",
+          "b": "player",
+          "r": "Ignore"
+        },
+        {
+          "a": "projectile",
+          "b": "projectile",
+          "r": "Ignore"
         }
       ]
     }
