@@ -119,10 +119,10 @@ partial class DeathmatchGame : Game
 	{
 		base.FrameSimulate( cl );
 
-		postProcess.Sharpen.Enabled = true;
+		postProcess.Sharpen.Enabled = false;
 		postProcess.Sharpen.Strength = 0.5f;
 
-		postProcess.FilmGrain.Enabled = true;
+		postProcess.FilmGrain.Enabled = false;
 		postProcess.FilmGrain.Intensity = 0.2f;
 		postProcess.FilmGrain.Response = 1;
 
