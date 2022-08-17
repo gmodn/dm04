@@ -86,7 +86,10 @@
 		if ( Owner is DeathmatchPlayer player )
 		{
 			if ( player.AmmoCount( AmmoType ) <= 0 )
+			{
+				OnReloadFinish();
 				return;
+			}
 		}
 
 		IsReloading = true;

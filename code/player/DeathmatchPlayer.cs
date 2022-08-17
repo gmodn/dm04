@@ -121,6 +121,12 @@
 
 		Inventory.DeleteContents();
 
+		if( worldLight != null )
+		{
+			worldLight.Delete();
+			worldLight = null;
+		}
+
 		if ( LastDamage.Flags.HasFlag( DamageFlags.Blast ) )
 		{
 			using ( Prediction.Off() )
@@ -169,10 +175,12 @@
 
 		base.Simulate( cl );
 		Simulateflashlight();
+		
 		//SimulateGrabbing();
 		//
 		// Input requested a weapon switch
 		//
+
 		if ( Input.ActiveChild != null )
 		{
 			ActiveChild = Input.ActiveChild;

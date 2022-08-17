@@ -17,21 +17,6 @@ public partial class DeathmatchPlayer
 	public override void Spawn()
 	{
 		base.Spawn();
-		CreateViewModel();
-
-		worldLight = CreateLight();
-		worldLight.SetParent( this, "slide", new Transform( LightOffset ) );
-		worldLight.EnableHideInFirstPerson = true;
-		worldLight.Enabled = false;
-	}
-
-	public void CreateViewModel()
-	{
-
-		viewLight = CreateLight();
-		viewLight.SetParent( this, "light", new Transform( LightOffset ) );
-		viewLight.EnableViewmodelRendering = true;
-		viewLight.Enabled = LightEnabled;
 	}
 
 	private SpotLightEntity CreateLight()
@@ -59,33 +44,32 @@ public partial class DeathmatchPlayer
 	public void Simulateflashlight()
 	{
 
-
 		bool toggle = Input.Pressed( InputButton.Flashlight );
 
-		if ( timeSinceLightToggled > 0.1f && toggle )
+		if(worldLight == null)
+		{
+			worldLight = CreateLight();
+			worldLight.SetParent( this );
+			worldLight.Enabled = true;
+			
+		}
+
+		if ( worldLight.IsValid() && IsServer )
+		{
+			worldLight.Enabled = LightEnabled;
+			worldLight.Position = EyePosition + EyeRotation.Forward * 25;
+			worldLight.Rotation = EyeRotation;
+		}
+
+		if ( timeSinceLightToggled > 0.3f && toggle )
 		{
 			LightEnabled = !LightEnabled;
 
 			PlaySound( LightEnabled ? "flashlight-on" : "flashlight-off" );
 
-			if ( worldLight.IsValid() )
-			{
-				worldLight.Enabled = LightEnabled;
-			}
-
-			if ( viewLight.IsValid() )
-			{
-				viewLight.Enabled = LightEnabled;
-			}
-
 			timeSinceLightToggled = 0;
 		}
 	}
-
-
-
-
-
 
 	private void Activate()
 	{

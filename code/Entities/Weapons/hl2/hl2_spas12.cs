@@ -6,13 +6,12 @@
 partial class hl2_spas12 : HLDMWeapon
 { 
 	public override string ViewModelPath => "models/weapons/hl2_spas12/v_hl2_spas12.vmdl";
-	public override float PrimaryRate => 1.13f;
-	public override float SecondaryRate => 0.96f;
+	public override float PrimaryRate => 0.95f;
+	public override float SecondaryRate => 0.8f;
 	public override int BucketWeight => 50;
 	public override AmmoType AmmoType => AmmoType.Buckshot;
-	//public override string AmmoIcon => "s";
 	public override int ClipSize => 6;
-	public override float ReloadTime => 0.6f;
+	public override float ReloadTime => 0.8f;
 	public override int Bucket => 3;
 
 	[Net, Predicted]
@@ -35,6 +34,9 @@ partial class hl2_spas12 : HLDMWeapon
 		{
 			StopReloading = true;
 		}
+
+		if ( !IsReloading && ViewModelEntity?.GetAnimParameterBool( "pumpreload" ) == true && TimeSinceReload >= (ReloadTime * 2.25f) )
+			ViewModelEntity?.SetAnimParameter( "pumpreload", false );
 	}
 
 	public override void AttackPrimary() 
@@ -106,11 +108,6 @@ partial class hl2_spas12 : HLDMWeapon
 
 		ViewModelEntity?.SetAnimParameter( "fire", true );
 
-		if ( IsLocalPawn )
-		{
-			//new Sandbox.ScreenShake.Perlin(0.5f, 1.0f, 2.0f);
-		}
-
 		//CrosshairPanel?.CreateEvent( "fire" );
 		
 	}
@@ -124,11 +121,6 @@ partial class hl2_spas12 : HLDMWeapon
 
 		ViewModelEntity?.SetAnimParameter( "fire_alt", true );
 		//CrosshairPanel?.CreateEvent( "fire" );
-
-		if ( IsLocalPawn )
-		{
-			//new Sandbox.ScreenShake.Perlin(0.7f, 1.5f, 3.0f);
-		}
 	}
 
 	[ClientRpc]
@@ -146,6 +138,7 @@ partial class hl2_spas12 : HLDMWeapon
 
 		TimeSincePrimaryAttack = 0;
 		TimeSinceSecondaryAttack = 0;
+		TimeSinceReload = 0;
 
 		if ( AmmoClip >= ClipSize )
 			return;
@@ -153,8 +146,12 @@ partial class hl2_spas12 : HLDMWeapon
 		if ( Owner is DeathmatchPlayer player )
 		{
 			var ammo = player.TakeAmmo( AmmoType, 1 );
+
 			if ( ammo == 0 )
+			{
+				FinishReload();
 				return;
+			}
 
 			AmmoClip += ammo;
 
@@ -169,11 +166,19 @@ partial class hl2_spas12 : HLDMWeapon
 		}
 	}
 
+	public override void Reload()
+	{
+		if(AmmoClip == 0)
+			ViewModelEntity?.SetAnimParameter( "pumpreload", true);
+
+		base.Reload();
+	}
+
 	[ClientRpc]
 	protected virtual void FinishReload()
 	{
 		ViewModelEntity?.SetAnimParameter( "reload", false );
-		ViewModelEntity?.SetAnimParameter( "reload_finished", true );
+		//ViewModelEntity?.SetAnimParameter( "reload_finished", true );
 	}
 
 	public override void SimulateAnimator( PawnAnimator anim )
