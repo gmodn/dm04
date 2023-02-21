@@ -3,6 +3,7 @@
   "Type": "game",
   "Org": "gman",
   "Ident": "dm04",
+  "Tags": null,
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
@@ -12,7 +13,6 @@
   ],
   "HasCode": true,
   "CodePath": "code",
-  "RootNamespace": "Dm04",
   "Metadata": {
     "MaxPlayers": 64,
     "MinPlayers": 1,

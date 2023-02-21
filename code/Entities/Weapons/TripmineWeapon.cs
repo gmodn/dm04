@@ -1,7 +1,7 @@
 ﻿[Library( "dm_tripmine" ), HammerEntity]
 [EditorModel( "models/dm_tripmine.vmdl" )]
 [Title(  "Tripmine" ), Category( "Weapons" )]
-partial class TripmineWeapon : DeathmatchWeapon
+partial class TripmineWeapon : HLDMWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "models/dm_tripmine.vmdl" );
 	public override string ViewModelPath => "models/v_dm_tripmine.vmdl";

@@ -54,7 +54,7 @@
 		var existing = Children.Where( x => x.ClassName == weaponName ).FirstOrDefault();
 		if ( existing != null ) return false;
 
-		var weapon = Entity.CreateByName<DeathmatchWeapon>( weaponName );
+		var weapon = Entity.CreateByName<HLDMWeapon>( weaponName );
 		if ( Inventory.Add( weapon ) )
 			return true;
 
@@ -77,16 +77,20 @@
 	{
 		switch ( ammo )
 		{
-			case AmmoType.Pistol: return 250;
-			case AmmoType.Python: return 36;
-			case AmmoType.Buckshot: return 100;
-			case AmmoType.Crossbow: return 40;
-			case AmmoType.RPG: return 5;
-			case AmmoType.Uranium: return 100;
-			case AmmoType.Grenade: return 10;
-			case AmmoType.Satchel: return 5;
-			case AmmoType.Tripmine: return 5;
-			case AmmoType.Snark: return 15;
+			case AmmoType.Pistol: return 150;
+			case AmmoType.Magnum: return 12;
+			case AmmoType.SMG: return 225;
+			case AmmoType.SMG_grenade: return 3;
+			case AmmoType.AR2: return 60;
+			case AmmoType.AR2_ball: return 3;
+			case AmmoType.Buckshot: return 30;
+			case AmmoType.Crossbow: return 10;
+			case AmmoType.RPG: return 3;
+			case AmmoType.Grenade: return 5;
+			case AmmoType.SLAM: return 5;
+			case AmmoType.Bugbait: return 99;
+			case AmmoType.Egon: return 5;
+
 		}
 
 		return 0;
@@ -97,13 +101,18 @@ public enum AmmoType
 {
 	None,
 	Pistol,
+	Magnum,
+	SMG,
+	SMG_grenade,
+	AR2,
+	AR2_ball,
 	Buckshot,
 	Crossbow,
-	Python,
-	Grenade,
-	Satchel,
-	Tripmine,
-	Snark,
 	RPG,
-	Uranium
+	Grenade,
+	SLAM,
+	Bugbait,
+	Egon,
+	Tripmine,
+	Python
 }

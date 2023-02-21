@@ -1,5 +1,5 @@
 ﻿
-$yellow: #ff0;
+$yellow: #fa02;
 $orange: #f70;
 
 @import "_crosshair.scss";
@@ -103,6 +103,7 @@ vitals
 .top-middle
 {
     top: 32px;
+    left: 70px;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -201,19 +202,17 @@ vitals
     }
 }
 
-.inventory, .ammobar, healthhud, armourhud, gamehud
-{
-    background-color: rgba( #fa0, 0.06 );
+.inventory, .ammobar, healthhud, armourhud, gamehud {
+    background-color: rgba( 0, 0, 0, 0.6 );
     padding: 16px;
     margin: 5px;
-    font-size: 32px;
-    font-weight: bolder;
+    font-family: Roboto;
+    font-size: 62px;
     color: #ff0;
-    text-shadow: 0px 0px 10px $orange;
     min-width: 130px;
     text-align: center;
     align-items: center;
-    border: 1px solid rgba( #fa0, 0.08 );
+    border: 1px solid rgba( 0, 0, 0, 0.08 );
     border-radius: 3px;
 }
 

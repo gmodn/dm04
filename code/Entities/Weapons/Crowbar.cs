@@ -1,10 +1,10 @@
 ﻿[Library( "dm_crowbar" ), HammerEntity]
 [EditorModel( "models/dm_crowbar.vmdl" )]
 [Title(  "Crowbar" ), Category( "Weapons" )]
-partial class Crowbar : DeathmatchWeapon
+partial class Crowbar : HLDMWeapon
 {
-	public static Model WorldModel = Model.Load( "models/dm_crowbar.vmdl" );
-	public override string ViewModelPath => "models/v_dm_crowbar.vmdl";
+	public static Model WorldModel = Model.Load( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" );
+	public override string ViewModelPath => "models/weapons/hl2_crowbar/v_hl2_crowbar.vmdl";
 
 	public override float PrimaryRate => 2.0f;
 	public override float SecondaryRate => 1.0f;
@@ -33,7 +33,7 @@ partial class Crowbar : DeathmatchWeapon
 
 		// woosh sound
 		// screen shake
-		PlaySound( "dm.crowbar_attack" );
+		PlaySound( "hl2_crowbar.swing" );
 
 		Game.SetRandomSeed( Time.Tick );
 

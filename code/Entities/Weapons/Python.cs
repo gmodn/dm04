@@ -3,14 +3,13 @@
 [Library( "dm_357" ), HammerEntity]
 [EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
 [Title( ".357 Magnum Revolver" ), Category( "Weapons" )]
-partial class Python : DeathmatchWeapon
+partial class Python : HLDMWeapon
 {
-	public static readonly Model WorldModel = Model.Load( "weapons/rust_pistol/rust_pistol.vmdl" );
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_357/w_hl2_357.vmdl" );
+	public override string ViewModelPath => "models/weapons/hl2_357/v_hl2_357.vmdl";
 
-	public override float PrimaryRate => 2.0f;
-	public override float SecondaryRate => 1.0f;
-	public override float ReloadTime => 7.0f;
+	public override float PrimaryRate => 1.3f;
+	public override float ReloadTime => 4f;
 	public override int ClipSize => 6;
 	public override AmmoType AmmoType => AmmoType.Python;
 
@@ -48,6 +47,7 @@ partial class Python : DeathmatchWeapon
 			if ( AvailableAmmo() > 0 )
 			{
 				Reload();
+				PlaySound( "hl2_uspmatch.empty" );
 			}
 			return;
 		}
@@ -56,12 +56,12 @@ partial class Python : DeathmatchWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_pistol.shoot" );
+		PlaySound( "hl2_357.fire" );
 
 		//
 		// Shoot the bullets
 		//
-		ShootBullet( 0.01f, 1.5f, 40.0f, 2.0f );
+		ShootBullet( 0f, 1.5f, 75f, 3.0f );
 	}
 
 	public override void Simulate( IClient cl )

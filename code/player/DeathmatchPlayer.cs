@@ -157,7 +157,7 @@ public partial class DeathmatchPlayer : Player
 		// If the current weapon is out of ammo and we last fired it over half a second ago
 		// lets try to switch to a better wepaon
 		//
-		if ( ActiveChild is DeathmatchWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
+		if ( ActiveChild is HLDMWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
 		{
 			SwitchToBestWeapon();
 		}
@@ -165,7 +165,7 @@ public partial class DeathmatchPlayer : Player
 
 	public void SwitchToBestWeapon()
 	{
-		var best = Children.Select( x => x as DeathmatchWeapon )
+		var best = Children.Select( x => x as HLDMWeapon )
 			.Where( x => x.IsValid() && x.IsUsable() )
 			.OrderByDescending( x => x.BucketWeight )
 			.FirstOrDefault();
@@ -336,7 +336,7 @@ public partial class DeathmatchPlayer : Player
 
 		// RenderOverlayTest( screenSize );
 
-		if ( ActiveChild is DeathmatchWeapon weapon )
+		if ( ActiveChild is HLDMWeapon weapon )
 		{
 			weapon.RenderHud( screenSize );
 		}
