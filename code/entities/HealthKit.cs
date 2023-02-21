@@ -16,6 +16,7 @@ partial class HealthKit : ModelEntity, IRespawnableEntity
 
 		PhysicsEnabled = true;
 		UsePhysicsCollision = true;
+		Tags.Add( "item" );
 	}
 
 	public override void StartTouch( Entity other )

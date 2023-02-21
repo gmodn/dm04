@@ -1,4 +1,5 @@
 ﻿using Sandbox.UI;
+using Sandbox.Diagnostics;
 
 /// <summary>
 /// The main inventory panel, top left of the screen.
@@ -6,10 +7,10 @@
 public class InventoryBar : Panel
 {
 	List<InventoryColumn> columns = new();
-	List<HLDMWeapon> Weapons = new();
+	List<DeathmatchWeapon> Weapons = new();
 
 	public bool IsOpen;
-	HLDMWeapon SelectedWeapon;
+	DeathmatchWeapon SelectedWeapon;
 
 	public InventoryBar()
 	{
@@ -26,11 +27,11 @@ public class InventoryBar : Panel
 
 		SetClass( "active", IsOpen );
 
-		var player = Local.Pawn as Player;
+		var player = Game.LocalPawn as Player;
 		if ( player == null ) return;
 
 		Weapons.Clear();
-		Weapons.AddRange( player.Children.Select( x => x as HLDMWeapon ).Where( x => x.IsValid() && x.IsUsable() ) );
+		Weapons.AddRange( player.Children.Select( x => x as DeathmatchWeapon ).Where( x => x.IsValid() && x.IsUsable() ) );
 
 		foreach ( var weapon in Weapons )
 		{
@@ -42,23 +43,23 @@ public class InventoryBar : Panel
 	/// IClientInput implementation, calls during the client input build.
 	/// You can both read and write to input, to affect what happens down the line.
 	/// </summary>
-	[Event.BuildInput]
-	public void ProcessClientInput( InputBuilder input )
+	[Event.Client.BuildInput]
+	public void ProcessClientInput()
 	{
 		if ( DeathmatchGame.CurrentState != DeathmatchGame.GameStates.Live ) return;
 
 		bool wantOpen = IsOpen;
-		var localPlayer = Local.Pawn as Player;
+		var localPlayer = Game.LocalPawn as Player;
 
 		// If we're not open, maybe this input has something that will 
 		// make us want to start being open?
-		wantOpen = wantOpen || input.MouseWheel != 0;
-		wantOpen = wantOpen || input.Pressed( InputButton.Slot1 );
-		wantOpen = wantOpen || input.Pressed( InputButton.Slot2 );
-		wantOpen = wantOpen || input.Pressed( InputButton.Slot3 );
-		wantOpen = wantOpen || input.Pressed( InputButton.Slot4 );
-		wantOpen = wantOpen || input.Pressed( InputButton.Slot5 );
-		wantOpen = wantOpen || input.Pressed( InputButton.Slot6 );
+		wantOpen = wantOpen || Input.MouseWheel != 0;
+		wantOpen = wantOpen || Input.Pressed( InputButton.Slot1 );
+		wantOpen = wantOpen || Input.Pressed( InputButton.Slot2 );
+		wantOpen = wantOpen || Input.Pressed( InputButton.Slot3 );
+		wantOpen = wantOpen || Input.Pressed( InputButton.Slot4 );
+		wantOpen = wantOpen || Input.Pressed( InputButton.Slot5 );
+		wantOpen = wantOpen || Input.Pressed( InputButton.Slot6 );
 
 		if ( Weapons.Count == 0 )
 		{
@@ -69,7 +70,7 @@ public class InventoryBar : Panel
 		// We're not open, but we want to be
 		if ( IsOpen != wantOpen )
 		{
-			SelectedWeapon = localPlayer?.ActiveChild as HLDMWeapon;
+			SelectedWeapon = localPlayer?.ActiveChild as DeathmatchWeapon;
 			IsOpen = true;
 		}
 
@@ -79,10 +80,10 @@ public class InventoryBar : Panel
 		//
 		// Fire pressed when we're open - select the weapon and close.
 		//
-		if ( input.Down( InputButton.PrimaryAttack ) )
+		if ( Input.Down( InputButton.PrimaryAttack ) )
 		{
-			input.SuppressButton( InputButton.PrimaryAttack );
-			input.ActiveChild = SelectedWeapon;
+			Input.SuppressButton( InputButton.PrimaryAttack );
+			localPlayer.ActiveChildInput = SelectedWeapon;
 			IsOpen = false;
 			Sound.FromScreen( "dm.ui_select" );
 			return;
@@ -93,10 +94,10 @@ public class InventoryBar : Panel
 		// get our current index
 		var oldSelected = SelectedWeapon;
 		int SelectedIndex = sortedWeapons.IndexOf( SelectedWeapon );
-		SelectedIndex = SlotPressInput( input, SelectedIndex, sortedWeapons );
+		SelectedIndex = SlotPressInput( SelectedIndex, sortedWeapons );
 
 		// forward if mouse wheel was pressed
-		SelectedIndex -= input.MouseWheel;
+		SelectedIndex -= Input.MouseWheel;
 		SelectedIndex = SelectedIndex.UnsignedMod( Weapons.Count );
 
 		SelectedWeapon = sortedWeapons[SelectedIndex];
@@ -106,7 +107,7 @@ public class InventoryBar : Panel
 			columns[i].TickSelection( SelectedWeapon );
 		}
 
-		input.MouseWheel = 0;
+		Input.MouseWheel = 0;
 
 		if ( oldSelected != SelectedWeapon )
 		{
@@ -114,16 +115,16 @@ public class InventoryBar : Panel
 		}
 	}
 
-	int SlotPressInput( InputBuilder input, int SelectedIndex, List<HLDMWeapon> sortedWeapons )
+	int SlotPressInput( int SelectedIndex, List<DeathmatchWeapon> sortedWeapons )
 	{
 		var columninput = -1;
 
-		if ( input.Pressed( InputButton.Slot1 ) ) columninput = 0;
-		if ( input.Pressed( InputButton.Slot2 ) ) columninput = 1;
-		if ( input.Pressed( InputButton.Slot3 ) ) columninput = 2;
-		if ( input.Pressed( InputButton.Slot4 ) ) columninput = 3;
-		if ( input.Pressed( InputButton.Slot5 ) ) columninput = 4;
-		if ( input.Pressed( InputButton.Slot6 ) ) columninput = 5;
+		if ( Input.Pressed( InputButton.Slot1 ) ) columninput = 0;
+		if ( Input.Pressed( InputButton.Slot2 ) ) columninput = 1;
+		if ( Input.Pressed( InputButton.Slot3 ) ) columninput = 2;
+		if ( Input.Pressed( InputButton.Slot4 ) ) columninput = 3;
+		if ( Input.Pressed( InputButton.Slot5 ) ) columninput = 4;
+		if ( Input.Pressed( InputButton.Slot6 ) ) columninput = 5;
 
 		if ( columninput == -1 ) return SelectedIndex;
 
@@ -143,12 +144,12 @@ public class InventoryBar : Panel
 		return sortedWeapons.IndexOf( firstOfColumn );
 	}
 
-	int NextInBucket( List<HLDMWeapon> sortedWeapons )
+	int NextInBucket( List<DeathmatchWeapon> sortedWeapons )
 	{
 		Assert.NotNull( SelectedWeapon );
 
-		HLDMWeapon first = null;
-		HLDMWeapon prev = null;
+		DeathmatchWeapon first = null;
+		DeathmatchWeapon prev = null;
 		foreach ( var weapon in sortedWeapons.Where( x => x.Bucket == SelectedWeapon.Bucket ) )
 		{
 			if ( first == null ) first = weapon;

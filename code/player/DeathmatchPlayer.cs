@@ -1,4 +1,6 @@
-﻿public partial class DeathmatchPlayer : Player
+﻿using Sandbox;
+
+public partial class DeathmatchPlayer : Player
 {
 	TimeSince timeSinceDropped;
 
@@ -12,28 +14,27 @@
 
 	public int ComboKillCount { get; set; } = 0;
 	public TimeSince TimeSinceLastKill { get; set; }
-	public List<string> clonedList;
+
+	[Net, Predicted]
+	public bool ThirdPerson { get; set; }
+
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
 	}
-	
-	
+
 	public override void Respawn()
 	{
-		SetModel( "models/player/hevsuit_white.vmdl" );
+		SetModel( "models/citizen/citizen.vmdl" );
+
 		Controller = new WalkController
 		{
 			WalkSpeed = 270,
-			SprintSpeed = 300,
+			SprintSpeed = 100,
 			DefaultSpeed = 270,
 			AirAcceleration = 10,
 
 		};
-
-		Animator = new StandardPlayerAnimator();
-
-		CameraMode = new FirstPersonCamera();
 
 		EnableAllCollisions = true;
 		EnableDrawing = true;
@@ -41,35 +42,15 @@
 		EnableShadowInFirstPerson = true;
 
 		ClearAmmo();
-		//Clothing.DressEntity( this );
+		Clothing.DressEntity( this );
 
 		SupressPickupNotices = true;
 
 		Inventory.DeleteContents();
-		Inventory.Add( new hl2_crowbar() );
-		Inventory.Add( new hl2_gravgun() );
-		Inventory.Add( new hl2_357(), true );
-		Inventory.Add( new hl2_uspmatch() );
-		Inventory.Add( new hl2_spas12() );
-		Inventory.Add( new hl2_smg1() );
-		Inventory.Add( new hl2_crossbow() );
-		Inventory.Add( new hl2_ar2() );
-		Inventory.Add( new hl2_357() );
-		Inventory.Add( new hl2_stunstick() );
-		Inventory.Add( new hl2_rpg() );
-		Inventory.Add( new hl2_grenade() );
+		Inventory.Add( new Crowbar() );
+		Inventory.Add( new Pistol(), true );
 
 		GiveAmmo( AmmoType.Pistol, 25 );
-		GiveAmmo( AmmoType.Buckshot, 1000 );
-		GiveAmmo( AmmoType.Crossbow, 1000 );
-		GiveAmmo( AmmoType.Grenade, 1000 );
-		GiveAmmo( AmmoType.SMG, 1000 );
-		GiveAmmo( AmmoType.SMG_grenade, 1000 );
-		GiveAmmo( AmmoType.AR2, 1000 );
-		GiveAmmo( AmmoType.AR2_ball, 1000 );
-		GiveAmmo( AmmoType.SLAM, 1000 );
-		GiveAmmo( AmmoType.RPG, 1000 );
-		GiveAmmo( AmmoType.Magnum, 1000 );
 
 		SupressPickupNotices = false;
 		Health = 100;
@@ -84,28 +65,18 @@
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
 
 		ply.GiveAmmo( AmmoType.Pistol, 1000 );
+		ply.GiveAmmo( AmmoType.Python, 1000 );
 		ply.GiveAmmo( AmmoType.Buckshot, 1000 );
 		ply.GiveAmmo( AmmoType.Crossbow, 1000 );
 		ply.GiveAmmo( AmmoType.Grenade, 1000 );
-		ply.GiveAmmo( AmmoType.SMG, 1000 );
-		ply.GiveAmmo( AmmoType.SMG_grenade, 1000 );
-		ply.GiveAmmo( AmmoType.AR2, 1000 );
-		ply.GiveAmmo( AmmoType.AR2_ball, 1000 );
-		ply.GiveAmmo( AmmoType.SLAM, 1000 );
-		ply.GiveAmmo( AmmoType.RPG, 1000 );
-		ply.GiveAmmo( AmmoType.Magnum, 1000 );
+		ply.GiveAmmo( AmmoType.Tripmine, 1000 );
 
-
-
-		ply.Inventory.Add( new hl2_uspmatch() );
-		ply.Inventory.Add( new hl2_spas12() );
-		ply.Inventory.Add( new hl2_smg1() );
-		ply.Inventory.Add( new hl2_crossbow() );
-		ply.Inventory.Add( new hl2_ar2() );
-		ply.Inventory.Add( new hl2_357() );
-		ply.Inventory.Add( new hl2_stunstick() );
-		ply.Inventory.Add( new hl2_rpg() );
-		ply.Inventory.Add( new hl2_grenade() );
+		ply.Inventory.Add( new Python() );
+		ply.Inventory.Add( new Shotgun() );
+		ply.Inventory.Add( new SMG() );
+		ply.Inventory.Add( new Crossbow() );
+		ply.Inventory.Add( new GrenadeWeapon() );
+		ply.Inventory.Add( new TripmineWeapon() );
 	}
 
 	public override void OnKilled()
@@ -121,13 +92,7 @@
 
 		Inventory.DeleteContents();
 
-		if( worldLight != null )
-		{
-			worldLight.Delete();
-			worldLight = null;
-		}
-
-		if ( LastDamage.Flags.HasFlag( DamageFlags.Blast ) )
+		if ( LastDamage.HasTag( "blast" ) )
 		{
 			using ( Prediction.Off() )
 			{
@@ -140,13 +105,10 @@
 		}
 		else
 		{
-			BecomeRagdollOnClient( LastDamage.Force, GetHitboxBone( LastDamage.HitboxIndex ) );
+			BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
 		}
 
 		Controller = null;
-
-		CameraMode = new SpectateRagdollCamera();
-
 		EnableAllCollisions = false;
 		EnableDrawing = false;
 
@@ -156,35 +118,12 @@
 		}
 	}
 
-	public override void BuildInput( InputBuilder input )
-	{
-		if ( DeathmatchGame.CurrentState == DeathmatchGame.GameStates.GameEnd )
-		{
-			input.ViewAngles = input.OriginalViewAngles;
-			return;
-		};
-
-		base.BuildInput( input );
-	}
-
-
-	public override void Simulate( Client cl )
+	public override void Simulate( IClient cl )
 	{
 		if ( DeathmatchGame.CurrentState == DeathmatchGame.GameStates.GameEnd )
 			return;
 
 		base.Simulate( cl );
-		Simulateflashlight();
-		
-		//SimulateGrabbing();
-		//
-		// Input requested a weapon switch
-		//
-
-		if ( Input.ActiveChild != null )
-		{
-			ActiveChild = Input.ActiveChild;
-		}
 
 		if ( LifeState != LifeState.Alive )
 			return;
@@ -193,14 +132,7 @@
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
-			if ( CameraMode is ThirdPersonCamera )
-			{
-				CameraMode = new FirstPersonCamera();
-			}
-			else
-			{
-				CameraMode = new ThirdPersonCamera();
-			}
+			ThirdPerson = !ThirdPerson;
 		}
 
 		if ( Input.Pressed( InputButton.Drop ) )
@@ -218,13 +150,14 @@
 			}
 		}
 
+		DoPlayerAnimation();
 		SimulateActiveChild( cl, ActiveChild );
 
 		//
 		// If the current weapon is out of ammo and we last fired it over half a second ago
 		// lets try to switch to a better wepaon
 		//
-		if ( ActiveChild is HLDMWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
+		if ( ActiveChild is DeathmatchWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
 		{
 			SwitchToBestWeapon();
 		}
@@ -232,7 +165,7 @@
 
 	public void SwitchToBestWeapon()
 	{
-		var best = Children.Select( x => x as HLDMWeapon )
+		var best = Children.Select( x => x as DeathmatchWeapon )
 			.Where( x => x.IsValid() && x.IsUsable() )
 			.OrderByDescending( x => x.BucketWeight )
 			.FirstOrDefault();
@@ -249,54 +182,9 @@
 		base.StartTouch( other );
 	}
 
-	public override void PostCameraSetup( ref CameraSetup setup )
+	public override void FrameSimulate( IClient cl )
 	{
-		setup.ZNear = 0.1f;
-
-		if ( DeathmatchGame.CurrentState == DeathmatchGame.GameStates.GameEnd )
-			return;
-
-		base.PostCameraSetup( ref setup );
-
-		if ( setup.Viewer != null )
-		{
-			AddCameraEffects( ref setup );
-		}
-	}
-
-	float walkBob = 0;
-	float lean = 0;
-	float fov = 0;
-
-	private void AddCameraEffects( ref CameraSetup setup )
-	{
-		var speed = Velocity.Length.LerpInverse( 0, 320 );
-		var forwardspeed = Velocity.Normal.Dot( setup.Rotation.Forward );
-
-		var left = setup.Rotation.Left;
-		var up = setup.Rotation.Up;
-
-		if ( GroundEntity != null )
-		{
-			walkBob += Time.Delta * 25.0f * speed;
-		}
-
-		setup.Position += up * MathF.Sin( walkBob ) * speed * 2;
-		setup.Position += left * MathF.Sin( walkBob * 0.6f ) * speed * 1;
-
-		// Camera lean
-		lean = lean.LerpTo( Velocity.Dot( setup.Rotation.Right ) * 0.01f, Time.Delta * 15.0f );
-
-		var appliedLean = lean;
-		appliedLean += MathF.Sin( walkBob ) * speed * 0.3f;
-		setup.Rotation *= Rotation.From( 0, 0, appliedLean );
-
-		speed = (speed - 0.7f).Clamp( 0, 1 ) * 3.0f;
-
-		fov = fov.LerpTo( speed * 20 * MathF.Abs( forwardspeed ), Time.Delta * 4.0f );
-
-		setup.FieldOfView += fov;
-
+		UpdateCamera();
 	}
 
 	DamageInfo LastDamage;
@@ -308,9 +196,7 @@
 
 		LastDamage = info;
 
-		// hack - hitbox group 1 is head
-		// we should be able to get this from somewhere (it's pretty specific to citizen though?)
-		if ( GetHitboxGroup( info.HitboxIndex ) == 1 )
+		if ( info.Hitbox.HasTag( "head" ) )
 		{
 			info.Damage *= 2.0f;
 		}
@@ -320,7 +206,7 @@
 		LastAttacker = info.Attacker;
 		LastAttackerWeapon = info.Weapon;
 
-		if ( IsServer && Armour > 0 )
+		if ( Game.IsServer && Armour > 0 )
 		{
 			Armour -= info.Damage;
 
@@ -335,7 +221,7 @@
 			}
 		}
 
-		if ( info.Flags.HasFlag( DamageFlags.Blast ) )
+		if ( info.HasTag( "blast" ) )
 		{
 			Deafen( To.Single( Client ), info.Damage.LerpInverse( 0, 60 ) );
 		}
@@ -401,7 +287,7 @@
 	[ConCmd.Client]
 	public static void InflictDamage()
 	{
-		if ( Local.Pawn is DeathmatchPlayer ply )
+		if ( Game.LocalPawn is DeathmatchPlayer ply )
 		{
 			ply.TookDamage( ply.Position + ply.EyeRotation.Forward * 100.0f );
 		}
@@ -414,7 +300,7 @@
 		if ( LifeState != LifeState.Alive )
 			return;
 
-		if ( !IsServer )
+		if ( !Game.IsServer )
 			return;
 
 		if ( timeSinceLastFootstep < 0.2f )
@@ -450,32 +336,9 @@
 
 		// RenderOverlayTest( screenSize );
 
-		if ( ActiveChild is HLDMWeapon weapon )
+		if ( ActiveChild is DeathmatchWeapon weapon )
 		{
 			weapon.RenderHud( screenSize );
-		}
-	}
-
-	void RenderOverlayTest( Vector2 screenSize )
-	{
-		foreach ( var ent in Entity.FindInSphere( Position, 1500 ) )
-		{
-			var pos = ent.Position.ToScreen( screenSize );
-			if ( !pos.HasValue ) continue;
-
-			var str = $"{ent}";
-			Render.Draw2D.FontFamily = "Poppins";
-			Render.Draw2D.FontWeight = 1000;
-			Render.Draw2D.FontSize = 14;
-
-			//var textRect = Render.Draw2D.DrawText( ?, str );
-
-			Render.Draw2D.BlendMode = BlendMode.Normal;
-			Render.Draw2D.Color = Color.Black.WithAlpha( 0.7f );
-			//Render.Draw2D.BoxWithBorder( textRect.Expand( 16, 12 ), 2.0f, Color.Black.WithAlpha( 0.2f ), new Vector4( 4.0f ) );
-
-			Render.Draw2D.Color = Color.White;
-			//Render.Draw2D.Text( pos.Value, str );
 		}
 	}
 

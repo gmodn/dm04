@@ -14,6 +14,7 @@
 
 		PhysicsEnabled = true;
 		UsePhysicsCollision = true;
+		Tags.Add( "item" );
 	}
 
 	public override void Touch( Entity other )
@@ -75,6 +76,16 @@ partial class AmmoBuckshot : BaseAmmo
 	public override Model WorldModel => Model.Load( "models/dm_ammo_buckshot.vmdl" );
 }
 
+[Library( "dm_ammo357" ), HammerEntity]
+[EditorModel( "models/dm_ammo_357.vmdl" )]
+[Title( "357 Ammo" ), Category( "Ammo" )]
+partial class Ammo357 : BaseAmmo
+{
+	public override AmmoType AmmoType => AmmoType.Python;
+	public override int AmmoAmount => 6;
+
+	public override Model WorldModel => Model.Load( "models/dm_ammo_357.vmdl" );
+}
 
 [Library( "dm_ammocrossbow" ), HammerEntity]
 [EditorModel( "models/dm_ammo_crossbow.vmdl" )]

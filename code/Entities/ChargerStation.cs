@@ -3,7 +3,7 @@
 /// </summary>
 [Library( "dm_chargerstation" ), HammerEntity]
 [SupportsSolid]
-[EditorModel( "models/props_combine/suit_charger001.vmdl" )]
+[EditorModel( "models/gameplay/charger/charger_station.vmdl" )]
 [Title( "Charger Station" )]
 partial class ChargerStation : KeyframeEntity, IUse
 {
@@ -31,8 +31,8 @@ partial class ChargerStation : KeyframeEntity, IUse
 	[Property( "armourcharger", Title = "Is Armour Charger" )]
 	public bool IsArmourCharger { get; set; } = false;
 
-	public static readonly Model HealthChargerModel = Model.Load( "models/props_combine/health_charger001.vmdl" );
-	public static readonly Model ArmourChargerModel = Model.Load( "models/props_combine/suit_charger001.vmdl" );
+	public static readonly Model HealthChargerModel = Model.Load( "models/gameplay/charger/charger_station.vmdl" );
+	public static readonly Model ArmourChargerModel = Model.Load( "models/gameplay/charger/armour_charger_station.vmdl" );
 
 	private TimeSince TimeSinceUsed;
 
@@ -106,14 +106,14 @@ partial class ChargerStation : KeyframeEntity, IUse
 		if ( IsArmourCharger )
 		{
 			player.Armour += add;
-			player.Armour.Clamp( 0, 100 );
+			player.Armour = player.Armour.Clamp( 0, 100 );
 			return player.Armour < 100;
 		}
 
 		if ( !IsArmourCharger )
 		{
 			player.Health += add;
-			player.Health.Clamp( 0, 100 );
+			player.Health = player.Health.Clamp( 0, 100 );
 			return player.Health < 100;
 		}
 

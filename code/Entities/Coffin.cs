@@ -1,6 +1,6 @@
 ﻿partial class Coffin : ModelEntity
 {
-	public static readonly Model WorldModel = Model.Load( "models/player/hev_coffin.vmdl" );
+	public static readonly Model WorldModel = Model.Load( "models/dm_coffin.vmdl" );
 
 	public List<string> Weapons = new List<string>();
 	public List<int> Ammos = new List<int>();
@@ -11,6 +11,7 @@
 
 		Model = WorldModel;
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic );
+		Tags.Add( "item" );
 	}
 
 	public void Populate( DeathmatchPlayer player )
@@ -19,7 +20,7 @@
 
 		foreach ( var child in player.Children.ToArray() )
 		{
-			if ( child is HLDMWeapon weapon )
+			if ( child is DeathmatchWeapon weapon )
 			{
 				Weapons.Add( weapon.ClassName );
 			}
@@ -30,7 +31,7 @@
 	{
 		base.StartTouch( other );
 
-		if ( IsClient )
+		if ( Game.IsClient )
 			return;
 
 		if ( other is not DeathmatchPlayer player )

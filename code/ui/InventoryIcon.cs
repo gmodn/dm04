@@ -2,10 +2,10 @@
 
 class InventoryIcon : Panel
 {
-	public HLDMWeapon Weapon;
+	public DeathmatchWeapon Weapon;
 	public Panel Icon;
 
-	public InventoryIcon( HLDMWeapon weapon )
+	public InventoryIcon( DeathmatchWeapon weapon )
 	{
 		Weapon = weapon;
 		Icon = Add.Panel( "icon" );
@@ -13,7 +13,7 @@ class InventoryIcon : Panel
 		AddClass( weapon.ClassName );
 	}
 
-	internal void TickSelection( HLDMWeapon selectedWeapon )
+	internal void TickSelection( DeathmatchWeapon selectedWeapon )
 	{
 		SetClass( "active", selectedWeapon == Weapon );
 		SetClass( "empty", !Weapon?.IsUsable() ?? true );
@@ -23,7 +23,7 @@ class InventoryIcon : Panel
 	{
 		base.Tick();
 
-		if ( !Weapon.IsValid() || Weapon.Owner != Local.Pawn )
+		if ( !Weapon.IsValid() || Weapon.Owner != Game.LocalPawn )
 			Delete( true );
 	}
 }

@@ -1,22 +1,15 @@
-﻿partial class HLDMWeapon : BaseWeapon, IRespawnableEntity
+﻿partial class DeathmatchWeapon : BaseWeapon, IRespawnableEntity
 {
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
 	public virtual int Bucket => 1;
 	public virtual int BucketWeight => 100;
-	public virtual AmmoType SecondaryAmmo => AmmoType.None;
+
 	public virtual int Order => (Bucket * 10000) + BucketWeight;
-
-	public virtual string AmmoIcon => "p";
-
-	public virtual string AltIcon => "z";
 
 	[Net, Predicted]
 	public int AmmoClip { get; set; }
-
-	[Net, Predicted]
-	public int SecondaryAmmoClip { get; set; } 
 
 	[Net, Predicted]
 	public TimeSince TimeSinceReload { get; set; }
@@ -27,23 +20,12 @@
 	[Net, Predicted]
 	public TimeSince TimeSinceDeployed { get; set; }
 
+
 	public PickupTrigger PickupTrigger { get; protected set; }
-	public PickupTrigger GravPickupTrigger { get; protected set; }
 
 
-	public void gravhitbox()
-	{
-		GravPickupTrigger = new PickupTrigger();
-		GravPickupTrigger.SetTriggerSize(64);
-		GravPickupTrigger.Parent = this;
-		GravPickupTrigger.Position = Position;
 
-	}
-	public void gravhitboxremove()
-	{
-		GravPickupTrigger.Delete();
 
-	}
 	public int AvailableAmmo()
 	{
 		var owner = Owner as DeathmatchPlayer;
@@ -86,10 +68,7 @@
 		if ( Owner is DeathmatchPlayer player )
 		{
 			if ( player.AmmoCount( AmmoType ) <= 0 )
-			{
-				OnReloadFinish();
 				return;
-			}
 		}
 
 		IsReloading = true;
@@ -99,7 +78,7 @@
 		StartReloadEffects();
 	}
 
-	public override void Simulate( Client owner )
+	public override void Simulate( IClient owner )
 	{
 		if ( TimeSinceDeployed < 0.6f )
 			return;
@@ -146,7 +125,7 @@
 	[ClientRpc]
 	protected virtual void ShootEffects()
 	{
-		Host.AssertClient();
+		Game.AssertClient();
 
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
@@ -163,11 +142,12 @@
 		//
 		// Seed rand using the tick, so bullet cones match on client and server
 		//
-		Rand.SetSeed( Time.Tick );
+		Game.SetRandomSeed( Time.Tick );
+		var aim = Owner.AimRay;
 
 		for ( int i = 0; i < bulletCount; i++ )
 		{
-			var forward = Owner.EyeRotation.Forward;
+			var forward = aim.Forward;
 			forward += (Vector3.Random + Vector3.Random + Vector3.Random + Vector3.Random) * spread * 0.25f;
 			forward = forward.Normal;
 
@@ -175,7 +155,7 @@
 			// ShootBullet is coded in a way where we can have bullets pass through shit
 			// or bounce off shit, in which case it'll return multiple results
 			//
-			foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + forward * 5000, bulletSize ) )
+			foreach ( var tr in TraceBullet( aim.Position, aim.Position + forward * 5000, bulletSize ) )
 			{
 				tr.Surface.DoBulletImpact( tr );
 
@@ -184,7 +164,7 @@
 					CreateTracerEffect( tr.EndPosition );
 				}
 
-				if ( !IsServer ) continue;
+				if ( !Game.IsServer ) continue;
 				if ( !tr.Entity.IsValid() ) continue;
 
 				var damageInfo = DamageInfo.FromBullet( tr.EndPosition, forward * 100 * force, damage )
@@ -217,17 +197,6 @@
 		return true;
 	}
 
-	public bool TakeSecondaryAmmo( DeathmatchPlayer player, AmmoType ammoType )
-	{
-		if ( player.AmmoCount( ammoType ) < 1 )
-			return false;
-
-		player.SetAmmo( ammoType, player.AmmoCount( ammoType ) - 1 );
-		SecondaryAmmoClip = player.AmmoCount( ammoType );
-
-		return true;
-	}
-
 	[ClientRpc]
 	public virtual void DryFire()
 	{
@@ -236,7 +205,7 @@
 
 	public override void CreateViewModel()
 	{
-		Host.AssertClient();
+		Game.AssertClient();
 
 		if ( string.IsNullOrEmpty( ViewModelPath ) )
 			return;
@@ -251,17 +220,12 @@
 
 	public override void CreateHudElements()
 	{
-		if ( Local.Hud == null ) return;
+	
 	}
 
 	public bool IsUsable()
 	{
-		//Need to fix secondary check since it's ass ///facepunch never did :dead:
-		var owner = Owner as DeathmatchPlayer;
-		if ( owner == null ) return true;
-
 		if ( AmmoClip > 0 ) return true;
-		if ( owner.AmmoCount( SecondaryAmmo ) > 0 ) return true;
 		if ( AmmoType == AmmoType.None ) return true;
 		return AvailableAmmo() > 0;
 	}
@@ -301,7 +265,18 @@
 
 	public virtual void RenderCrosshair( in Vector2 center, float lastAttack, float lastReload )
 	{
-		var draw = Render.Draw2D;
+		
 	}
 
+	public virtual void UpdateCamera()
+	{
+
+	}
+	public virtual void UpdateViewmodelCamera()
+	{
+		if ( ViewModelEntity is DmViewModel dmv )
+		{
+			dmv.UpdateCamera();
+		}
+	}
 }

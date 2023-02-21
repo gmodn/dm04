@@ -8,12 +8,6 @@ public class HudRootPanel : RootPanel
 
 	public HudRootPanel()
 	{
-		if(Current != null)
-		{
-			Current.Delete();
-			Current = null;
-		}
-
 		Current = this;
 
 		StyleSheet.Load( "/resource/styles/hud.scss" );
@@ -26,10 +20,7 @@ public class HudRootPanel : RootPanel
 		AddChild<PickupFeed>();
 
 		AddChild<ChatBox>();
-		AddChild<Ammo>();
-		AddChild<Health>();
 		AddChild<KillFeed>();
-		AddChild<Crosshair>();
 		Scoreboard = AddChild<Scoreboard>();
 		AddChild<VoiceList>();
 	}

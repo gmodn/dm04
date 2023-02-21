@@ -1,25 +1,16 @@
-﻿
-using Sandbox;
-using Sandbox.UI;
-using Sandbox.UI.Construct;
-using System;
+﻿using Sandbox.UI;
 
 public class Crosshair : Panel
 {
 	int fireCounter;
 
-	// Quick info crosshair
-	public Label LeftFull;
-
-	public Label centre;
-	public Label RightFull;
-
 	public Crosshair()
 	{
-		StyleSheet.Load( "ui/Crosshair.scss" );
-		centre = Add.Label( "{", "crosshairBracket" );
-		LeftFull = Add.Label( "Q", "crosshair" );
-		RightFull = Add.Label( "}", "crosshairBracket" );
+		for ( int i = 0; i < 5; i++ )
+		{
+			var p = Add.Panel( "element" );
+			p.AddClass( $"el{i}" );
+		}
 	}
 
 	public override void Tick()

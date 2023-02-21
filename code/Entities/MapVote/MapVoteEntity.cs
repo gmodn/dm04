@@ -5,7 +5,7 @@ partial class MapVoteEntity : Entity
 	MapVotePanel Panel;
 
 	[Net]
-	public IDictionary<Client, string> Votes { get; set; }
+	public IDictionary<IClient, string> Votes { get; set; }
 
 	[Net]
 	public string WinningMap { get; set; } = "facepunch.datacore";
@@ -27,7 +27,7 @@ partial class MapVoteEntity : Entity
 
 		Current = this;
 		Panel = new MapVotePanel();
-		DeathmatchHud.Current.AddChild( Panel );
+		HudRootPanel.Current.AddChild( Panel );
 	}
 
 	protected override void OnDestroy()
@@ -41,7 +41,7 @@ partial class MapVoteEntity : Entity
 			Current = null;
 	}
 
-	[Event.Frame]
+	[Event.Client.Frame]
 	public void OnFrame()
 	{
 		if ( Panel != null )
@@ -68,7 +68,7 @@ partial class MapVoteEntity : Entity
 		WinningMap = Votes.GroupBy( x => x.Value ).OrderBy( x => x.Count() ).First().Key;
 	}
 
-	void SetVote( Client client, string map )
+	void SetVote( IClient client, string map )
 	{
 		CullInvalidClients();
 		Votes[client] = map;

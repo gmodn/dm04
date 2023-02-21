@@ -4,17 +4,14 @@
 	{
 		public static void PositionAtCrosshair( this Panel panel )
 		{
-			panel.PositionAtCrosshair( Local.Pawn );
+			panel.PositionAtCrosshair( Game.LocalPawn );
 		}
 
 		public static void PositionAtCrosshair( this Panel panel, Entity player )
 		{
 			if ( !player.IsValid() ) return;
 
-			var eyePos = player.EyePosition;
-			var eyeRot = player.EyeRotation;
-
-			var tr = Trace.Ray( eyePos, eyePos + eyeRot.Forward * 2000 )
+			var tr = Trace.Ray( player.AimRay, 2000.0f )
 							.Size( 1.0f )
 							.Ignore( player )
 							.UseHitboxes()

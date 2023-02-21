@@ -19,18 +19,9 @@ class MapVotePanel : Panel
 
 	public async Task PopulateMaps()
 	{
-		var query = new Package.Query
-		{
-			Type = Package.Type.Map,
-			Order = Package.Order.User,
-			Take = 16,
-		};
+		var query = await Package.FindAsync( "type:map order:user game:facepunch.dm98", 16 );
 
-		query.Tags.Add( "game:gman.dm04" ); // maybe this should be a "for this game" type of thing instead
-
-		var packages = await query.RunAsync( default );
-
-		foreach ( var package in packages )
+		foreach ( var package in query.Packages )
 		{
 			AddMap( package.FullIdent );
 		}
@@ -56,7 +47,7 @@ class MapVotePanel : Panel
 		base.Tick();
 	}
 
-	internal void UpdateFromVotes( IDictionary<Client, string> votes )
+	internal void UpdateFromVotes( IDictionary<IClient, string> votes )
 	{
 		foreach ( var icon in MapIcons )
 			icon.VoteCount = "0";
