@@ -1,0 +1,22 @@
+{
+  "Name": "My HL Weapon",
+  "WorldModel": "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl",
+  "ViewModel": "models/weapons/hl2_uspmatch/v_hl2_uspmatch.vmdl",
+  "FireSound": "sounds/weapons/hl2_uspmatch/hl2_uspmatch.fire.sound",
+  "AltFireSound": "sounds/weapons/hl2_ar2/hl2_ar2.secondary_fire.sound",
+  "ReloadSound": "sounds/weapons/hl2_uspmatch/hl2_uspmatch.reload.sound",
+  "EmptyChamber": "sounds/weapons/hl2_uspmatch/hl2_uspmatch.empty.sound",
+  "Bucket": 1,
+  "BucketWeight": 1,
+  "PrimaryAmmoIcon": "p",
+  "SecondaryAmmoIcon": "z",
+  "ReloadTime": 8.05,
+  "FireRate": 7.6,
+  "AltFireRate": 6.25,
+  "ClipSize": 9,
+  "BulletSpread": 93.55,
+  "BulletForce": 51.4,
+  "BulletDamage": 49.45,
+  "BulletSize": 20.05,
+  "BulletCount": 37
+}

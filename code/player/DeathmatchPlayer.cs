@@ -47,8 +47,6 @@ public partial class DeathmatchPlayer : Player
 		SupressPickupNotices = true;
 
 		Inventory.DeleteContents();
-		Inventory.Add( new Crowbar() );
-		Inventory.Add( new Pistol(), true );
 
 		GiveAmmo( AmmoType.Pistol, 25 );
 
@@ -70,13 +68,6 @@ public partial class DeathmatchPlayer : Player
 		ply.GiveAmmo( AmmoType.Crossbow, 1000 );
 		ply.GiveAmmo( AmmoType.Grenade, 1000 );
 		ply.GiveAmmo( AmmoType.Tripmine, 1000 );
-
-		ply.Inventory.Add( new Python() );
-		ply.Inventory.Add( new Shotgun() );
-		ply.Inventory.Add( new SMG() );
-		ply.Inventory.Add( new Crossbow() );
-		ply.Inventory.Add( new GrenadeWeapon() );
-		ply.Inventory.Add( new TripmineWeapon() );
 	}
 
 	public override void OnKilled()
