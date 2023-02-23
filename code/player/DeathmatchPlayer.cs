@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System.Runtime.CompilerServices;
 
 public partial class DeathmatchPlayer : Player
 {
@@ -11,6 +12,8 @@ public partial class DeathmatchPlayer : Player
 	public float MaxHealth { get; set; } = 100;
 
 	public bool SupressPickupNotices { get; private set; }
+
+	public bool IsGodMode { get; set; }
 
 	public int ComboKillCount { get; set; } = 0;
 	public TimeSince TimeSinceLastKill { get; set; }
@@ -47,6 +50,8 @@ public partial class DeathmatchPlayer : Player
 		SupressPickupNotices = true;
 
 		Inventory.DeleteContents();
+		Inventory.Add( new Crowbar());
+		Inventory.Add( new Pistol());
 
 		GiveAmmo( AmmoType.Pistol, 25 );
 
@@ -68,44 +73,86 @@ public partial class DeathmatchPlayer : Player
 		ply.GiveAmmo( AmmoType.Crossbow, 1000 );
 		ply.GiveAmmo( AmmoType.Grenade, 1000 );
 		ply.GiveAmmo( AmmoType.Tripmine, 1000 );
+
+
+		ply.Inventory.Add( new Crowbar() );
+		ply.Inventory.Add( new Pistol() );
+		ply.Inventory.Add( new Python() );
+		ply.Inventory.Add( new Shotgun() );
+		ply.Inventory.Add( new SMG() );
+		ply.Inventory.Add( new Crossbow() );
+		ply.Inventory.Add( new GrenadeWeapon() );
+		ply.Inventory.Add( new TripmineWeapon() );
+	}
+
+	[ConCmd.Admin]
+	public static void Kill()
+	{
+		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
+
+		ply.Health = 0;
+	}
+
+	[ConCmd.Admin]
+	public static void God( bool isiton )
+	{
+		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
+
+		if (isiton = true)
+		{
+			ply.IsGodMode = true;
+		}
+
+		if ( isiton = false )
+		{
+			ply.IsGodMode = false;
+		}
 	}
 
 	public override void OnKilled()
 	{
-		base.OnKilled();
-
-		var coffin = new Coffin();
-		coffin.Position = Position + Vector3.Up * 30;
-		coffin.Rotation = Rotation;
-		coffin.PhysicsBody.Velocity = Velocity + Rotation.Forward * 100;
-
-		coffin.Populate( this );
-
-		Inventory.DeleteContents();
-
-		if ( LastDamage.HasTag( "blast" ) )
+		if(IsGodMode = true)
 		{
-			using ( Prediction.Off() )
+			// dont kill the pawn
+		}
+
+		if(IsGodMode = false)
+		{
+			base.OnKilled();
+
+			var coffin = new Coffin();
+			coffin.Position = Position + Vector3.Up * 30;
+			coffin.Rotation = Rotation;
+			coffin.PhysicsBody.Velocity = Velocity + Rotation.Forward * 100;
+
+			coffin.Populate( this );
+
+			Inventory.DeleteContents();
+
+			if ( LastDamage.HasTag( "blast" ) )
 			{
-				var particles = Particles.Create( "particles/gib.vpcf" );
-				if ( particles != null )
+				using ( Prediction.Off() )
 				{
-					particles.SetPosition( 0, Position + Vector3.Up * 40 );
+					var particles = Particles.Create( "particles/gib.vpcf" );
+					if ( particles != null )
+					{
+						particles.SetPosition( 0, Position + Vector3.Up * 40 );
+					}
 				}
 			}
-		}
-		else
-		{
-			BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
-		}
+			else
+			{
+				BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
+			}
 
-		Controller = null;
-		EnableAllCollisions = false;
-		EnableDrawing = false;
+			Controller = null;
+			EnableAllCollisions = false;
+			EnableDrawing = false;
 
-		foreach ( var child in Children.OfType<ModelEntity>() )
-		{
-			child.EnableDrawing = false;
+			foreach ( var child in Children.OfType<ModelEntity>() )
+			{
+				child.EnableDrawing = false;
+			}
 		}
 	}
 
