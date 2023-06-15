@@ -32,7 +32,7 @@
 			Camera.Position = EyePosition;
 			Camera.FirstPersonViewer = this;
 
-			if ( ActiveChild is HLDMWeapon weapon )
+			if ( ActiveChild is DeathmatchWeapon weapon )
 			{
 				weapon.UpdateViewmodelCamera();
 				weapon.UpdateCamera();

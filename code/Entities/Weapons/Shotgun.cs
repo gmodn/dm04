@@ -1,7 +1,7 @@
 ﻿[Library( "dm_shotgun" ), HammerEntity]
 [EditorModel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" )]
 [Title( "Shotgun" ), Category( "Weapons" )]
-partial class Shotgun : HLDMWeapon
+partial class Shotgun : DeathmatchWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" );
 	public override string ViewModelPath => "weapons/rust_pumpshotgun/v_rust_pumpshotgun.vmdl";

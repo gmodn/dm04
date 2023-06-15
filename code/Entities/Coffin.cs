@@ -20,7 +20,7 @@
 
 		foreach ( var child in player.Children.ToArray() )
 		{
-			if ( child is HLDMWeapon weapon )
+			if ( child is DeathmatchWeapon weapon )
 			{
 				Weapons.Add( weapon.ClassName );
 			}

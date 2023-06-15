@@ -1,5 +1,4 @@
 ﻿using Sandbox;
-using System.Runtime.CompilerServices;
 
 public partial class DeathmatchPlayer : Player
 {
@@ -12,8 +11,6 @@ public partial class DeathmatchPlayer : Player
 	public float MaxHealth { get; set; } = 100;
 
 	public bool SupressPickupNotices { get; private set; }
-
-	public bool IsGodMode { get; set; }
 
 	public int ComboKillCount { get; set; } = 0;
 	public TimeSince TimeSinceLastKill { get; set; }
@@ -50,8 +47,8 @@ public partial class DeathmatchPlayer : Player
 		SupressPickupNotices = true;
 
 		Inventory.DeleteContents();
-		Inventory.Add( new Crowbar());
-		Inventory.Add( new Pistol());
+		Inventory.Add( new Crowbar() );
+		Inventory.Add( new Pistol(), true );
 
 		GiveAmmo( AmmoType.Pistol, 25 );
 
@@ -74,9 +71,6 @@ public partial class DeathmatchPlayer : Player
 		ply.GiveAmmo( AmmoType.Grenade, 1000 );
 		ply.GiveAmmo( AmmoType.Tripmine, 1000 );
 
-
-		ply.Inventory.Add( new Crowbar() );
-		ply.Inventory.Add( new Pistol() );
 		ply.Inventory.Add( new Python() );
 		ply.Inventory.Add( new Shotgun() );
 		ply.Inventory.Add( new SMG() );
@@ -85,74 +79,42 @@ public partial class DeathmatchPlayer : Player
 		ply.Inventory.Add( new TripmineWeapon() );
 	}
 
-	[ConCmd.Admin]
-	public static void Kill()
-	{
-		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
-
-		ply.Health = 0;
-	}
-
-	[ConCmd.Admin]
-	public static void God( bool isiton )
-	{
-		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
-
-		if (isiton = true)
-		{
-			ply.IsGodMode = true;
-		}
-
-		if ( isiton = false )
-		{
-			ply.IsGodMode = false;
-		}
-	}
-
 	public override void OnKilled()
 	{
-		if(IsGodMode = true)
+		base.OnKilled();
+
+		var coffin = new Coffin();
+		coffin.Position = Position + Vector3.Up * 30;
+		coffin.Rotation = Rotation;
+		coffin.PhysicsBody.Velocity = Velocity + Rotation.Forward * 100;
+
+		coffin.Populate( this );
+
+		Inventory.DeleteContents();
+
+		if ( LastDamage.HasTag( "blast" ) )
 		{
-			// dont kill the pawn
-		}
-
-		if(IsGodMode = false)
-		{
-			base.OnKilled();
-
-			var coffin = new Coffin();
-			coffin.Position = Position + Vector3.Up * 30;
-			coffin.Rotation = Rotation;
-			coffin.PhysicsBody.Velocity = Velocity + Rotation.Forward * 100;
-
-			coffin.Populate( this );
-
-			Inventory.DeleteContents();
-
-			if ( LastDamage.HasTag( "blast" ) )
+			using ( Prediction.Off() )
 			{
-				using ( Prediction.Off() )
+				var particles = Particles.Create( "particles/gib.vpcf" );
+				if ( particles != null )
 				{
-					var particles = Particles.Create( "particles/gib.vpcf" );
-					if ( particles != null )
-					{
-						particles.SetPosition( 0, Position + Vector3.Up * 40 );
-					}
+					particles.SetPosition( 0, Position + Vector3.Up * 40 );
 				}
 			}
-			else
-			{
-				BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
-			}
+		}
+		else
+		{
+			BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
+		}
 
-			Controller = null;
-			EnableAllCollisions = false;
-			EnableDrawing = false;
+		Controller = null;
+		EnableAllCollisions = false;
+		EnableDrawing = false;
 
-			foreach ( var child in Children.OfType<ModelEntity>() )
-			{
-				child.EnableDrawing = false;
-			}
+		foreach ( var child in Children.OfType<ModelEntity>() )
+		{
+			child.EnableDrawing = false;
 		}
 	}
 
@@ -195,7 +157,7 @@ public partial class DeathmatchPlayer : Player
 		// If the current weapon is out of ammo and we last fired it over half a second ago
 		// lets try to switch to a better wepaon
 		//
-		if ( ActiveChild is HLDMWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
+		if ( ActiveChild is DeathmatchWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
 		{
 			SwitchToBestWeapon();
 		}
@@ -203,7 +165,7 @@ public partial class DeathmatchPlayer : Player
 
 	public void SwitchToBestWeapon()
 	{
-		var best = Children.Select( x => x as HLDMWeapon )
+		var best = Children.Select( x => x as DeathmatchWeapon )
 			.Where( x => x.IsValid() && x.IsUsable() )
 			.OrderByDescending( x => x.BucketWeight )
 			.FirstOrDefault();
@@ -374,7 +336,7 @@ public partial class DeathmatchPlayer : Player
 
 		// RenderOverlayTest( screenSize );
 
-		if ( ActiveChild is HLDMWeapon weapon )
+		if ( ActiveChild is DeathmatchWeapon weapon )
 		{
 			weapon.RenderHud( screenSize );
 		}

@@ -1,17 +1,14 @@
-﻿using System;
-
-[Library( "dm_smg" ), HammerEntity]
+﻿[Library( "dm_smg" ), HammerEntity]
 [EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
 [Title( "SMG" ), Category( "Weapons" )]
-partial class SMG : HLDMWeapon
+partial class SMG : DeathmatchWeapon
 {
-	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" );
-	public override string ViewModelPath => "models/weapons/hl2_smg1/v_hl2_smg1.vmdl";
+	public static readonly Model WorldModel = Model.Load( "weapons/rust_smg/rust_smg.vmdl" );
+	public override string ViewModelPath => "weapons/rust_smg/v_rust_smg.vmdl";
 
-	public override float PrimaryRate => 13.3f;
+	public override float PrimaryRate => 16.0f;
 	public override float SecondaryRate => 1.0f;
-	public override int ClipSize => 45;
-	public override AmmoType AmmoType => AmmoType.SMG;
+	public override int ClipSize => 50;
 	public override float ReloadTime => 4.0f;
 	public override int Bucket => 2;
 	public override int BucketWeight => 100;
@@ -46,7 +43,7 @@ partial class SMG : HLDMWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "hl2_smg1.fire" );
+		PlaySound( "rust_smg.shoot" );
 
 		//
 		// Shoot the bullets
@@ -57,7 +54,46 @@ partial class SMG : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
-			// use later -Ian
+		// Screw this for now
+		return;
+
+		/*TimeSincePrimaryAttack = 0;
+		TimeSinceSecondaryAttack = 0;
+
+		if ( Owner is not DeathmatchPlayer player ) return;
+
+		if ( !TakeAmmo( 10 ) )//Using SMG ammo for now.
+		{
+			Reload();
+			return;
+		}
+
+		// woosh sound
+		// screen shake
+
+		Game.SetRandomSeed( Time.Tick );
+
+		if ( IsServer )
+		{
+			var grenade = new SMGGrenade
+			{
+				Position = Owner.EyePosition + Owner.EyeRotation.Forward * 3.0f,
+				Owner = Owner
+			};
+
+			grenade.PhysicsBody.Velocity = Owner.EyeRotation.Forward * 1600.0f + Owner.EyeRotation.Up * 200.0f + Owner.Velocity;
+
+			// This is fucked in the head, lets sort this this year
+			grenade.CollisionGroup = CollisionGroup.Debris;
+			grenade.SetInteractsExclude( CollisionLayer.Player );
+			grenade.SetInteractsAs( CollisionLayer.Debris );
+		}
+
+		if ( IsServer && AmmoClip == 0 && player.AmmoCount( AmmoType.Grenade ) == 0 )
+		{
+			Delete();
+			player.SwitchToBestWeapon();
+		}*/
 	}
 
 	[ClientRpc]
