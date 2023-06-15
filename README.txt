@@ -1,9 +1,8 @@
 Credits:
 
 IanSource2: Programming, UI, Lead
-OMGOMGplays: ADD STUFF YOU DID HERE
 ItsRifter: ADD STUFF YOU DID HERE
-Lokiv: ADD STUFF YOU DID HERE
+Lokiv: Animgraph Work
 TheBoxTrot: ADD STUFF YOU DID HERE
 Meetle Meek: Mapping
 Rice: Mapping
