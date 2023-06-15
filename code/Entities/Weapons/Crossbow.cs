@@ -3,8 +3,8 @@
 [Title( "Crossbow" ), Category( "Weapons" )]
 partial class Crossbow : DeathmatchWeapon
 {
-	public static readonly Model WorldModel = Model.Load( "weapons/rust_crossbow/rust_crossbow.vmdl" );
-	public override string ViewModelPath => "weapons/rust_crossbow/v_rust_crossbow.vmdl";
+	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" );
+	public override string ViewModelPath => "models/weapons/hl2_crossbow/v_hl2_crossbow.vmdl";
 
 	public override float PrimaryRate => 1;
 	public override int Bucket => 3;

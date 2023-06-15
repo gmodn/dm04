@@ -3,8 +3,8 @@
 [Title(  "Crowbar" ), Category( "Weapons" )]
 partial class Crowbar : DeathmatchWeapon
 {
-	public static Model WorldModel = Model.Load( "models/dm_crowbar.vmdl" );
-	public override string ViewModelPath => "models/v_dm_crowbar.vmdl";
+	public static Model WorldModel = Model.Load( "models/weapons/hl2_crowbar/w_hl2_crowbar.vmdl" );
+	public override string ViewModelPath => "models/weapons/hl2_crowbar/v_hl2_crowbar.vmdl";
 
 	public override float PrimaryRate => 2.0f;
 	public override float SecondaryRate => 1.0f;

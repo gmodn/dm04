@@ -1,6 +1,7 @@
 ﻿partial class DeathmatchWeapon : BaseWeapon, IRespawnableEntity
 {
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
+	public virtual AmmoType SecondaryAmmo => AmmoType.None;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
 	public virtual int Bucket => 1;
@@ -10,6 +11,9 @@
 
 	[Net, Predicted]
 	public int AmmoClip { get; set; }
+
+	[Net, Predicted]
+	public int SecondaryAmmoClip { get; set; }
 
 	[Net, Predicted]
 	public TimeSince TimeSinceReload { get; set; }

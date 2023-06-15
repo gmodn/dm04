@@ -2,7 +2,7 @@
 [Title( "Hand Grenade" )]
 partial class HandGrenade : BasePhysics
 {
-	public static readonly Model WorldModel = Model.Load( "models/dm_grenade.vmdl" );
+	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" );
 
 	Particles GrenadeParticles;
 
@@ -13,7 +13,7 @@ partial class HandGrenade : BasePhysics
 		Model = WorldModel;
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic );
 
-		GrenadeParticles = Particles.Create( "particles/grenade.vpcf", this, "trail_particle", true );
+		GrenadeParticles = Particles.Create( "particles/grenade.vpcf", this, "particles/weapons/hl2_grenade_trail.vpcf", true );
 		GrenadeParticles.SetPosition( 0, Position );
 		Tags.Add( "grenade" );
 	}

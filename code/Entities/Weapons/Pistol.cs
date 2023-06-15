@@ -3,8 +3,8 @@
 [Title( "Pistol" ), Category( "Weapons" )]
 partial class Pistol : DeathmatchWeapon
 {
-	public static readonly Model WorldModel = Model.Load( "weapons/rust_pistol/rust_pistol.vmdl" );
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" );
+	public override string ViewModelPath => "models/weapons/hl2_uspmatch/v_hl2_uspmatch.vmdl";
 
 	public override float PrimaryRate => 12.0f;
 	public override float SecondaryRate => 4.5f;

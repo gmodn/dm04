@@ -65,18 +65,16 @@ public partial class DeathmatchPlayer : Player
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
 
 		ply.GiveAmmo( AmmoType.Pistol, 1000 );
-		ply.GiveAmmo( AmmoType.Python, 1000 );
+		ply.GiveAmmo( AmmoType.Magnum, 1000 );
 		ply.GiveAmmo( AmmoType.Buckshot, 1000 );
 		ply.GiveAmmo( AmmoType.Crossbow, 1000 );
 		ply.GiveAmmo( AmmoType.Grenade, 1000 );
-		ply.GiveAmmo( AmmoType.Tripmine, 1000 );
+		ply.GiveAmmo( AmmoType.SLAM, 1000 );
 
 		ply.Inventory.Add( new Python() );
 		ply.Inventory.Add( new Shotgun() );
 		ply.Inventory.Add( new SMG() );
 		ply.Inventory.Add( new Crossbow() );
-		ply.Inventory.Add( new GrenadeWeapon() );
-		ply.Inventory.Add( new TripmineWeapon() );
 	}
 
 	public override void OnKilled()

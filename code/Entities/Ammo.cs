@@ -81,7 +81,7 @@ partial class AmmoBuckshot : BaseAmmo
 [Title( "357 Ammo" ), Category( "Ammo" )]
 partial class Ammo357 : BaseAmmo
 {
-	public override AmmoType AmmoType => AmmoType.Python;
+	public override AmmoType AmmoType => AmmoType.Magnum;
 	public override int AmmoAmount => 6;
 
 	public override Model WorldModel => Model.Load( "models/dm_ammo_357.vmdl" );
