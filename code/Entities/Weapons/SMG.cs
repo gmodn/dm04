@@ -42,7 +42,7 @@ partial class SMG : DeathmatchWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_smg.shoot" );
+		PlaySound( "hl2_smg1.fire" );
 
 		//
 		// Shoot the bullets

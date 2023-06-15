@@ -46,7 +46,7 @@ partial class Pistol : DeathmatchWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "hl2_uspmatch.empty" );
+		PlaySound( "hl2_uspmatch.fire" );
 
 		//
 		// Shoot the bullets

@@ -55,7 +55,7 @@ partial class Python : DeathmatchWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_pistol.shoot" );
+		PlaySound( "hl2_357.fire" );
 
 		//
 		// Shoot the bullets

@@ -55,7 +55,7 @@ partial class Shotgun : DeathmatchWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_pumpshotgun.shoot" );
+		PlaySound( "hl2_spas12.fire" );
 
 		//
 		// Shoot the bullets
@@ -146,7 +146,7 @@ partial class Shotgun : DeathmatchWeapon
 	[ClientRpc]
 	protected virtual void FinishReload()
 	{
-		ViewModelEntity?.SetAnimParameter( "reload_finished", true );
+		ViewModelEntity?.SetAnimParameter( "idle", true );
 	}
 
 	public override void SimulateAnimator( CitizenAnimationHelper anim )
