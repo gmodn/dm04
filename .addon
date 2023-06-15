@@ -8,7 +8,7 @@
   "HasAssets": true,
   "AssetsPath": "",
   "Resources": null,
-  "MenuResources": null,
+  "MenuResources": "ui/MainMenu/*\nfonts/*\nsounds/menu/*",
   "HasCode": true,
   "CodePath": "code",
   "PackageReferences": [],
@@ -112,6 +112,8 @@
           "r": "Ignore"
         }
       ]
-    }
+    },
+    "CsProjName": "",
+    "HttpAllowList": null
   }
 }
