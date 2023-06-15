@@ -1,9 +1,11 @@
+Half-Life Deathmatch
+
 Credits:
 
-IanSource2: Programming, UI, Lead
-ItsRifter: ADD STUFF YOU DID HERE
+Gman (Ian): Programming, UI, Lead
+ItsRifter: Programming
 Lokiv: Animgraph Work
-TheBoxTrot: ADD STUFF YOU DID HERE
+TheBoxTrot: Programming, Mapping
 Meetle Meek: Mapping
 Rice: Mapping
 Super Smol: Programming, Weapon Model Porting
