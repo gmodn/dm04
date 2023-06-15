@@ -8,7 +8,6 @@ public class HealthHud : Panel
 
 	public HealthHud()
 	{
-		Icon = Add.Icon( "add_box", "icon" );
 		Value = Add.Label( "0", "label" );
 	}
 
@@ -31,7 +30,6 @@ public class ArmourHud : Panel
 
 	public ArmourHud()
 	{
-		Icon = Add.Icon( "shield", "icon" );
 		Value = Add.Label( "0", "label" );
 
 	}
