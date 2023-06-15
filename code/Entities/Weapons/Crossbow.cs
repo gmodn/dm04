@@ -6,7 +6,8 @@ partial class Crossbow : DeathmatchWeapon
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_crossbow/w_hl2_crossbow.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_crossbow/v_hl2_crossbow.vmdl";
 
-	public override float PrimaryRate => 1;
+	public override float PrimaryRate => 0.52f;
+	public override float ReloadTime => 3.8f;
 	public override int Bucket => 3;
 	public override AmmoType AmmoType => AmmoType.Crossbow;
 	public override int ClipSize => 5;
@@ -36,7 +37,6 @@ partial class Crossbow : DeathmatchWeapon
 		}
 
 		ShootEffects();
-		PlaySound( "rust_crossbow.shoot" );
 
 		// TODO - if zoomed in then instant hit, no travel, 120 damage
 

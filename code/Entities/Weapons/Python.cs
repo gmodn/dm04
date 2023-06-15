@@ -8,9 +8,8 @@ partial class Python : DeathmatchWeapon
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_357/w_hl2_357.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_357/v_hl2_357.vmdl";
 
-	public override float PrimaryRate => 2.0f;
-	public override float SecondaryRate => 1.0f;
-	public override float ReloadTime => 7.0f;
+	public override float PrimaryRate => 1.3f;
+	public override float ReloadTime => 4f;
 	public override int ClipSize => 6;
 	public override AmmoType AmmoType => AmmoType.Magnum;
 

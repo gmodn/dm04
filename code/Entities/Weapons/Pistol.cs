@@ -6,10 +6,10 @@ partial class Pistol : DeathmatchWeapon
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_uspmatch/w_hl2_uspmatch.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_uspmatch/v_hl2_uspmatch.vmdl";
 
-	public override float PrimaryRate => 12.0f;
-	public override float SecondaryRate => 4.5f;
-	public override float ReloadTime => 3.0f;
-
+	public override float PrimaryRate => 10.0f;
+	public override float SecondaryRate => 2.0f;
+	public override int ClipSize => 18;
+	public override float ReloadTime => 1.4f;
 	public override int Bucket => 1;
 
 	public override void Spawn()
@@ -17,7 +17,7 @@ partial class Pistol : DeathmatchWeapon
 		base.Spawn();
 
 		Model = WorldModel;
-		AmmoClip = 12;
+		AmmoClip = 18;
 	}
 
 	public override bool CanPrimaryAttack()
@@ -46,38 +46,13 @@ partial class Pistol : DeathmatchWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_pistol.shoot" );
+		PlaySound( "hl2_uspmatch.empty" );
 
 		//
 		// Shoot the bullets
 		//
 		ShootBullet( 0.05f, 1, 12.0f, 2.0f );
 
-	}
-
-	public override void AttackSecondary()
-	{
-		base.AttackSecondary();
-
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
-
-		if ( !TakeAmmo( 1 ) )
-		{
-			DryFire();
-			return;
-		}
-
-		//
-		// Tell the clients to play the shoot effects
-		//
-		ShootEffects();
-		PlaySound( "rust_pistol.shoot" );
-
-		//
-		// Shoot the bullets
-		//
-		ShootBullet( 0.4f, 1.5f, 8.0f, 3.0f );
 	}
 
 	public override void RenderCrosshair( in Vector2 center, float lastAttack, float lastReload )

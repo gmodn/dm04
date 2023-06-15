@@ -5,13 +5,12 @@ partial class Shotgun : DeathmatchWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_spas12/w_hl2_spas12.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_spas12/v_hl2_spas12.vmdl";
-	public override float PrimaryRate => 1;
-	public override float SecondaryRate => 1;
+	public override float PrimaryRate => 0.95f;
+	public override float SecondaryRate => 0.8f;
 	public override AmmoType AmmoType => AmmoType.Buckshot;
-	public override int ClipSize => 8;
-	public override float ReloadTime => 0.5f;
-	public override int Bucket => 2;
-	public override int BucketWeight => 200;
+	public override int ClipSize => 6;
+	public override float ReloadTime => 0.8f;
+	public override int Bucket => 3;
 
 	[Net, Predicted]
 	public bool StopReloading { get; set; }
