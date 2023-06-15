@@ -1,5 +1,3 @@
-# Half-Life Deathmatch
-
 Credits:
 
 IanSource2: Programming, UI, Lead
