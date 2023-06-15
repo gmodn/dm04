@@ -282,12 +282,12 @@ public partial class DeathmatchPlayer : Player
 		Sound.FromScreen( sound );
 	}
 
-	[ConCmd.Client]
+	[ConCmd.Client("kill")]
 	public static void InflictDamage()
 	{
 		if ( Game.LocalPawn is DeathmatchPlayer ply )
 		{
-			ply.TookDamage( ply.Position + ply.EyeRotation.Forward * 100.0f );
+			ply.TookDamage( ply.Position + ply.EyeRotation.Forward * 999.0f );
 		}
 	}
 

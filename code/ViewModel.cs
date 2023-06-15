@@ -32,8 +32,8 @@
 			walkBob += Time.Delta * 2.0f * speed;
 		}
 
-		Position += up * MathF.Sin( walkBob ) * speed * -0.6f;
-		Position += left * MathF.Sin( walkBob * 0.5f ) * speed * -0.3f;
+		//Position += up * MathF.Sin( walkBob ) * speed * -0.6f;
+		Position += left * MathF.Sin( walkBob * 0.5f ) * 1 * -0.3f;
 
 		var uitx = new Sandbox.UI.PanelTransform();
 		uitx.AddTranslateY( MathF.Sin( walkBob * 1.0f ) * speed * -4.0f );

@@ -202,7 +202,7 @@ partial class DeathmatchGame : GameManager
 
 			ent.TakeDamage( damageInfo );
 
-			
+
 		}
 	}
 
@@ -220,5 +220,4 @@ partial class DeathmatchGame : GameManager
 
 		localPawn.RenderHud( Screen.Size );
 	}
-
 }

@@ -201,12 +201,12 @@ vitals
     }
 }
 
-.inventory, .ammobar, healthhud, armourhud, gamehud
+.inventory, .counter, healthhud, armourhud, gamehud
 {
     background-color: rgba( 0, 0, 0, 0.6 );
     padding: 16px;
     margin: 5px;
-    font-size: 32px;
+    font-size: 62px;
     font-weight: bolder;
     font-family: halflife2;
     color: #ff0;
