@@ -5,6 +5,7 @@ public class Ammo : Panel
 {
 	public Label Inventory;
 	public Label CounterText;
+	public Label AltCounterText;
 
 	List<Panel> BulletPanels = new List<Panel>();
 
@@ -33,5 +34,6 @@ public class Ammo : Panel
 		var hash = HashCode.Combine( player, weapon );
 
 		CounterText.Text = $"{weapon.AmmoClip}";
+		//AltCounterText.Text = $"{weapon.SecondaryAmmoClip}";
 	}
 }

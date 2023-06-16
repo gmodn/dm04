@@ -18,6 +18,8 @@ public partial class DeathmatchPlayer : Player
 	[Net, Predicted]
 	public bool ThirdPerson { get; set; }
 
+	public static string PlayerModel { get; set; } = ("models/playermodels/female/female_02/female_02.vmdl");
+
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
@@ -25,7 +27,7 @@ public partial class DeathmatchPlayer : Player
 
 	public override void Respawn()
 	{
-		SetModel( "models/citizen/citizen.vmdl" );
+		SetModel( PlayerModel );
 
 		Controller = new WalkController
 		{
@@ -42,7 +44,6 @@ public partial class DeathmatchPlayer : Player
 		EnableShadowInFirstPerson = true;
 
 		ClearAmmo();
-		Clothing.DressEntity( this );
 
 		SupressPickupNotices = true;
 
@@ -59,22 +60,48 @@ public partial class DeathmatchPlayer : Player
 		base.Respawn();
 	}
 
-	[ConCmd.Admin]
-	public static void GiveAll()
+	[ConCmd.Admin( "impulse" )]
+	public static void Impulse( int Value )
 	{
-		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
+		if ( Value == null)
+		{
+			Log.Error( "ERROR: impulse value cannot be null!" );
+		}
 
-		ply.GiveAmmo( AmmoType.Pistol, 1000 );
-		ply.GiveAmmo( AmmoType.Magnum, 1000 );
-		ply.GiveAmmo( AmmoType.Buckshot, 1000 );
-		ply.GiveAmmo( AmmoType.Crossbow, 1000 );
-		ply.GiveAmmo( AmmoType.Grenade, 1000 );
-		ply.GiveAmmo( AmmoType.SLAM, 1000 );
+		if ( Value == 101 ) 
+		{
+			var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
 
-		ply.Inventory.Add( new Python() );
-		ply.Inventory.Add( new Shotgun() );
-		ply.Inventory.Add( new SMG() );
-		ply.Inventory.Add( new Crossbow() );
+			ply.GiveAmmo( AmmoType.Pistol, 1000 );
+			ply.GiveAmmo( AmmoType.Magnum, 1000 );
+			ply.GiveAmmo( AmmoType.Buckshot, 1000 );
+			ply.GiveAmmo( AmmoType.Crossbow, 1000 );
+			ply.GiveAmmo( AmmoType.Grenade, 1000 );
+			ply.GiveAmmo( AmmoType.SLAM, 1000 );
+			ply.GiveAmmo( AmmoType.AR2, 1000 );
+
+			ply.Inventory.Add( new Python() );
+			ply.Inventory.Add( new Shotgun() );
+			ply.Inventory.Add( new SMG() );
+			ply.Inventory.Add( new AR2() );
+			ply.Inventory.Add( new Crossbow() );
+		}
+	}
+
+	[ConCmd.Server( "noclip", Help = "Turns on noclip mode, which makes you non solid and lets you fly around" )]
+	public static void Noclip()
+	{
+		if ( ConsoleSystem.Caller.Pawn is DeathmatchPlayer basePlayer )
+		{
+			if ( basePlayer.DevController is NoclipController )
+			{
+				basePlayer.DevController = null;
+			}
+			else
+			{
+				basePlayer.DevController = new NoclipController();
+			}
+		}
 	}
 
 	public override void OnKilled()
@@ -325,6 +352,13 @@ public partial class DeathmatchPlayer : Player
 	public static void MapVote()
 	{
 		var vote = new MapVoteEntity();
+	}
+
+	[ConCmd.Client("cl_playermodel")]
+	public static void SetPlayerModel( string PMPath )
+	{
+		DeathmatchPlayer.PlayerModel = PMPath;
+		Log.Error( $"Done! On next spawn your model will be set to: {PMPath}"  );
 	}
 
 	public void RenderHud( Vector2 screenSize )

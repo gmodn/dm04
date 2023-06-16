@@ -146,7 +146,7 @@ partial class Shotgun : DeathmatchWeapon
 	[ClientRpc]
 	protected virtual void FinishReload()
 	{
-		ViewModelEntity?.SetAnimParameter( "idle", true );
+		ViewModelEntity?.SetAnimParameter( "reload_finished", true );
 	}
 
 	public override void SimulateAnimator( CitizenAnimationHelper anim )

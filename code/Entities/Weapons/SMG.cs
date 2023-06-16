@@ -9,6 +9,7 @@ partial class SMG : DeathmatchWeapon
 	public override float PrimaryRate => 13.3f;
 	public override float SecondaryRate => 1.0f;
 	public override int ClipSize => 45;
+	public override AmmoType AmmoType => AmmoType.SMG;
 	public override float ReloadTime => 1.7f;
 	public override int Bucket => 2;
 

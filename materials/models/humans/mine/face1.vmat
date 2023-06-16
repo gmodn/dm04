@@ -1,51 +1,27 @@
-// THIS FILE IS AUTO-GENERATED
-
-Layer0
+"Layer0"
 {
-	shader "skin.vfx"
-
-	//---- Ambient Occlusion ----
-	g_flAmbientOcclusionDirectDiffuse "1.000"
-	g_flAmbientOcclusionDirectSpecular "1.000"
-	g_vAmbientOcclusionColorBleed "[1.000000 1.000000 1.000000 0.000000]"
-	TextureAmbientOcclusion "materials/default/default_ao.tga"
-
-	//---- Color ----
-	g_flModelTintAmount "1.000"
-	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
-	TextureColor "materials/models/humans/mine/face1.tga"
-
-	//---- Curvature ----
-	g_flCurvatureScale "1.000"
-
-	//---- Face Occlusion ----
-	g_flMouthInteriorBrightnessScale "1.000"
-	TextureInsideMouth "materials/default/default_black_mask.tga"
-
-	//---- Fog ----
-	g_bFogEnabled "1"
-
-	//---- Lookup Textures ----
-	g_vAmbientNormalSoftness "[1.000000 1.000000 1.000000 0.000000]"
-	TextureDiffuseFalloff "materials/default/default_skin_diffusewarp.tga"
-
-	//---- Normal ----
-	g_flDiffuseNormalBlur "0.500"
-	TextureNormal "materials/default/default_normal.tga"
-
-	//---- Roughness ----
-	TextureRoughness "materials/default/default_rough.tga"
-
-	//---- Specular ----
-	g_flSecondSpecularLobeGlossiness "0.500"
-	g_flSecondSpecularLobeRatio "0.150"
-
-	//---- Texture Coordinates ----
-	g_vTexCoordOffset "[0.000 0.000]"
-	g_vTexCoordScale "[1.000 1.000]"
-
-	//---- Transmission ----
-	g_flTransmissionFalloff "0.800"
-	g_vTransmissionColor "[0.894118 0.854902 0.823529 1.000000]"
-	TextureTransmissiveMask "materials/default/default_trans.tga"
+	"shader"		"shaders/skin.shader_c"
+	"g_flAmbientOcclusionDirectDiffuse"		"1.000000"
+	"g_flAmbientOcclusionDirectSpecular"		"1.000000"
+	"g_vAmbientOcclusionColorBleed"		"[1.000000 1.000000 1.000000 0.000000]"
+	"TextureAmbientOcclusion"		"materials/default/default_ao.tga"
+	"g_flModelTintAmount"		"1.000000"
+	"g_vColorTint"		"[1.000000 1.000000 1.000000 0.000000]"
+	"TextureColor"		"materials/models/humans/mine/face1.tga"
+	"g_flCurvatureScale"		"1.000000"
+	"g_flMouthInteriorBrightnessScale"		"1.000000"
+	"TextureInsideMouth"		"materials/default/default_black_mask.tga"
+	"g_bFogEnabled"		"1"
+	"g_vAmbientNormalSoftness"		"[1.000000 1.000000 1.000000 0.000000]"
+	"TextureDiffuseFalloff"		"materials/default/default_skin_diffusewarp.tga"
+	"g_flDiffuseNormalBlur"		"0.500000"
+	"TextureNormal"		"materials/default/default_normal.tga"
+	"TextureRoughness"		"materials/default/default_rough.tga"
+	"g_flSecondSpecularLobeGlossiness"		"0.500000"
+	"g_flSecondSpecularLobeRatio"		"0.150000"
+	"g_vTexCoordOffset"		"[0.000 0.000]"
+	"g_vTexCoordScale"		"[1.000 1.000]"
+	"g_flTransmissionFalloff"		"0.800000"
+	"g_vTransmissionColor"		"[0.894118 0.854902 0.823529 1.000000]"
+	"TextureTransmissiveMask"		"materials/default/default_trans.tga"
 }

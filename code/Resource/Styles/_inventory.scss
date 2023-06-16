@@ -1,125 +1,110 @@
-﻿inventorybar
-{
+﻿inventorybar {
 	position: absolute;
-	left: 200px;
+	left: 600px;
 	top: 80px;
 	font-family: Roboto;
 	opacity: 0;
 	transition: all 0.2s ease-out;
-	mix-blend-mode: lighten;
 
-	&.active
-	{
+
+	&.active {
 		top: 100px;
 		transition: all 0.1s ease-out;
 		opacity: 1;
 	}
 }
 
-inventorycolumn
-{
-	margin-right: 5px;
+inventorycolumn {
+	margin-right: 30px;
 	color: #fc0;
+	font-family: DIN;
 	flex-direction: column;
 	align-items: flex-start; // align to the left, don't stretch
-
-	.slot-number
-	{
-		background-color: #fa02;
-		padding: 15px 15px 0px 10px;
-		font-size: 20px;
+	.slot-number {
+		background-color: rgba(0, 0, 0, 0.69); //nice
+		padding: 22px 15px 0px 10px;
+		font-size: 30px;
 		font-weight: bolder;
 		width: 40px;
-		height: 40px;
+		height: 60px;
+		top: -10px;
 	}
 
-	inventoryicon
-	{
+	inventoryicon {
 		opacity: 1;
-		padding: 25px 15px 10px 2px;
-		width: 40px;
-		height: 40px;
+		padding: 55px 65px 60px 2px;
+		width: 90px;
+		height: 90px;
 		overflow: hidden;
 		transition: all 0.1s ease-out;
+		border-radius: 10px;
 
-		.icon
-		{
-			opacity: 0;
+		.icon {
+			opacity: 0.06;
 		}
 	}
 
 	opacity: 0.4;
 
-	&.active
-	{
+	&.active {
 		opacity: 1;
 
-		inventoryicon
-		{
+		inventoryicon {
 			transition: all 0.1s ease-out;
 			opacity: 0.2;
 			display: flex;
 			width: 200px;
 			height: 90px;
+			border: solid;
+			border-color: #fc0;
+			border-radius: 10px;
 
-			.icon
-			{
+			.icon {
 				opacity: 1;
 			}
 
-			&.active
-			{
+			&.active {
 				opacity: 1;
 			}
 		}
 	}
 }
 
-inventoryicon
-{
+inventoryicon {
 	margin-top: 5px;
-	mix-blend-mode: lighten;
 	color: #fc0;
-	background-color: #fa02;
+	background-color: rgba(0, 0, 0, 0.89);
 	font-size: 40px;
 	font-weight: lighter;
 	padding: 10px;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	border: 1px solid rgba( #fa0, 0.08 );
-	border-radius: 3px;
 
-	.icon
-	{
+	.icon {
 		width: 150px;
-		height: 150px;
+		height:150px;
 		background-size: 100%;
 		background-image-tint: #fa0;
 		position: absolute;
 	}
 
-	&.active
-	{
+	&.active {
 		opacity: 1;
 
-		.icon
-		{
+		.icon {
 			// filter: drop-shadow additive glow
 			opacity: 1;
 		}
 	}
 
-	&.empty
-	{
+	&.empty {
 		opacity: 0.5;
 		background-color: #c004;
 		color: #f002;
 
-		.icon
-		{
+		.icon {
 			background-color: #f50;
 		}
 	}
 }
-

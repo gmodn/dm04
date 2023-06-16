@@ -74,10 +74,7 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "weapon_bone"
 						surface_prop = "metal.weapon"
-						collision_group = ""
-						collision_interact_as = ""
-						collision_interact_with = ""
-						collision_interact_exclude = ""
+						collision_tags = "solid"
 						origin = [ 1.43694, -0.523591, 1.537541 ]
 						angles = [ 5.0, -2.0, -5.0 ]
 						dimensions = [ 10.353326, 1.460394, 2.169158 ]
@@ -86,10 +83,7 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "weapon_bone"
 						surface_prop = "plastic"
-						collision_group = ""
-						collision_interact_as = ""
-						collision_interact_with = ""
-						collision_interact_exclude = ""
+						collision_tags = "solid"
 						origin = [ -1.869411, -0.197304, 4.797781 ]
 						angles = [ -6.0, 0.0, -5.0 ]
 						dimensions = [ 2.273061, 1.244864, 4.23489 ]
@@ -98,10 +92,7 @@
 						_class = "PhysicsShapeBox"
 						parent_bone = "weapon_bone"
 						surface_prop = "plastic"
-						collision_group = ""
-						collision_interact_as = ""
-						collision_interact_with = ""
-						collision_interact_exclude = ""
+						collision_tags = "solid"
 						origin = [ 0.855793, -0.389679, 2.947203 ]
 						angles = [ 5.0, -2.0, -5.0 ]
 						dimensions = [ 3.156237, 0.774579, 1.315662 ]
@@ -126,5 +117,6 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = ""
+		base_model_name = ""
 	}
 }
