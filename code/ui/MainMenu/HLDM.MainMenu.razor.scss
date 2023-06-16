@@ -13,7 +13,6 @@
 
 	&:intro {
 		opacity: 0;
-		transform: scaleX( 1.1 );
 	}
 
 	&.ingame {
@@ -37,21 +36,41 @@
 
 	font-size: 28px;
 	font-family: DIN;
-	font-weight: 700;
+	font-weight: 500;
 	flex-shrink: 0;
 }
 
 .button {
 	background-color: rgba(0, 0, 0, 0.2);
 	cursor: pointer;
+	transition: all 0.1s ease-out;
 
 	&:hover {
 		opacity: 1;
+		font-weight: 700;
+		transform: scaleX( 1.05 );
 	}
 
 	&:active {
 		left: 2px;
 		top: 3px;
+	}
+}
+
+.game-title {
+
+	.label {
+		font-family: DIN;
+		font-weight: 500;
+		transition: all 0.5s ease-out;
+
+		&:hover {
+			transform: scaleX( 1.01 );
+		}
+
+		&:intro {
+			top: -100px;
+		}
 	}
 }
 
