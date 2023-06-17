@@ -48,7 +48,7 @@ partial class DeathmatchGame : GameManager
 		StateTimer = 10.0f;
 		await WaitStateTimer();
 
-		Game.ChangeLevel( "facepunc.datacore" );
+		Game.ChangeLevel( "facepunch.datacore" );
 	}
 
 	private bool HasEnoughPlayers()
