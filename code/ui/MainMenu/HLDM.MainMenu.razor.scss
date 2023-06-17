@@ -58,22 +58,12 @@
 }
 
 .game-title {
+	background-image: url('ui/MainMenu/hldm-logo.png');
+	background-size: contain;
+	background-repeat: no-repeat;
 
 	.label {
-		font-family: DIN;
-		font-weight: 500;
-		opacity: 1;
-		transition: all 0.3s ease-out;
-		transition: all 0.3s ease-out;
-
-		&:hover {
-			transform: scaleX( 1.01 );
-		}
-
-		&:intro {
-			opacity: 0;
-			left: -100px;
-		}
+		opacity: 0;
 	}
 }
 
