@@ -1,13 +1,10 @@
-// Converted with vmt_to_vmat.py
-
-Layer0
+"Layer0"
 {
-	shader "vr_complex.vfx"
-
-	TextureColor "materials\models\humans\male\group01\van_facemap_color.tga"
-	g_vReflectanceRange "[0.000 0.5]"
-	TextureAmbientOcclusion "materials\models\humans\male\group01\van_facemap_ao.tga"
-	g_flAmbientOcclusionDirectSpecular "1.000"
-	F_SPECULAR 1
-	TextureRoughness "[0.49804149312820334 0.49804149312820334 0.49804149312820334 0.000]"
+	"shader"		"vr_complex.shader_c"
+	"TextureColor"		"materials\models\humans\male\group01\van_facemap_color.tga"
+	"g_vReflectanceRange"		"[0.000 0.5]"
+	"TextureAmbientOcclusion"		"materials\models\humans\male\group01\van_facemap_ao.tga"
+	"g_flAmbientOcclusionDirectSpecular"		"1.000000"
+	"F_SPECULAR"		"1"
+	"TextureRoughness"		"[0.49804149312820334 0.49804149312820334 0.49804149312820334 0.000]"
 }

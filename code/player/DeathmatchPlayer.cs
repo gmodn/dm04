@@ -18,7 +18,7 @@ public partial class DeathmatchPlayer : Player
 	[Net, Predicted]
 	public bool ThirdPerson { get; set; }
 
-	public static string PlayerModel { get; set; } = ("models/playermodels/female/female_02/female_02.vmdl");
+	public static string PlayerModel { get; set; } = ("models/citizen/citizen.vmdl");
 
 	public DeathmatchPlayer()
 	{
@@ -88,7 +88,7 @@ public partial class DeathmatchPlayer : Player
 		}
 	}
 
-	[ConCmd.Server( "noclip", Help = "Turns on noclip mode, which makes you non solid and lets you fly around" )]
+	[ConCmd.Server( "noclip" )]
 	public static void Noclip()
 	{
 		if ( ConsoleSystem.Caller.Pawn is DeathmatchPlayer basePlayer )
@@ -182,7 +182,7 @@ public partial class DeathmatchPlayer : Player
 		// If the current weapon is out of ammo and we last fired it over half a second ago
 		// lets try to switch to a better wepaon
 		//
-		if ( ActiveChild is DeathmatchWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
+		if ( ActiveChild is HLDMWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
 		{
 			SwitchToBestWeapon();
 		}
@@ -190,7 +190,7 @@ public partial class DeathmatchPlayer : Player
 
 	public void SwitchToBestWeapon()
 	{
-		var best = Children.Select( x => x as DeathmatchWeapon )
+		var best = Children.Select( x => x as HLDMWeapon )
 			.Where( x => x.IsValid() && x.IsUsable() )
 			.OrderByDescending( x => x.BucketWeight )
 			.FirstOrDefault();
@@ -309,13 +309,22 @@ public partial class DeathmatchPlayer : Player
 		Sound.FromScreen( sound );
 	}
 
-	[ConCmd.Client("kill")]
+	[ConCmd.Client]
 	public static void InflictDamage()
 	{
 		if ( Game.LocalPawn is DeathmatchPlayer ply )
 		{
-			ply.TookDamage( ply.Position + ply.EyeRotation.Forward * 999.0f );
+			ply.TookDamage( ply.Position + ply.EyeRotation.Forward * 100.0f );
+			ply.Health = 0;
 		}
+	}
+
+	[ConCmd.Client("kill")]
+	public static void KillCMD() 
+	{
+		var target = (ConsoleSystem.Caller.Pawn as DeathmatchPlayer);
+		if ( target == null ) return;
+		InflictDamage();
 	}
 
 	TimeSince timeSinceLastFootstep = 0;
@@ -368,7 +377,7 @@ public partial class DeathmatchPlayer : Player
 
 		// RenderOverlayTest( screenSize );
 
-		if ( ActiveChild is DeathmatchWeapon weapon )
+		if ( ActiveChild is HLDMWeapon weapon )
 		{
 			weapon.RenderHud( screenSize );
 		}

@@ -1,7 +1,4 @@
-// Converted with vmt_to_vmat.py
-
-Layer0
+"Layer0"
 {
-	shader "vr_complex.vfx"
-
+	"shader"		"vr_complex.shader_c"
 }

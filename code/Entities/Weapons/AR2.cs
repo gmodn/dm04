@@ -1,7 +1,7 @@
 ﻿[Library( "dm_ar2" ), HammerEntity]
 [EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
 [Title( "AR2" ), Category( "Weapons" )]
-partial class AR2 : DeathmatchWeapon
+partial class AR2 : HLDMWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_ar2/v_hl2_ar2.vmdl";

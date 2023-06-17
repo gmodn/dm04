@@ -3,7 +3,7 @@
 [Library( "dm_357" ), HammerEntity]
 [EditorModel( "weapons/rust_pistol/rust_pistol.vmdl" )]
 [Title( ".357 Magnum Revolver" ), Category( "Weapons" )]
-partial class Python : DeathmatchWeapon
+partial class Python : HLDMWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_357/w_hl2_357.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_357/v_hl2_357.vmdl";

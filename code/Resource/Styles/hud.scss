@@ -120,25 +120,21 @@ vitals
     }
 }
 
-.bottom-right
-{
-    ammo
-    {
+.bottom-right {
+    ammo {
         flex-direction: row;
         mix-blend-mode: lighten;
-        font-family: DIN;
+        font-family: Roboto;
         width: 100%;
         height: 100%;
 
-        .ammobar
-        {
+        .ammobar {
             flex-direction: row-reverse;
             flex-shrink: 0;
             align-items: center;
 
 
-            .bullet
-            {
+            .bullet {
                 width: 8px;
                 flex-shrink: 0;
                 flex-grow: 0;
@@ -149,51 +145,45 @@ vitals
                 transition: all 0.1s ease-out;
                 box-shadow: 0px 0px 20px $orange;
 
-                &.empty
-                {
+                &.empty {
                     background-color: #fa0;
                     opacity: 0.04;
                     box-shadow: none;
                 }
             }
 
-            &.is-shotgun .bullet
-            {
+            &.is-shotgun .bullet {
                 width: 12px;
                 height: 35px;
                 margin-left: 10px;
                 border-radius: 1px 1px 1px 1px;
             }
 
-            &.is-crossbow .bullet
-            {
+            &.is-crossbow .bullet {
                 width: 3px;
                 height: 35px;
                 margin-left: 5px;
                 border-radius: 1px 1px 1px 1px;
             }
 
-            &.is-smg .bullet
-            {
+            &.is-smg .bullet {
                 width: 4px;
                 margin-left: 2px;
                 border-radius: 2px 2px 1px 1px;
             }
         }
 
-        label
-        {
+        label {
             text-align: right;
 
-            &.danger
-            {
+            &.danger {
                 color: #f00;
             }
         }
     }
 }
 
-.inventory, .counter, healthhud, armourhud, gamehud
+.inventory, healthhud, armourhud, gamehud
 {
     background-color: rgba( 0, 0, 0, 0.6 );
     padding: 16px;
@@ -202,6 +192,53 @@ vitals
     font-weight: bolder;
     font-family: halflife2;
     color: #ff0;
+    text-shadow: 0px 0px 10px $orange;
+    min-width: 130px;
+    text-align: center;
+    align-items: center;
+}
+
+.counter, .reserve {
+    background-color: rgba( 0, 0, 0, 0.6 );
+    padding: 16px;
+    margin: 5px;
+    left: 140px;
+    font-size: 62px;
+    font-weight: bolder;
+    font-family: halflife2;
+    color: #ff0;
+    text-shadow: 0px 0px 10px $orange;
+    min-width: 130px;
+    text-align: center;
+    align-items: center;
+}
+
+.alt {
+    background-color: rgba( 0, 0, 0, 0.6 );
+    padding: 16px;
+    margin: 5px;
+    bottom: 100px;
+    font-size: 62px;
+    font-weight: bolder;
+    font-family: halflife2;
+    color: #ff0;
+    text-shadow: 0px 0px 10px $orange;
+    min-width: 130px;
+    text-align: center;
+    align-items: center;
+}
+
+.altlabel {
+    background-color: rgba( 0, 0, 0, 0.6 );
+    padding: 16px;
+    margin: 5px;
+    bottom: 100px;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: DIN;
+    color: #ff0;
+    right: 200px;
+    bottom: 91px;
     text-shadow: 0px 0px 10px $orange;
     min-width: 130px;
     text-align: center;

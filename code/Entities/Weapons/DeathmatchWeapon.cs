@@ -1,13 +1,16 @@
-﻿partial class DeathmatchWeapon : BaseWeapon, IRespawnableEntity
+﻿partial class HLDMWeapon : BaseWeapon, IRespawnableEntity
 {
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
-	public virtual AmmoType SecondaryAmmo => AmmoType.None;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
 	public virtual int Bucket => 1;
 	public virtual int BucketWeight => 100;
-
+	public virtual AmmoType SecondaryAmmo => AmmoType.None;
 	public virtual int Order => (Bucket * 10000) + BucketWeight;
+
+	public virtual string AmmoIcon => "p";
+
+	public virtual string AltIcon => "z";
 
 	[Net, Predicted]
 	public int AmmoClip { get; set; }
@@ -26,6 +29,7 @@
 
 
 	public PickupTrigger PickupTrigger { get; protected set; }
+	public PickupTrigger GravPickupTrigger { get; protected set; }
 
 
 
@@ -224,7 +228,7 @@
 
 	public override void CreateHudElements()
 	{
-	
+
 	}
 
 	public bool IsUsable()
@@ -269,7 +273,7 @@
 
 	public virtual void RenderCrosshair( in Vector2 center, float lastAttack, float lastReload )
 	{
-		
+
 	}
 
 	public virtual void UpdateCamera()
