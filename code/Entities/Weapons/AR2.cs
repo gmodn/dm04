@@ -1,4 +1,6 @@
-﻿[Library( "dm_ar2" ), HammerEntity]
+﻿using Sandbox.Component;
+
+[Library( "dm_ar2" ), HammerEntity]
 [EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
 [Title( "AR2" ), Category( "Weapons" )]
 partial class AR2 : HLDMWeapon
@@ -20,6 +22,7 @@ partial class AR2 : HLDMWeapon
 
 		Model = WorldModel;
 		AmmoClip = 45;
+		SecondaryAmmoClip = 3;
 	}
 
 	public override void AttackPrimary()
@@ -55,7 +58,32 @@ partial class AR2 : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
-		// Shoot Combine Balls
+		if ( Owner is DeathmatchPlayer player )
+		{
+			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )
+			{
+				PlaySound( "hl2_ar2.empty" );
+				return;
+			}
+			else
+			{
+				PlaySound( "hl2_ar2.secondary_fire" );
+				ViewModelEntity?.SetAnimParameter( "fire_alt", true );
+
+				//wait and then play next sound - TODO
+
+				player.TakeAmmo( SecondaryAmmo, 1 );
+				SecondaryAmmoClip = player.AmmoCount( SecondaryAmmo );
+
+				using ( Prediction.Off() )
+				{
+					var energyBall = new prop_combine_ball();
+					energyBall.Velocity = player.EyeRotation.Forward * 1000;
+					energyBall.Position = player.EyePosition + 20;
+					energyBall.Rotation = player.EyeRotation;
+				}
+			}
+		}
 	}
 
 	[ClientRpc]

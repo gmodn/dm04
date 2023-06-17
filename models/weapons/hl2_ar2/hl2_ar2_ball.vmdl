@@ -13,11 +13,8 @@
 						_class = "PhysicsShapeSphere"
 						parent_bone = ""
 						surface_prop = "default"
-						collision_group = ""
-						collision_interact_as = ""
-						collision_interact_with = ""
-						collision_interact_exclude = ""
-						radius = 9.979726
+						collision_tags = "solid"
+						radius = 7.786754
 						center = [ 0.0, 0.0, 0.0 ]
 					},
 				]
@@ -35,9 +32,26 @@
 						angles = [ 0.0, 0.0, 0.0 ]
 						max_u = 1.0
 						max_v = 1.0
-						radius = 10.0
+						radius = 7.863342
 						segments_u = 16
 						segments_v = 16
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "particle"
+						game_keys = 
+						{
+							name = resource:"particles/combineball.vpcf"
+							attachment_point = ""
+							attachment_type = "5"
+							attachment_offset = [ 0.0, 0.0, 0.0 ]
+						}
 					},
 				]
 			},
@@ -45,5 +59,6 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = ""
+		base_model_name = ""
 	}
 }

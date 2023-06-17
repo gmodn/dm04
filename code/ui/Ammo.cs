@@ -35,7 +35,7 @@ public class Ammo : Panel
 		ReserveAmmo.Text = $"{reserve}";
 		ReserveAmmo.SetClass( "active", reserve >= 0 );
 
-		//temp hide ui if ammotype = none (I'm sure there's a better way to do this)
+		//Hide UI if the selected weapon does not have certian aspects (Alt ammo, No ammo, ETC)
 		if ( weapon.AmmoType == AmmoType.None ) ReserveAmmo.Style.Display = DisplayMode.None;
 		else ReserveAmmo.Style.Display = DisplayMode.Flex;
 		if ( weapon.AmmoType == AmmoType.None ) CounterText.Style.Display = DisplayMode.None;

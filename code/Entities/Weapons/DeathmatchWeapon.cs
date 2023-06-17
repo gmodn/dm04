@@ -282,9 +282,6 @@
 	}
 	public virtual void UpdateViewmodelCamera()
 	{
-		if ( ViewModelEntity is DmViewModel dmv )
-		{
-			dmv.UpdateCamera();
-		}
+		//nah
 	}
 }
