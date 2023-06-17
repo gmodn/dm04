@@ -35,6 +35,16 @@ public class Ammo : Panel
 		ReserveAmmo.Text = $"{reserve}";
 		ReserveAmmo.SetClass( "active", reserve >= 0 );
 
+		//temp hide ui if ammotype = none (I'm sure there's a better way to do this)
+		if ( weapon.AmmoType == AmmoType.None ) ReserveAmmo.Style.Display = DisplayMode.None;
+		else ReserveAmmo.Style.Display = DisplayMode.Flex;
+		if ( weapon.AmmoType == AmmoType.None ) CounterText.Style.Display = DisplayMode.None;
+		else CounterText.Style.Display = DisplayMode.Flex;
+		if ( weapon.SecondaryAmmo == AmmoType.None ) AltCounterText.Style.Display = DisplayMode.None;
+		else AltCounterText.Style.Display = DisplayMode.Flex;
+		if ( weapon.SecondaryAmmo == AmmoType.None ) AltLabel.Style.Display = DisplayMode.None;
+		else AltLabel.Style.Display = DisplayMode.Flex;
+
 		var hash = HashCode.Combine( player, weapon );
 
 		CounterText.Text = $"{weapon.AmmoClip}";
