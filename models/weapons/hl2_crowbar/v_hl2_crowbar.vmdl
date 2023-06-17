@@ -419,6 +419,7 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = "models/weapons/hl2_crowbar/v_hl2_crowbar.vanmgrph"
+		anim_graph_name = "animgraphs/weapons/crowbar_reference.vanmgrph"
+		base_model_name = ""
 	}
 }

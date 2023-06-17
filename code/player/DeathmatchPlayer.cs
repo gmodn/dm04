@@ -7,6 +7,8 @@ public partial class DeathmatchPlayer : Player
 	[Net]
 	public float Armour { get; set; } = 0;
 
+	public bool EnableClothing { get; set; } = true;
+
 	[Net]
 	public float MaxHealth { get; set; } = 100;
 
@@ -43,15 +45,23 @@ public partial class DeathmatchPlayer : Player
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
 
+		if ( EnableClothing = true )
+		{
+			Log.Info( $"Player Clothing is marked {EnableClothing}." );
+			Clothing.DressEntity( this );
+		}
+		else 
+		{
+			Log.Info( $"Player Clothing is marked {EnableClothing}." );
+			return;
+		}
+
 		ClearAmmo();
 
 		SupressPickupNotices = true;
 
 		Inventory.DeleteContents();
 		Inventory.Add( new Crowbar() );
-		Inventory.Add( new Pistol(), true );
-
-		GiveAmmo( AmmoType.Pistol, 25 );
 
 		SupressPickupNotices = false;
 		Health = 100;
@@ -81,6 +91,7 @@ public partial class DeathmatchPlayer : Player
 			ply.GiveAmmo( AmmoType.AR2, 1000 );
 			ply.GiveAmmo( AmmoType.AR2_ball, 1000 );
 
+			ply.Inventory.Add( new Pistol() );
 			ply.Inventory.Add( new Python() );
 			ply.Inventory.Add( new Shotgun() );
 			ply.Inventory.Add( new SMG() );

@@ -33,7 +33,7 @@ partial class Crowbar : HLDMWeapon
 
 		// woosh sound
 		// screen shake
-		PlaySound( "dm.crowbar_attack" );
+		PlaySound( "sounds/weapons/hl2_crowbar/hl2_crowbar.swing.sound" );
 
 		Game.SetRandomSeed( Time.Tick );
 

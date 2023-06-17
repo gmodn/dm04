@@ -75,7 +75,7 @@
 					m_sNote = ""
 					m_tagSpans = [  ]
 					m_sequenceName = "reload1"
-					m_playbackSpeed = 3.0
+					m_playbackSpeed = 1.0
 					m_bLoop = false
 				}
 			},
@@ -97,7 +97,7 @@
 					m_sNote = ""
 					m_tagSpans = [  ]
 					m_sequenceName = "reload2"
-					m_playbackSpeed = 1.3
+					m_playbackSpeed = 1.0
 					m_bLoop = false
 				}
 			},
@@ -119,7 +119,7 @@
 					m_sNote = ""
 					m_tagSpans = [  ]
 					m_sequenceName = "reload3"
-					m_playbackSpeed = 1.5
+					m_playbackSpeed = 1.0
 					m_bLoop = false
 				}
 			},
@@ -141,7 +141,7 @@
 					m_sNote = ""
 					m_tagSpans = [  ]
 					m_sequenceName = "draw"
-					m_playbackSpeed = 2.0
+					m_playbackSpeed = 1.0
 					m_bLoop = false
 				}
 			},
@@ -163,7 +163,7 @@
 					m_sNote = ""
 					m_tagSpans = [  ]
 					m_sequenceName = "fire"
-					m_playbackSpeed = 1.5
+					m_playbackSpeed = 1.0
 					m_bLoop = false
 				}
 			},
@@ -973,7 +973,7 @@
 					m_sNote = ""
 					m_tagSpans = [  ]
 					m_sequenceName = "reload2"
-					m_playbackSpeed = 1.3
+					m_playbackSpeed = 1.0
 					m_bLoop = false
 				}
 			},

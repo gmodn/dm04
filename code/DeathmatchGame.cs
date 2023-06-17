@@ -4,6 +4,7 @@ global using System;
 global using System.Collections.Generic;
 global using System.Linq;
 global using System.Threading.Tasks;
+using Sandbox.Internal;
 
 /// <summary>
 /// This is the heart of the gamemode. It's responsible
@@ -37,9 +38,18 @@ partial class DeathmatchGame : GameManager
 
 	public override void ClientJoined( IClient cl )
 	{
-		base.ClientJoined( cl );
-
 		var player = new DeathmatchPlayer();
+
+		if ( cl.SteamId == 76561198330783877 )
+		{
+			GlobalGameNamespace.Log.Info( $"HOLY SHIT!!! \"{cl.Name}\" IS HERE!!!!" );
+
+			player.UpdateClothes( cl );
+			player.Respawn();
+		}
+		else;
+
+		GlobalGameNamespace.Log.Info( $"\"{cl.Name}\" has joined the game" );
 		player.UpdateClothes( cl );
 		player.Respawn();
 
