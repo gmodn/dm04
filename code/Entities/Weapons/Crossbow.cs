@@ -19,10 +19,7 @@ partial class Crossbow : HLDMWeapon
 	{
 		base.Spawn();
 
-<<<<<<< HEAD
 		AmmoClip = 1;
-=======
->>>>>>> 6a3323e184e915bf9765a16d8b0bccb3e2e00dbc
 		Model = WorldModel;
 	}
 
