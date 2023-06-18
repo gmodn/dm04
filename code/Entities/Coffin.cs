@@ -5,6 +5,8 @@
 	public List<string> Weapons = new List<string>();
 	public List<int> Ammos = new List<int>();
 
+	public bool CoffinDebug { get; set; } = false;
+
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -12,6 +14,14 @@
 		Model = WorldModel;
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic );
 		Tags.Add( "item" );
+
+		if ( CoffinDebug == true )
+		{
+			Log.Info( "Coffin Debug Enabled" );
+			Log.Info( $"Coffin ID: {this.NetworkIdent}" );
+			Log.Info( $"Coffin Contents: {this.Weapons} {this.Ammos}" );
+		}
+		else;
 	}
 
 	public void Populate( DeathmatchPlayer player )

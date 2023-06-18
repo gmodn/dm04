@@ -20,7 +20,6 @@ partial class Shotgun : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
-		AmmoClip = 6;
 	}
 
 	public override void Simulate( IClient owner )
@@ -80,7 +79,7 @@ partial class Shotgun : HLDMWeapon
 		// Tell the clients to play the shoot effects
 		//
 		DoubleShootEffects();
-		PlaySound( "rust_pumpshotgun.shootdouble" );
+		PlaySound( "hl2_spas12.dbl_fire" );
 
 		//
 		// Shoot the bullets

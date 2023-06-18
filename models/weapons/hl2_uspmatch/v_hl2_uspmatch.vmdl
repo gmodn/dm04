@@ -23,7 +23,7 @@
 							},
 							{
 								from = "v_pistol_chrome.vmat"
-								to = "materials/models/weapons/hl2_uspmatch/hl2_uspmatch_chrome.vmat"
+								to = "materials/models/weapons/hl2_uspmatch/hl2_uspmatch_body.vmat"
 							},
 							{
 								from = "v_hand_sheet.vmat"

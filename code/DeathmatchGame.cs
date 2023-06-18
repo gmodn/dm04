@@ -38,22 +38,18 @@ partial class DeathmatchGame : GameManager
 
 	public override void ClientJoined( IClient cl )
 	{
-		var player = new DeathmatchPlayer();
+		base.ClientJoined( cl );
 
 		if ( cl.SteamId == 76561198330783877 )
-		{
-			GlobalGameNamespace.Log.Info( $"HOLY SHIT!!! \"{cl.Name}\" IS HERE!!!!" );
-
-			player.UpdateClothes( cl );
-			player.Respawn();
-		}
-		else;
-
-		GlobalGameNamespace.Log.Info( $"\"{cl.Name}\" has joined the game" );
+			Log.Info( $"HOLY SHIT!!! \"{cl.Name}\" IS HERE!!!!" );		
+		
+		var player = new DeathmatchPlayer();
 		player.UpdateClothes( cl );
 		player.Respawn();
 
 		cl.Pawn = player;
+
+		base.ClientJoined( cl );
 	}
 
 	public override void MoveToSpawnpoint( Entity pawn )

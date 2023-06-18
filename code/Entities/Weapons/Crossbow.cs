@@ -7,10 +7,10 @@ partial class Crossbow : HLDMWeapon
 	public override string ViewModelPath => "models/weapons/hl2_crossbow/v_hl2_crossbow.vmdl";
 
 	public override float PrimaryRate => 0.52f;
-	public override float ReloadTime => 3.8f;
+	public override float ReloadTime => 2.8f;
 	public override int Bucket => 3;
 	public override AmmoType AmmoType => AmmoType.Crossbow;
-	public override int ClipSize => 5;
+	public override int ClipSize => 1;
 
 	[Net, Predicted]
 	public bool Zoomed { get; set; }
@@ -19,7 +19,10 @@ partial class Crossbow : HLDMWeapon
 	{
 		base.Spawn();
 
-		AmmoClip = 5;
+<<<<<<< HEAD
+		AmmoClip = 1;
+=======
+>>>>>>> 6a3323e184e915bf9765a16d8b0bccb3e2e00dbc
 		Model = WorldModel;
 	}
 
@@ -49,6 +52,8 @@ partial class Crossbow : HLDMWeapon
 			bolt.Rotation = Rotation.LookAt( aim.Forward );
 			bolt.Owner = Owner;
 			bolt.Velocity = aim.Forward * 100;
+			// Have Crossbow AutoReload after firing
+			Reload();
 		}
 	}
 

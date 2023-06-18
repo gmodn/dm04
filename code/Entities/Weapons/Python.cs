@@ -27,7 +27,6 @@ partial class Python : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
-		AmmoClip = 6;
 	}
 
 	public override bool CanPrimaryAttack()
@@ -66,18 +65,6 @@ partial class Python : HLDMWeapon
 	public override void Simulate( IClient cl )
 	{
 		base.Simulate( cl );
-
-		Zoomed = Input.Down( InputButton.SecondaryAttack );
-	}
-
-	public override void UpdateCamera()
-	{
-		base.UpdateCamera();
-
-		if ( Zoomed )
-		{
-			Camera.FieldOfView = Screen.CreateVerticalFieldOfView( 40 ); ;
-		}
 	}
 
 	public override void RenderCrosshair( in Vector2 center, float lastAttack, float lastReload )

@@ -12,7 +12,7 @@ partial class AR2 : HLDMWeapon
 	public override float SecondaryRate => 0.5f;
 	public override int ClipSize => 30;
 	public override AmmoType AmmoType => AmmoType.AR2;
-	public override AmmoType SecondaryAmmo => AmmoType.AR2_ball;
+	public override AmmoType SecondaryAmmo => AmmoType.AR2Alt;
 	public override float ReloadTime => 1.7f;
 	public override int Bucket => 2;
 
@@ -21,8 +21,6 @@ partial class AR2 : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
-		AmmoClip = 45;
-		SecondaryAmmoClip = 3;
 	}
 
 	public override void AttackPrimary()
