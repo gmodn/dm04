@@ -44,24 +44,24 @@ public partial class DeathmatchPlayer : Player
 		EnableDrawing = true;
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
+		
+		Log.Info( $"Player Clothing is marked {EnableClothing}." );
 
-		if ( EnableClothing = true )
-		{
-			Log.Info( $"Player Clothing is marked {EnableClothing}." );
+		if ( EnableClothing )
 			Clothing.DressEntity( this );
-		}
-		else 
-		{
-			Log.Info( $"Player Clothing is marked {EnableClothing}." );
-			return;
-		}
+		else return;
 
 		ClearAmmo();
 
 		SupressPickupNotices = true;
 
-		Inventory.DeleteContents();
-		Inventory.Add( new Crowbar() );
+		if ( Game.IsServer )
+		{
+			Inventory.DeleteContents();
+
+			if ( DeathmatchGame.CurrentState == DeathmatchGame.GameStates.Live )
+				PlayerSetup.Equipment.GiveWeapons( this );
+		}
 
 		SupressPickupNotices = false;
 		Health = 100;
@@ -73,11 +73,6 @@ public partial class DeathmatchPlayer : Player
 	[ConCmd.Admin( "impulse" )]
 	public static void Impulse( int Value )
 	{
-		if ( Value == null)
-		{
-			Log.Error( "ERROR: impulse value cannot be null!" );
-		}
-
 		if ( Value == 101 ) 
 		{
 			var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
@@ -87,9 +82,9 @@ public partial class DeathmatchPlayer : Player
 			ply.GiveAmmo( AmmoType.Buckshot, 1000 );
 			ply.GiveAmmo( AmmoType.Crossbow, 1000 );
 			ply.GiveAmmo( AmmoType.Grenade, 1000 );
-			ply.GiveAmmo( AmmoType.SLAM, 1000 );
+			ply.GiveAmmo( AmmoType.Slam, 1000 );
 			ply.GiveAmmo( AmmoType.AR2, 1000 );
-			ply.GiveAmmo( AmmoType.AR2_ball, 1000 );
+			ply.GiveAmmo( AmmoType.AR2Alt, 1000 );
 
 			ply.Inventory.Add( new Pistol() );
 			ply.Inventory.Add( new Python() );
@@ -321,7 +316,6 @@ public partial class DeathmatchPlayer : Player
 		Sound.FromScreen( sound );
 	}
 
-	[ConCmd.Client]
 	public static void InflictDamage()
 	{
 		if ( Game.LocalPawn is DeathmatchPlayer ply )
@@ -331,12 +325,13 @@ public partial class DeathmatchPlayer : Player
 		}
 	}
 
-	[ConCmd.Client("kill")]
+	[ConCmd.Server("kill")]
 	public static void KillCMD() 
 	{
-		var target = (ConsoleSystem.Caller.Pawn as DeathmatchPlayer);
+		var target = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
 		if ( target == null ) return;
-		InflictDamage();
+
+		target.OnKilled();
 	}
 
 	TimeSince timeSinceLastFootstep = 0;

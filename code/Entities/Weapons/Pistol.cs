@@ -18,7 +18,6 @@ partial class Pistol : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
-		AmmoClip = 18;
 	}
 
 	public override bool CanPrimaryAttack()

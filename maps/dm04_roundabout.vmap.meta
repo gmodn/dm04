@@ -16,7 +16,9 @@
       "CodePath": null,
       "PackageReferences": [],
       "EditorReferences": [
-        "gman.dm04"
+        "gman.dm04",
+        "duccsoft.dog_pirate#17219",
+        "randkassets.breakable_vase#12641"
       ],
       "Metadata": {}
     }
