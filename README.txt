@@ -8,6 +8,7 @@ Lokiv: Animgraph Work
 TheBoxTrot: Programming, Mapping
 Meetle Meek: Mapping
 Rice: Mapping
+Foxtrot: Mapping
 Super Smol: Programming, Weapon Model Porting
 
 Juniez (Weapon models and textures) [https://www.artstation.com/juniez]:
