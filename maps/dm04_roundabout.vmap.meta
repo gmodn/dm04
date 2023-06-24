@@ -1,11 +1,11 @@
 {
   "publish": {
-    "Enabled": false,
+    "Enabled": true,
     "ProjectConfig": {
-      "Title": null,
-      "Type": null,
-      "Org": null,
-      "Ident": null,
+      "Title": "Round About",
+      "Type": "map",
+      "Org": "gmodn",
+      "Ident": "dm04_roundabout",
       "Tags": null,
       "Schema": 0,
       "HasAssets": false,
@@ -20,7 +20,15 @@
         "duccsoft.dog_pirate#17219",
         "randkassets.breakable_vase#12641"
       ],
-      "Metadata": {}
+      "Metadata": {
+        "SingleAssetSource": "maps/dm04_roundabout.vmap",
+        "GameSupport": [
+          "gman.dm04"
+        ],
+        "Summary": "",
+        "Description": "",
+        "Public": true
+      }
     }
   }
 }

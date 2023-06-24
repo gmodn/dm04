@@ -1,0 +1,27 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Energy Ball",
+      "Type": "particle",
+      "Org": "mdlresrc",
+      "Ident": "hl2_energyball",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": null,
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "particles/combineball.vpcf",
+        "Summary": "Energy Ball from Half-Life 2",
+        "Description": "Energy Ball from Half-Life 2",
+        "Public": true
+      }
+    }
+  }
+}

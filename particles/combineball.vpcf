@@ -117,6 +117,9 @@
 				}
 			}
 		},
+		{
+			_class = "C_OP_RenderDeferredLight"
+		},
 	]
 	m_Children = 
 	[
