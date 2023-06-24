@@ -364,12 +364,6 @@ public partial class DeathmatchPlayer : Player
 		tr.Surface.DoFootstep( this, tr, foot, volume * 10 );
 	}
 
-	[ConCmd.Admin]
-	public static void MapVote()
-	{
-		var vote = new MapVoteEntity();
-	}
-
 	[ConCmd.Client("cl_playermodel")]
 	public static void SetPlayerModel( string PMPath )
 	{

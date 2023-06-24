@@ -1,6 +1,6 @@
 ﻿partial class HLDMWeapon : BaseWeapon, IRespawnableEntity
 {
-	public virtual AmmoType AmmoType => AmmoType.Pistol;
+	public virtual AmmoType AmmoType => AmmoType.None;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
 	public virtual int Bucket => 1;

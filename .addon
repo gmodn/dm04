@@ -16,8 +16,10 @@
   "Metadata": {
     "MaxPlayers": 64,
     "MinPlayers": 1,
-    "MapList": [],
-    "MapSelect": "Tagged",
+    "MapList": [
+      "facepunch.crossfire"
+    ],
+    "MapSelect": "Hidden",
     "GameNetworkType": "Multiplayer",
     "RankType": "None",
     "PerMapRanking": false,
