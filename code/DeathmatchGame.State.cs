@@ -13,12 +13,21 @@ partial class DeathmatchGame : GameManager
 	[Net]
 	public string NextMap { get; set; } = "facepunch.datacore";
 
+	[ConVar.Replicated]
+	public static int hldm_gamelength { get; set; } = 10;
+
 	[ConCmd.Admin]
 	public static void SkipStage()
 	{
 		if ( Current is not DeathmatchGame dmg ) return;
 
 		dmg.StateTimer = 1;
+	}
+
+	[ConCmd.Server( "hldm_setgamelength" )]
+	public static void ChangeGameLength( int length )
+	{
+		hldm_gamelength = length;
 	}
 
 	private async Task WaitStateTimer()
@@ -40,7 +49,7 @@ partial class DeathmatchGame : GameManager
 		await WaitStateTimer();
 
 		GameState = GameStates.Live;
-		StateTimer = 10 * 60;
+		StateTimer = hldm_gamelength * 60;
 		FreshStart();
 		await WaitStateTimer();
 
