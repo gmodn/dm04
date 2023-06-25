@@ -17,7 +17,7 @@
         <div class="left">
             <a class="button" href="/"> Home </a>
             <span class="block">&gt;</span>
-            <span class="block">Current Lobby</span>
+            <span class="block">Current Server</span>
         </div>
 
         <div class="right">
@@ -137,14 +137,14 @@
         <div class="left">
             <a class="button" href="/" title="Go To Main Menu"> &lt; </a>
 
-            <span class="button" onclick=@( () => Game.Menu.Lobby?.Leave() )>Exit Lobby</span>
+            <span class="button" onclick=@( () => Game.Menu.Lobby?.Leave() )>Exit Server</span>
         </div>
 
         <div class="right">
 
             @if (Game.Menu.Lobby.Owner.IsMe)
             {
-                <span class="button" onclick=@StartGame>Start Game</span>
+                <span class="button" onclick=@StartGame>Start Server</span>
             }
         </div>
 
