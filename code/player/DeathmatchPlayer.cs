@@ -4,10 +4,10 @@ public partial class DeathmatchPlayer : Player
 {
 	TimeSince timeSinceDropped;
 
+	private DamageInfo lastDamage;
+
 	[Net]
 	public float Armour { get; set; } = 0;
-
-	public bool EnableClothing { get; set; } = true;
 
 	[Net]
 	public float MaxHealth { get; set; } = 100;
@@ -20,6 +20,9 @@ public partial class DeathmatchPlayer : Player
 	[Net, Predicted]
 	public bool ThirdPerson { get; set; }
 
+	[Net]
+	public Vector3 WishVelocity { get; set; }
+
 	public static string PlayerModel { get; set; } = ("models/citizen/citizen.vmdl");
 
 	public DeathmatchPlayer()
@@ -31,25 +34,27 @@ public partial class DeathmatchPlayer : Player
 	{
 		SetModel( PlayerModel );
 
-		Controller = new WalkController
+		// I think this might just be our base movement controller, it feels really good.
+		Controller = new GoldSrcWalkController
 		{
-			WalkSpeed = 270,
-			SprintSpeed = 100,
-			DefaultSpeed = 270,
-			AirAcceleration = 10,
-
+			sv_walkspeed = 150,
+			sv_sprintspeed = 320,
+			sv_defaultspeed = 320,
+			sv_airaccelerate = 10,
 		};
+
+		//Log.Info($"GoldSrc Movement is {dm04_goldsrcmovement}");
 
 		EnableAllCollisions = true;
 		EnableDrawing = true;
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
 		
-		Log.Info( $"Player Clothing is marked {EnableClothing}." );
+		Log.Info( $"Player Clothing is marked {dm04_enableclothing}." );
 
-		if ( EnableClothing )
+		if ( dm04_enableclothing )
 			Clothing.DressEntity( this );
-		else return;
+		else
 
 		ClearAmmo();
 
@@ -59,8 +64,7 @@ public partial class DeathmatchPlayer : Player
 		{
 			Inventory.DeleteContents();
 
-			if ( DeathmatchGame.CurrentState == DeathmatchGame.GameStates.Live )
-				PlayerSetup.Equipment.GiveWeapons( this );
+			PlayerSetup.Equipment.GiveWeapons( this );
 		}
 
 		SupressPickupNotices = false;
@@ -92,6 +96,11 @@ public partial class DeathmatchPlayer : Player
 			ply.Inventory.Add( new SMG() );
 			ply.Inventory.Add( new AR2() );
 			ply.Inventory.Add( new Crossbow() );
+		}
+
+		if ( Value == 203 )
+		{
+			Log.Info( "TODO: Make this remove the current entity that the player is looking at" );
 		}
 	}
 
@@ -152,9 +161,6 @@ public partial class DeathmatchPlayer : Player
 
 	public override void Simulate( IClient cl )
 	{
-		if ( DeathmatchGame.CurrentState == DeathmatchGame.GameStates.GameEnd )
-			return;
-
 		base.Simulate( cl );
 
 		if ( LifeState != LifeState.Alive )
@@ -368,7 +374,7 @@ public partial class DeathmatchPlayer : Player
 	public static void SetPlayerModel( string PMPath )
 	{
 		DeathmatchPlayer.PlayerModel = PMPath;
-		Log.Error( $"Done! On next spawn your model will be set to: {PMPath}"  );
+		Log.Info( $"Done! On next spawn your model will be set to: {PMPath}"  );
 	}
 
 	public void RenderHud( Vector2 screenSize )

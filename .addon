@@ -122,15 +122,13 @@
     "Public": false,
     "PackageSettings": [
       {
-        "DisplayType": "Integer",
+        "DisplayType": "Boolean",
         "Choices": [],
-        "ConVarName": "hldm_gamelength",
-        "DisplayName": "Match Length (Mins)",
-        "DefaultValue": "10.021493",
-        "Description": "Change the length of the match. Goes by Minutes.",
-        "Group": "Match Settings",
-        "Minimum": 1,
-        "Maximum": 30
+        "ConVarName": "dm04_enableclothing",
+        "DisplayName": "Enable Player Clothing?",
+        "DefaultValue": "true",
+        "Description": "Allow Player to have clothing selected in the avatar menu of s\u0026box.",
+        "Group": "Player Settings"
       }
     ]
   }

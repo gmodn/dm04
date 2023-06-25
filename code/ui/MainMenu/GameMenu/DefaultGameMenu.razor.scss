@@ -30,12 +30,15 @@
 	}
 }
 
-.button, .block
-{
+.notice {
+	font-size: 80px;
+	color: white;
+	font-weight: bolder;
+}
+
+.button, .block {
 	padding: 4px 16px;
-
 	opacity: 0.8;
-
 	font-size: 28px;
 	font-family: DIN;
 	font-weight: 600;
@@ -82,28 +85,23 @@
 }
 
 
-.gamemainmenu .navigator-canvas
-{
+.gamemainmenu .navigator-canvas {
 	height: 100%;
 	flex-grow: 1;
 	flex-shrink: 0;
 }
 
-section
-{
+section {
 	flex-direction: column;
 	flex-grow: 1;
 	flex-shrink: 0;
 
-	&.nogrow
-	{
+	&.nogrow {
 		flex-grow: 0;
 	}
 
-	&.box
-	{
+	&.box {
 		background-color: rgba( black, 0.5 );
-		
 	}
 }
 
@@ -127,15 +125,13 @@ h2 {
 	flex-shrink: 0;
 }
 
-.member-list
-{
+.member-list {
 	overflow-x: scroll;
 	padding: 20px;
 	gap: 8px;
 }
 
-.navigator-body
-{
+.navigator-body {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -145,49 +141,41 @@ h2 {
 	padding: 100px 0px;
 }
 
-.hidden
-{
+.hidden {
 	display: none;
 }
 
-.inset
-{
+.inset {
 	overflow: hidden;
 }
 
-.layout
-{
+.layout {
 	flex-direction: column;
 
-	> *
-	{
+	> * {
 		flex-shrink: 0;
 	}
 
-	> .body
-	{
+	> .body {
 		flex-grow: 1;
 		flex-shrink: 0;
 		flex-direction: column;
 
-		&.columned
-		{
+		&.columned {
 			flex-direction: row;
 			flex-grow: 1;
 			flex-shrink: 1;
 			margin: 0px 50px;
 			justify-content: space-between;
 
-			> .left
-			{
+			> .left {
 				flex-grow: 0;
 				flex-shrink: 0;
 				overflow-y: scroll;
 				flex-direction: column;
 			}
 
-			> .right
-			{
+			> .right {
 				flex-grow: 0;
 				flex-shrink: 0;
 				flex-direction: column;

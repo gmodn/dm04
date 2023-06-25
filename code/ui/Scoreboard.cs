@@ -32,9 +32,6 @@ public class Scoreboard : Sandbox.UI.Scoreboard<ScoreboardEntry>
 
 	public override bool ShouldBeOpen()
 	{
-		if ( DeathmatchGame.CurrentState == DeathmatchGame.GameStates.GameEnd )
-			return true;
-
 		return base.ShouldBeOpen();
 	}
 }

@@ -24,8 +24,6 @@ partial class DeathmatchGame : GameManager
 		if ( Game.IsServer )
 		{
 			Hud = new DeathmatchHud();
-
-			_ = GameLoopAsync();
 		}
 	}
 
@@ -148,15 +146,6 @@ partial class DeathmatchGame : GameManager
 			//postProcess.FilmGrain.Intensity += (1 - healthDelta) * 0.5f;
 
 			Audio.SetEffect( "core.player.death.muffle1", 1 - healthDelta, velocity: 2.0f );
-		}
-
-
-		if ( CurrentState == GameStates.Warmup )
-		{
-			postProcess.FilmGrain.Intensity = 0.4f;
-			postProcess.FilmGrain.Response = 0.5f;
-
-			postProcess.Saturation = 0;
 		}
 	}
 
