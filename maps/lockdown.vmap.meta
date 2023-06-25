@@ -1,0 +1,27 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": null,
+      "Type": null,
+      "Org": null,
+      "Ident": null,
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": null,
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "andiq.tiles074#12706",
+        "gman.dm04",
+        "tameranian.bnw_tiles#9973",
+        "andiq.tiles078#12705"
+      ],
+      "Metadata": {}
+    }
+  }
+}
