@@ -116,7 +116,9 @@
       ]
     },
     "CsProjName": "",
-    "HttpAllowList": null,
+    "HttpAllowList": [
+      "https://asset.party/"
+    ],
     "Summary": "A Half-Life themed Deathmatch mode in s\u0026box!",
     "Description": "STILL IN EARLY DEVELOPMENT, MANY THINGS ARE NOT IMPLEMENTED OR WORKING CORRECTLY! EVERYTHING IS SUBJECT TO CHANGE.\n\n2.0 Update officaly out! Have fun!\n\n---Map Rotation---\n4ange\nlockdown\n\nA Half-Life themed Deathmatch mode in s\u0026box!",
     "Public": false,
