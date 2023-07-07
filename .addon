@@ -7,7 +7,7 @@
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
-  "Resources": "ui/*",
+  "Resources": "ui/*\nui/weapons/*",
   "MenuResources": "ui/MainMenu/*\nfonts/*\nsounds/menu/*",
   "HasCode": true,
   "CodePath": "code",

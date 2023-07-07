@@ -43,8 +43,6 @@ public partial class DeathmatchPlayer : Player
 			sv_airaccelerate = 10,
 		};
 
-		//Log.Info($"GoldSrc Movement is {dm04_goldsrcmovement}");
-
 		EnableAllCollisions = true;
 		EnableDrawing = true;
 		EnableHideInFirstPerson = true;
