@@ -16,19 +16,22 @@ public class Crosshair : Panel
 	public Crosshair()
 	{
 		StyleSheet.Load( "ui/Crosshair.scss" );
-		centre = Add.Label( "{", "crosshairBracket" );
-		LeftFull = Add.Label( "Q", "crosshair" );
-		RightFull = Add.Label( "}", "crosshairBracket" );
+		centre = Add.Label( "{", "crosshairBracketLeft" );
+		LeftFull = Add.Label( "Q", "crosshairCenter" );
+		RightFull = Add.Label( "}", "crosshairBracketRight" );
 	}
 
 	public override void Tick()
 	{
 		base.Tick();
+		var player = Game.LocalPawn as DeathmatchPlayer;
+		if ( player == null ) return;
 
-		SetClass( "fire", fireCounter > 0 );
+		SetClass( "healthlow", player.Health < 40.0f );
+		SetClass( "healthempty", player.Health <= 0.0f );
 
-		if ( fireCounter > 0 )
-			fireCounter--;
+		SetClass( "ammolow", player.Health < 40.0f );
+		SetClass( "ammoempty", player.Health < 40.0f );
 	}
 
 	[PanelEvent]

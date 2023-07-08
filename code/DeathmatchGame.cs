@@ -38,9 +38,12 @@ partial class DeathmatchGame : GameManager
 	{
 		base.ClientJoined( cl );
 
-		if ( cl.SteamId == 76561198330783877 )
-			Log.Info( $"HOLY SHIT!!! \"{cl.Name}\" IS HERE!!!!" );		
-		
+		if ( cl.SteamId == 76561197960279927 )
+		{
+			Log.Info( $"HOLY SHIT!!! \"{cl.Name}\" IS HERE!!!!" );
+
+		}
+
 		var player = new DeathmatchPlayer();
 		player.UpdateClothes( cl );
 		player.Respawn();
@@ -96,57 +99,6 @@ partial class DeathmatchGame : GameManager
 		base.OnKilled( client, pawn );
 
 		Hud.OnPlayerDied( To.Everyone, pawn as DeathmatchPlayer );
-	}
-
-
-	public override void FrameSimulate( IClient cl )
-	{
-		base.FrameSimulate( cl );
-
-		var postProcess = Camera.Main.FindOrCreateHook<Sandbox.Effects.ScreenEffects>();
-
-		postProcess.Sharpen = 0.3f;
-
-		postProcess.FilmGrain.Intensity = 0.1f;
-		postProcess.FilmGrain.Response = 1;
-
-		postProcess.Vignette.Intensity = 0.7f;
-		postProcess.Vignette.Roundness = 0.2f;
-		postProcess.Vignette.Smoothness = 0.9f;
-		postProcess.Vignette.Color = Color.Black;
-
-		postProcess.Saturation = 1;
-
-		postProcess.MotionBlur.Scale = 0;
-
-		Audio.SetEffect( "core.player.death.muffle1", 0 );
-
-		if ( Game.LocalPawn is DeathmatchPlayer localPlayer )
-		{
-			var timeSinceDamage = localPlayer.TimeSinceDamage.Relative;
-			var damageUi = timeSinceDamage.LerpInverse( 0.25f, 0.0f, true ) * 0.3f;
-			if ( damageUi > 0 )
-			{
-				postProcess.Saturation -= damageUi;
-				postProcess.Vignette.Color = Color.Lerp( postProcess.Vignette.Color, Color.Red.Darken( 0.2f ), damageUi );
-				postProcess.Vignette.Intensity += damageUi;
-				//postProcess.Vignette.Smoothness += damageUi;
-				//postProcess.Vignette.Roundness += damageUi;
-			}
-
-			var healthDelta = localPlayer.Health.LerpInverse( 0, 100.0f, true );
-
-			healthDelta = MathF.Pow( healthDelta, 0.5f );
-
-			postProcess.Vignette.Color = Color.Lerp( postProcess.Vignette.Color, Color.Red.Darken( 0.7f ), 1 - healthDelta );
-			postProcess.Vignette.Intensity += (1 - healthDelta) * 0.1f;
-			//postProcess.Vignette.Smoothness += (1 - healthDelta);
-			//postProcess.Vignette.Roundness += (1 - healthDelta) * 0.5f;
-			//postProcess.Saturation *= healthDelta;
-			//postProcess.FilmGrain.Intensity += (1 - healthDelta) * 0.5f;
-
-			Audio.SetEffect( "core.player.death.muffle1", 1 - healthDelta, velocity: 2.0f );
-		}
 	}
 
 	public static void Explosion( Entity weapon, Entity owner, Vector3 position, float radius, float damage, float forceScale )

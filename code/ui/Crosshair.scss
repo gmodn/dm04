@@ -16,17 +16,35 @@ Crosshair {
     right: 900px;
     letter-spacing: 10px;
     font-family: HalfLife2;
-    color: yellow;
     font-size: 108px;
 
-    .crosshair {
+    .crosshairCenter {
         top: -38px;
         font-family: HalfLife2;
         font-size: 52px;
+        color: yellow;
     }
 
-    .crosshairBracket {
+    .crosshairBracketLeft, .crosshairBracketRight {
         top: -20px;
         font-family: HalfLife2;
+    }
+
+    .crosshairBracketleft {
+        color: yellow;
+
+        &.healthlow {
+            color: #f00;
+            text-shadow: 0px 0px 10px #f005;
+        }
+    }
+
+    .crosshairBracketright {
+        color: yellow;
+
+        &.low {
+            color: #f00;
+            text-shadow: 0px 0px 10px #f005;
+        }
     }
 }

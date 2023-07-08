@@ -155,6 +155,15 @@ public partial class DeathmatchPlayer : Player
 		{
 			child.EnableDrawing = false;
 		}
+
+		DeathStat();
+	}
+
+	[ClientRpc]
+	public void DeathStat()
+	{
+		Sandbox.Services.Stats.Increment( "deaths", 1 );
+		Log.Info( "Client has died, increase death stat by 1." );
 	}
 
 	public override void Simulate( IClient cl )
