@@ -15,7 +15,7 @@ public class Ammo : Panel
 	{
 		CounterText = Add.Label( "0", "Counter" );
 		ReserveAmmo = Add.Label( "100", "Reserve" );
-		AltCounterText = Add.Label( "100", "Alt" );
+		AltCounterText = Add.Label( "0", "Alt" );
 		AltLabel = Add.Label( "Alt", "AltLabel" );
 	}
 

@@ -27,7 +27,8 @@
         "rust.ladder_300_top#22441",
         "rust.fluorescentlight_wall#22137",
         "facepunch.ceiling_plaster_01#17458",
-        "rust.gas_station_concrete_floor#22364"
+        "rust.gas_station_concrete_floor#22364",
+        "facepunch.wooden_crate#18879"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/dm04_testingmap.vmap"
