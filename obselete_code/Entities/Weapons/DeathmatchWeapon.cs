@@ -1,21 +1,12 @@
-﻿using Sandbox;
-using Sandbox.UI;
-using Sandbox.UI.Construct;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Threading.Tasks;
-
-partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
+﻿partial class HLDMWeapon : BaseWeapon, IRespawnableEntity
 {
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
-
-	public virtual AmmoType SecondaryAmmo => AmmoType.None;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
 	public virtual int Bucket => 1;
 	public virtual int BucketWeight => 100;
+	public virtual AmmoType SecondaryAmmo => AmmoType.None;
+	public virtual int Order => (Bucket * 10000) + BucketWeight;
 
 	public virtual string AmmoIcon => "p";
 
@@ -25,7 +16,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	public int AmmoClip { get; set; }
 
 	[Net, Predicted]
-	public int SecondaryAmmoClip { get; set; }
+	public int SecondaryAmmoClip { get; set; } 
 
 	[Net, Predicted]
 	public TimeSince TimeSinceReload { get; set; }
@@ -36,10 +27,23 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	[Net, Predicted]
 	public TimeSince TimeSinceDeployed { get; set; }
 
-
 	public PickupTrigger PickupTrigger { get; protected set; }
 	public PickupTrigger GravPickupTrigger { get; protected set; }
 
+
+	public void gravhitbox()
+	{
+		GravPickupTrigger = new PickupTrigger();
+		GravPickupTrigger.SetTriggerSize(64);
+		GravPickupTrigger.Parent = this;
+		GravPickupTrigger.Position = Position;
+
+	}
+	public void gravhitboxremove()
+	{
+		GravPickupTrigger.Delete();
+
+	}
 	public int AvailableAmmo()
 	{
 		var owner = Owner as DeathmatchPlayer;
@@ -55,39 +59,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 		IsReloading = false;
 	}
-	
-	public void gravhitbox()
-	{
-		GravPickupTrigger = new PickupTrigger();
-		GravPickupTrigger.SetTriggerSize( 64 );
-		GravPickupTrigger.Parent = this;
-		GravPickupTrigger.Position = Position;
 
-	}
-	public void gravhitboxremove()
-	{
-		GravPickupTrigger.Delete();
-
-	}
-	public override void StartTouch( Entity other )
-	{
-		if ( other is DeathmatchPlayer player )
-		{
-			if(!player.Inventory.Contains(this))
-				base.StartTouch( other );
-
-			if ( (player.AmmoCount( AmmoType ) + ClipSize) > player.AmmoLimit[(int)AmmoType] )
-			{
-				AmmoClip = player.AmmoLimit[(int)AmmoType] - player.AmmoCount( AmmoType );
-			}
-			else if ( player.AmmoCount( AmmoType ) >= player.AmmoLimit[(int)AmmoType] )
-			{
-				return;
-			}
-		}
-
-		base.StartTouch( other );
-	}
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
 	public override void Spawn()
@@ -97,7 +69,6 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
 
 		PickupTrigger = new PickupTrigger();
-		PickupTrigger.SetTriggerSize( 16 );
 		PickupTrigger.Parent = this;
 		PickupTrigger.Position = Position;
 	}
@@ -108,17 +79,17 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			return;
 
 		if ( AmmoClip >= ClipSize )
-		{
-			ViewModelEntity?.SetAnimParameter( "inspect", true );
 			return;
-		}	
 
 		TimeSinceReload = 0;
 
 		if ( Owner is DeathmatchPlayer player )
 		{
 			if ( player.AmmoCount( AmmoType ) <= 0 )
+			{
+				OnReloadFinish();
 				return;
+			}
 		}
 
 		IsReloading = true;
@@ -128,7 +99,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		StartReloadEffects();
 	}
 
-	public override void Simulate( Client owner ) 
+	public override void Simulate( Client owner )
 	{
 		if ( TimeSinceDeployed < 0.6f )
 			return;
@@ -142,13 +113,6 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		{
 			OnReloadFinish();
 		}
-
-		//Sprint Animation System
-		if ( Owner is DeathmatchPlayer player )
-		{
-			ViewModelEntity?.SetAnimParameter( "speed", Owner.Velocity.Length.LerpInverse( 0, 320 ) );
-			return;
-		}	
 	}
 
 	public virtual void OnReloadFinish()
@@ -169,6 +133,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	public virtual void StartReloadEffects()
 	{
 		ViewModelEntity?.SetAnimParameter( "reload", true );
+
 		// TODO - player third person model reload
 	}
 
@@ -176,35 +141,6 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	{
 		TimeSincePrimaryAttack = 0;
 		TimeSinceSecondaryAttack = 0;
-		//
-		// Tell the clients to play the shoot effects
-		//
-		ShootEffects();
-
-		//
-		// ShootBullet is coded in a way where we can have bullets pass through shit
-		// or bounce off shit, in which case it'll return multiple results
-		//
-		foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + Owner.EyeRotation.Forward * 5000 ) )
-		{
-			tr.Surface.DoBulletImpact( tr );
-
-			if ( !IsServer ) continue;
-			if ( !tr.Entity.IsValid() ) continue;
-
-			//
-			// We turn predictiuon off for this, so aany exploding effects don't get culled etc
-			//
-			using ( Prediction.Off() )
-			{
-				var damage = DamageInfo.FromBullet( tr.EndPosition, Owner.EyeRotation.Forward * 100, 15 )
-					.UsingTraceResult( tr )
-					.WithAttacker( Owner )
-					.WithWeapon( this );
-
-				tr.Entity.TakeDamage( damage );
-			}
-		}
 	}
 
 	[ClientRpc]
@@ -212,42 +148,45 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 	{
 		Host.AssertClient();
 
-		//Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
+		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
-		//if ( IsLocalPawn )
-		//{
-		//	new Sandbox.ScreenShake.Perlin();
-		//}
-		(Owner as AnimatedEntity).SetAnimParameter( "b_attack", true );
 		ViewModelEntity?.SetAnimParameter( "fire", true );
-	//we dont have it	///CrosshairPanel?.CreateEvent( "fire" );
+		CrosshairLastShoot = 0;
+
 	}
 
 	/// <summary>
 	/// Shoot a single bullet
 	/// </summary>
-	public virtual void ShootBullet( float spread, float force, float damage, float bulletSize )
+	public virtual void ShootBullet( float spread, float force, float damage, float bulletSize, int bulletCount = 1 )
 	{
-		var forward = Owner.EyeRotation.Forward;
-		forward += (Vector3.Random + Vector3.Random + Vector3.Random + Vector3.Random) * spread * 0.25f;
-		forward = forward.Normal;
+		//
+		// Seed rand using the tick, so bullet cones match on client and server
+		//
+		Rand.SetSeed( Time.Tick );
 
-		//
-		// ShootBullet is coded in a way where we can have bullets pass through shit
-		// or bounce off shit, in which case it'll return multiple results
-		//
-		foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + forward * 5000, bulletSize ) )
+		for ( int i = 0; i < bulletCount; i++ )
 		{
-			tr.Surface.DoBulletImpact( tr );
-
-			if ( !IsServer ) continue;
-			if ( !tr.Entity.IsValid() ) continue;
+			var forward = Owner.EyeRotation.Forward;
+			forward += (Vector3.Random + Vector3.Random + Vector3.Random + Vector3.Random) * spread * 0.25f;
+			forward = forward.Normal;
 
 			//
-			// We turn predictiuon off for this, so any exploding effects don't get culled etc
+			// ShootBullet is coded in a way where we can have bullets pass through shit
+			// or bounce off shit, in which case it'll return multiple results
 			//
-			using ( Prediction.Off() )
+			foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + forward * 5000, bulletSize ) )
 			{
+				tr.Surface.DoBulletImpact( tr );
+
+				if ( tr.Distance > 200 )
+				{
+					CreateTracerEffect( tr.EndPosition );
+				}
+
+				if ( !IsServer ) continue;
+				if ( !tr.Entity.IsValid() ) continue;
+
 				var damageInfo = DamageInfo.FromBullet( tr.EndPosition, forward * 100 * force, damage )
 					.UsingTraceResult( tr )
 					.WithAttacker( Owner )
@@ -256,6 +195,17 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 				tr.Entity.TakeDamage( damageInfo );
 			}
 		}
+	}
+
+	[ClientRpc]
+	public void CreateTracerEffect( Vector3 hitPosition )
+	{
+		// get the muzzle position on our effect entity - either viewmodel or world model
+		var pos = EffectEntity.GetAttachment( "muzzle" ) ?? Transform;
+
+		var system = Particles.Create( "particles/tracer.standard.vpcf" );
+		system?.SetPosition( 0, pos.Position );
+		system?.SetPosition( 1, hitPosition );
 	}
 
 	public bool TakeAmmo( int amount )
@@ -267,11 +217,22 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		return true;
 	}
 
-	//[ClientRpc]
-	//public virtual void DryFire()
-	//{
+	public bool TakeSecondaryAmmo( DeathmatchPlayer player, AmmoType ammoType )
+	{
+		if ( player.AmmoCount( ammoType ) < 1 )
+			return false;
 
-	//}
+		player.SetAmmo( ammoType, player.AmmoCount( ammoType ) - 1 );
+		SecondaryAmmoClip = player.AmmoCount( ammoType );
+
+		return true;
+	}
+
+	[ClientRpc]
+	public virtual void DryFire()
+	{
+		PlaySound( "dm.dryfire" );
+	}
 
 	public override void CreateViewModel()
 	{
@@ -285,6 +246,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		ViewModelEntity.Owner = Owner;
 		ViewModelEntity.EnableViewmodelRendering = true;
 		ViewModelEntity.SetModel( ViewModelPath );
+		ViewModelEntity.SetAnimParameter( "deploy", true );
 	}
 
 	public override void CreateHudElements()
@@ -294,7 +256,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 
 	public bool IsUsable()
 	{
-		//Need to fix secondary check since it's ass
+		//Need to fix secondary check since it's ass ///facepunch never did :dead:
 		var owner = Owner as DeathmatchPlayer;
 		if ( owner == null ) return true;
 
@@ -323,4 +285,23 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 			PickupTrigger.EnableTouch = true;
 		}
 	}
+
+	protected TimeSince CrosshairLastShoot { get; set; }
+	protected TimeSince CrosshairLastReload { get; set; }
+
+	public virtual void RenderHud( in Vector2 screensize )
+	{
+		var center = screensize * 0.5f;
+
+		if ( IsReloading || (AmmoClip == 0 && ClipSize > 1) )
+			CrosshairLastReload = 0;
+
+		RenderCrosshair( center, CrosshairLastShoot.Relative, CrosshairLastReload.Relative );
+	}
+
+	public virtual void RenderCrosshair( in Vector2 center, float lastAttack, float lastReload )
+	{
+		var draw = Render.Draw2D;
+	}
+
 }
