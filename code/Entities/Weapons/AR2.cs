@@ -61,7 +61,6 @@ partial class AR2 : HLDMWeapon
 			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )
 			{
 				PlaySound( "hl2_ar2.empty" );
-				return;
 			}
 			else
 			{

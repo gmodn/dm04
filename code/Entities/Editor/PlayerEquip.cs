@@ -6,6 +6,7 @@ public partial class PlayerSetup : Entity
 	public static PlayerSetup Equipment;
 
 	List<(HLDMWeapon Wep, int Ammo, int Start)> Weapons;
+	List<(AmmoType AltType, int AltAmmo)> AltWeapons;
 
 	//[Property, Description( "The equipment players will start with" )]
 	//public WeaponEquipment[] Weapon { get; set; }
@@ -115,6 +116,7 @@ public partial class PlayerSetup : Entity
 	public void GenerateWeapons()
 	{
 		Weapons = new();
+		AltWeapons = new();
 
 		if ( GiveCrowbar )
 			Weapons.Add( (new Crowbar(), -1, -1) );
@@ -122,17 +124,23 @@ public partial class PlayerSetup : Entity
 		//if ( GiveStunstick )
 			//Weapons.Add( (new Stunstick(), -1) );
 
-		if(GivePistol)
+		if ( GivePistol )
 			Weapons.Add( (new Pistol(), PistolAmmo, PistolClip) );
 
 		if ( GiveMagnum )
 			Weapons.Add( (new Python(), MagnumAmmo, MagnumClip) );
 
 		if ( GiveSMG )
+		{
 			Weapons.Add( (new SMG(), SMGAmmo, SMGClip) );
+			AltWeapons.Add( (AmmoType.SMGGrenade, SMGAltAmmo) );
+		}
 
 		if ( GiveAR2 )
+		{
 			Weapons.Add( (new AR2(), AR2Ammo, AR2Clip) );
+			AltWeapons.Add( (AmmoType.AR2Alt, AR2AltAmmo) );
+		}
 
 		if ( GiveShotgun )
 			Weapons.Add( (new Shotgun(), ShotgunAmmo, ShotgunClip) );
@@ -201,9 +209,7 @@ public partial class PlayerSetup : Entity
 	//Returns true if weapon has alternative fire with ammo for said weapon
 	bool HasAltFire( HLDMWeapon wep )
 	{
-		if ( wep is SMG || wep is AR2 ) return true;
-
-		return false;
+		return wep.SecondaryAmmo != AmmoType.None;
 	}
 
 	/// <summary>
@@ -223,8 +229,13 @@ public partial class PlayerSetup : Entity
 			player.SetAmmo( weapon.AmmoType, ammo );
 
 			weapon.AmmoClip = startClip;
-			weapon.SecondaryAmmoClip = GetMaxAmmo( weapon.AmmoType, HasAltFire( weapon ) );
 
+			var altAmmo = AltWeapons.Where(a => a.AltType == weapon.SecondaryAmmo)
+				.FirstOrDefault();
+
+			if ( altAmmo.AltAmmo > -1 )
+				player.SetAmmo( altAmmo.AltType, altAmmo.AltAmmo );
+			
 			player.Inventory.Add( weapon );
 		}
 	}
