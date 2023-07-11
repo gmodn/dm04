@@ -83,7 +83,7 @@ public class InventoryBar : Panel
 			Input.SuppressButton( InputButton.PrimaryAttack );
 			localPlayer.ActiveChildInput = SelectedWeapon;
 			IsOpen = false;
-			Sound.FromScreen( "sounds/ui/buttonclick.sound" );
+			Sound.FromScreen( "sounds/ui/wpn_select.sound" );
 			return;
 		}
 
@@ -109,7 +109,7 @@ public class InventoryBar : Panel
 
 		if ( oldSelected != SelectedWeapon )
 		{
-			Sound.FromScreen( "sounds/ui/buttonrollover.sound" );
+			Sound.FromScreen( "sounds/ui/wpn_moveselect.sound" );
 		}
 	}
 

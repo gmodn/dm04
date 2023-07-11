@@ -1,21 +1,23 @@
 ﻿using Sandbox;
+using Sandbox.Physics;
 using System;
 using System.Linq;
 
-[Library("hl2_gravgun", Title = "gravgun" )]
-[EditorModel("models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl")]
-partial class hl2_gravgun : HLDMWeapon
+[Library( "dm_gravgun" ), HammerEntity]
+[EditorModel( "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl" )]
+[Title( "GravGun" ), Category( "Weapons" )]
+partial class GravGun : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl";
 	public override AmmoType AmmoType => AmmoType.None;
 	public override int Bucket => 0;
 
-	private PhysicsBody holdBody;
-	private FixedJoint holdJoint;
-	public HLDMWeapon weaponpickup;
 	public PhysicsBody HeldBody { get; private set; }
+	public Vector3 HeldPos { get; private set; }
 	public Rotation HeldRot { get; private set; }
 	public ModelEntity HeldEntity { get; private set; }
+	public Vector3 HoldPos { get; private set; }
+	public Rotation HoldRot { get; private set; }
 
 	protected virtual float MaxPullDistance => 2000.0f;
 	protected virtual float MaxPushDistance => 500.0f;
@@ -31,20 +33,22 @@ partial class hl2_gravgun : HLDMWeapon
 	protected virtual float DropCooldown => 0.5f;
 	protected virtual float BreakLinearForce => 2000.0f;
 
+	private const string grabbedTag = "grabbed";
+
 	private TimeSince timeSinceDrop;
 	public override void Spawn()
 	{
 		base.Spawn();
 
 		Tags.Add( "weapon" );
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel( "models/weapons/hl2_gravgun/w_hl2_gravgun.vmdl" );
 	}
 
-	public override void Simulate( Client client )
+	public override void Simulate( IClient client )
 	{
 		if ( Owner is not Player owner ) return;
 
-		if ( !IsServer )
+		if ( !Game.IsServer )
 			return;
 
 		using ( Prediction.Off() )
@@ -55,11 +59,7 @@ partial class hl2_gravgun : HLDMWeapon
 
 			if ( HeldBody.IsValid() && HeldBody.PhysicsGroup != null )
 			{
-				if ( holdJoint.IsValid() && !holdJoint.IsActive )
-				{
-					GrabEnd();
-				}
-				else if ( Input.Pressed( InputButton.PrimaryAttack ) )
+				if ( Input.Pressed( "attack1" ) )
 				{
 					if ( HeldBody.PhysicsGroup.BodyCount > 1 )
 					{
@@ -75,10 +75,8 @@ partial class hl2_gravgun : HLDMWeapon
 
 					GrabEnd();
 				}
-				else if ( Input.Pressed( InputButton.SecondaryAttack ) )
+				else if ( Input.Pressed( "attack2" ) )
 				{
-					timeSinceDrop = 0;
-
 					GrabEnd();
 				}
 				else
@@ -94,11 +92,11 @@ partial class hl2_gravgun : HLDMWeapon
 
 			var tr = Trace.Ray( eyePos, eyePos + eyeDir * MaxPullDistance )
 				.UseHitboxes()
-				.WithTag( "solid" )
+				.WithAnyTags( "solid", "debris" )
 				.Ignore( this )
 				.Radius( 2.0f )
 				.Run();
-			
+
 			if ( !tr.Hit || !tr.Body.IsValid() || !tr.Entity.IsValid() || tr.Entity.IsWorld )
 				return;
 
@@ -109,17 +107,23 @@ partial class hl2_gravgun : HLDMWeapon
 			if ( !modelEnt.IsValid() )
 				return;
 
+			if ( modelEnt.Tags.Has( grabbedTag ) )
+				return;
+
 			var body = tr.Body;
 
-			if ( Input.Pressed( InputButton.PrimaryAttack ) )
+			if ( body.BodyType != PhysicsBodyType.Dynamic )
+				return;
+
+			if ( Input.Pressed( "attack1" ) )
 			{
-				if ( tr.Distance < MaxPushDistance && !IsBodyGrabbed( body ) )
+				if ( tr.Distance < MaxPushDistance )
 				{
 					var pushScale = 1.0f - Math.Clamp( tr.Distance / MaxPushDistance, 0.0f, 1.0f );
 					body.ApplyImpulseAt( tr.EndPosition, eyeDir * (body.Mass * (PushForce * pushScale)) );
 				}
 			}
-			else if ( Input.Down( InputButton.SecondaryAttack ) )
+			else if ( Input.Down( "attack2" ) )
 			{
 				var physicsGroup = tr.Entity.PhysicsGroup;
 
@@ -137,7 +141,7 @@ partial class hl2_gravgun : HLDMWeapon
 					var holdDistance = HoldDistance + attachPos.Distance( body.MassCenter );
 					GrabStart( modelEnt, body, eyePos + eyeDir * holdDistance, eyeRot );
 				}
-				else if ( !IsBodyGrabbed( body ) )
+				else
 				{
 					physicsGroup.ApplyImpulse( eyeDir * -PullForce, true );
 				}
@@ -147,28 +151,18 @@ partial class hl2_gravgun : HLDMWeapon
 
 	private void Activate()
 	{
-		if ( !holdBody.IsValid() )
-		{
-			holdBody = new PhysicsBody( Map.Physics )
-			{
-				BodyType = PhysicsBodyType.Keyframed
-			};
-		}
 	}
 
 	private void Deactivate()
 	{
 		GrabEnd();
-
-		holdBody?.Remove();
-		holdBody = null;
 	}
 
 	public override void ActiveStart( Entity ent )
 	{
 		base.ActiveStart( ent );
 
-		if ( IsServer )
+		if ( Game.IsServer )
 		{
 			Activate();
 		}
@@ -178,7 +172,7 @@ partial class hl2_gravgun : HLDMWeapon
 	{
 		base.ActiveEnd( ent, dropped );
 
-		if ( IsServer )
+		if ( Game.IsServer )
 		{
 			Deactivate();
 		}
@@ -188,7 +182,7 @@ partial class hl2_gravgun : HLDMWeapon
 	{
 		base.OnDestroy();
 
-		if ( IsServer )
+		if ( Game.IsServer )
 		{
 			Deactivate();
 		}
@@ -198,11 +192,31 @@ partial class hl2_gravgun : HLDMWeapon
 	{
 	}
 
+	[Event.Physics.PreStep]
+	public void OnPrePhysicsStep()
+	{
+		if ( !Game.IsServer )
+			return;
+
+		if ( !HeldBody.IsValid() )
+			return;
+
+		if ( HeldEntity is Player )
+			return;
+
+		var velocity = HeldBody.Velocity;
+		Vector3.SmoothDamp( HeldBody.Position, HoldPos, ref velocity, 0.1f, Time.Delta );
+		HeldBody.Velocity = velocity;
+
+		var angularVelocity = HeldBody.AngularVelocity;
+		Rotation.SmoothDamp( HeldBody.Rotation, HoldRot, ref angularVelocity, 0.1f, Time.Delta );
+		HeldBody.AngularVelocity = angularVelocity;
+	}
 
 	private static bool IsBodyGrabbed(PhysicsBody body)
 	{
 		// There for sure is a better way to deal with this
-		if (All.OfType<hl2_gravgun>().Any(x => x?.HeldBody?.PhysicsGroup == body?.PhysicsGroup)) return true;
+		if (All.OfType<GravGun>().Any(x => x?.HeldBody?.PhysicsGroup == body?.PhysicsGroup)) return true;
 
 		return false;
 	}
@@ -215,38 +229,27 @@ partial class hl2_gravgun : HLDMWeapon
 		if ( body.PhysicsGroup == null )
 			return;
 
-		if ( IsBodyGrabbed( body ) )
-			return;
-
 		GrabEnd();
 
 		HeldBody = body;
+		HeldPos = HeldBody.LocalMassCenter;
 		HeldRot = grabRot.Inverse * HeldBody.Rotation;
 
-		holdBody.Position = grabPos;
-		holdBody.Rotation = HeldBody.Rotation;
+		HoldPos = HeldBody.Position;
+		HoldRot = HeldBody.Rotation;
 
 		HeldBody.Sleeping = false;
 		HeldBody.AutoSleep = false;
 
-		holdJoint = PhysicsJoint.CreateFixed( holdBody, HeldBody.MassCenterPoint() );
-		holdJoint.SpringLinear = new( LinearFrequency, LinearDampingRatio );
-		holdJoint.SpringAngular = new( AngularFrequency, AngularDampingRatio );
-		holdJoint.Strength = HeldBody.Mass * BreakLinearForce;
-
 		HeldEntity = entity;
-		if ( HeldEntity is HLDMWeapon weapon )
-		{
-			weaponpickup = weapon;
-			weapon.gravhitbox();
-		}
+		HeldEntity.Tags.Add( grabbedTag );
+
 		Client?.Pvs.Add( HeldEntity );
 	}
 
 	private void GrabEnd()
 	{
-		holdJoint?.Remove();
-		holdJoint = null;
+		timeSinceDrop = 0;
 
 		if ( HeldBody.IsValid() )
 		{
@@ -260,6 +263,12 @@ partial class hl2_gravgun : HLDMWeapon
 
 		HeldBody = null;
 		HeldRot = Rotation.Identity;
+
+		if ( HeldEntity.IsValid() )
+		{
+			HeldEntity.Tags.Remove( grabbedTag );
+		}
+
 		HeldEntity = null;
 	}
 
@@ -271,23 +280,18 @@ partial class hl2_gravgun : HLDMWeapon
 		var attachPos = HeldBody.FindClosestPoint( startPos );
 		var holdDistance = HoldDistance + attachPos.Distance( HeldBody.MassCenter );
 
-		holdBody.Position = startPos + dir * holdDistance;
-		holdBody.Rotation = rot * HeldRot;
+		HoldPos = startPos - HeldPos * HeldBody.Rotation + dir * holdDistance;
+		HoldRot = rot * HeldRot;
 	}
-	public override void SimulateAnimator( PawnAnimator anim )
-	{
-		anim.SetAnimParameter( "holdtype", 2 ); // TODO this is shit
-												//anim.SetAnimParameter( "aimat_weight", 1.0f );
 
-		var forward = Owner.EyeRotation.Forward;
-		forward = forward.Normal;
-		foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + forward * 150, 0.2f ) )
-		{
-			ViewModelEntity?.SetAnimParameter( "prongs", ((!tr.Entity.IsValid()) || (tr.Entity.IsWorld)) );
-		}
-	}
 	public bool IsUsable( Entity user )
 	{
 		return Owner == null || HeldBody.IsValid();
+	}
+
+	public override void SimulateAnimator( CitizenAnimationHelper anim )
+	{
+		anim.HoldType = CitizenAnimationHelper.HoldTypes.Rifle;
+		anim.AimBodyWeight = 1.0f;
 	}
 }

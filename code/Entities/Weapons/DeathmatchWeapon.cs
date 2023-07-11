@@ -32,7 +32,19 @@
 	public PickupTrigger GravPickupTrigger { get; protected set; }
 
 
+	public void gravhitbox()
+	{
+		GravPickupTrigger = new PickupTrigger();
+		GravPickupTrigger.SetTriggerSize( 64 );
+		GravPickupTrigger.Parent = this;
+		GravPickupTrigger.Position = Position;
 
+	}
+	public void gravhitboxremove()
+	{
+		GravPickupTrigger.Delete();
+
+	}
 
 	public int AvailableAmmo()
 	{

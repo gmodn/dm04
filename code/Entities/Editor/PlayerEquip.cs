@@ -141,10 +141,10 @@ public partial class PlayerSetup : Entity
 			Weapons.Add( (new Crossbow(), CrossbowAmmo, 1) );
 
 		//if ( GiveRPG )
-			//Weapons.Add( (new RPG(), 0) );
+		//Weapons.Add( (new RPG(), 0) );
 
-		//if ( GiveGravityGun )
-			//Weapons.Add( (new GravGun(), -1) );
+		if ( GiveGravityGun )
+			Weapons.Add( (new GravGun(), -1, -1) );
 	}
 
 	//Clamps reserve ammo

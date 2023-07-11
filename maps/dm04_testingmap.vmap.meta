@@ -1,11 +1,15 @@
 {
+  "tags": [
+    "Dev"
+  ],
   "publish": {
+    "Allowed": true,
     "Enabled": false,
     "ProjectConfig": {
-      "Title": null,
-      "Type": null,
-      "Org": null,
-      "Ident": null,
+      "Title": "dm04_testingmap",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "dm04_testingmap",
       "Tags": null,
       "Schema": 0,
       "HasAssets": false,
@@ -18,12 +22,16 @@
       "EditorReferences": [
         "tameranian.bnw_tiles#9973",
         "andiq.tiles078#12705",
-        "gman.dm04"
+        "gman.dm04",
+        "rust.industrialceilinglampcompact#22136",
+        "rust.ladder_300_top#22441",
+        "rust.fluorescentlight_wall#22137",
+        "facepunch.ceiling_plaster_01#17458",
+        "rust.gas_station_concrete_floor#22364"
       ],
-      "Metadata": {}
+      "Metadata": {
+        "SingleAssetSource": "maps/dm04_testingmap.vmap"
+      }
     }
-  },
-  "tags": [
-    "Dev"
-  ]
+  }
 }
