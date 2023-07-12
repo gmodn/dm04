@@ -114,7 +114,7 @@ public partial class DeathmatchPlayer : Player
 		}
 		else 
 		{
-			Log.Warning( $"{ply.Name} Tried to activate a command that they dont have permission to, twist their dick!" );
+			Log.Warning( $"{ply.Name} Tried to activate a command that they don't have permission to, twist their dick!" );
 		}
 	}
 
@@ -190,26 +190,6 @@ public partial class DeathmatchPlayer : Player
 			return;
 
 		TickPlayerUse();
-
-		if ( Input.Pressed( InputButton.View ) )
-		{
-			ThirdPerson = !ThirdPerson;
-		}
-
-		if ( Input.Pressed( InputButton.Drop ) )
-		{
-			var dropped = Inventory.DropActive();
-			if ( dropped != null )
-			{
-				if ( dropped.PhysicsGroup != null )
-				{
-					dropped.PhysicsGroup.Velocity = Velocity + (EyeRotation.Forward + EyeRotation.Up) * 300;
-				}
-
-				timeSinceDropped = 0;
-				SwitchToBestWeapon();
-			}
-		}
 
 		DoPlayerAnimation();
 		SimulateActiveChild( cl, ActiveChild );

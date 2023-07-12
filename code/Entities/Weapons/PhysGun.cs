@@ -9,6 +9,7 @@ using System.Linq;
 public partial class PhysGun : HLDMWeapon
 {
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public override int Bucket => 0;
 
 	public PhysicsBody HeldBody { get; private set; }
 	public Vector3 HeldPos { get; private set; }
