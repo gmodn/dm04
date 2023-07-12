@@ -103,6 +103,7 @@ partial class Grenade : HLDMWeapon
 		IsReloading = false;
 	}
 	public override void SimulateAnimator( CitizenAnimationHelper anim )
+	{
 		anim.HoldType = CitizenAnimationHelper.HoldTypes.Swing;	
 	}
 }

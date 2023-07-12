@@ -11,7 +11,7 @@ Rice: Mapping
 Foxtrot: Mapping
 Super Smol: Programming, Weapon Model Implementation
 
-Special Thanks:
+External Sources:
 Amper Software (Breaker Admin System) : [https://github.com/AmperSoftware/breaker/wiki/Server-Administration]
 
 Juniez (Weapon models and textures) [https://www.artstation.com/juniez]:
