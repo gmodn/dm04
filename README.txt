@@ -1,4 +1,4 @@
-Half-Life Deathmatch
+Half-Life Deathmatch is...
 
 Credits:
 
@@ -9,7 +9,10 @@ TheBoxTrot: Programming, Mapping
 Meetle Meek: Mapping
 Rice: Mapping
 Foxtrot: Mapping
-Super Smol: Programming, Weapon Model Porting
+Super Smol: Programming, Weapon Model Implementation
+
+Special Thanks:
+Amper Software (Breaker Admin System) : [https://github.com/AmperSoftware/breaker/wiki/Server-Administration]
 
 Juniez (Weapon models and textures) [https://www.artstation.com/juniez]:
 	Hello, please enjoy this.

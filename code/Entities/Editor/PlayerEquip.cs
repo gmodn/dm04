@@ -145,6 +145,9 @@ public partial class PlayerSetup : Entity
 		if ( GiveShotgun )
 			Weapons.Add( (new Shotgun(), ShotgunAmmo, ShotgunClip) );
 
+		if ( GiveGrenades )
+			Weapons.Add( (new Grenade(), Grenades, 0) );
+
 		if ( GiveCrossbow )
 			Weapons.Add( (new Crossbow(), CrossbowAmmo, 1) );
 

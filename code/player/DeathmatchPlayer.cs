@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System.Runtime.CompilerServices;
 
 public partial class DeathmatchPlayer : Player
 {
@@ -99,6 +100,21 @@ public partial class DeathmatchPlayer : Player
 		if ( Value == 203 )
 		{
 			Log.Info( "TODO: Make this remove the current entity that the player is looking at" );
+		}
+	}
+
+	[ConCmd.Admin]
+	public static void GiveDevTools()
+	{
+		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
+
+		if ( ply.IsAuthority )
+		{
+			ply.Inventory.Add( new PhysGun() );
+		}
+		else 
+		{
+			Log.Warning( $"{ply.Name} Tried to activate a command that they dont have permission to, twist their dick!" );
 		}
 	}
 

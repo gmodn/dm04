@@ -1,4 +1,4 @@
-﻿partial class HLDMWeapon : BaseWeapon, IRespawnableEntity
+﻿public partial class HLDMWeapon : BaseWeapon, IRespawnableEntity
 {
 	public virtual AmmoType AmmoType => AmmoType.None;
 	public virtual int ClipSize => 16;
