@@ -13,34 +13,34 @@
 
     <div class="controls">
 
-        <a class="button" href="/servers">Find Servers</a>
+        <a class="button" href="/servers">FIND SERVERS</a>
 
         @if ( Game.InGame )
         {
-            <a class="button" href="/active">Current Match</a>
-            <a class="button" onclick=@LeaveGame>Leave Match</a>
+            <a class="button" href="/active">CURRENT MATCH</a>
+            <a class="button" onclick=@LeaveGame>LEAVE MATCH</a>
             <span style="height: 20px;"></span>
         }
         else if (Game.Menu.Lobby != null)
         {
-            <a class="button" href="/lobby">Return To Server</a>
+            <a class="button" href="/lobby">RETURN TO SERVER</a>
         }
         else
         {
-            <a class="button" onclick=@CreateNewLobby>Create Server</a>
+            <a class="button" onclick=@CreateNewLobby>CREATE SERVER</a>
 
             if (Game.Menu.Package.SupportsSavedGames && Game.Menu.SavedGames.Any())
             {
-                <a class="button" onclick=@LoadSavedGame>Load Game</a>
+                <a class="button" onclick=@LoadSavedGame>LOAD GAME</a>
             }
         }
 
 
-        <a class="button" href="/settings">Options</a>
-        <a class="button" href="/about">About</a>
+        <a class="button" href="/settings">OPTIONS</a>
+        <a class="button" href="/about">ABOUT</a>
 
         <span style="height: 30px;"></span>
-        <a class="button" @onclick=@Game.Menu.Close>Quit</a>
+        <a class="button" @onclick=@Game.Menu.Close>QUIT</a>
 
     </div>
 

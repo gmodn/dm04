@@ -39,14 +39,14 @@
 .button, .block {
 	padding: 4px 16px;
 	opacity: 0.8;
-	font-size: 28px;
+	font-size: 20px;
 	font-family: DIN;
 	font-weight: 600;
 	flex-shrink: 0;
 }
 
 .button {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0);
 	cursor: pointer;
 	transition: all 0.1s ease-out;
 

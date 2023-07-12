@@ -15,9 +15,9 @@
     <div class="navbar">
 
         <div class="left">
-            <a class="button" href="/"> Home </a>
+            <a class="button" href="/"> HOME </a>
             <span class="block">&gt;</span>
-            <span class="block">Current Server</span>
+            <span class="block">CURRENT SERVER</span>
         </div>
 
         <div class="right">
@@ -28,36 +28,36 @@
 
         <div class="form scroll">
 
-            <h2>Server Settings</h2>
+            <h2>SERVER SETTINGS</h2>
 
             <FormGroup>
-                <Label>Name</Label>
+                <Label>SERVER NAME</Label>
                 <Control>
-                    <TextEntry Value:bind=@Game.Menu.Lobby.Title Tooltip="Server Title"> </TextEntry>
+                    <TextEntry Value:bind=@Game.Menu.Lobby.Title Tooltip="SERVER TITLE"> </TextEntry>
                 </Control>
             </FormGroup>
 
             @if (!string.IsNullOrEmpty(Game.Menu.Lobby.SavedGame))
             {
                 <FormGroup>
-                    <Label>Saved Game</Label>
+                    <Label>SAVED GAME</Label>
                     <Control>
-                        <TextEntry Disabled Value=@Game.Menu.Lobby.SavedGame Tooltip="Server Title"> </TextEntry>
+                        <TextEntry Disabled Value=@Game.Menu.Lobby.SavedGame Tooltip="SERVER TITLE"> </TextEntry>
                     </Control>
                 </FormGroup>
             }
 
             <FormGroup>
-                <Label>Description</Label>
+                <Label>SERVER DESCRIPTION</Label>
                 <Control>
-                    <TextEntry Value:bind=@Game.Menu.Lobby.Description Tooltip="Server Description"> </TextEntry>
+                    <TextEntry Value:bind=@Game.Menu.Lobby.Description Tooltip="SERVER DESCRIPTION"> </TextEntry>
                 </Control>
             </FormGroup>
 
             @if (MaxPlayersSupported > 1)
             {
                 <FormGroup class="form-group">
-                    <Label>Max Players</Label>
+                    <Label>MAX PLAYERS</Label>
                     <Control>
                         <SliderControl ShowTextEntry="@true" ShowRange="@true" Min=@(1.0f) Max=@(MaxPlayersSupported) Value:bind=@Game.Menu.Lobby.MaxMembers> </SliderControl>
                     </Control>
@@ -65,14 +65,14 @@
             }
 
             <FormGroup>
-                <Label>Addons</Label>
+                <Label>ADDONS</Label>
                 <Control>
 
                     @foreach (var addon in Game.Menu.Lobby.Addons)
                     {
                         <div class="button" onclick="@( () => Game.Menu.Lobby.Addons = Game.Menu.Lobby.Addons.Remove( addon ) )">@addon</div>
                     }
-                    <a class="button" href="/lobby/addons">Add</a>
+                    <a class="button" href="/lobby/addons">ADD</a>
                 </Control>
             </FormGroup>
 
@@ -110,7 +110,7 @@
         @if (ShowMapOption)
         {
             <div class="right">
-                <h2>Map</h2>
+                <h2>MAP</h2>
                 <MapButton MapIdent=@Game.Menu.Lobby.Map></MapButton>
             </div>
         }
@@ -135,16 +135,16 @@
     <div class="navbar">
     
         <div class="left">
-            <a class="button" href="/" title="Go To Main Menu"> &lt; </a>
+            <a class="button" href="/" title="GO TO MAIN MENU"> &lt; </a>
 
-            <span class="button" onclick=@( () => Game.Menu.Lobby?.Leave() )>Exit Server</span>
+            <span class="button" onclick=@( () => Game.Menu.Lobby?.Leave() )>EXIT</span>
         </div>
 
         <div class="right">
 
             @if (Game.Menu.Lobby.Owner.IsMe)
             {
-                <span class="button" onclick=@StartGame>Start Server</span>
+                <span class="button" onclick=@StartGame>START</span>
             }
         </div>
 
