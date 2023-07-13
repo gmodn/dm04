@@ -49,10 +49,11 @@
 	cursor: pointer;
 	font-weight: 700;
 	transition: all 0.1s ease-out;
+	color: white;
 
 	&:hover {
 		opacity: 1;
-		color: lightgray;
+		color: darkgray;
 	}
 
 	&:active {
