@@ -37,16 +37,6 @@
                 </Control>
             </FormGroup>
 
-            @if (!string.IsNullOrEmpty(Game.Menu.Lobby.SavedGame))
-            {
-                <FormGroup>
-                    <Label>SAVED GAME</Label>
-                    <Control>
-                        <TextEntry Disabled Value=@Game.Menu.Lobby.SavedGame Tooltip="SERVER TITLE"> </TextEntry>
-                    </Control>
-                </FormGroup>
-            }
-
             <FormGroup>
                 <Label>SERVER DESCRIPTION</Label>
                 <Control>

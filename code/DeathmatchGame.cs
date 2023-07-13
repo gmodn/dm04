@@ -49,8 +49,6 @@ partial class DeathmatchGame : GameManager
 		player.Respawn();
 
 		cl.Pawn = player;
-
-		base.ClientJoined( cl );
 	}
 
 	public override void MoveToSpawnpoint( Entity pawn )

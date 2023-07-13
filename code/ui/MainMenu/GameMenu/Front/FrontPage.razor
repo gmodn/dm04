@@ -7,11 +7,9 @@
 
 <root style="flex-direction: column;">
 
-    <div class="game-title">a</div>
+    <div class="game-title">ass</div>
 
     <div class="controls">
-
-        <a class="button" href="/servers">FIND SERVERS</a>
 
         @if ( Game.InGame )
         {
@@ -22,12 +20,10 @@
         {
             <a class="button" href="/lobby">RETURN TO SERVER</a>
         }
-        else
-        {
-            <a class="button" onclick=@CreateNewLobby>CREATE SERVER</a>
-        }
-
-
+        else;
+        <span style="height: 20px;"></span>
+        <a class="button" href="/servers">FIND SERVERS</a>
+        <a class="button" onclick=@CreateNewLobby>CREATE SERVER</a>
         <a class="button" href="/settings">OPTIONS</a>
         <a class="button" href="/about">ABOUT</a>
         <a class="button" @onclick=@Game.Menu.Close>QUIT</a>
@@ -38,7 +34,7 @@
         }
         else
         {
-            <a class="audio-button" @onclick=@MusicToggle>TOGGLE MUSIC</a>
+            <a class="audio-button" @onclick=@MusicToggle>toggle music</a>
         }
 
     </div>
