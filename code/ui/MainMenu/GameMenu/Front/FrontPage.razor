@@ -24,11 +24,6 @@
         else
         {
             <a class="button" onclick=@CreateNewLobby>CREATE SERVER</a>
-
-            if (Game.Menu.Package.SupportsSavedGames && Game.Menu.SavedGames.Any())
-            {
-                <a class="button" onclick=@LoadSavedGame>LOAD GAME</a>
-            }
         }
 
 
@@ -36,7 +31,14 @@
         <a class="button" href="/about">ABOUT</a>
         <a class="button" @onclick=@Game.Menu.Close>QUIT</a>
 
-        <a class="audio-button" @onclick=@MusicToggle>TOGGLE MUSIC</a>
+        @if (Game.InGame)
+        {
+            // Hide Menu Music Toggle if in a game.
+        }
+        else
+        {
+            <a class="audio-button" @onclick=@MusicToggle>TOGGLE MUSIC</a>
+        }
 
     </div>
 
