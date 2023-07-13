@@ -205,7 +205,7 @@
 								parent_bone = "smdimport"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.2089, -1.176064, -2.577374 ]
 								hitbox_maxs = [ 1.2089, 1.176136, 16.974426 ]
 							},
@@ -214,7 +214,7 @@
 								parent_bone = "left_wrist"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ 0.0, -1.631489, -0.727292 ]
 								hitbox_maxs = [ 3.773045, 1.261464, 0.574182 ]
 							},
@@ -223,7 +223,7 @@
 								parent_bone = "frame_l_index_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.513998, -1.34794, -0.652454 ]
 								hitbox_maxs = [ 2.00207, 0.407715, 0.50804 ]
 							},
@@ -232,7 +232,7 @@
 								parent_bone = "frame_l_ring_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.118394, -1.503593, -0.700277 ]
 								hitbox_maxs = [ 1.984852, 0.37376, 0.503822 ]
 							},
@@ -241,7 +241,7 @@
 								parent_bone = "frame_l_middlelow"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ 0.0, -1.240201, -0.73834 ]
 								hitbox_maxs = [ 2.226858, 0.393417, 0.884777 ]
 							},
@@ -250,7 +250,7 @@
 								parent_bone = "frame_l_pinky_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.433129, -0.920723, -0.613261 ]
 								hitbox_maxs = [ 1.654254, 0.574798, 0.651671 ]
 							},
@@ -259,7 +259,7 @@
 								parent_bone = "frame_l_thumb_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.265872, -1.731602, -1.366804 ]
 								hitbox_maxs = [ 2.313255, 0.771167, 0.717645 ]
 							},
@@ -268,7 +268,7 @@
 								parent_bone = "frame_l_thumb_mid"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.725841, -1.428877, -0.8996 ]
 								hitbox_maxs = [ 1.461938, 0.711858, 0.492111 ]
 							},
@@ -277,7 +277,7 @@
 								parent_bone = "frame_l_thumb_tip"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.254807, -0.804742, -0.523573 ]
 								hitbox_maxs = [ 0.694859, 0.888061, 0.533591 ]
 							},
@@ -286,7 +286,7 @@
 								parent_bone = "right_wrist"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ 0.0, -1.630608, -0.57946 ]
 								hitbox_maxs = [ 3.773535, 1.261477, 0.727354 ]
 							},
@@ -295,7 +295,7 @@
 								parent_bone = "frame_r_thumb_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.292739, -1.774185, -0.560072 ]
 								hitbox_maxs = [ 2.157987, 0.797273, 1.653656 ]
 							},
@@ -304,7 +304,7 @@
 								parent_bone = "frame_r_thumb_mid"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.6344, -1.04974, -0.47182 ]
 								hitbox_maxs = [ 1.460487, 0.710166, 0.954971 ]
 							},
@@ -313,7 +313,7 @@
 								parent_bone = "frame_r_thumb_tip"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.3989, -0.841534, -0.61572 ]
 								hitbox_maxs = [ 0.567064, 0.825429, 0.462572 ]
 							},
@@ -322,7 +322,7 @@
 								parent_bone = "frame_r_index_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.635807, -1.037503, -0.471278 ]
 								hitbox_maxs = [ 1.902623, 0.558112, 0.750861 ]
 							},
@@ -331,7 +331,7 @@
 								parent_bone = "frame_r_middlelow"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.078369, -0.947882, -0.922834 ]
 								hitbox_maxs = [ 2.229605, 0.4704, 0.744448 ]
 							},
@@ -340,7 +340,7 @@
 								parent_bone = "frame_r_ring_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.242699, -1.225727, -0.541502 ]
 								hitbox_maxs = [ 1.984998, 0.663821, 0.542547 ]
 							},
@@ -349,25 +349,16 @@
 								parent_bone = "frame_r_pinky_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.617917, -0.654405, -0.739387 ]
 								hitbox_maxs = [ 1.63242, 0.893077, 0.54315 ]
-							},
-							{
-								_class = "Hitbox"
-								parent_bone = "frame_main-bone"
-								surface_property = "default"
-								translation_only = false
-								group_id = 0
-								hitbox_mins = [ -8.498693, -2.613142, -4.573454 ]
-								hitbox_maxs = [ 7.920056, 0.0, 0.0 ]
 							},
 							{
 								_class = "Hitbox"
 								parent_bone = "frame_r_upperarm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.196146, -4.663191, -3.786643 ]
 								hitbox_maxs = [ 11.587134, 1.787859, 2.66834 ]
 							},
@@ -376,7 +367,7 @@
 								parent_bone = "frame_r_forearm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.58334, -3.801058, -3.529663 ]
 								hitbox_maxs = [ 14.300879, 2.202962, 2.404502 ]
 							},
@@ -385,7 +376,7 @@
 								parent_bone = "frame_r_wriste"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.324123, -2.179149, -1.455041 ]
 								hitbox_maxs = [ 4.62768, 2.03214, 1.764898 ]
 							},
@@ -394,7 +385,7 @@
 								parent_bone = "frame_l_upperarm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.117738, -2.744063, -3.314924 ]
 								hitbox_maxs = [ 11.546636, 3.142478, 2.82929 ]
 							},
@@ -403,7 +394,7 @@
 								parent_bone = "frame_l_forearm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.692619, -2.789546, -2.82046 ]
 								hitbox_maxs = [ 14.288759, 3.061757, 2.934741 ]
 							},
@@ -412,7 +403,7 @@
 								parent_bone = "frame_l_wriste"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.351785, -2.258037, -1.730604 ]
 								hitbox_maxs = [ 4.79044, 2.066103, 1.512808 ]
 							},
@@ -421,7 +412,7 @@
 								parent_bone = "smdimport"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.2089, -1.176064, -2.577374 ]
 								hitbox_maxs = [ 1.2089, 1.176136, 16.974426 ]
 							},
@@ -430,7 +421,7 @@
 								parent_bone = "left_wrist"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ 0.0, -1.631489, -0.727292 ]
 								hitbox_maxs = [ 3.773045, 1.261464, 0.574182 ]
 							},
@@ -439,7 +430,7 @@
 								parent_bone = "frame_l_index_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.513998, -1.34794, -0.652454 ]
 								hitbox_maxs = [ 2.00207, 0.407715, 0.50804 ]
 							},
@@ -448,7 +439,7 @@
 								parent_bone = "frame_l_ring_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.118394, -1.503593, -0.700277 ]
 								hitbox_maxs = [ 1.984852, 0.37376, 0.503822 ]
 							},
@@ -457,7 +448,7 @@
 								parent_bone = "frame_l_middlelow"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ 0.0, -1.240201, -0.73834 ]
 								hitbox_maxs = [ 2.226858, 0.393417, 0.884777 ]
 							},
@@ -466,7 +457,7 @@
 								parent_bone = "frame_l_pinky_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.433129, -0.920723, -0.613261 ]
 								hitbox_maxs = [ 1.654254, 0.574798, 0.651671 ]
 							},
@@ -475,7 +466,7 @@
 								parent_bone = "frame_l_thumb_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.265872, -1.731602, -1.366804 ]
 								hitbox_maxs = [ 2.313255, 0.771167, 0.717645 ]
 							},
@@ -484,7 +475,7 @@
 								parent_bone = "frame_l_thumb_mid"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.725841, -1.428877, -0.8996 ]
 								hitbox_maxs = [ 1.461938, 0.711858, 0.492111 ]
 							},
@@ -493,7 +484,7 @@
 								parent_bone = "frame_l_thumb_tip"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.254807, -0.804742, -0.523573 ]
 								hitbox_maxs = [ 0.694859, 0.888061, 0.533591 ]
 							},
@@ -502,7 +493,7 @@
 								parent_bone = "right_wrist"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ 0.0, -1.630608, -0.57946 ]
 								hitbox_maxs = [ 3.773535, 1.261477, 0.727354 ]
 							},
@@ -511,7 +502,7 @@
 								parent_bone = "frame_r_thumb_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.292739, -1.774185, -0.560072 ]
 								hitbox_maxs = [ 2.157987, 0.797273, 1.653656 ]
 							},
@@ -520,7 +511,7 @@
 								parent_bone = "frame_r_thumb_mid"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.6344, -1.04974, -0.47182 ]
 								hitbox_maxs = [ 1.460487, 0.710166, 0.954971 ]
 							},
@@ -529,7 +520,7 @@
 								parent_bone = "frame_r_thumb_tip"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.3989, -0.841534, -0.61572 ]
 								hitbox_maxs = [ 0.567064, 0.825429, 0.462572 ]
 							},
@@ -538,7 +529,7 @@
 								parent_bone = "frame_r_index_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.635807, -1.037503, -0.471278 ]
 								hitbox_maxs = [ 1.902623, 0.558112, 0.750861 ]
 							},
@@ -547,7 +538,7 @@
 								parent_bone = "frame_r_middlelow"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.078369, -0.947882, -0.922834 ]
 								hitbox_maxs = [ 2.229605, 0.4704, 0.744448 ]
 							},
@@ -556,7 +547,7 @@
 								parent_bone = "frame_r_ring_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.242699, -1.225727, -0.541502 ]
 								hitbox_maxs = [ 1.984998, 0.663821, 0.542547 ]
 							},
@@ -565,25 +556,16 @@
 								parent_bone = "frame_r_pinky_low"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -0.617917, -0.654405, -0.739387 ]
 								hitbox_maxs = [ 1.63242, 0.893077, 0.54315 ]
-							},
-							{
-								_class = "Hitbox"
-								parent_bone = "frame_main-bone"
-								surface_property = "default"
-								translation_only = false
-								group_id = 0
-								hitbox_mins = [ -8.498693, -2.613142, -4.573454 ]
-								hitbox_maxs = [ 7.920056, 0.0, 0.0 ]
 							},
 							{
 								_class = "Hitbox"
 								parent_bone = "frame_r_upperarm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.196146, -4.663191, -3.786643 ]
 								hitbox_maxs = [ 11.587134, 1.787859, 2.66834 ]
 							},
@@ -592,7 +574,7 @@
 								parent_bone = "frame_r_forearm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.58334, -3.801058, -3.529663 ]
 								hitbox_maxs = [ 14.300879, 2.202962, 2.404502 ]
 							},
@@ -601,7 +583,7 @@
 								parent_bone = "frame_r_wriste"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.324123, -2.179149, -1.455041 ]
 								hitbox_maxs = [ 4.62768, 2.03214, 1.764898 ]
 							},
@@ -610,7 +592,7 @@
 								parent_bone = "frame_l_upperarm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -1.117738, -2.744063, -3.314924 ]
 								hitbox_maxs = [ 11.546636, 3.142478, 2.82929 ]
 							},
@@ -619,7 +601,7 @@
 								parent_bone = "frame_l_forearm"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.692619, -2.789546, -2.82046 ]
 								hitbox_maxs = [ 14.288759, 3.061757, 2.934741 ]
 							},
@@ -628,7 +610,7 @@
 								parent_bone = "frame_l_wriste"
 								surface_property = "default"
 								translation_only = false
-								group_id = 0
+								tags = ""
 								hitbox_mins = [ -2.351785, -2.258037, -1.730604 ]
 								hitbox_maxs = [ 4.79044, 2.066103, 1.512808 ]
 							},
@@ -1017,6 +999,7 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = "models/weapons/hl2_stunstick/v_hl2_stunstick.vanmgrph"
+		base_model_name = ""
 		importer_notes = """
 Imported from compiled VMDL_C
 ==Warnings==
