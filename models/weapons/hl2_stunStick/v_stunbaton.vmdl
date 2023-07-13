@@ -998,7 +998,7 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = "models/weapons/hl2_stunstick/v_hl2_stunstick.vanmgrph"
+		anim_graph_name = "animgraphs/weapons/stunstick_reference.vanmgrph"
 		base_model_name = ""
 		importer_notes = """
 Imported from compiled VMDL_C
