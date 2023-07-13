@@ -78,5 +78,12 @@
         {
             MenuMusic = Audio.Play("sounds/menu/MENULOOP.sound");
         }
+
+        // Make sure the Menu Music doesn't play ingame.
+        if (Game.InGame)
+        {
+            MenuMusic.Stop(true);
+            return;
+        }
     }
 }
