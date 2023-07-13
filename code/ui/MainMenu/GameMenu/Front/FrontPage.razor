@@ -16,6 +16,7 @@
         @if ( Game.InGame )
         {
             <a class="button" onclick=@Game.Menu.HideMenu>RESUME GAME</a>
+            <a class="button" onclick=@Game.Menu.CancelLoading>DISCONNECT</a>
         }
         else if (Game.Menu.Lobby != null)
         {
