@@ -36,16 +36,16 @@
         BindClass("inlobby", () => Game.Menu.Lobby != null);
     }
 
-	protected override void OnEvent( PanelEvent e )
-	{
-		if ( e.Name == "package.changed" )
-		{
-			StateHasChanged();
-			return;
-		}
+    protected override void OnEvent( PanelEvent e )
+    {
+        if ( e.Name == "package.changed" )
+        {
+            StateHasChanged();
+            return;
+        }
 
-		base.OnEvent( e );
-	}
+        base.OnEvent( e );
+    }
 
     [GameEvent.Menu.ServerJoined]
     public void OnServerJoined() => Navigate("/active");
@@ -58,26 +58,4 @@
 
     [GameEvent.Menu.ServerLeave]
     public void OnServerLeave() => Navigate("/");
-
-    public override void Tick()
-{
-	base.Tick();
-	UpdateMusic();
-}
-
-SoundHandle MenuMusic;
-
-void UpdateMusic()
-{
-	if ( Game.InGame )
-	{
-		MenuMusic.Stop( true );
-		return;
-	}
-
-	if ( !MenuMusic.IsPlaying )
-	{
-		MenuMusic = Audio.Play( "sounds/menu/MENULOOP.sound" );
-	}
-}
 }

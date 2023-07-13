@@ -1,20 +1,30 @@
 
-.gamemainmenu frontpage
-{
+.gamemainmenu frontpage {
 	top: 150px;
 	margin: 100px 50px;
 	gap: 50px;
 
-	.game-title
-	{
+	.game-title {
 		font-family: Poppins;
 		font-weight: 700;
 		font-size: 70px;
 	}
 
-	.controls
-	{
+	.controls {
 		flex-direction: column;
 		//align-items: flex-start;
+	}
+
+	.audio-button {
+		background-image: url('ui/MainMenu/volume_up.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 100px;
+		top: 300px;
+		right: 160px;
+
+		.label {
+			opacity: 0;
+		}
 	}
 }

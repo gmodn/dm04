@@ -37,6 +37,8 @@
         <a class="button" href="/about">ABOUT</a>
         <a class="button" @onclick=@Game.Menu.Close>QUIT</a>
 
+        <a class="audio-button" @onclick=@MusicToggle>TOGGLE MUSIC</a>
+
     </div>
 
 </root>
@@ -57,5 +59,24 @@
     void LeaveGame()
     {
         Game.Menu.LeaveServer("Leaving");
+    }
+
+    public override void Tick()
+    {
+        base.Tick();
+    }
+
+    SoundHandle MenuMusic;
+
+    void MusicToggle()
+    {
+        if (MenuMusic.IsPlaying)
+        {
+            MenuMusic.Stop(true);
+        }
+        else
+        {
+            MenuMusic = Audio.Play("sounds/menu/MENULOOP.sound");
+        }
     }
 }
