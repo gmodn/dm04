@@ -15,8 +15,7 @@
 
         @if ( Game.InGame )
         {
-            <a class="button" href="/active">CURRENT MATCH</a>
-            <a class="button" onclick=@LeaveGame>LEAVE MATCH</a>
+            <a class="button" onclick=@Game.Menu.HideMenu>RESUME GAME</a>
         }
         else if (Game.Menu.Lobby != null)
         {

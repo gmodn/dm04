@@ -7,6 +7,10 @@
 @implements Sandbox.Menu.IGameMenuPanel
 @namespace Sandbox.UI.GameMenu
 
+@if (!Game.InGame)
+{
+}
+
 <root class="gamemainmenu">
 
     <div class="navigator-canvas" slot="navigator-canvas"></div>
@@ -24,8 +28,6 @@
         AddDestination("/lobby", typeof(LobbyPage));
         AddDestination("/lobby/map", typeof(LobbyMapPage));
         AddDestination("/lobby/addons", typeof(LobbyAddonPage));
-        AddDestination("/active", typeof(ActivePage));
-        AddDestination("/active/map", typeof(ActiveMapPage));
         AddDestination("/servers", typeof(ServerListPage));
         AddDestination("/settings", typeof(SettingsPage));
         AddDestination("/about", typeof(AboutPage));
