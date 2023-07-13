@@ -55,11 +55,6 @@
 		opacity: 1;
 		color: darkgray;
 	}
-
-	&:active {
-		left: 2px;
-		top: 3px;
-	}
 }
 
 .game-title {
@@ -80,11 +75,6 @@
 
 	.button {
 		transition: all 0.3s ease-out;
-
-		&:intro {
-			opacity: 0;
-			left: -100px;
-		}
 	}
 }
 
