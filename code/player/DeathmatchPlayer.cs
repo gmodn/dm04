@@ -63,7 +63,10 @@ public partial class DeathmatchPlayer : Player
 		{
 			Inventory.DeleteContents();
 
-			PlayerSetup.Equipment.GiveWeapons( this );
+			if ( PlayerSetup.Equipment != null )
+				PlayerSetup.Equipment.GiveWeapons( this );
+			else
+				PlayerSetup.GiveWeaponsDefault( this );
 		}
 
 		SupressPickupNotices = false;
@@ -108,7 +111,7 @@ public partial class DeathmatchPlayer : Player
 	{
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
 
-		if ( ply.IsAuthority )
+		if ( Game.IsServerHost )
 		{
 			ply.Inventory.Add( new PhysGun() );
 		}

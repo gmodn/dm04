@@ -26,13 +26,13 @@ public partial class PlayerSetup : Entity
 	[Property, Category( "Pistol" )]
 	public bool GivePistol { get; set; } = false;
 
-	[Property, Category("Magnum")]
+	[Property, Category( "Magnum" )]
 	public bool GiveMagnum { get; set; } = false;
 
 	[Property, Category( "SMG" )]
 	public bool GiveSMG { get; set; } = false;
 
-	[Property, Title("Give AR2"), Category( "AR2" )]
+	[Property, Title( "Give AR2" ), Category( "AR2" )]
 	public bool GiveAR2 { get; set; } = false;
 
 	[Property, Category( "Shotgun" )]
@@ -56,7 +56,7 @@ public partial class PlayerSetup : Entity
 
 	//Starting ammo/clip
 	#region
-	[Property, Title("Starting Ammo"), Category("Pistol")]
+	[Property, Title( "Starting Ammo" ), Category( "Pistol" )]
 	public int PistolAmmo { get; set; } = 30;
 
 	[Property, Title( "Starting Clip" ), Category( "Pistol" )]
@@ -82,7 +82,7 @@ public partial class PlayerSetup : Entity
 
 	[Property, Title( "Starting Clip" ), Category( "AR2" )]
 	public int AR2Clip { get; set; } = 30;
-	
+
 	[Property, Title( "Starting Alternative Ammo" ), Category( "AR2" )]
 	public int AR2AltAmmo { get; set; } = 1;
 
@@ -122,7 +122,7 @@ public partial class PlayerSetup : Entity
 			Weapons.Add( (new Crowbar(), -1, -1) );
 
 		//if ( GiveStunstick )
-			//Weapons.Add( (new Stunstick(), -1) );
+		//Weapons.Add( (new Stunstick(), -1) );
 
 		if ( GivePistol )
 			Weapons.Add( (new Pistol(), PistolAmmo, PistolClip) );
@@ -145,8 +145,8 @@ public partial class PlayerSetup : Entity
 		if ( GiveShotgun )
 			Weapons.Add( (new Shotgun(), ShotgunAmmo, ShotgunClip) );
 
-		if ( GiveGrenades )
-			Weapons.Add( (new Grenade(), Grenades, 0) );
+		//if ( GiveGrenades )
+		//Weapons.Add( (new HandGrenade(), Grenades, 0) );
 
 		if ( GiveCrossbow )
 			Weapons.Add( (new Crossbow(), CrossbowAmmo, 1) );
@@ -154,15 +154,15 @@ public partial class PlayerSetup : Entity
 		//if ( GiveRPG )
 		//Weapons.Add( (new RPG(), 0) );
 
-		if ( GiveGravityGun )
-			Weapons.Add( (new GravGun(), -1, -1) );
+		//if ( GiveGravityGun )
+		//	Weapons.Add( (new GravGun(), -1, -1) );
 	}
 
 	//Clamps reserve ammo
-	int GetMaxAmmo(AmmoType wep, bool alt)
+	int GetMaxAmmo( AmmoType wep, bool alt )
 	{
 		//If the weapon has alt fire, return max alt ammo
-		if(alt)
+		if ( alt )
 		{
 			return wep switch
 			{
@@ -224,7 +224,7 @@ public partial class PlayerSetup : Entity
 		{
 			HLDMWeapon weapon = CreateByName<HLDMWeapon>( equipItem.Wep.ClassName );
 			int ammo = equipItem.Ammo;
-			ammo = ammo.Clamp( -1, GetMaxAmmo( weapon.AmmoType, false ));
+			ammo = ammo.Clamp( -1, GetMaxAmmo( weapon.AmmoType, false ) );
 
 			int startClip = equipItem.Start;
 			startClip = startClip.Clamp( -1, GetMaxStartAmmo( weapon.AmmoType ) );
@@ -233,13 +233,34 @@ public partial class PlayerSetup : Entity
 
 			weapon.AmmoClip = startClip;
 
-			var altAmmo = AltWeapons.Where(a => a.AltType == weapon.SecondaryAmmo)
+			var altAmmo = AltWeapons.Where( a => a.AltType == weapon.SecondaryAmmo )
 				.FirstOrDefault();
 
 			if ( altAmmo.AltAmmo > -1 )
 				player.SetAmmo( altAmmo.AltType, altAmmo.AltAmmo );
-			
+
 			player.Inventory.Add( weapon );
 		}
+	}
+
+	/// <summary>
+	/// If no equipment entity is present, give player default weapons and ammo
+	/// </summary>
+	public static void GiveWeaponsDefault( DeathmatchPlayer player )
+	{
+		HLDMWeapon crowbar = new Crowbar();
+		player.Inventory.Add( crowbar );
+
+		HLDMWeapon usp = new Pistol();
+		usp.AmmoClip = 12;
+
+		player.Inventory.Add( usp );
+		player.SetAmmo( AmmoType.Pistol, 50 );
+
+		HLDMWeapon smg = new SMG();
+		smg.AmmoClip = 30;
+
+		player.Inventory.Add( smg );
+		player.SetAmmo( AmmoType.SMG, 75 );
 	}
 }
