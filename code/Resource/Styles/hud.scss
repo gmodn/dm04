@@ -20,19 +20,16 @@ HudRootPanel
     }
 }
 
-vitals
-{   
+vitals {
     font-size: 64px;
     color: #ff0;
     mix-blend-mode: lighten;
     font-family: DIN;
 
-    label
-    {
-        text-shadow: 0px 0px 20px #f70a;
+    label {
+        text-shadow: 0px 0px 20px $orange;
 
-        &.danger
-        {
+        &.danger {
             color: #f00;
             text-shadow: 0px 0px 10px #f005;
         }

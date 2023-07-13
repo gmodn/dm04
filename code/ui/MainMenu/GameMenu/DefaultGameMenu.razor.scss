@@ -1,8 +1,6 @@
 
 .gamemainmenu {
-	background-image: url('ui/MainMenu/background_placeholder.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
+	background-color: rgb(127, 96, 0);
 	padding: 0 140px;
 	opacity: 1;
 	flex-direction: column;
@@ -18,7 +16,8 @@
 	}
 
 	&.ingame {
-		background-color: #151313ee;
+		background-image: url('no.png');
+		background-color: rgba(127, 96, 0, 0.5);
 	}
 
 	> .modelpanel {
@@ -61,6 +60,7 @@
 	background-image: url('ui/MainMenu/hldm-logo.png');
 	background-size: contain;
 	background-repeat: no-repeat;
+	height: 30%;
 
 	&:active {
 		opacity: 0;
