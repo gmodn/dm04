@@ -121,8 +121,8 @@ public partial class PlayerSetup : Entity
 		if ( GiveCrowbar )
 			Weapons.Add( (new Crowbar(), -1, -1) );
 
-		//if ( GiveStunstick )
-		//Weapons.Add( (new Stunstick(), -1) );
+		if ( GiveStunstick )
+			Weapons.Add( (new Stunstick(), -1, -1) );
 
 		if ( GivePistol )
 			Weapons.Add( (new Pistol(), PistolAmmo, PistolClip) );
