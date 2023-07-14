@@ -48,14 +48,14 @@ public partial class DeathmatchPlayer : Player
 		EnableDrawing = true;
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
-		
+
 		Log.Info( $"Player Clothing is marked {dm04_enableclothing}." );
 
 		if ( dm04_enableclothing )
 			Clothing.DressEntity( this );
 		else
 
-		ClearAmmo();
+			ClearAmmo();
 
 		SupressPickupNotices = true;
 
@@ -91,6 +91,7 @@ public partial class DeathmatchPlayer : Player
 			ply.GiveAmmo( AmmoType.Slam, 1000 );
 			ply.GiveAmmo( AmmoType.AR2, 1000 );
 			ply.GiveAmmo( AmmoType.AR2Alt, 1000 );
+			ply.GiveAmmo( AmmoType.SMGGrenade, 1000 );
 
 			ply.Inventory.Add( new Pistol() );
 			ply.Inventory.Add( new Python() );
@@ -98,6 +99,7 @@ public partial class DeathmatchPlayer : Player
 			ply.Inventory.Add( new SMG() );
 			ply.Inventory.Add( new AR2() );
 			ply.Inventory.Add( new Crossbow() );
+			ply.Inventory.Add( new GravGun() );
 		}
 
 		if ( Value == 203 )

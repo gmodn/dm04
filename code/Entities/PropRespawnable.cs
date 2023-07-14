@@ -160,6 +160,8 @@ partial class PropRespawnable : BasePhysics, IRespawnableEntity
 
 	public override void OnKilled()
 	{
+		ItemRespawn.Taken( this ); // Add this to the Respawn List
+
 		if ( LifeState != LifeState.Alive )
 			return;
 
@@ -186,7 +188,7 @@ partial class PropRespawnable : BasePhysics, IRespawnableEntity
 			{
 				DoGibs();
 				DoExplosion();
-				Delete(); // LifeState.Dead prevents this in OnKilled\
+				Delete(); // LifeState.Dead prevents this in OnKilled
 			}
 		}
 		else

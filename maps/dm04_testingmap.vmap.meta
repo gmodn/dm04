@@ -1,7 +1,4 @@
 {
-  "tags": [
-    "Dev"
-  ],
   "publish": {
     "Allowed": true,
     "Enabled": false,
@@ -28,7 +25,22 @@
         "rust.fluorescentlight_wall#22137",
         "facepunch.ceiling_plaster_01#17458",
         "rust.gas_station_concrete_floor#22364",
-        "facepunch.wooden_crate#18879"
+        "facepunch.wooden_crate#18879",
+        "facepunch.oildrumexplosive#19223",
+        "gman.sboxkey#1105",
+        "rust.fluorescentlight_wall#25214",
+        "facepunch.oil_drum#19222",
+        "sneed.trash_bag#6203",
+        "baik.baseball#19451",
+        "rust.industrialceilinglampcompact#25222",
+        "svin.trash_can#24511",
+        "facepunch.toilet_a#18252",
+        "rust.ladder_300_top#25203",
+        "rust.gas_station_concrete_floor#25027",
+        "gmodn.sboxhardhat#21157",
+        "willow.poopemoji#4751",
+        "svin.trash_can_cap#24510",
+        "facepunch.street_bin#19204"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/dm04_testingmap.vmap"

@@ -10,6 +10,7 @@ partial class SMG : HLDMWeapon
 	public override float SecondaryRate => 1.0f;
 	public override int ClipSize => 45;
 	public override AmmoType AmmoType => AmmoType.SMG;
+	public override AmmoType SecondaryAmmo => AmmoType.SMGGrenade;
 	public override float ReloadTime => 1.7f;
 	public override int Bucket => 2;
 
@@ -53,46 +54,49 @@ partial class SMG : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
-		// Screw this for now
-		return;
-
-		/*TimeSincePrimaryAttack = 0;
+		TimeSincePrimaryAttack = 0;
 		TimeSinceSecondaryAttack = 0;
 
-		if ( Owner is not DeathmatchPlayer player ) return;
-
-		if ( !TakeAmmo( 10 ) )//Using SMG ammo for now.
+		if ( Owner is DeathmatchPlayer player )
 		{
-			Reload();
-			return;
-		}
-
-		// woosh sound
-		// screen shake
-
-		Game.SetRandomSeed( Time.Tick );
-
-		if ( IsServer )
-		{
-			var grenade = new SMGGrenade
+			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )
 			{
-				Position = Owner.EyePosition + Owner.EyeRotation.Forward * 3.0f,
-				Owner = Owner
-			};
+				PlaySound( "hl2_ar2.empty" );
+			}
+			else
+			{
+				var aim = Owner.AimRay;
 
-			grenade.PhysicsBody.Velocity = Owner.EyeRotation.Forward * 1600.0f + Owner.EyeRotation.Up * 200.0f + Owner.Velocity;
+				if ( Game.IsServer )
+					using ( Prediction.Off() )
+					{
+						var grenade = new SMGGrenade
+						{
+							Position = aim.Position + aim.Forward * 5.0f,
+							Owner = Owner
+						};
 
-			// This is fucked in the head, lets sort this this year
-			grenade.CollisionGroup = CollisionGroup.Debris;
-			grenade.SetInteractsExclude( CollisionLayer.Player );
-			grenade.SetInteractsAs( CollisionLayer.Debris );
+						grenade.PhysicsBody.Velocity = aim.Forward * 600.0f + Owner.Rotation.Up * 200.0f + Owner.Velocity;
+					}
+
+				player.SetAnimParameter( "b_attack", true );
+
+				PlaySound( "dm.grenade_throw" );
+
+				Game.SetRandomSeed( Time.Tick );
+
+				Reload();
+
+				player.TakeAmmo( SecondaryAmmo, 1 );
+				SecondaryAmmoClip = player.AmmoCount( SecondaryAmmo );
+
+				if ( Game.IsServer && AmmoClip == 0 && player.AmmoCount( AmmoType.SMGGrenade ) == 0 )
+				{
+					Delete();
+					player.SwitchToBestWeapon();
+				}
+			}
 		}
-
-		if ( IsServer && AmmoClip == 0 && player.AmmoCount( AmmoType.Grenade ) == 0 )
-		{
-			Delete();
-			player.SwitchToBestWeapon();
-		}*/
 	}
 
 	[ClientRpc]

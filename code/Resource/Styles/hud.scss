@@ -66,7 +66,15 @@ vitals {
     background-image: url( /ui/weapons/hl2_crowbar.png );
 }
 
-.dm_grenade .icon, .dm_handgrenade .icon {
+.dm_stunstick .icon {
+    background-image: url( /ui/weapons/hl2_stunstick.png );
+}
+
+.dm_slam .icon {
+    background-image: url( /ui/weapons/hl2_slam.png );
+}
+
+.dm_grenade .icon {
     background-image: url( /ui/weapons/hl2_grenade.png );
 }
 

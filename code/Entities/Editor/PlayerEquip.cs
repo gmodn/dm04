@@ -146,7 +146,10 @@ public partial class PlayerSetup : Entity
 			Weapons.Add((new Shotgun(), ShotgunAmmo, ShotgunClip));
 
 		if ( GiveGrenades )
-		Weapons.Add( (new Grenade(), Grenades, 0) );
+		Weapons.Add( (new GrenadeWeapon(), Grenades, 0) );
+
+		if ( GiveSlams )
+			Weapons.Add( (new SLAMWeapon(), Slams, 0) );
 
 		if (GiveCrossbow)
 			Weapons.Add((new Crossbow(), CrossbowAmmo, 1));
@@ -184,6 +187,7 @@ public partial class PlayerSetup : Entity
 			AmmoType.Buckshot => 30,
 			AmmoType.Crossbow => 10,
 			AmmoType.Grenade => 5,
+			AmmoType.Slam => 5,
 			AmmoType.RPG => 3,
 
 			//Default to -1 if weapon is considered a melee
