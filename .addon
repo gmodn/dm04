@@ -19,7 +19,7 @@
     "MapList": [
       "facepunch.crossfire"
     ],
-    "MapSelect": "Hidden",
+    "MapSelect": "Unrestricted",
     "GameNetworkType": "Multiplayer",
     "RankType": "None",
     "PerMapRanking": false,
