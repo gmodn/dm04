@@ -1,4 +1,5 @@
-﻿using Sandbox.Component;
+﻿using Sandbox;
+using Sandbox.Component;
 
 [Library( "dm_ar2" ), HammerEntity]
 [EditorModel( "weapons/rust_smg/rust_smg.vmdl" )]
@@ -15,12 +16,25 @@ partial class AR2 : HLDMWeapon
 	public override AmmoType SecondaryAmmo => AmmoType.AR2Alt;
 	public override float ReloadTime => 1.7f;
 	public override int Bucket => 2;
+	
+	RealTimeUntil timeToAltFire;
+	bool isChargingAlt;
+	Sound chargeSound;
 
 	public override void Spawn()
 	{
 		base.Spawn();
 
 		Model = WorldModel;
+		isChargingAlt = false;
+	}
+
+	public override void Simulate( IClient owner )
+	{
+		base.Simulate( owner );
+
+		if ( isChargingAlt && timeToAltFire <= 0.0f )
+			FireEnergyBall();
 	}
 
 	public override void AttackPrimary()
@@ -56,30 +70,37 @@ partial class AR2 : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
-		if ( Owner is DeathmatchPlayer player )
+		if ( Owner is DeathmatchPlayer player && Game.IsServer )
 		{
 			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )
-			{
 				PlaySound( "hl2_ar2.empty" );
-			}
 			else
 			{
-				PlaySound( "hl2_ar2.secondary_fire" );
-				ViewModelEntity?.SetAnimParameter( "fire_alt", true );
-
-				//wait and then play next sound - TODO
-
-				player.TakeAmmo( SecondaryAmmo, 1 );
-				SecondaryAmmoClip = player.AmmoCount( SecondaryAmmo );
-
-				using ( Prediction.Off() )
-				{
-					var energyBall = new prop_combine_ball();
-					energyBall.Velocity = player.EyeRotation.Forward * 1000;
-					energyBall.Position = player.EyePosition + 20;
-					energyBall.Rotation = player.EyeRotation;
-				}
+				chargeSound = PlaySound( "hl2_ar2.charge" );
+				timeToAltFire = 0.5f;
+				isChargingAlt = true;
 			}
+		}
+	}
+
+	void FireEnergyBall()
+	{
+		isChargingAlt = false;
+		chargeSound.Stop();
+
+		PlaySound( "hl2_ar2.secondary_fire" );
+		ShootAltEffects( To.Single( Owner ) );
+
+		var player = Owner as DeathmatchPlayer;
+		player.TakeAmmo( SecondaryAmmo, 1 );
+
+		using ( Prediction.Off() )
+		{
+			var energyBall = new prop_combine_ball();
+			energyBall.Owner = Owner;
+			energyBall.Velocity = player.EyeRotation.Forward * 1000;
+			energyBall.Position = player.EyePosition;
+			energyBall.Rotation = player.EyeRotation;
 		}
 	}
 

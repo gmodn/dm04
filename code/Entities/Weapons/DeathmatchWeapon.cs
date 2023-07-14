@@ -27,10 +27,8 @@
 	[Net, Predicted]
 	public TimeSince TimeSinceDeployed { get; set; }
 
-
 	public PickupTrigger PickupTrigger { get; protected set; }
 	public PickupTrigger GravPickupTrigger { get; protected set; }
-
 
 	public void gravhitbox()
 	{
@@ -40,10 +38,10 @@
 		GravPickupTrigger.Position = Position;
 
 	}
+
 	public void gravhitboxremove()
 	{
 		GravPickupTrigger.Delete();
-
 	}
 
 	public int AvailableAmmo()
@@ -51,6 +49,13 @@
 		var owner = Owner as DeathmatchPlayer;
 		if ( owner == null ) return 0;
 		return owner.AmmoCount( AmmoType );
+	}
+
+	public int AvailableAltAmmo()
+	{
+		var owner = Owner as DeathmatchPlayer;
+		if ( owner == null ) return 0;
+		return owner.AmmoCount( SecondaryAmmo );
 	}
 
 	public override void ActiveStart( Entity ent )
@@ -142,6 +147,12 @@
 		TimeSinceSecondaryAttack = 0;
 	}
 
+	public override void AttackSecondary()
+	{
+		TimeSincePrimaryAttack = 0;
+		TimeSinceSecondaryAttack = 0;
+	}
+
 	[ClientRpc]
 	protected virtual void ShootEffects()
 	{
@@ -152,6 +163,14 @@
 		ViewModelEntity?.SetAnimParameter( "fire", true );
 		CrosshairLastShoot = 0;
 
+	}
+
+	[ClientRpc]
+	protected virtual void ShootAltEffects()
+	{
+		Game.AssertClient();
+
+		ViewModelEntity?.SetAnimParameter( "fire_alt", true );
 	}
 
 	/// <summary>

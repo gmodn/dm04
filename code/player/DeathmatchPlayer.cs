@@ -90,8 +90,8 @@ public partial class DeathmatchPlayer : Player
 			ply.GiveAmmo( AmmoType.Grenade, 1000 );
 			ply.GiveAmmo( AmmoType.Slam, 1000 );
 			ply.GiveAmmo( AmmoType.AR2, 1000 );
-			ply.GiveAmmo( AmmoType.AR2Alt, 1000 );
-			ply.GiveAmmo( AmmoType.SMGGrenade, 1000 );
+			ply.GiveAmmo( AmmoType.AR2Alt, 3 );
+			ply.GiveAmmo( AmmoType.SMGGrenade, 3 );
 
 			ply.Inventory.Add( new Pistol() );
 			ply.Inventory.Add( new Python() );

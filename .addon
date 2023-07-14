@@ -19,7 +19,7 @@
     "MapList": [
       "facepunch.crossfire"
     ],
-    "MapSelect": "Unrestricted",
+    "MapSelect": "Hidden",
     "GameNetworkType": "Multiplayer",
     "RankType": "None",
     "PerMapRanking": false,
@@ -133,7 +133,7 @@
         "Group": "Player Settings"
       }
     ],
-    "TickRate": 50,
+    "TickRate": 64,
     "LaunchConfigs": [
       {
         "Name": "HLDM-Test map",

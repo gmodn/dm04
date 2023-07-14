@@ -19,11 +19,9 @@ public class Ammo : Panel
 		AltLabel = Add.Label( "Alt", "AltLabel" );
 	}
 
-	int weaponHash;
-
 	public override void Tick()
 	{
-		var player = Game.LocalPawn as Player;
+		var player = Game.LocalPawn as DeathmatchPlayer;
 		if ( player == null ) return;
 
 		var weapon = player.ActiveChild as HLDMWeapon;
@@ -45,9 +43,7 @@ public class Ammo : Panel
 		if ( weapon.SecondaryAmmo == AmmoType.None ) AltLabel.Style.Display = DisplayMode.None;
 		else AltLabel.Style.Display = DisplayMode.Flex;
 
-		var hash = HashCode.Combine( player, weapon );
-
 		CounterText.Text = $"{weapon.AmmoClip}";
-		AltCounterText.Text = $"{weapon.SecondaryAmmoClip}";
+		AltCounterText.Text = $"{weapon.AvailableAltAmmo()}";
 	}
 }

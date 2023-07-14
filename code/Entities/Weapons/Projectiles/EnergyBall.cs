@@ -13,22 +13,21 @@ partial class prop_combine_ball : ModelEntity
 	}
 
 
-	[Event.Tick.Server]
+	[GameEvent.Tick.Server]
 	public virtual void Tick()
 	{
-		
 		Velocity = Rotation.Forward * Speed;
 
 		var start = Position;
 		var end = start + Velocity * Time.Delta;
 
 		var tr = Trace.Ray( start, end )
-				.UseHitboxes()
-				//.HitLayer( CollisionLayer.Water, !InWater )
-				.Ignore( Owner )
-				.Ignore( this )
-				.Size( 8 )
-				.Run();
+			.UseHitboxes()
+			//.HitLayer( CollisionLayer.Water, !InWater )
+			.Ignore( Owner )
+			.Ignore( this )
+			.Size( 8 )
+			.Run();
 		
 		if ( tr.Hit )
 		{	
