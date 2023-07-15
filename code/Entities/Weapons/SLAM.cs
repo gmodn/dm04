@@ -1,9 +1,14 @@
-﻿[Library( "dm_slam" ), HammerEntity]
+﻿
+/// <summary>
+/// Temp disabled due to it not being able to pull from ammo count
+/// </summary>
+
+[Library( "dm_slam" ), HammerEntity]
 [EditorModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" )]
 [Title( "S.L.A.M." ), Category( "Weapons" )]
 partial class SLAMWeapon : HLDMWeapon
 {
-	public override string ViewModelPath => "models/weapons/hl2_slam/v_slam.vmdl";
+/*	public override string ViewModelPath => "models/weapons/hl2_slam/v_slam.vmdl";
 
 	public override float PrimaryRate => 1.0f;
 	public override float SecondaryRate => 1.0f;
@@ -125,5 +130,5 @@ partial class SLAMWeapon : HLDMWeapon
 	{
 		anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
 		anim.AimBodyWeight = 1.0f;
-	}
+	}*/
 }
