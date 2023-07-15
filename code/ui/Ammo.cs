@@ -3,6 +3,8 @@ using Sandbox.UI.Construct;
 
 public class Ammo : Panel
 {
+	public Label PlaytestText;
+
 	public Label ReserveAmmo;
 	public Label CounterText;
 
