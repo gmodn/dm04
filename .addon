@@ -136,9 +136,9 @@
     "TickRate": 64,
     "LaunchConfigs": [
       {
-        "Name": "HLDM-Test map",
+        "Name": "HLDM-Crossfire",
         "GameIdent": "gman.dm04#local",
-        "MapName": "dm04_testingmap.vmap",
+        "MapName": "facepunch.crossfire",
         "MaxPlayers": 64,
         "GameSettings": {},
         "Addons": "",

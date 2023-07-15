@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 
 [Library]
-public partial class GoldSrcWalkController : BasePlayerController
+public partial class HLDMWalkController : BasePlayerController
 {
 	/*
 		[ConVar.Replicated] public static float sv_gravity { get; set; } = 800;
@@ -94,7 +94,7 @@ public partial class GoldSrcWalkController : BasePlayerController
 	// Magic Numbers and Consts 
 	static float PLAYER_DUCKING_MULTIPLIER = 0.333f;
 
-	public GoldSrcWalkController()
+	public HLDMWalkController()
 	{
 		Duck = new Duck( this );
 		Unstuck = new Unstuck( this );

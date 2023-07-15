@@ -12,7 +12,6 @@
 	flex-direction: column;
 	font-family: DIN;
 	pointer-events: all;
-	color: #ccc;
 
 	> .title {
 		font-size: 80px;
@@ -21,7 +20,6 @@
 
 	> .subtitle {
 		font-size: 30px;
-		color: #aaa;
 		font-weight: 200;
 	}
 
@@ -33,14 +31,10 @@
 		.button {
 			font-size: 20px;
 			padding: 10px 50px;
-			background-color: rgba(69, 69, 69, 1);
+			background-color: rgba(0, 0, 0, 0.5);
 			color: white;
 			font-weight: bold;
 			cursor: pointer;
-
-			&:hover {
-				background-color: rgba(69, 69, 69, 1);
-			}
 		}
 	}
 
@@ -52,7 +46,7 @@
 		overflow: hidden;
 
 		.bar {
-			background-color: #fff1;
+			background-color: rgba(255, 255, 255, 0.5);
 			position: absolute;
 			height: 100%;
 		}

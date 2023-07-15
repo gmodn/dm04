@@ -36,7 +36,7 @@ public partial class DeathmatchPlayer : Player
 		SetModel( PlayerModel );
 
 		// I think this might just be our base movement controller, it feels really good.
-		Controller = new GoldSrcWalkController
+		Controller = new HLDMWalkController
 		{
 			sv_walkspeed = 150,
 			sv_sprintspeed = 320,

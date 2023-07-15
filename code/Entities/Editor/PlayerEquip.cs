@@ -148,8 +148,8 @@ public partial class PlayerSetup : Entity
 		if ( GiveGrenades )
 		Weapons.Add( (new GrenadeWeapon(), Grenades, 0) );
 
-		if ( GiveSlams )
-			Weapons.Add( (new SLAMWeapon(), Slams, 0) );
+      /*if ( GiveSlams )
+			Weapons.Add( (new SLAMWeapon(), Slams, 0) );*/
 
 		if (GiveCrossbow)
 			Weapons.Add((new Crossbow(), CrossbowAmmo, 1));
