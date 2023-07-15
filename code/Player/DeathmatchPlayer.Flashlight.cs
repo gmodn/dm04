@@ -86,8 +86,4 @@ public partial class DeathmatchPlayer
 			Log.Info( "flashlight is inactive." );
 		}
 	}
-
-
-
-
 }

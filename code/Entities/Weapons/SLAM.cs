@@ -12,8 +12,8 @@ partial class SLAMWeapon : HLDMWeapon
 	public override int ClipSize => 1;
 	public override int Bucket => 4;
 
-	private hl2_slamthrown slamthrown;
-	private hl2_slamthrown slammounted;
+	private SlamEntity slamthrown;
+	private SlamEntity slammounted;
 	List<Entity> slamsactive = new List<Entity>();
 
 	public override void Spawn()
@@ -62,7 +62,7 @@ partial class SLAMWeapon : HLDMWeapon
 				if ( Game.IsServer )
 					using ( Prediction.Off() )
 					{
-						slamthrown = new hl2_slamthrown();
+						slamthrown = new SlamEntity();
 						slamsactive.Add( slamthrown );
 						slamthrown.Position = player.EyePosition;
 						slamthrown.Rotation += player.EyeRotation;
@@ -75,7 +75,7 @@ partial class SLAMWeapon : HLDMWeapon
 				if ( Game.IsServer )
 					using ( Prediction.Off() )
 					{
-						slammounted = new hl2_slamthrown();
+						slammounted = new SlamEntity();
 						slammounted.PhysicsEnabled = false;
 						slammounted.mounted = true;
 						slammounted.SetModel( "models/weapons/hl2_slam/w_hl2_slam_open.vmdl" );
@@ -109,7 +109,7 @@ partial class SLAMWeapon : HLDMWeapon
 					foreach ( var active in slamsactive )
 					{
 
-						(active as hl2_slamthrown).DoExplosion();
+						(active as SlamEntity).DoExplosion();
 
 					}
 					slamsactive.Clear();

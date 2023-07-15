@@ -10,7 +10,7 @@ partial class GrenadeWeapon : HLDMWeapon
 	public override float ReloadTime => 1.0f;
 	public override AmmoType AmmoType => AmmoType.Grenade;
 	public override int ClipSize => 1;
-	public override int Bucket => 5;
+	public override int Bucket => 4;
 
 	public override void Spawn()
 	{

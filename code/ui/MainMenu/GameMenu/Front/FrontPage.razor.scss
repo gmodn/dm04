@@ -14,17 +14,4 @@
 		flex-direction: column;
 		//align-items: flex-start;
 	}
-
-	.audio-button {
-		background-image: url('ui/MainMenu/volume_up.png');
-		background-size: contain;
-		background-repeat: no-repeat;
-		width: 100px;
-		top: 250px;
-		right: 160px;
-
-		.label {
-			opacity: 0;
-		}
-	}
 }

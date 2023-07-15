@@ -2,9 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-[Library( "hl2_slamthrown" )]
-[HideInEditor]
-partial class hl2_slamthrown : Prop
+partial class SlamEntity : Prop
 {
 	Particles LaserParticle;
 	public bool mounted { get; set; }
