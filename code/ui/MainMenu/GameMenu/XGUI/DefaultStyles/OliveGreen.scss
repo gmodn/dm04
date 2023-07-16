@@ -1,0 +1,416 @@
+﻿//@import "/styles/base.scss";
+//@import "/styles/form.scss";
+@import "/XGUI/FunctionStyles/FunctionStyles.scss";
+
+$base-colour: rgba(76,88,68,255);
+$base-colour-inset: #3e4637;
+$base-colour-active: #958831;
+
+$border-colour-top: #889180;
+$border-colour-left: #889180;
+$border-colour-bottom: #282e22;
+$border-colour-right: #282e22;
+
+
+$border-colour-top-inset: #282e22;
+$border-colour-left-inset: #282e22;
+$border-colour-bottom-inset: #889180;
+$border-colour-right-inset: #889180;
+
+
+$default-text-colour: #FFFFFF;
+$default-text-colour-active: #c4b550;
+$default-text-size: 13px;
+$default-text-font: "Tahoma";
+
+$window-title-icon: url("Code/XGUI/Resources/icon_steam.png");
+$window-minimise-button: url("Code/XGUI/Resources/icon_minimize.png");
+$window-maximise-button: url("Code/XGUI/Resources/icon_maximize.png");
+$window-close-button: url("Code/XGUI/Resources/icon_close.png");
+$window-resize-icon: url("Code/XGUI/Resources/icon_resizer.png");
+
+.Window {
+    overflow: hidden;
+    color: $default-text-colour;
+    font-size: $default-text-size;
+    font-family: $default-text-font; 
+    padding: 4px;
+    border-top: 1px solid $border-colour-top;
+    border-left: 1px solid $border-colour-left;
+    border-bottom: 1px solid $border-colour-bottom;
+    border-right: 1px solid $border-colour-right;
+    background-color: $base-colour;
+
+
+    .TitleBar {
+
+        .TitleIcon {
+            width: 16px;
+            height: 16px;
+            background-image: $window-title-icon;
+            background-size: cover;
+            margin-top: 4px;
+        }
+
+        .TitleLabel {
+            padding: 4px;
+        }
+
+        .Control {
+            margin: 2px;
+            margin-top: 3px;
+            padding: 0;
+            margin-left: 0px;
+
+            width: 18px;
+            height: 18px;
+            background-position-x: 2px;
+            background-position-y: 1px;
+
+            &:active {
+                background-position-x: 3px;
+                background-position-y: 2px;
+            }
+        }
+
+        .MinimiseButton {
+            background-image: $window-minimise-button;
+            background-size: 15px;
+            color: rgba(0,0,0,0);
+        }
+
+        .MaximiseButton {
+            background-image: $window-maximise-button;
+            background-size: 15px;
+            color: rgba(0,0,0,0);
+        }
+
+        .CloseButton {
+            background-image: $window-close-button;
+            background-size: 16px;
+            color: rgba(0,0,0,0);
+        }
+    }
+
+    .Resizer {
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        background-image: $window-resize-icon;
+        background-repeat: no-repeat;
+        margin-top: 4px;
+    }
+}
+
+// ------------------
+// Control Elements
+// ------------------
+
+// Button
+.Button {
+    padding: 5px;
+    height: 24px;
+    align-items: center;
+    background-color: $base-colour;
+    border-top: 1px solid $border-colour-top;
+    border-left: 1px solid $border-colour-left;
+    border-bottom: 1px solid $border-colour-bottom;
+    border-right: 1px solid $border-colour-right;
+
+    &:active {
+        padding-top: 6px;
+        padding-left: 6px;
+        border-top: 1px solid $border-colour-top-inset;
+        border-left: 1px solid $border-colour-left-inset;
+        border-bottom: 1px solid $border-colour-bottom-inset;
+        border-right: 1px solid $border-colour-right-inset;
+    }
+}
+
+// TextEntry
+.TextEntry {
+    padding: 5px;
+    height: 24px;
+    align-items: center;
+    background-color: $base-colour-inset;
+    border-top: 1px solid $border-colour-top-inset;
+    border-left: 1px solid $border-colour-left-inset;
+    border-bottom: 1px solid $border-colour-bottom-inset;
+    border-right: 1px solid $border-colour-right-inset;
+}
+
+// Tabs
+.TabContainer {
+    flex-direction: column;
+
+    > .tabs {
+
+        > .button {
+            background-color: $base-colour;
+            border-top: 1px solid $border-colour-top;
+            border-left: 1px solid $border-colour-left;
+            border-bottom: 1px solid $border-colour-top;
+            border-right: 1px solid $border-colour-right;
+            font-size: $default-text-size;
+            font-family: $default-text-font;
+            padding: 5px;
+            // Move unselected ones down
+            height: 25px;
+            align-items: center;
+            min-width: 64px;
+            top: 3px;
+            margin-right: 1px;
+
+            &.active {
+                padding-top: 4px;
+                color: $default-text-colour-active;
+                // Offset up when selected
+                top: 1px;
+                z-index: 10;
+                border-bottom: 0px;
+                height: 27px;
+            }
+
+            &:hover {
+            }
+        }
+    }
+
+
+    > .sheets {
+        overflow: hidden;
+        background-color: $base-colour;
+        border-top: 1px solid $border-colour-top;
+        border-left: 1px solid $border-colour-left;
+        border-bottom: 1px solid $border-colour-bottom;
+        border-right: 1px solid $border-colour-right;
+        padding: 5px;
+    }
+}
+
+// Sidebar
+
+.Sidebar {
+
+    > .tabs {
+        padding-left: 6px;
+        padding-right: 3px;
+        background-color: $base-colour-inset;
+        border-top: 1px solid $border-colour-top-inset;
+        border-left: 1px solid $border-colour-left-inset;
+        border-bottom: 1px solid $border-colour-top-inset;
+        border-right: 1px solid $border-colour-right-inset;
+
+        > .button {
+            background-color: $base-colour-inset;
+            border: 0px;
+            font-size: $default-text-size;
+            font-family: $default-text-font;
+            height: 20px;
+
+            &.active {
+                padding: 5px;
+                background-color: $base-colour-active;
+            }
+
+            &:active {
+                padding: 5px;
+            }
+
+            &:hover {
+            }
+        }
+    }
+
+
+    > .sheets {
+        overflow: hidden;
+        background-color: $base-colour;
+        border-top: 1px solid $border-colour-top;
+        border-left: 1px solid $border-colour-left;
+        border-bottom: 1px solid $border-colour-bottom;
+        border-right: 1px solid $border-colour-right;
+        padding: 5px;
+    }
+}
+
+// Slider
+
+.slider { 
+    margin-right:8px;
+    > .thumb { 
+        background-color: $base-colour;
+        border-top: 1px solid $border-colour-top;
+        border-left: 1px solid $border-colour-left;
+        border-bottom: 1px solid $border-colour-bottom;
+        border-right: 1px solid $border-colour-right; 
+
+        &:hover {
+            background-color: rgba(76,88,68,255);
+        }
+    }
+
+    &:active {
+        > .thumb {
+            background-color: rgba(76,88,68,255);
+        }
+    }
+
+    > .scalestepmin { 
+        color: #889180;
+        font-size: 9px;
+    }
+
+    > .scalestepmax { 
+        font-size: 9px;
+        color: #889180;
+    }
+
+    > .scalesteps { 
+
+        > .step {
+            left:4px;
+            background-color: #7f8c7f;
+            width: 1px;
+            height: 5px;
+        }
+    }
+
+    > .track { 
+        height: 4px; 
+
+        background-color: rgb(31, 31, 31);
+        border-top: 1px solid $border-colour-top-inset;
+        border-left: 1px solid $border-colour-left-inset;
+        border-bottom: 1px solid $border-colour-bottom-inset;
+        border-right: 1px solid $border-colour-right-inset;
+
+        > .inner {
+            border-radius: 0px;
+            background-color: rgb(31, 31, 31);
+            width: 50px;
+            height: 0px;
+            transition: all 0.2s ease-out;
+        }
+    }
+}
+
+
+.sliderentry {
+
+    > .slider {
+    }
+
+    > .textentry:not( .one.two ) {
+        border-bottom: 1px solid $border-colour-bottom-inset;
+        border-right: 1px solid $border-colour-right-inset;
+        border-top: 1px solid $border-colour-top-inset;
+        border-left: 1px solid $border-colour-left-inset;
+        background-color: $base-colour-inset;
+
+        align-items: center;
+        padding: 5px;
+        max-width: 48px;
+        min-width: 48px;
+        width: 48px;
+        height: 24px;
+        overflow: hidden;
+        margin-left: 16px; 
+        font-size: 13px;
+    }
+}
+
+// Checkbox
+.checkbox {
+    min-width: 24px;
+    height: 16px;
+    margin-bottom: 6px;
+    cursor: pointer;
+
+    .checkpanel, iconpanel {
+        flex-shrink: 0;
+        width: 15px;
+        height: 15px;
+        border: 1px solid rgba(103,100,88,255);
+        border-radius: 1px;
+        margin-right: 8px;
+        color: white;
+
+        .checklabel {
+            transform: translate(-3 -5);
+            font-family: Webdings;
+            font-size: 22px;
+            color: transparent;
+        }
+    }
+
+    .label {
+        margin-right: 10px;
+        color: #cfd6ca;
+    }
+
+    > .checkmark {
+        padding: 1px;
+        font-size: 14px;
+        //border: 3px solid $primary;
+        border-radius: 2px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: transparent;
+        min-height: 15px;
+        margin-right: 10px;
+        pointer-events: none;
+        cursor: pointer;
+    }
+
+    &.checked {
+
+        .label {
+            margin-right: 10px;
+            color: #c4b550;
+        }
+
+        > .checkpanel, .iconpanel {
+            .checklabel {
+                font-family: Webdings;
+                font-size: 22px;
+                color: white;
+            }
+        }
+
+        > .checkmark {
+            //color: $primary-alt;
+            color: white;
+            background-color: transparent;
+        }
+    }
+
+    &:active {
+        color: gray;
+        transform: scale(1);
+    }
+
+    &:hover {
+    }
+}
+
+// ------------------
+// Layout Elements
+// ------------------
+
+LayoutBoxInset {
+    border-bottom: 1px solid $border-colour-bottom-inset;
+    border-right: 1px solid $border-colour-right-inset;
+    border-top: 1px solid $border-colour-top-inset;
+    border-left: 1px solid $border-colour-left-inset;
+    background-color: $base-colour-inset;
+}
+
+LayoutBox {
+    background-color: $base-colour;
+    border-top: 1px solid $border-colour-top;
+    border-left: 1px solid $border-colour-left;
+    border-bottom: 1px solid $border-colour-bottom;
+    border-right: 1px solid $border-colour-right;
+}

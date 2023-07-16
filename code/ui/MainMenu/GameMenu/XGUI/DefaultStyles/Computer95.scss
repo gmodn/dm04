@@ -1,0 +1,99 @@
+﻿
+@import "/XGUI/FunctionStyles/FunctionStyles.scss";
+
+$base-colour: #C0C0C0;
+
+$border-colour-top: #FFFFFF;
+$border-colour-left: #FFFFFF;
+$border-colour-bottom: #808080;
+$border-colour-right: #808080;
+
+$border-colour-top-inset: #000000;
+$border-colour-left-inset: #000000;
+$border-colour-bottom-inset: #DFDFDF;
+$border-colour-right-inset: #DFDFDF;
+
+$border-colour-top-outer: #DFDFDF;
+$border-colour-left-outer: #DFDFDF;
+$border-colour-bottom-outer: #000000;
+$border-colour-right-outer: #000000;
+
+$border-colour-top-outer-inset: #808080;
+$border-colour-left-outer-inset: #808080;
+$border-colour-bottom-outer-inset: #FFFFFF;
+$border-colour-right-outer-inset: #FFFFFF;
+
+$default-text-size: 12px;
+$default-text-font: "Microsoft Sans Serif";
+
+$default-text-colour: #000000;
+$default-text-colour-alt: #FFFFFF;
+
+.Window {
+    overflow: hidden;
+    padding: 1px;
+    color: $default-text-colour;
+    border-top: 1px solid $border-colour-top;
+    border-left: 1px solid $border-colour-left;
+    border-bottom: 1px solid $border-colour-bottom;
+    border-right: 1px solid $border-colour-right;
+
+    background-color: $base-colour;
+    font-size: $default-text-size;
+    font-family: $default-text-font;
+
+    .TitleBar {
+        align-items: center;
+        height: 18px;
+        padding: 2px;
+        background-color: #000080;
+        color: $default-text-colour-alt;
+
+        .TitleSpacer {
+            padding: 10px;
+        }
+
+        .TitleIcon {
+            width: 16px;
+            height: 16px;
+            background-size: cover;
+            margin-top: 4px;
+        }
+
+        .TitleLabel {
+            padding: 4px;
+        }
+
+        .Control {
+            width: 16px;
+            height: 14px;
+            align-items: center;
+            justify-content: center;
+            color: $default-text-colour;
+        }
+
+        .CloseButton {
+            margin-left: 2px;
+        }
+    }
+}
+
+//
+
+.Button {
+    height: 23px;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid $border-colour-top;
+    border-left: 2px solid $border-colour-left;
+    border-bottom: 2px solid $border-colour-bottom;
+    border-right: 2px solid $border-colour-right;
+    background-color: $base-colour;
+
+    &:active {
+        border-top: 1px solid $border-colour-top-inset;
+        border-left: 1px solid $border-colour-left-inset;
+        border-bottom: 1px solid $border-colour-bottom-inset;
+        border-right: 1px solid $border-colour-right-inset;
+    }
+}

@@ -1,0 +1,73 @@
+﻿.slider {
+    height: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+
+    > .thumb {
+        z-index: 1;
+        position: absolute;
+        width: 8px;
+        height: 16px;
+
+        &:hover {
+        }
+    }
+
+    &:active {
+        > .thumb {
+        }
+    }
+
+    > .scalestepmin {
+        position: absolute;
+        z-index: -1;
+        flex-grow: 1;
+        top: 18px;
+        justify-content: flex-start; 
+    }
+
+    > .scalestepmax {
+        position: absolute;
+        z-index: -1;
+        flex-grow: 1;
+        top: 18px;
+        right: -8px;
+        text-align: right; 
+    }
+
+    > .scalesteps {
+        z-index: -1;
+        flex-grow: 1;
+        top: 11px; 
+        height: 10px;
+        justify-content: space-between;
+
+        > .step {
+            background-color: #7f8c7f;
+            width: 1px;
+            height: 5px;
+        }
+    }
+
+    > .track {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        height: 4px;
+
+        > .inner {  
+        }
+    }
+}
+
+
+.sliderentry {
+
+    > .slider {
+        flex-grow: 1;
+    }
+
+    > .textentry:not( .one.two ) {
+
+    }
+}
