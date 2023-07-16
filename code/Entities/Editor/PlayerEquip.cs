@@ -255,6 +255,9 @@ public partial class PlayerSetup : Entity
 		HLDMWeapon crowbar = new Crowbar();
 		player.Inventory.Add(crowbar);
 
+		HLDMWeapon gravgun = new GravGun();
+		player.Inventory.Add( gravgun );
+
 		HLDMWeapon usp = new Pistol();
 		usp.AmmoClip = 12;
 

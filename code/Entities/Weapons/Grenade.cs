@@ -95,7 +95,7 @@ partial class GrenadeWeapon : HLDMWeapon
 					Owner = Owner
 				};
 
-				grenade.PhysicsBody.Velocity = aim.Forward * 200.0f + Owner.Rotation.Up * 200.0f + Owner.Velocity;
+				grenade.PhysicsBody.Velocity = aim.Forward * 200.0f + Owner.Rotation.Up * 100.0f + Owner.Velocity;
 			}
 
 		player.SetAnimParameter( "b_attack", true );
@@ -111,7 +111,7 @@ partial class GrenadeWeapon : HLDMWeapon
 
 	public override void SimulateAnimator( CitizenAnimationHelper anim )
 	{
-		anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
+		anim.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		anim.AimBodyWeight = 1.0f;
 	}
 }
