@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 
 [Library( "dm_physgun" ), HammerEntity]
-[EditorModel( "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl" )]
+[EditorModel( "weapons/rust_pistol/w_rust_pistol.vmdl" )]
 [Title( "PhysGun" ), Category( "Weapons" )]
 public partial class PhysGun : HLDMWeapon
 {

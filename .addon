@@ -124,13 +124,9 @@
     "Public": false,
     "PackageSettings": [
       {
-        "DisplayType": "Boolean",
         "Choices": [],
-        "ConVarName": "dm04_enableclothing",
-        "DisplayName": "Enable Player Clothing?",
-        "DefaultValue": "true",
-        "Description": "Allow Player to have clothing selected in the avatar menu of s\u0026box.",
-        "Group": "Player Settings"
+        "ConVarName": "",
+        "DisplayName": "New Setting..."
       }
     ],
     "TickRate": 64,

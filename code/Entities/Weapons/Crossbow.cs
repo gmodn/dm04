@@ -7,6 +7,7 @@ partial class Crossbow : HLDMWeapon
 	public override string ViewModelPath => "models/weapons/hl2_crossbow/v_hl2_crossbow.vmdl";
 
 	public override float PrimaryRate => 0.52f;
+	public override float SecondaryRate => 0f;
 	public override float ReloadTime => 2.8f;
 	public override int Bucket => 3;
 	public override AmmoType AmmoType => AmmoType.Crossbow;
@@ -58,7 +59,10 @@ partial class Crossbow : HLDMWeapon
 	{
 		base.Simulate( cl );
 
-		Zoomed = Input.Down( InputButton.SecondaryAttack );
+		if ( Input.Pressed( "attack2" ) )
+		{ 
+			ZoomToggle();
+		}
 	}
 
 	[ClientRpc]
@@ -75,6 +79,18 @@ partial class Crossbow : HLDMWeapon
 		if ( Zoomed )
 		{
 			Camera.FieldOfView = Screen.CreateVerticalFieldOfView( 30 );
+		}
+	}
+
+	public void ZoomToggle()
+	{
+		if ( Zoomed )
+		{
+			Zoomed = false;
+		}
+		else
+		{
+			Zoomed = true;
 		}
 	}
 

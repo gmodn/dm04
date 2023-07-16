@@ -49,13 +49,15 @@ public partial class DeathmatchPlayer : Player
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
 
-		Log.Info( $"Player Clothing is marked {dm04_enableclothing}." );
+	  /*Log.Info( $"Player Clothing is marked {dm04_enableclothing}." );
 
 		if ( dm04_enableclothing )
 			Clothing.DressEntity( this );
-		else
+		else*/
 
-			ClearAmmo();
+		ClearAmmo();
+
+		Clothing.DressEntity( this );
 
 		SupressPickupNotices = true;
 
@@ -110,22 +112,15 @@ public partial class DeathmatchPlayer : Player
 		}
 	}
 
-	[ConCmd.Admin]
+	[ConCmd.Admin( "HLDM_DevTools")]
 	public static void GiveDevTools()
 	{
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
 
-		if ( Game.IsServerHost )
-		{
-			ply.Inventory.Add( new PhysGun() );
-		}
-		else
-		{
-			Log.Warning( $"{ply.Name} Tried to activate a command that they don't have permission to, twist their dick!" );
-		}
+		ply.Inventory.Add( new PhysGun() );
 	}
 
-	[ConCmd.Admin("god")]
+	[ConCmd.Admin( "god")]
 	public static void GiveGodMode()
 	{
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
@@ -135,7 +130,7 @@ public partial class DeathmatchPlayer : Player
 		Log.Info( "no good way of doing this atm so lets just set the players health really high." );
 	}
 
-	[ConCmd.Server( "noclip" )]
+	[ConCmd.Admin( "noclip" )]
 	public static void Noclip()
 	{
 		if ( ConsoleSystem.Caller.Pawn is DeathmatchPlayer basePlayer )
@@ -351,7 +346,7 @@ public partial class DeathmatchPlayer : Player
 		}
 	}
 
-	[ConCmd.Server("kill")]
+	[ConCmd.Admin( "kill")]
 	public static void KillCMD() 
 	{
 		var target = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
