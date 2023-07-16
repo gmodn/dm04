@@ -10,13 +10,13 @@ public class Crosshair : Panel
 
 	// Quick info crosshair
 	public Label LeftFull;
-	public Label centre;
+	public Label Center;
 	public Label RightFull;
 
 	public Crosshair()
 	{
 		StyleSheet.Load( "ui/Crosshair.scss" );
-		centre = Add.Label( "{", "crosshairBracketLeft" );
+		Center = Add.Label( "{", "crosshairBracketLeft" );
 		LeftFull = Add.Label( "Q", "crosshairCenter" );
 		RightFull = Add.Label( "}", "crosshairBracketRight" );
 	}
