@@ -20,7 +20,7 @@ public class HudRootPanel : RootPanel
 		AddChild<PickupFeed>();
 
 		AddChild<Crosshair>();
-		AddChild<ChatBox>();
+		AddChild<HLDMChatBox>();
 		AddChild<KillFeed>();
 		Scoreboard = AddChild<Scoreboard>();
 		AddChild<VoiceList>();

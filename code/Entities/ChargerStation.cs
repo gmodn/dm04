@@ -38,6 +38,8 @@ partial class ChargerStation : KeyframeEntity, IUse
 
 	public PickupTrigger PickupTrigger { get; protected set; }
 
+	private Sound UseSound;
+
 	public bool CanUse;
 
 	[Net]
@@ -105,6 +107,7 @@ partial class ChargerStation : KeyframeEntity, IUse
 
 		if ( IsArmourCharger )
 		{
+			//UseSound = base.PlaySound( "sounds/hl2/items/suitcharge1.sound" );
 			player.Armour += add;
 			player.Armour = player.Armour.Clamp( 0, 100 );
 			return player.Armour < 100;
@@ -112,6 +115,7 @@ partial class ChargerStation : KeyframeEntity, IUse
 
 		if ( !IsArmourCharger )
 		{
+			//UseSound = base.PlaySound( "sounds/hl2/items/medcharge4.sound" );
 			player.Health += add;
 			player.Health = player.Health.Clamp( 0, 100 );
 			return player.Health < 100;
