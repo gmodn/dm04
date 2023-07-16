@@ -1,4 +1,5 @@
 @using System
+@using System.Linq;
 @using Sandbox;
 @using Sandbox.UI;
 @using Sandbox.Menu;
@@ -9,7 +10,7 @@
 
 <root class="loadingpanel">
 
-    <div class="title">LOADING</div>
+    <div class="title">LOADING...</div>
     <div class="subtitle">@Progress.Title</div>
 
     @if (Progress.Fraction > 0)

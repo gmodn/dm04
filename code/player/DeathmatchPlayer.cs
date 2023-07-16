@@ -98,6 +98,7 @@ public partial class DeathmatchPlayer : Player
 			ply.Inventory.Add( new Shotgun() );
 			ply.Inventory.Add( new SMG() );
 			ply.Inventory.Add( new AR2() );
+			ply.Inventory.Add( new GrenadeWeapon() );
 			ply.Inventory.Add( new Crossbow() );
 			ply.Inventory.Add( new GravGun() );
 		}

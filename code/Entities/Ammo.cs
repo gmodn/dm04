@@ -4,7 +4,7 @@
 
 	public virtual AmmoType AmmoType => AmmoType.None;
 	public virtual int AmmoAmount => 17;
-	public virtual Model WorldModel => Model.Load( "models/dm_battery.vmdl" );
+	public virtual Model WorldModel => Model.Load( "models/dm_ammo_9mmbox.vmdl" );
 
 	public override void Spawn()
 	{
