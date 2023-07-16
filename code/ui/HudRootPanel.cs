@@ -21,6 +21,7 @@ public class HudRootPanel : RootPanel
 
 		AddChild<Crosshair>();
 		AddChild<HLDMChatBox>();
+		AddChild<HLDMAlertBox>();
 		AddChild<KillFeed>();
 		Scoreboard = AddChild<Scoreboard>();
 		AddChild<VoiceList>();

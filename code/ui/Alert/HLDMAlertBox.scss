@@ -1,0 +1,45 @@
+﻿hldmalertbox
+{
+	position: absolute;
+	bottom: 200px;
+	right: 100px;
+	z-index: 100;
+	flex-direction: column;
+	width: 500px;
+	font-family: DIN;
+	font-size: 13px;
+
+	.chat_canvas
+	{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+hldmalertentry {
+	margin-bottom: 5px;
+	color: white;
+	transition: all 0.1s ease-out;
+	opacity: 1;
+	max-height: 200px;
+	flex-shrink: 0;
+	flex-grow: 0;
+	padding: 12px;
+	padding-left: 45px;
+	min-height: 47px;
+	max-width: 100%;
+	transform: scale( 1 );
+
+	&:outro {
+		opacity: 0;
+		transition: all 2s ease-out;
+	}
+
+	.message {
+		color: rgb(255, 192, 0);
+		font-size: 20px;
+		font-weight: 500;
+		flex-grow: 1;
+		text-align: right;
+	}
+}
