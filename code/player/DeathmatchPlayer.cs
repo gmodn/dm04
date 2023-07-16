@@ -118,10 +118,20 @@ public partial class DeathmatchPlayer : Player
 		{
 			ply.Inventory.Add( new PhysGun() );
 		}
-		else 
+		else
 		{
 			Log.Warning( $"{ply.Name} Tried to activate a command that they don't have permission to, twist their dick!" );
 		}
+	}
+
+	[ConCmd.Admin("god")]
+	public static void GiveGodMode()
+	{
+		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
+
+		ply.MaxHealth = 99999;
+		ply.Health = 99999;
+		Log.Info( "no good way of doing this atm so lets just set the players health really high." );
 	}
 
 	[ConCmd.Server( "noclip" )]

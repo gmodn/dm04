@@ -7,7 +7,7 @@ partial class GrenadeWeapon : HLDMWeapon
 
 	public override float PrimaryRate => 1.0f;
 	public override float SecondaryRate => 1.0f;
-	public override float ReloadTime => 0f;
+	public override float ReloadTime => 1f;
 	public override AmmoType AmmoType => AmmoType.Grenade;
 	public override int ClipSize => 1;
 	public override int Bucket => 4;
@@ -54,6 +54,48 @@ partial class GrenadeWeapon : HLDMWeapon
 				};
 
 				grenade.PhysicsBody.Velocity = aim.Forward * 600.0f + Owner.Rotation.Up * 200.0f + Owner.Velocity;
+			}
+
+		player.SetAnimParameter( "b_attack", true );
+
+		Reload();
+
+		if ( Game.IsServer && AmmoClip == 0 && player.AmmoCount( AmmoType.Grenade ) == 0 )
+		{
+			Delete();
+			player.SwitchToBestWeapon();
+		}
+	}
+
+	public override void AttackSecondary()
+	{
+		TimeSincePrimaryAttack = 0;
+		TimeSinceSecondaryAttack = 0;
+
+		if ( Owner is not DeathmatchPlayer player ) return;
+
+		if ( !TakeAmmo( 1 ) )
+		{
+			Reload();
+			return;
+		}
+
+		var aim = Owner.AimRay;
+		PlaySound( "sounds/weapons/hl2_grenade/hl2_grenade.throw.sound" );
+
+		Game.SetRandomSeed( Time.Tick );
+
+
+		if ( Game.IsServer )
+			using ( Prediction.Off() )
+			{
+				var grenade = new GrenadeThrown
+				{
+					Position = aim.Position + aim.Forward * 3.0f,
+					Owner = Owner
+				};
+
+				grenade.PhysicsBody.Velocity = aim.Forward * 200.0f + Owner.Rotation.Up * 200.0f + Owner.Velocity;
 			}
 
 		player.SetAnimParameter( "b_attack", true );

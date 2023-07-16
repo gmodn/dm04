@@ -34,6 +34,12 @@ partial class DeathmatchGame : GameManager
 		ItemRespawn.Init();
 	}
 
+	[ConCmd.Server( "alert" )]
+	public static void GameAlert( string message )
+	{
+		Log.Error( $"{message}" );
+	}
+
 	public override void ClientJoined( IClient cl )
 	{
 		base.ClientJoined( cl );
