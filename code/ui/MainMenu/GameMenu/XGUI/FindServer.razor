@@ -1,21 +1,23 @@
-﻿@using Sandbox;
+﻿@using System;
+@using Sandbox;
+@using Sandbox.MenuSystem;
 @using Sandbox.UI;
+@using Sandbox.UI.GameMenu;
 @using XGUI;
 @attribute [StyleSheet("/ui/MainMenu/GameMenu/XGUI/DefaultStyles/OliveGreen.scss")]
 @inherits Window
 
-<root title="Options" hasminimise="false" hasmaximise="false">
-        <tabcontrol>
-            <tab tabName="general" slot="tab" tabtext="General">
-				<div style="width:300px;height:200px;">
-					Something will go here someday.
+<root title="Find Servers" hasminimise="false" hasmaximise="false">
+				<div style="width:1000px;height:500px;">
+					<ServerListPanel @ref="List" ShowGame=@false FilterByGame=gman.dm04></ServerListPanel>
 				</div>
-			</tab>
-		</tabcontrol>
+
+				<div>
+					<div class="button" onclick="@(() => List.Refresh())"> Refresh </div>
+				</div>
 </root>
 
 @code
 {
-
+	ServerListPanel List;
 }
-
