@@ -1,6 +1,6 @@
 ﻿//@import "/styles/base.scss";
 //@import "/styles/form.scss";
-@import "/XGUI/FunctionStyles/FunctionStyles.scss";
+@import "ui/MainMenu/GameMenu/XGUI/FunctionStyles/FunctionStyles.scss";
 
 $base-colour: rgba(76,88,68,255);
 $base-colour-inset: #3e4637;
@@ -23,11 +23,11 @@ $default-text-colour-active: #c4b550;
 $default-text-size: 13px;
 $default-text-font: "DIN";
 
-$window-title-icon: url("Code/XGUI/Resources/icon_steam.png");
-$window-minimise-button: url("Code/XGUI/Resources/icon_minimize.png");
-$window-maximise-button: url("Code/XGUI/Resources/icon_maximize.png");
-$window-close-button: url("Code/XGUI/Resources/icon_close.png");
-$window-resize-icon: url("Code/XGUI/Resources/icon_resizer.png");
+$window-title-icon: url("ui/MainMenu/GameMenu/XGUI/Resources/icon_hlicon1.png");
+$window-minimise-button: url("ui/MainMenu/GameMenu/XGUI/Resources/icon_minimize.png");
+$window-maximise-button: url("ui/MainMenu/GameMenu/XGUI/Resources/icon_maximize.png");
+$window-close-button: url("ui/MainMenu/GameMenu/XGUI/Resources/icon_close.png");
+$window-resize-icon: url("ui/MainMenu/GameMenu/XGUI/Resources/icon_resizer.png");
 
 .Window {
     overflow: hidden;
