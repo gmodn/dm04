@@ -22,13 +22,11 @@ hldmalertentry {
 	transition: all 0.1s ease-out;
 	opacity: 1;
 	max-height: 200px;
-	flex-shrink: 0;
-	flex-grow: 0;
-	padding: 12px;
-	padding-left: 45px;
+	flex-direction: column;
 	min-height: 47px;
 	max-width: 100%;
 	transform: scale( 1 );
+	position: absolute;
 
 	&:outro {
 		opacity: 0;
@@ -37,9 +35,9 @@ hldmalertentry {
 
 	.message {
 		color: rgb(255, 192, 0);
+		justify-content: center;
 		font-size: 20px;
 		font-weight: 500;
 		flex-grow: 1;
-		text-align: right;
 	}
 }
