@@ -8,7 +8,7 @@
   "HasAssets": true,
   "AssetsPath": "",
   "Resources": "ui/*\nui/weapons/*",
-  "MenuResources": "ui/MainMenu/*\nsounds/menu/*\nui/MainMenu/GameMenu/XGUI/*",
+  "MenuResources": "ui/MainMenu/*\nfonts/*\nsounds/menu/*",
   "HasCode": true,
   "CodePath": "code",
   "PackageReferences": [],
@@ -16,10 +16,10 @@
   "Metadata": {
     "MaxPlayers": 64,
     "MinPlayers": 1,
-    "MapSelect": "Unrestricted",
     "MapList": [
       "facepunch.crossfire"
     ],
+    "MapSelect": "Hidden",
     "GameNetworkType": "Multiplayer",
     "RankType": "None",
     "PerMapRanking": false,
@@ -136,9 +136,9 @@
     "TickRate": 64,
     "LaunchConfigs": [
       {
-        "Name": "HLDM-Crossfire",
+        "Name": "HLDM-Test map",
         "GameIdent": "gman.dm04#local",
-        "MapName": "facepunch.crossfire",
+        "MapName": "dm04_testingmap.vmap",
         "MaxPlayers": 64,
         "GameSettings": {},
         "Addons": "",

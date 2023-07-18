@@ -7,12 +7,6 @@
 @attribute [StyleSheet("/ui/MainMenu/GameMenu/XGUI/DefaultStyles/OliveGreen.scss")]
 @inherits Window
 
-@if ( choosingMap )
-{
-    <ChooseMap OnPackageSelected="@OnMapSelected"></ChooseMap>
-    return;
-}
-
 <root title="Create Server" hasminimise="false" hasmaximise="false">
     <div style="width:600px;height:400px;">
         <div class="form scroll">
@@ -30,8 +24,6 @@
                 </Control>
             </FormGroup>
             
-        @if (ShowMapOption)
-        {
             <FormGroup>
                 <Label>Map</Label>
                 <Control>
@@ -40,7 +32,7 @@
                          </div>
                 </Control>
             </FormGroup>
-        }
+
         </div>
     </div>
 
@@ -75,14 +67,12 @@
 
     void OnMapClicked()
     {
-        choosingMap = true;
-        StateHasChanged();
+        Game.Overlay.ShowPackageSelector("type:map sort:popular", OnMapSelected);
     }
 
     void OnMapSelected(Package map)
     {
         Map = map.FullIdent;
-        choosingMap = false;
         StateHasChanged();
     }
 
