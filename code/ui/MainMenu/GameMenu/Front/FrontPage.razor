@@ -22,7 +22,7 @@
         <a class="button" onclick=@CreateGame>CREATE SERVER</a>
         <a class="button" onclick=@Options>OPTIONS</a>
         <a class="button" onclick=@About>ABOUT</a>
-        <a class="button" @onclick=@Game.Menu.Close>QUIT</a>
+        <a class="button" @onclick=@QuitDialouge>QUIT</a>
 
     </div>
 
@@ -59,6 +59,12 @@
     {
         //create xgui panel
         AddChild<Options>();
+    }
+
+    async Task QuitDialouge()
+    {
+        //create xgui panel
+        AddChild<QuitDialouge>();
     }
 
     void LeaveGame()

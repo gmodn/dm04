@@ -1,0 +1,12 @@
+HLDMMapButton
+{
+	flex-direction: column;
+	flex-shrink: 0;
+	flex-grow: 1;
+
+	.card-package
+	{
+		max-width: 150px;
+		min-width: 150px;
+	}
+}

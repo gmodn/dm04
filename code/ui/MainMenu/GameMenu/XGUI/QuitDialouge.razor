@@ -1,0 +1,24 @@
+﻿@using System;
+@using Sandbox;
+@using Sandbox.MenuSystem;
+@using Sandbox.UI;
+@using Sandbox.UI.GameMenu;
+@using XGUI;
+@attribute [StyleSheet("/ui/MainMenu/GameMenu/XGUI/DefaultStyles/OliveGreen.scss")]
+@inherits Window
+
+<root title="Leaving so soon?" hasminimise="false" hasmaximise="false">
+	<div style="width:300px;height:100px;">
+		<Label>Are you sure you want to quit?</Label>
+	</div>
+
+	<div>
+		<span class="button" onclick=@Game.Menu.Close>Quit</span>
+	</div>
+</root>
+
+@code
+{
+
+}
+

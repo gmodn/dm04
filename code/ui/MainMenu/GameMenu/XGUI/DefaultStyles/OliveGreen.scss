@@ -33,7 +33,7 @@ $window-resize-icon: url("ui/MainMenu/GameMenu/XGUI/Resources/icon_resizer.png")
     overflow: hidden;
     color: $default-text-colour;
     font-size: $default-text-size;
-    font-family: $default-text-font; 
+    font-family: $default-text-font;
     padding: 4px;
     border-top: 1px solid $border-colour-top;
     border-left: 1px solid $border-colour-left;
@@ -61,7 +61,6 @@ $window-resize-icon: url("ui/MainMenu/GameMenu/XGUI/Resources/icon_resizer.png")
             margin-top: 3px;
             padding: 0;
             margin-left: 0px;
-
             width: 18px;
             height: 18px;
             background-position-x: 2px;

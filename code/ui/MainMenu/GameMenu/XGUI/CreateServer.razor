@@ -7,7 +7,13 @@
 @attribute [StyleSheet("/ui/MainMenu/GameMenu/XGUI/DefaultStyles/OliveGreen.scss")]
 @inherits Window
 
-<root title="Options" hasminimise="false" hasmaximise="false">
+@if ( choosingMap )
+{
+    <ChooseMap OnPackageSelected="@OnMapSelected"></ChooseMap>
+    return;
+}
+
+<root title="Create Server" hasminimise="false" hasmaximise="false">
     <div style="width:600px;height:400px;">
         <div class="form scroll">
             <FormGroup>
@@ -26,12 +32,20 @@
             
         @if (ShowMapOption)
         {
-            //Add Map Select Soon
+            <FormGroup>
+                <Control>
+                         <div class="right">
+                            <h2>Map</h2>
+                            <HLDMMapButton MapIdent=@Map OnClicked="@OnMapClicked"></HLDMMapButton>
+                         </div>
+                </Control>
+            </FormGroup>
         }
-            <div>
-                <span class="button" onclick=@StartGame>Start Game</span>
-            </div
         </div>
+    </div>
+
+    <div>
+        <span class="button" onclick=@StartGame>Start Game</span>
     </div>
 </root>
 
