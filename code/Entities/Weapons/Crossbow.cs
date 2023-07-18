@@ -8,7 +8,7 @@ partial class Crossbow : HLDMWeapon
 
 	public override float PrimaryRate => 0.52f;
 	public override float SecondaryRate => 0f;
-	public override float ReloadTime => 2.8f;
+	public override float ReloadTime => 3.6f;
 	public override int Bucket => 3;
 	public override AmmoType AmmoType => AmmoType.Crossbow;
 	public override int ClipSize => 1;

@@ -111,28 +111,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "fire_ironsights"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_spas12/v_anims/fire_ironsights.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
 						name = "fire"
 						activity_name = ""
 						activity_weight = 1
@@ -217,28 +195,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "idle_sighted"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_spas12/v_anims/idle_sighted.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
 						name = "idletolow"
 						activity_name = ""
 						activity_weight = 1
@@ -275,7 +231,7 @@
 						source_filename = "models/weapons/hl2_spas12/v_anims/inspect1.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 50.0
 						take = 0
 						reverse = false
 					},
@@ -323,7 +279,7 @@
 						source_filename = "models/weapons/hl2_spas12/v_anims/inspect2.smd"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 60.0
 						take = 0
 						reverse = false
 					},
@@ -419,29 +375,7 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "pump2_sighted"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_spas12/v_anims/pump2_sighted.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "reload1"
+						name = "reload_start"
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -462,7 +396,7 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "reload2"
+						name = "reload_loop"
 						children = 
 						[
 							{
@@ -498,7 +432,7 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "reload3"
+						name = "reload_end"
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -541,20 +475,6 @@
 					{
 						_class = "AnimFile"
 						name = "Walk"
-						children = 
-						[
-							{
-								_class = "ExtractMotion"
-								extract_tx = true
-								extract_ty = true
-								extract_tz = false
-								extract_rz = false
-								linear = false
-								quadratic = false
-								root_bone_name = ""
-								motion_type = "Single"
-							},
-						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""

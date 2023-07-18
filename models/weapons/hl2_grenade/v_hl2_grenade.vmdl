@@ -88,6 +88,18 @@
 									tags = ""
 								}
 							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 16
+								event_keys = 
+								{
+									name = "sounds/weapons/hl2_grenade/hl2_grenade.pinpull.sound"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
 						]
 						activity_name = ""
 						activity_weight = 1

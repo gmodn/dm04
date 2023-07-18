@@ -8,7 +8,7 @@
   "HasAssets": true,
   "AssetsPath": "",
   "Resources": "ui/*\nui/weapons/*",
-  "MenuResources": "/ui/MainMenu/*\n/sounds/menu/*\n/ui/MainMenu/GameMenu/XGUI/*\n/fonts/*",
+  "MenuResources": "ui/MainMenu/*\nfonts/*\nsounds/menu/*",
   "HasCode": true,
   "CodePath": "code",
   "PackageReferences": [],
@@ -16,10 +16,10 @@
   "Metadata": {
     "MaxPlayers": 64,
     "MinPlayers": 1,
-    "MapSelect": "Unrestricted",
     "MapList": [
       "facepunch.crossfire"
     ],
+    "MapSelect": "Hidden",
     "GameNetworkType": "Multiplayer",
     "RankType": "None",
     "PerMapRanking": false,
@@ -124,17 +124,21 @@
     "Public": false,
     "PackageSettings": [
       {
+        "DisplayType": "Boolean",
         "Choices": [],
-        "ConVarName": "",
-        "DisplayName": "New Setting..."
+        "ConVarName": "dm04_enableclothing",
+        "DisplayName": "Enable Player Clothing?",
+        "DefaultValue": "true",
+        "Description": "Allow Player to have clothing selected in the avatar menu of s\u0026box.",
+        "Group": "Player Settings"
       }
     ],
     "TickRate": 64,
     "LaunchConfigs": [
       {
-        "Name": "HLDM-Crossfire",
+        "Name": "HLDM-Test map",
         "GameIdent": "gman.dm04#local",
-        "MapName": "facepunch.crossfire",
+        "MapName": "dm04_testingmap.vmap",
         "MaxPlayers": 64,
         "GameSettings": {},
         "Addons": "",

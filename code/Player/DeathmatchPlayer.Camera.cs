@@ -38,7 +38,7 @@
 				weapon.UpdateCamera();
 			}
 
-			Camera.Main.SetViewModelCamera( Camera.FieldOfView );
+			//Camera.Main.SetViewModelCamera( Camera.FieldOfView );
 
 			AddCameraEffects();
 		}

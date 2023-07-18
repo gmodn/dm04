@@ -26,10 +26,8 @@ partial class Shotgun : HLDMWeapon
 	{
 		base.Simulate( owner );
 
-		if ( IsReloading && (Input.Pressed( InputButton.PrimaryAttack ) || Input.Pressed( InputButton.SecondaryAttack )) )
-		{
+		if ( IsReloading && (Input.Pressed( "Attack1" ) || Input.Pressed( "Attack2" )) )
 			StopReloading = true;
-		}
 	}
 
 	public override void AttackPrimary()
@@ -120,20 +118,21 @@ partial class Shotgun : HLDMWeapon
 		TimeSincePrimaryAttack = 0;
 		TimeSinceSecondaryAttack = 0;
 
-		if ( AmmoClip >= ClipSize )
-			return;
-
 		if ( Owner is DeathmatchPlayer player )
 		{
-			var ammo = player.TakeAmmo( AmmoType, 1 );
-			if ( ammo == 0 )
-				return;
-
-			AmmoClip += ammo;
-
 			if ( AmmoClip < ClipSize && !stop )
 			{
 				Reload();
+
+				var ammo = player.TakeAmmo( AmmoType, 1 );
+
+				if ( ammo == 0 )
+				{
+					FinishReload();
+					return;
+				}
+
+				AmmoClip += ammo;
 			}
 			else
 			{

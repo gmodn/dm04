@@ -36,7 +36,6 @@
 		GravPickupTrigger.SetTriggerSize( 64 );
 		GravPickupTrigger.Parent = this;
 		GravPickupTrigger.Position = Position;
-
 	}
 
 	public void gravhitboxremove()
@@ -100,7 +99,7 @@
 
 		(Owner as AnimatedEntity).SetAnimParameter( "b_reload", true );
 
-		StartReloadEffects();
+		DoReloadEffects();
 	}
 
 	public override void Simulate( IClient owner )
@@ -134,11 +133,9 @@
 	}
 
 	[ClientRpc]
-	public virtual void StartReloadEffects()
+	public void DoReloadEffects()
 	{
 		ViewModelEntity?.SetAnimParameter( "reload", true );
-
-		// TODO - player third person model reload
 	}
 
 	public override void AttackPrimary()
@@ -311,8 +308,9 @@
 	{
 
 	}
+
 	public virtual void UpdateViewmodelCamera()
 	{
-		//nah
+		Camera.Main.SetViewModelCamera( 95 );
 	}
 }

@@ -169,28 +169,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "fire1_is"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_uspmatch/v_anims/fire1_is.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
 						name = "fire2"
 						activity_name = ""
 						activity_weight = 1
@@ -212,28 +190,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "fire2_is"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_uspmatch/v_anims/fire2_is.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
 						name = "fire3"
 						activity_name = ""
 						activity_weight = 1
@@ -247,28 +203,6 @@
 						anim_markup_ordered = false
 						disable_compression = false
 						source_filename = "models/weapons/hl2_uspmatch/v_anims/fire3.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "fire3_is"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_uspmatch/v_anims/fire3_is.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -332,28 +266,6 @@
 						anim_markup_ordered = false
 						disable_compression = false
 						source_filename = "models/weapons/hl2_uspmatch/v_anims/idle.smd"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "idle_is"
-						disabled = true
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.0
-						fade_out_time = 0.0
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/hl2_uspmatch/v_anims/idle_is.smd"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -495,6 +407,45 @@
 					{
 						_class = "AnimFile"
 						name = "reload"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 12
+								event_keys = 
+								{
+									name = "sounds/weapons/hl2_uspmatch/hl2_uspmatch.clipout.sound"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 25
+								event_keys = 
+								{
+									name = "sounds/weapons/hl2_uspmatch/hl2_uspmatch.clipin.sound"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 37
+								event_keys = 
+								{
+									name = "sounds/weapons/hl2_uspmatch/hl2_uspmatch.sliderelease.sound"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -558,20 +509,6 @@
 					{
 						_class = "AnimFile"
 						name = "Walk"
-						children = 
-						[
-							{
-								_class = "ExtractMotion"
-								extract_tx = true
-								extract_ty = true
-								extract_tz = false
-								extract_rz = false
-								linear = false
-								quadratic = false
-								root_bone_name = ""
-								motion_type = "Single"
-							},
-						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""

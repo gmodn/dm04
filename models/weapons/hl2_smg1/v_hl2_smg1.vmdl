@@ -562,7 +562,7 @@
 							{
 								_class = "AnimEvent"
 								event_class = "AE_CL_PLAYSOUND"
-								event_frame = 44
+								event_frame = 39
 								event_keys = 
 								{
 									name = "hl2_smg1.release"
@@ -677,5 +677,6 @@
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = "models/weapons/hl2_smg1/v_hl2_smg1.vanmgrph"
+		base_model_name = ""
 	}
 }
