@@ -16,16 +16,12 @@
             <a class="button" onclick=@Game.Menu.HideMenu>RESUME GAME</a>
             <a class="button" onclick=@Game.Menu.CancelLoading>DISCONNECT</a>
         }
-        else if (Game.Menu.Lobby != null)
-        {
-            <a class="button" href="/lobby">RETURN TO SERVER</a>
-        }
         else;
         <span style="height: 20px;"></span>
-        <a class="button" href="/servers">FIND SERVERS</a>
-        <a class="button" onclick=@CreateNewLobby>CREATE SERVER</a>
-        <a class="button" href="/settings">OPTIONS</a>
-        <a class="button" href="/about">ABOUT</a>
+        <a class="button" onclick=@FindGame>FIND SERVERS</a>
+        <a class="button" onclick=@CreateGame>CREATE SERVER</a>
+        <a class="button" onclick=@Options>OPTIONS</a>
+        <a class="button" onclick=@About>ABOUT</a>
         <a class="button" @onclick=@Game.Menu.Close>QUIT</a>
 
     </div>
@@ -33,15 +29,33 @@
 
 @code
 {
-    void LoadSavedGame()
-    {
-        this.Navigate( "/load" );
-    }
-
     async Task CreateNewLobby()
     {
-        await Game.Menu.CreateLobbyAsync( 64, "game", true );
         // we will navigate to lobby when it's ready
+    }
+
+    async Task About()
+    {
+        //create xgui panel
+        AddChild<About>();
+    }
+
+    async Task FindGame()
+    {
+        //create xgui panel
+        AddChild<FindServer>();
+    }
+
+    async Task CreateGame()
+    {
+        //create xgui panel
+        AddChild<CreateServer>();
+    }
+
+    async Task Options()
+    {
+        //create xgui panel
+        AddChild<Options>();
     }
 
     void LeaveGame()

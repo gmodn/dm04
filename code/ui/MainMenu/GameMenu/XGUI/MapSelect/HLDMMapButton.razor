@@ -1,9 +1,9 @@
-@using System
+@using System;
 @using Sandbox;
 @using Sandbox.MenuSystem;
 @using Sandbox.UI;
+@using Sandbox.UI.GameMenu;
 @inherits Panel
-@namespace Sandbox.UI.GameMenu
 @attribute [StyleSheet]
 
 <root>
@@ -22,7 +22,8 @@
 @code
 {
     public string MapIdent { get; set; }
-    public string HRef { get; set; } = "/lobby/map";
+
+    public Action OnClicked{ get; set; }
 
     public Package MapPackage { get; set; }
 
@@ -48,6 +49,6 @@
 
     void OnMapClicked()
     {
-        this.Navigate(HRef);
+        OnClicked?.Invoke();
     }
 }

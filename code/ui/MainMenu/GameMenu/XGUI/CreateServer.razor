@@ -1,0 +1,87 @@
+﻿@using System;
+@using Sandbox;
+@using Sandbox.MenuSystem;
+@using Sandbox.UI;
+@using Sandbox.UI.GameMenu;
+@using XGUI;
+@attribute [StyleSheet("/ui/MainMenu/GameMenu/XGUI/DefaultStyles/OliveGreen.scss")]
+@inherits Window
+
+<root title="Create Server" hasminimise="false" hasmaximise="false">
+    <div style="width:600px;height:400px;">
+        <div class="form scroll">
+            <FormGroup>
+                <Label>Server Name</Label>
+                <Control>
+                    <TextEntry Value:bind="@GameTitle" Tooltip="Server Title"> </TextEntry>
+                </Control>
+            </FormGroup>
+
+            <FormGroup>
+                <Label>Max Players</Label>
+                <Control>
+                    <SliderControl ShowTextEntry="@true" ShowRange="@true" Min=@(1.0f) Max=@(64) Value:bind="@MaxPlayers"></SliderControl>
+                </Control>
+            </FormGroup>
+            
+            <FormGroup>
+                <Label>Map</Label>
+                <Control>
+                         <div>
+                            <HLDMMapButton MapIdent=@Map OnClicked="@OnMapClicked"></HLDMMapButton>
+                         </div>
+                </Control>
+            </FormGroup>
+
+        </div>
+    </div>
+
+    <div>
+        <span class="button" onclick=@StartGame>Start Game</span>
+    </div>
+</root>
+
+@code
+{
+    public string GameTitle { get; set; } = "My Deathmatch Server";
+    public float MaxPlayers { get; set; } = 32;
+    public string Map { get; set; } = "facepunch.crossfire";
+    bool ShowMapOption = true;
+    int MaxPlayersSupported = 1;
+
+    bool choosingMap;
+
+    protected override void OnParametersSet()
+    {
+        MaxPlayersSupported = Game.Menu.Package.GetMeta<int>("MaxPlayers", 1);
+
+        ShowMapOption = Game.Menu.Package.MapSelectionMode != Sandbox.DataModel.Game.MapSelect.Hidden;
+        ShowMapOption = ShowMapOption && Game.Menu.Package.MapSelectionMode != Sandbox.DataModel.Game.MapSelect.Empty;
+    }
+
+    public void StartGame()
+    {
+        _ = Game.Menu.StartServerAsync(MaxPlayersSupported, GameTitle, Map);
+        this.Navigate("/active");
+    }
+
+    void OnMapClicked()
+    {
+        Game.Overlay.ShowPackageSelector("type:map sort:popular", OnMapSelected);
+    }
+
+    void OnMapSelected(Package map)
+    {
+        Map = map.FullIdent;
+        StateHasChanged();
+    }
+
+    public override void Tick()
+    {
+        base.Tick();
+
+        if (!IsVisible)
+            return;
+    }
+}
+

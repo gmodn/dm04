@@ -1,0 +1,23 @@
+﻿@using System;
+@using Sandbox;
+@using Sandbox.MenuSystem;
+@using Sandbox.UI;
+@using Sandbox.UI.GameMenu;
+@using XGUI;
+@attribute [StyleSheet("/ui/MainMenu/GameMenu/XGUI/DefaultStyles/OliveGreen.scss")]
+@inherits Window
+
+<root title="Server Browser" hasminimise="false" hasmaximise="false">
+				<div style="width:1000px;height:500px;">
+					<ServerListPanel @ref="List" ShowGame=@false FilterByGame=gman.dm04></ServerListPanel>
+				</div>
+
+				<div>
+					<div class="button" onclick="@(() => List.Refresh())"> Refresh </div>
+				</div>
+</root>
+
+@code
+{
+	ServerListPanel List;
+}
