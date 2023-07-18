@@ -19,6 +19,7 @@ partial class SMG : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
+		AmmoClip = ClipSize;
 	}
 
 	public override void AttackPrimary()

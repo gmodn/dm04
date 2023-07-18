@@ -146,7 +146,9 @@
         "PostLaunchCommand": ""
       }
     ],
-    "ControlModes": {},
+    "ControlModes": {
+      "Keyboard": true
+    },
     "InputSettings": {
       "Actions": [
         {
@@ -294,10 +296,10 @@
           "GroupName": "Other"
         },
         {
-          "Name": "Drop",
+          "Name": "GravGun",
           "KeyboardCode": "g",
           "GamepadCode": "RightJoystickButton",
-          "GroupName": "Other"
+          "GroupName": "Inventory"
         },
         {
           "Name": "Flashlight",

@@ -1,11 +1,12 @@
 ﻿using Sandbox;
-using System.Runtime.CompilerServices;
 
 public partial class DeathmatchPlayer : Player
 {
 	TimeSince timeSinceDropped;
 
 	private DamageInfo lastDamage;
+
+	public bool InGodMode { get; private set; }
 
 	[Net]
 	public float Armour { get; set; } = 0;
@@ -33,7 +34,7 @@ public partial class DeathmatchPlayer : Player
 
 	public override void Respawn()
 	{
-		SetModel( PlayerModel );
+		InGodMode = false;
 
 		// I think this might just be our base movement controller, it feels really good.
 		Controller = new HLDMWalkController
@@ -48,15 +49,10 @@ public partial class DeathmatchPlayer : Player
 		EnableDrawing = true;
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
-
-	  /*Log.Info( $"Player Clothing is marked {dm04_enableclothing}." );
-
-		if ( dm04_enableclothing )
-			Clothing.DressEntity( this );
-		else*/
-
+		
 		ClearAmmo();
 
+		SetModel( PlayerModel );
 		Clothing.DressEntity( this );
 
 		SupressPickupNotices = true;
@@ -120,14 +116,12 @@ public partial class DeathmatchPlayer : Player
 		ply.Inventory.Add( new PhysGun() );
 	}
 
-	[ConCmd.Admin( "god")]
+	[ConCmd.Admin( "dm04.god")]
 	public static void GiveGodMode()
 	{
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
 
-		ply.MaxHealth = 99999;
-		ply.Health = 99999;
-		Log.Info( "no good way of doing this atm so lets just set the players health really high." );
+		ply.InGodMode = !ply.InGodMode;
 	}
 
 	[ConCmd.Admin( "noclip" )]
@@ -214,6 +208,18 @@ public partial class DeathmatchPlayer : Player
 		{
 			SwitchToBestWeapon();
 		}
+
+		if(Input.Pressed("GravGun") && ActiveChild is not GravGun )
+		{
+			var inv = Inventory as DmInventory;
+
+			var gravgun = inv.List.Where( g => g is GravGun )
+				.FirstOrDefault();
+
+			if ( gravgun == null ) return;
+
+			ActiveChildInput = gravgun;
+		}
 	}
 
 	public void SwitchToBestWeapon()
@@ -244,15 +250,13 @@ public partial class DeathmatchPlayer : Player
 
 	public override void TakeDamage( DamageInfo info )
 	{
-		if ( LifeState == LifeState.Dead )
+		if ( LifeState == LifeState.Dead || InGodMode )
 			return;
 
 		LastDamage = info;
 
 		if ( info.Hitbox.HasTag( "head" ) )
-		{
 			info.Damage *= 2.0f;
-		}
 
 		this.ProceduralHitReaction( info );
 

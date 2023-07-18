@@ -46,10 +46,7 @@ partial class GravGun : HLDMWeapon
 
 	public override void Simulate( IClient client )
 	{
-		if ( Owner is not Player owner ) return;
-
-		if ( !Game.IsServer )
-			return;
+		if ( !Game.IsServer || Owner is not DeathmatchPlayer owner ) return;
 
 		using ( Prediction.Off() )
 		{
@@ -240,6 +237,9 @@ partial class GravGun : HLDMWeapon
 
 		HeldBody.Sleeping = false;
 		HeldBody.AutoSleep = false;
+
+		if ( entity is GrenadeThrown grenade )
+			grenade.ResetTimerGrav();
 
 		HeldEntity = entity;
 		HeldEntity.Tags.Add( grabbedTag );

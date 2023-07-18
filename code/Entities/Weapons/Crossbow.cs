@@ -20,8 +20,8 @@ partial class Crossbow : HLDMWeapon
 	{
 		base.Spawn();
 
-		AmmoClip = 1;
 		Model = WorldModel;
+		AmmoClip = 1;
 	}
 
 	public override void AttackPrimary()

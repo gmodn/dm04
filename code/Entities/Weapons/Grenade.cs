@@ -22,7 +22,7 @@ partial class GrenadeWeapon : HLDMWeapon
 
 	public override bool CanPrimaryAttack()
 	{
-		return Input.Released( InputButton.PrimaryAttack );
+		return Input.Released( "Attack1" );
 	}
 
 	public override void AttackPrimary()
@@ -42,7 +42,6 @@ partial class GrenadeWeapon : HLDMWeapon
 		PlaySound( "sounds/weapons/hl2_grenade/hl2_grenade.throw.sound" );
 
 		Game.SetRandomSeed( Time.Tick );
-
 
 		if ( Game.IsServer )
 			using ( Prediction.Off() )

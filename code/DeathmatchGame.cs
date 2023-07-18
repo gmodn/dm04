@@ -47,7 +47,6 @@ partial class DeathmatchGame : GameManager
 		if ( cl.SteamId == 76561197960279927 )
 		{
 			Log.Info( $"HOLY SHIT!!! \"{cl.Name}\" IS HERE!!!!" );
-
 		}
 
 		var player = new DeathmatchPlayer();

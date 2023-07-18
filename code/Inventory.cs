@@ -2,7 +2,7 @@
 {
 
 
-	public DmInventory( Player player ) : base( player )
+	public DmInventory( DeathmatchPlayer player ) : base( player )
 	{
 
 	}

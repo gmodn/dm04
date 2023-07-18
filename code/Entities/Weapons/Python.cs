@@ -27,6 +27,7 @@ partial class Python : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
+		AmmoClip = ClipSize;
 	}
 
 	public override bool CanPrimaryAttack()

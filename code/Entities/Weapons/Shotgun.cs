@@ -20,6 +20,7 @@ partial class Shotgun : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
+		AmmoClip = ClipSize;
 	}
 
 	public override void Simulate( IClient owner )

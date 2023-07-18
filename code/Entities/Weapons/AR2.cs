@@ -26,6 +26,7 @@ partial class AR2 : HLDMWeapon
 		base.Spawn();
 
 		Model = WorldModel;
+		AmmoClip = ClipSize;
 		isChargingAlt = false;
 	}
 
