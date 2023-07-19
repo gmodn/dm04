@@ -8,5 +8,6 @@ code/Properties/launchSettings.json
 dm98.csproj
 Properties/launchSettings.json
 *.csproj
+*.log
 .vs
 *.generated.*
