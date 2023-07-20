@@ -3,10 +3,17 @@
 	public virtual AmmoType AmmoType => AmmoType.None;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
-	public virtual int Bucket => 1;
-	public virtual int BucketWeight => 100;
+
+	/// <summary>
+	/// The column order this weapon will go in, follow the array indexing
+	/// </summary>
+	public virtual int SlotColumn => 1;
+
+	/// <summary>
+	/// The order in the column, don't use the array indexing for this
+	/// </summary>
+	public virtual int SlotOrder => 1;
 	public virtual AmmoType SecondaryAmmo => AmmoType.None;
-	public virtual int Order => (Bucket * 10000) + BucketWeight;
 
 	public virtual string AmmoIcon => "p";
 

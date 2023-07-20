@@ -245,7 +245,7 @@ public partial class DeathmatchPlayer : Player
 	{
 		var best = Children.Select( x => x as HLDMWeapon )
 			.Where( x => x.IsValid() && x.IsUsable() )
-			.OrderByDescending( x => x.BucketWeight )
+			.OrderByDescending( x => x.SlotOrder )
 			.FirstOrDefault();
 
 		if ( best == null ) return;

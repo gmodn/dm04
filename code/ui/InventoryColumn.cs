@@ -26,13 +26,11 @@ public class InventoryColumn : Panel
 			icon.Parent = this;
 			Icons.Add( icon );
 		}
-
-
 	}
 
 	internal void TickSelection( HLDMWeapon selectedWeapon )
 	{
-		SetClass( "active", selectedWeapon?.Bucket == Column );
+		SetClass( "active", selectedWeapon?.SlotColumn == Column );
 
 		for ( int i = 0; i < Icons.Count; i++ )
 		{
@@ -43,7 +41,7 @@ public class InventoryColumn : Panel
 		{
 			if ( p is InventoryIcon icon )
 			{
-				return icon.Weapon?.BucketWeight ?? 0;
+				return icon.Weapon?.SlotOrder ?? 0;
 			}
 
 			return 0;

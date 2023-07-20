@@ -10,7 +10,8 @@ partial class Shotgun : HLDMWeapon
 	public override AmmoType AmmoType => AmmoType.Buckshot;
 	public override int ClipSize => 6;
 	public override float ReloadTime => 0.8f;
-	public override int Bucket => 3;
+	public override int SlotColumn => 3;
+	public override int SlotOrder => 1;
 
 	[Net, Predicted]
 	public bool StopReloading { get; set; }

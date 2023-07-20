@@ -12,18 +12,16 @@ using Sandbox.Internal;
 /// </summary>
 partial class DeathmatchGame : GameManager
 {
-	[Net]
-	DeathmatchHud Hud { get; set; }
-
 	public DeathmatchGame()
 	{
-		//
-		// Create the HUD entity. This is always broadcast to all clients
-		// and will create the UI panels clientside.
-		//
 		if ( Game.IsServer )
 		{
-			Hud = new DeathmatchHud();
+
+		}
+
+		if ( Game.IsClient )
+		{
+			_ = new DMHud();
 		}
 	}
 
@@ -34,11 +32,25 @@ partial class DeathmatchGame : GameManager
 		ItemRespawn.Init();
 	}
 
-	[ConCmd.Server( "alert" )]
+	[Event.Hotload]
+	protected void GameHotload()
+	{
+		if ( Game.IsServer )
+		{
+
+		}
+
+		if ( Game.IsClient )
+		{
+			_ = new DMHud();
+		}
+	}
+
+	/*[ConCmd.Server( "alert" )]
 	public static void GameAlert( string message )
 	{
 		Log.Error( $"{message}" );
-	}
+	}*/
 
 	public override void ClientJoined( IClient cl )
 	{
@@ -101,7 +113,7 @@ partial class DeathmatchGame : GameManager
 	{
 		base.OnKilled( client, pawn );
 
-		Hud.OnPlayerDied( To.Everyone, pawn as DeathmatchPlayer );
+		//DMHud.OnPlayerDied( To.Everyone, pawn as DeathmatchPlayer );
 	}
 
 	public static void Explosion( Entity weapon, Entity owner, Vector3 position, float radius, float damage, float forceScale )

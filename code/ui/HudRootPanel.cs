@@ -1,14 +1,15 @@
 ﻿using Sandbox.UI;
 
-public class HudRootPanel : RootPanel
+public class DMHud : RootPanel
 {
-	public static HudRootPanel Current;
+	public static DMHud Current;
 
 	public Scoreboard Scoreboard { get; set; }
 
-	public HudRootPanel()
+	public DMHud()
 	{
-		Current = this;
+		Current?.Delete();
+		Current = null;
 
 		StyleSheet.Load( "/resource/styles/hud.scss" );
 		SetTemplate( "/resource/templates/hud.html" );
@@ -25,6 +26,8 @@ public class HudRootPanel : RootPanel
 		AddChild<KillFeed>();
 		Scoreboard = AddChild<Scoreboard>();
 		AddChild<VoiceList>();
+
+		Current = this;
 	}
 
 	public override void Tick()

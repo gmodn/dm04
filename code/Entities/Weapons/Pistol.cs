@@ -11,7 +11,8 @@ partial class Pistol : HLDMWeapon
 	public override AmmoType AmmoType => AmmoType.Pistol;
 	public override int ClipSize => 18;
 	public override float ReloadTime => 1.4f;
-	public override int Bucket => 1;
+	public override int SlotColumn => 1;
+	public override int SlotOrder => 1;
 
 	public override void Spawn()
 	{

@@ -12,7 +12,8 @@ partial class SMG : HLDMWeapon
 	public override AmmoType AmmoType => AmmoType.SMG;
 	public override AmmoType SecondaryAmmo => AmmoType.SMGGrenade;
 	public override float ReloadTime => 1.7f;
-	public override int Bucket => 2;
+	public override int SlotColumn => 2;
+	public override int SlotOrder => 1;
 
 	public override void Spawn()
 	{

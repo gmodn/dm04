@@ -11,7 +11,8 @@ partial class Crowbar : HLDMWeapon
 	public override float ReloadTime => 3.0f;
 	public override AmmoType AmmoType => AmmoType.None;
 	public override int ClipSize => 0;
-	public override int Bucket => 0;
+	public override int SlotColumn => 0;
+	public override int SlotOrder => 1;
 
 	public override void Spawn()
 	{

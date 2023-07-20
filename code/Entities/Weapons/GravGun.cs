@@ -1,16 +1,12 @@
-﻿using Sandbox;
-using Sandbox.Physics;
-using System;
-using System.Linq;
-
-[Library( "dm_gravgun" ), HammerEntity]
+﻿[Library( "dm_gravgun" ), HammerEntity]
 [EditorModel( "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl" )]
 [Title( "GravGun" ), Category( "Weapons" )]
 partial class GravGun : HLDMWeapon
 {
 	public override string ViewModelPath => "models/weapons/hl2_gravgun/v_hl2_gravgun.vmdl";
 	public override AmmoType AmmoType => AmmoType.None;
-	public override int Bucket => 0;
+	public override int SlotColumn => 0;
+	public override int SlotOrder => 3;
 
 	public PhysicsBody HeldBody { get; private set; }
 	public Vector3 HeldPos { get; private set; }

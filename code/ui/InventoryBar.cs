@@ -35,7 +35,7 @@ public class InventoryBar : Panel
 
 		foreach ( var weapon in Weapons )
 		{
-			columns[weapon.Bucket].UpdateWeapon( weapon );
+			columns[weapon.SlotColumn].UpdateWeapon( weapon );
 		}
 	}
 
@@ -75,9 +75,7 @@ public class InventoryBar : Panel
 		// Not open fuck it off
 		if ( !IsOpen ) return;
 
-		//
 		// Fire pressed when we're open - select the weapon and close.
-		//
 		if ( Input.Down( "Attack1" ) )
 		{
 			Input.SetAction( "Attack1", false );
@@ -87,7 +85,9 @@ public class InventoryBar : Panel
 			return;
 		}
 
-		var sortedWeapons = Weapons.OrderBy( x => x.Order ).ToList();
+		var sortedWeapons = Weapons.OrderBy( x => x.SlotOrder )
+			.OrderBy( x => x.SlotColumn )
+			.ToList();
 
 		// get our current index
 		var oldSelected = SelectedWeapon;
@@ -126,13 +126,16 @@ public class InventoryBar : Panel
 
 		if ( columninput == -1 ) return SelectedIndex;
 
-		if ( SelectedWeapon.IsValid() && SelectedWeapon.Bucket == columninput )
+		if ( SelectedWeapon.IsValid() && SelectedWeapon.SlotColumn == columninput )
 		{
 			return NextInBucket( sortedWeapons );
 		}
 
 		// Are we already selecting a weapon with this column?
-		var firstOfColumn = sortedWeapons.Where( x => x.Bucket == columninput ).FirstOrDefault();
+		var firstOfColumn = sortedWeapons.Where( x => x.SlotColumn == columninput )
+			.Where(s => s.SlotOrder == 1)
+			.FirstOrDefault();
+
 		if ( firstOfColumn == null )
 		{
 			// DOOP sound
@@ -148,7 +151,7 @@ public class InventoryBar : Panel
 
 		HLDMWeapon first = null;
 		HLDMWeapon prev = null;
-		foreach ( var weapon in sortedWeapons.Where( x => x.Bucket == SelectedWeapon.Bucket ) )
+		foreach ( var weapon in sortedWeapons.Where( x => x.SlotColumn == SelectedWeapon.SlotColumn ) )
 		{
 			if ( first == null ) first = weapon;
 			if ( prev == SelectedWeapon ) return sortedWeapons.IndexOf( weapon );

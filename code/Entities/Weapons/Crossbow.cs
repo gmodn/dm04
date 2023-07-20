@@ -9,7 +9,8 @@ partial class Crossbow : HLDMWeapon
 	public override float PrimaryRate => 0.52f;
 	public override float SecondaryRate => 0f;
 	public override float ReloadTime => 3.6f;
-	public override int Bucket => 3;
+	public override int SlotColumn => 3;
+	public override int SlotOrder => 2;
 	public override AmmoType AmmoType => AmmoType.Crossbow;
 	public override int ClipSize => 1;
 
@@ -22,6 +23,14 @@ partial class Crossbow : HLDMWeapon
 
 		Model = WorldModel;
 		AmmoClip = 1;
+	}
+
+	public override void ActiveEnd( Entity ent, bool dropped )
+	{
+		ToggleVMDrawing( To.Single( Owner ), true );
+		Zoomed = false;
+
+		base.ActiveEnd( ent, dropped );
 	}
 
 	public override void AttackPrimary()
@@ -39,18 +48,16 @@ partial class Crossbow : HLDMWeapon
 
 		ShootEffects();
 
-		// TODO - if zoomed in then instant hit, no travel, 120 damage
-
-
 		if ( Game.IsServer )
 		{
 			var aim = Owner.AimRay;
+
 			var bolt = new CrossbowBolt();
 			bolt.Position = aim.Position;
 			bolt.Rotation = Rotation.LookAt( aim.Forward );
 			bolt.Owner = Owner;
 			bolt.Velocity = aim.Forward * 100;
-			// Have Crossbow AutoReload after firing
+
 			Reload();
 		}
 	}
@@ -60,9 +67,7 @@ partial class Crossbow : HLDMWeapon
 		base.Simulate( cl );
 
 		if ( Input.Pressed( "attack2" ) )
-		{ 
 			ZoomToggle();
-		}
 	}
 
 	[ClientRpc]
@@ -77,21 +82,34 @@ partial class Crossbow : HLDMWeapon
 	public override void UpdateCamera()
 	{
 		if ( Zoomed )
-		{
-			Camera.FieldOfView = Screen.CreateVerticalFieldOfView( 30 );
-		}
+			Camera.FieldOfView = Screen.CreateVerticalFieldOfView( 20 );
 	}
 
 	public void ZoomToggle()
 	{
-		if ( Zoomed )
-		{
-			Zoomed = false;
-		}
-		else
-		{
-			Zoomed = true;
-		}
+		Zoomed = !Zoomed;
+		ToggleVMDrawing( To.Single( Owner ) );
 	}
 
+	/// <summary>
+	/// Sets viewmodel drawing with parameter
+	/// </summary>
+	[ClientRpc]
+	void ToggleVMDrawing(bool set)
+	{
+		Game.AssertClient();
+
+		ViewModelEntity.EnableDrawing = set;
+	}
+
+	/// <summary>
+	/// Toggles viewmodel drawing
+	/// </summary>
+	[ClientRpc]
+	void ToggleVMDrawing()
+	{
+		Game.AssertClient();
+
+		ViewModelEntity.EnableDrawing = !ViewModelEntity.EnableDrawing;
+	}
 }
