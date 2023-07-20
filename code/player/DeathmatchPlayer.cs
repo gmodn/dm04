@@ -235,10 +235,8 @@ public partial class DeathmatchPlayer : Player
 		DoPlayerAnimation();
 		SimulateActiveChild( cl, ActiveChild );
 
-		//
 		// If the current weapon is out of ammo and we last fired it over half a second ago
 		// lets try to switch to a better wepaon
-		//
 		if ( ActiveChild is HLDMWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
 		{
 			SwitchToBestWeapon();
@@ -299,6 +297,8 @@ public partial class DeathmatchPlayer : Player
 		base.OnActiveChildChanged( previous, next );
 
 		(Inventory as DmInventory).LastActive = previous;
+
+		if ( SuppressAttacks ) SuppressAttacks = false;
 	}
 
 	public override void StartTouch( Entity other )
