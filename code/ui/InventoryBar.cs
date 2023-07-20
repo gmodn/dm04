@@ -39,6 +39,8 @@ public class InventoryBar : Panel
 		}
 	}
 
+	bool becameOpen = false;
+
 	/// <summary>
 	/// IClientInput implementation, calls during the client input build.
 	/// You can both read and write to input, to affect what happens down the line.
@@ -82,8 +84,11 @@ public class InventoryBar : Panel
 			localPlayer.ActiveChildInput = SelectedWeapon;
 			IsOpen = false;
 			Sound.FromScreen( "sounds/ui/wpn_select.sound" );
+			becameOpen = false;
 			return;
 		}
+
+		Log.Info( becameOpen );
 
 		var sortedWeapons = Weapons.OrderBy( x => x.SlotOrder )
 			.OrderBy( x => x.SlotColumn )
@@ -93,6 +98,9 @@ public class InventoryBar : Panel
 		var oldSelected = SelectedWeapon;
 		int SelectedIndex = sortedWeapons.IndexOf( SelectedWeapon );
 		SelectedIndex = SlotPressInput( SelectedIndex, sortedWeapons );
+
+		if ( Input.MouseWheel != 0 && !becameOpen )
+			becameOpen = true;
 
 		// forward if mouse wheel was pressed
 		SelectedIndex -= Input.MouseWheel;
@@ -126,15 +134,26 @@ public class InventoryBar : Panel
 
 		if ( columninput == -1 ) return SelectedIndex;
 
-		if ( SelectedWeapon.IsValid() && SelectedWeapon.SlotColumn == columninput )
-		{
-			return NextInBucket( sortedWeapons );
-		}
-
 		// Are we already selecting a weapon with this column?
 		var firstOfColumn = sortedWeapons.Where( x => x.SlotColumn == columninput )
 			.Where(s => s.SlotOrder == 1)
 			.FirstOrDefault();
+
+		if ( !becameOpen )
+		{
+			becameOpen = true;
+
+			if( SelectedWeapon.SlotColumn == columninput )
+			{
+				SelectedIndex = sortedWeapons.IndexOf( firstOfColumn );
+				return SelectedIndex;
+			}
+		}
+
+		if ( SelectedWeapon.IsValid() && SelectedWeapon.SlotColumn == columninput )
+		{
+			return NextInBucket( sortedWeapons );
+		}
 
 		if ( firstOfColumn == null )
 		{
