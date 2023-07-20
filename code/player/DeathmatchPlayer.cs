@@ -74,7 +74,7 @@ public partial class DeathmatchPlayer : Player
 		base.Respawn();
 	}
 
-	[ConCmd.Admin( "impulse" )]
+	[ConCmd.Admin( "dm04.impulse" )]
 	public static void Impulse( int Value )
 	{
 		if ( Value == 101 ) 
@@ -108,7 +108,7 @@ public partial class DeathmatchPlayer : Player
 		}
 	}
 
-	[ConCmd.Admin( "HLDM_DevTools")]
+	[ConCmd.Admin( "dm04.DevTools")]
 	public static void GiveDevTools()
 	{
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
@@ -185,7 +185,7 @@ public partial class DeathmatchPlayer : Player
 	public void DeathStat()
 	{
 		Sandbox.Services.Stats.Increment( "deaths", 1 );
-		Log.Info( "Client has died, increase death stat by 1." );
+		//Log.Info( "Client has died, increase death stat by 1." );
 	}
 
 	public override void Simulate( IClient cl )
@@ -209,16 +209,35 @@ public partial class DeathmatchPlayer : Player
 			SwitchToBestWeapon();
 		}
 
-		if(Input.Pressed("GravGun") && ActiveChild is not GravGun )
+		if( Input.Pressed("QuickSwap") )
 		{
 			var inv = Inventory as DmInventory;
 
-			var gravgun = inv.List.Where( g => g is GravGun )
-				.FirstOrDefault();
+			var curActive = ActiveChild;
+			ActiveChildInput = inv.LastActive;
 
-			if ( gravgun == null ) return;
+			inv.LastActive = curActive;
+		}
 
-			ActiveChildInput = gravgun;
+		if( Input.Pressed("GravGun") )
+		{
+			var inv = Inventory as DmInventory;
+
+			if ( ActiveChild is not GravGun )
+			{
+				var gravgun = inv.List.Where( g => g is GravGun )
+					.FirstOrDefault();
+
+				inv.LastActive = ActiveChild;
+				ActiveChildInput = gravgun;
+			} 
+			else
+			{
+				ActiveChildInput = inv.LastActive;
+				inv.LastActive = inv.List
+					.Where( g => g is GravGun )
+					.FirstOrDefault();
+			}
 		}
 	}
 
@@ -232,6 +251,13 @@ public partial class DeathmatchPlayer : Player
 		if ( best == null ) return;
 
 		ActiveChild = best;
+	}
+
+	public override void OnActiveChildChanged( Entity previous, Entity next )
+	{
+		base.OnActiveChildChanged( previous, next );
+
+		(Inventory as DmInventory).LastActive = previous;
 	}
 
 	public override void StartTouch( Entity other )

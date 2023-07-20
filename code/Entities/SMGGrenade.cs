@@ -13,7 +13,7 @@
 		SetModel( "models/weapons/hl2_grenade/w_hl2_grenade.vmdl" );
 	}
 
-	[Event.Tick.Server]
+	[GameEvent.Tick.Server]
 	public void Simulate()
 	{
 		var trace = Trace.Ray( Position, Position )

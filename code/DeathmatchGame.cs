@@ -135,7 +135,7 @@ partial class DeathmatchGame : GameManager
 
 			var tr = Trace.Ray( position, targetPos )
 				.Ignore( weapon )
-				.WorldOnly()
+				.StaticOnly()
 				.Run();
 
 			if ( tr.Fraction < 0.98f )

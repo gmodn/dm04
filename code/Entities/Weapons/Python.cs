@@ -32,7 +32,7 @@ partial class Python : HLDMWeapon
 
 	public override bool CanPrimaryAttack()
 	{
-		return base.CanPrimaryAttack() && Input.Pressed( InputButton.PrimaryAttack );
+		return base.CanPrimaryAttack() && Input.Pressed( "Attack1" );
 	}
 
 	public override void AttackPrimary()
