@@ -27,6 +27,8 @@ public partial class DeathmatchPlayer : Player
 
 	public static string PlayerModel { get; set; } = ("models/citizen/citizen.vmdl");
 
+	public bool SuppressAttacks = false;
+
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
@@ -209,6 +211,18 @@ public partial class DeathmatchPlayer : Player
 		//Log.Info( "Client has died, increase death stat by 1." );
 	}
 
+	int GetSlotInput()
+	{
+		if ( Input.Pressed( "slot1" ) ) return 0;
+		if ( Input.Pressed( "slot2" ) ) return 1;
+		if ( Input.Pressed( "slot3" ) ) return 2;
+		if ( Input.Pressed( "slot4" ) ) return 3;
+		if ( Input.Pressed( "slot5" ) ) return 4;
+		if ( Input.Pressed( "slot6" ) ) return 5;
+
+		return -1;
+	}
+
 	public override void Simulate( IClient cl )
 	{
 		base.Simulate( cl );
@@ -259,6 +273,12 @@ public partial class DeathmatchPlayer : Player
 					.Where( g => g is GravGun )
 					.FirstOrDefault();
 			}
+		}
+
+		if ( Input.MouseWheel != 0 || GetSlotInput() != -1 )
+		{
+			if ( !SuppressAttacks )
+				SuppressAttacks = true;
 		}
 	}
 

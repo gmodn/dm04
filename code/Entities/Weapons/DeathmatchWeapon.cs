@@ -37,7 +37,9 @@
 	public PickupTrigger PickupTrigger { get; protected set; }
 	public PickupTrigger GravPickupTrigger { get; protected set; }
 
-	public void gravhitbox()
+	public DeathmatchPlayer Holder => Owner as DeathmatchPlayer;
+
+	public void CreateGravHitbox()
 	{
 		GravPickupTrigger = new PickupTrigger();
 		GravPickupTrigger.SetTriggerSize( 64 );
@@ -45,9 +47,23 @@
 		GravPickupTrigger.Position = Position;
 	}
 
-	public void gravhitboxremove()
+	public void RemoveGravHitbox()
 	{
 		GravPickupTrigger.Delete();
+	}
+
+	public override bool CanPrimaryAttack()
+	{
+		if ( Holder.SuppressAttacks ) return false;
+
+		return base.CanPrimaryAttack();
+	}
+
+	public override bool CanSecondaryAttack()
+	{
+		if ( Holder.SuppressAttacks ) return false;
+
+		return base.CanSecondaryAttack();
 	}
 
 	public int AvailableAmmo()
@@ -109,19 +125,33 @@
 		DoReloadEffects();
 	}
 
+	TimeSince timeSinceSuppressed;
+
 	public override void Simulate( IClient owner )
 	{
 		if ( TimeSinceDeployed < 0.6f )
+			return;
+
+		if ( timeSinceSuppressed < 0.2f ) 
 			return;
 
 		if ( !IsReloading )
 		{
 			base.Simulate( owner );
 		}
-
+		
 		if ( IsReloading && TimeSinceReload > ReloadTime )
 		{
 			OnReloadFinish();
+		}
+
+		if ( Holder.SuppressAttacks )
+		{
+			if ( Input.Pressed( "Attack1" ) || Input.Pressed( "Attack2" ) )
+			{
+				Holder.SuppressAttacks = false;
+				timeSinceSuppressed = 0;
+			}
 		}
 	}
 

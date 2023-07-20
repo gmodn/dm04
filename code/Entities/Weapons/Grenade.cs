@@ -28,8 +28,7 @@ partial class GrenadeWeapon : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( Owner is not DeathmatchPlayer player ) return;
 

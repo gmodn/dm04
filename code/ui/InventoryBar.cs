@@ -82,13 +82,12 @@ public class InventoryBar : Panel
 		{
 			Input.SetAction( "Attack1", false );
 			localPlayer.ActiveChildInput = SelectedWeapon;
-			IsOpen = false;
 			Sound.FromScreen( "sounds/ui/wpn_select.sound" );
+
+			IsOpen = false;
 			becameOpen = false;
 			return;
 		}
-
-		Log.Info( becameOpen );
 
 		var sortedWeapons = Weapons.OrderBy( x => x.SlotOrder )
 			.OrderBy( x => x.SlotColumn )

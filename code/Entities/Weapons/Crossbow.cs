@@ -35,6 +35,8 @@ partial class Crossbow : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
+		base.AttackPrimary();
+
 		if ( !TakeAmmo( 1 ) )
 		{
 			DryFire();

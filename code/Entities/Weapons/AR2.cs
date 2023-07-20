@@ -40,8 +40,7 @@ partial class AR2 : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( !TakeAmmo( 1 ) )
 		{
@@ -68,6 +67,8 @@ partial class AR2 : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
+		base.AttackSecondary();
+
 		if ( Owner is DeathmatchPlayer player && Game.IsServer )
 		{
 			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )

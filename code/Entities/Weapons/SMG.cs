@@ -5,7 +5,6 @@ partial class SMG : HLDMWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_smg1/v_hl2_smg1.vmdl";
-
 	public override float PrimaryRate => 13.3f;
 	public override float SecondaryRate => 1.0f;
 	public override int ClipSize => 45;
@@ -25,8 +24,7 @@ partial class SMG : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( !TakeAmmo( 1 ) )
 		{
@@ -56,8 +54,7 @@ partial class SMG : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackSecondary();
 
 		if ( Owner is DeathmatchPlayer player )
 		{

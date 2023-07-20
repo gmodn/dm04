@@ -185,7 +185,7 @@ partial class GravGun : HLDMWeapon
 	{
 	}
 
-	[Event.Physics.PreStep]
+	[GameEvent.Physics.PreStep]
 	public void OnPrePhysicsStep()
 	{
 		if ( !Game.IsServer )
@@ -194,7 +194,7 @@ partial class GravGun : HLDMWeapon
 		if ( !HeldBody.IsValid() )
 			return;
 
-		if ( HeldEntity is Player )
+		if ( HeldEntity is DeathmatchPlayer )
 			return;
 
 		var velocity = HeldBody.Velocity;

@@ -34,8 +34,7 @@ partial class Shotgun : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( !TakeAmmo( 1 ) )
 		{
@@ -64,6 +63,8 @@ partial class Shotgun : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
+		base.AttackSecondary();
+
 		TimeSincePrimaryAttack = -0.5f;
 		TimeSinceSecondaryAttack = -0.5f;
 

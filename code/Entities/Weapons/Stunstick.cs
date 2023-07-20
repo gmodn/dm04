@@ -29,8 +29,7 @@ partial class Stunstick : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		// woosh sound
 		// screen shake
