@@ -67,6 +67,8 @@ partial class SMG : HLDMWeapon
 			}
 			else
 			{
+				Game.SetRandomSeed( Time.Tick );
+
 				var aim = Owner.AimRay;
 
 				if ( Game.IsServer )
@@ -78,25 +80,14 @@ partial class SMG : HLDMWeapon
 							Owner = Owner
 						};
 
-						grenade.PhysicsBody.Velocity = aim.Forward * 600.0f + Owner.Rotation.Up * 200.0f + Owner.Velocity;
+						grenade.PhysicsBody.Velocity = aim.Forward * 1000.0f + Owner.Velocity;
 					}
 
 				player.SetAnimParameter( "b_attack", true );
-
-				PlaySound( "dm.grenade_throw" );
-
-				Game.SetRandomSeed( Time.Tick );
-
-				Reload();
+				PlaySound( "hl2_smg1.glauncher" );
 
 				player.TakeAmmo( SecondaryAmmo, 1 );
 				SecondaryAmmoClip = player.AmmoCount( SecondaryAmmo );
-
-				if ( Game.IsServer && AmmoClip == 0 && player.AmmoCount( AmmoType.SMGGrenade ) == 0 )
-				{
-					Delete();
-					player.SwitchToBestWeapon();
-				}
 			}
 		}
 	}

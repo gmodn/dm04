@@ -270,7 +270,8 @@
 	{
 		if ( AmmoClip > 0 ) return true;
 		if ( AmmoType == AmmoType.None ) return true;
-		return AvailableAmmo() > 0;
+
+		return AvailableAmmo() > 0 && AvailableAltAmmo() > 0;
 	}
 
 	public override void OnCarryStart( Entity carrier )

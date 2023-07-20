@@ -11,7 +11,7 @@ partial class GrenadeWeapon : HLDMWeapon
 	public override AmmoType AmmoType => AmmoType.Grenade;
 	public override int ClipSize => 1;
 	public override int SlotColumn => 4;
-	public override int SlotOrder => 0;
+	public override int SlotOrder => 1;
 
 	public override void Spawn()
 	{

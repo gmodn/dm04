@@ -69,7 +69,7 @@ partial class Crowbar : HLDMWeapon
 
 	public override void SimulateAnimator( CitizenAnimationHelper anim )
 	{
-		anim.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
+		anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
 		anim.AimBodyWeight = 1.0f;
 	}
 }

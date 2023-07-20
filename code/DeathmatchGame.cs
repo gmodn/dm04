@@ -46,11 +46,16 @@ partial class DeathmatchGame : GameManager
 		}
 	}
 
-	/*[ConCmd.Server( "alert" )]
-	public static void GameAlert( string message )
+	[ConCmd.Server( "kill" )]
+	public static void DoSuicide()
 	{
-		Log.Error( $"{message}" );
-	}*/
+		var player = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
+		if ( player == null ) return;
+
+		player.TakeDamage(DamageInfo.Generic(1000)
+			.WithAttacker( player.LastDamageInfo.Attacker ) 
+		);
+	}
 
 	public override void ClientJoined( IClient cl )
 	{

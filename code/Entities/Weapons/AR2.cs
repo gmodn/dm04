@@ -60,13 +60,10 @@ partial class AR2 : HLDMWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "hl2_smg1.fire" );
+		PlaySound( "hl2_ar2.fire" );
 
-		//
 		// Shoot the bullets
-		//
 		ShootBullet( 0.1f, 1.5f, 12.0f, 3.0f );
-
 	}
 
 	public override void AttackSecondary()

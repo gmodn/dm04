@@ -4,7 +4,7 @@ public partial class DeathmatchPlayer : Player
 {
 	TimeSince timeSinceDropped;
 
-	private DamageInfo lastDamage;
+	public DamageInfo LastDamageInfo;
 
 	public bool InGodMode { get; private set; }
 
@@ -65,6 +65,8 @@ public partial class DeathmatchPlayer : Player
 				PlayerSetup.Equipment.GiveWeapons( this );
 			else
 				PlayerSetup.GiveWeaponsDefault( this );
+
+			SetRandomWeapon();
 		}
 
 		SupressPickupNotices = false;
@@ -72,6 +74,25 @@ public partial class DeathmatchPlayer : Player
 		Armour = 0;
 
 		base.Respawn();
+	}
+
+	/// <summary>
+	/// Use a weapon at random they spawned with with exclusions
+	/// </summary>
+	public void SetRandomWeapon()
+	{
+		var list = (Inventory as DmInventory).List;
+
+		List<Type> excludes = new()
+		{
+			typeof(Stunstick),
+			typeof(GravGun),
+			typeof(GrenadeWeapon),
+		};
+
+		var weps = list.Where( w => !excludes.Contains( w.GetType() ) ).ToList();
+
+		ActiveChildInput = weps[Game.Random.Int( weps.Count()-1 )];
 	}
 
 	[ConCmd.Admin( "dm04.impulse" )]
@@ -153,7 +174,7 @@ public partial class DeathmatchPlayer : Player
 
 		Inventory.DeleteContents();
 
-		if ( LastDamage.HasTag( "blast" ) )
+		if ( LastDamageInfo.HasTag( "blast" ) )
 		{
 			using ( Prediction.Off() )
 			{
@@ -166,7 +187,7 @@ public partial class DeathmatchPlayer : Player
 		}
 		else
 		{
-			BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
+			BecomeRagdollOnClient( LastDamageInfo.Force, LastDamageInfo.BoneIndex );
 		}
 
 		Controller = null;
@@ -272,14 +293,12 @@ public partial class DeathmatchPlayer : Player
 		UpdateCamera();
 	}
 
-	DamageInfo LastDamage;
-
 	public override void TakeDamage( DamageInfo info )
 	{
 		if ( LifeState == LifeState.Dead || InGodMode )
 			return;
 
-		LastDamage = info;
+		LastDamageInfo = info;
 
 		if ( info.Hitbox.HasTag( "head" ) )
 			info.Damage *= 2.0f;

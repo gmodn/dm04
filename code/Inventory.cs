@@ -23,8 +23,6 @@
 		// We don't want to pick up the same weapon twice
 		// But we'll take the ammo from it Winky Face
 
-		Log.Info( IsCarryingType( weapon.GetType() ) );
-
 		if ( weapon != null && IsCarryingType( weapon.GetType() ) )
 		{
 			var ammo = weapon.AmmoClip;
