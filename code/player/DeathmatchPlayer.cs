@@ -188,6 +188,13 @@ public partial class DeathmatchPlayer : Player
 		Log.Info( "Client has died, increase death stat by 1." );
 	}
 
+	[ClientRpc]
+	public void KillStat()
+	{
+		Sandbox.Services.Stats.Increment( "kills", 1 );
+		Log.Info( "Client has killed a player, increase kill stat by 1." );
+	}
+
 	public override void Simulate( IClient cl )
 	{
 		base.Simulate( cl );
