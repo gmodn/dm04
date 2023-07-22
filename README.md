@@ -9,14 +9,16 @@ I want this to be as mapper/developer-friendly as possible, so if there is somet
 
 # Half-Life Deathmatch is...
 
-Gman (Ian): Programming, UI, Lead
-ItsRifter: Programming
-Lokiv: Animgraph Work
-TheBoxTrot: Programming, Mapping
-Meetle Meek: Mapping
-Rice: Mapping
-Foxtrot: Mapping
-Super Smol: Programming, Weapon Model Implementation
+| Contributor                   | Contribution      
+| -----------                   | -----------    
+| Gman (Ian)                    |  Programming, UI, Lead
+| ItsRifter                     |  Programming
+| Lokiv                         |  Animgraph Work
+| TheBoxTrot                    |  Programming, Mapping
+| Meetle Meek                   |  Mapping
+| Rice                          |  Mapping
+| Foxtrot                       |  Mapping
+| Super Smol                    |  Programming, Weapon Model Implementation
 
 # External Sources:
 Amper Software (Breaker Admin System) : [https://github.com/AmperSoftware/breaker/wiki/Server-Administration]
@@ -33,11 +35,11 @@ Juniez (Weapon models and textures) [https://www.artstation.com/juniez]:
 	Juniez
 
 HL2:MMod Team (Weapon animations, and sounds) [https://www.moddb.com/mods/hl2-ep2-enhased-mod]:
+
 	Gunship Mark II : Mod author, code, VFX, textures, texture edits, compiling, scripting, shaders, playtesting.
 	Fooltaurus : Animations, model edits and fixes, texture edits, playtesting.
 	KrIsCrEeP : Sound re-design, weapon foley, playtesting.
 	sgor00 : Mod page art, logos, art for videos.
-
 	Sirgibsalot : Help with compiling, proofreading and model edits.
 	CW3D : Ideas, proofreading, constructive criticism.
 	.NicolasDe : Hyperborea viewroll/idle camera.
