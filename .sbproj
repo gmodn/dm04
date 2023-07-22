@@ -314,10 +314,10 @@
           "GroupName": "Other"
         },
         {
-          "Name": "Menu",
+          "Name": "QuickSwap",
           "KeyboardCode": "Q",
           "GamepadCode": "SwitchRightMenu",
-          "GroupName": "Other"
+          "GroupName": "Actions"
         },
         {
           "Name": "Chat",

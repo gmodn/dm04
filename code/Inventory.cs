@@ -1,6 +1,10 @@
-﻿partial class DmInventory : BaseInventory
+﻿public partial class DmInventory : BaseInventory
 {
 
+	/// <summary>
+	/// The last active weapon, used for quick swap
+	/// </summary>
+	public Entity LastActive { get; set; }
 
 	public DmInventory( DeathmatchPlayer player ) : base( player )
 	{
@@ -15,11 +19,11 @@
 
 		if ( weapon == null )
 			return false;
-		//
+
 		// We don't want to pick up the same weapon twice
 		// But we'll take the ammo from it Winky Face
-		//
-		if ( weapon != null && IsCarryingType( ent.GetType() ) )
+
+		if ( weapon != null && IsCarryingType( weapon.GetType() ) )
 		{
 			var ammo = weapon.AmmoClip;
 			var ammoType = weapon.AmmoType;
@@ -44,6 +48,9 @@
 			return false;
 		}
 
+		if ( makeActive )
+			LastActive = player.ActiveChild;
+
 		if ( !base.Add( ent, makeActive ) )
 			return false;
 
@@ -63,5 +70,15 @@
 	public bool IsCarryingType( Type t )
 	{
 		return List.Any( x => x.IsValid() && x.GetType() == t );
+	}
+
+	public override bool Contains( Entity ent )
+	{
+		return base.Contains( ent );
+	}
+
+	public override bool CanAdd( Entity ent )
+	{
+		return base.CanAdd( ent );
 	}
 }

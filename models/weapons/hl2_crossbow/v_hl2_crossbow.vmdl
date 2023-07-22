@@ -337,7 +337,7 @@
 								event_frame = 20
 								event_keys = 
 								{
-									name = "hl2_crossbow.lens"
+									name = "sounds/weapons/hl2_crossbow/hl2_crossbow.lens.sound"
 									stop_on_seq_change = true
 									use_layer_sequence = false
 									tags = ""

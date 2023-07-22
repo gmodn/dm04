@@ -5,14 +5,14 @@ partial class SMG : HLDMWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_smg1/w_hl2_smg1.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_smg1/v_hl2_smg1.vmdl";
-
 	public override float PrimaryRate => 13.3f;
 	public override float SecondaryRate => 1.0f;
 	public override int ClipSize => 45;
 	public override AmmoType AmmoType => AmmoType.SMG;
 	public override AmmoType SecondaryAmmo => AmmoType.SMGGrenade;
 	public override float ReloadTime => 1.7f;
-	public override int Bucket => 2;
+	public override int SlotColumn => 2;
+	public override int SlotOrder => 1;
 
 	public override void Spawn()
 	{
@@ -24,8 +24,7 @@ partial class SMG : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( !TakeAmmo( 1 ) )
 		{
@@ -55,8 +54,7 @@ partial class SMG : HLDMWeapon
 
 	public override void AttackSecondary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackSecondary();
 
 		if ( Owner is DeathmatchPlayer player )
 		{
@@ -66,6 +64,8 @@ partial class SMG : HLDMWeapon
 			}
 			else
 			{
+				Game.SetRandomSeed( Time.Tick );
+
 				var aim = Owner.AimRay;
 
 				if ( Game.IsServer )
@@ -77,25 +77,14 @@ partial class SMG : HLDMWeapon
 							Owner = Owner
 						};
 
-						grenade.PhysicsBody.Velocity = aim.Forward * 600.0f + Owner.Rotation.Up * 200.0f + Owner.Velocity;
+						grenade.PhysicsBody.Velocity = aim.Forward * 1000.0f + Owner.Velocity;
 					}
 
 				player.SetAnimParameter( "b_attack", true );
-
-				PlaySound( "dm.grenade_throw" );
-
-				Game.SetRandomSeed( Time.Tick );
-
-				Reload();
+				PlaySound( "hl2_smg1.glauncher" );
 
 				player.TakeAmmo( SecondaryAmmo, 1 );
 				SecondaryAmmoClip = player.AmmoCount( SecondaryAmmo );
-
-				if ( Game.IsServer && AmmoClip == 0 && player.AmmoCount( AmmoType.SMGGrenade ) == 0 )
-				{
-					Delete();
-					player.SwitchToBestWeapon();
-				}
 			}
 		}
 	}

@@ -150,7 +150,7 @@ partial class ChargerStation : KeyframeEntity, IUse
 		}
 	}
 
-	[Event.Tick.Server]
+	[GameEvent.Tick.Server]
 	private void Tick()
 	{
 		if ( TimeSinceUsed >= ChargerResetTime && ChargerPower <= 0 )
@@ -160,7 +160,7 @@ partial class ChargerStation : KeyframeEntity, IUse
 		}
 	}
 
-	[Event.Tick.Client]
+	[GameEvent.Tick.Client]
 	private void ClientTick()
 	{
 

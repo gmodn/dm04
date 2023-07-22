@@ -4,7 +4,7 @@ public partial class DeathmatchPlayer : Player
 {
 	TimeSince timeSinceDropped;
 
-	private DamageInfo lastDamage;
+	public DamageInfo LastDamageInfo;
 
 	public bool InGodMode { get; private set; }
 
@@ -26,6 +26,8 @@ public partial class DeathmatchPlayer : Player
 	public Vector3 WishVelocity { get; set; }
 
 	public static string PlayerModel { get; set; } = ("models/citizen/citizen.vmdl");
+
+	public bool SuppressAttacks = false;
 
 	public DeathmatchPlayer()
 	{
@@ -65,6 +67,8 @@ public partial class DeathmatchPlayer : Player
 				PlayerSetup.Equipment.GiveWeapons( this );
 			else
 				PlayerSetup.GiveWeaponsDefault( this );
+
+			SetRandomWeapon();
 		}
 
 		SupressPickupNotices = false;
@@ -74,7 +78,26 @@ public partial class DeathmatchPlayer : Player
 		base.Respawn();
 	}
 
-	[ConCmd.Admin( "impulse" )]
+	/// <summary>
+	/// Use a weapon at random they spawned with with exclusions
+	/// </summary>
+	public void SetRandomWeapon()
+	{
+		var list = (Inventory as DmInventory).List;
+
+		List<Type> excludes = new()
+		{
+			typeof(Stunstick),
+			typeof(GravGun),
+			typeof(GrenadeWeapon),
+		};
+
+		var weps = list.Where( w => !excludes.Contains( w.GetType() ) ).ToList();
+
+		ActiveChildInput = weps[Game.Random.Int( weps.Count()-1 )];
+	}
+
+	[ConCmd.Admin( "dm04.impulse" )]
 	public static void Impulse( int Value )
 	{
 		if ( Value == 101 ) 
@@ -108,7 +131,7 @@ public partial class DeathmatchPlayer : Player
 		}
 	}
 
-	[ConCmd.Admin( "HLDM_DevTools")]
+	[ConCmd.Admin( "dm04.DevTools")]
 	public static void GiveDevTools()
 	{
 		var ply = ConsoleSystem.Caller.Pawn as DeathmatchPlayer;
@@ -153,7 +176,7 @@ public partial class DeathmatchPlayer : Player
 
 		Inventory.DeleteContents();
 
-		if ( LastDamage.HasTag( "blast" ) )
+		if ( LastDamageInfo.HasTag( "blast" ) )
 		{
 			using ( Prediction.Off() )
 			{
@@ -166,7 +189,7 @@ public partial class DeathmatchPlayer : Player
 		}
 		else
 		{
-			BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
+			BecomeRagdollOnClient( LastDamageInfo.Force, LastDamageInfo.BoneIndex );
 		}
 
 		Controller = null;
@@ -185,7 +208,19 @@ public partial class DeathmatchPlayer : Player
 	public void DeathStat()
 	{
 		Sandbox.Services.Stats.Increment( "deaths", 1 );
-		Log.Info( "Client has died, increase death stat by 1." );
+		//Log.Info( "Client has died, increase death stat by 1." );
+	}
+
+	int GetSlotInput()
+	{
+		if ( Input.Pressed( "slot1" ) ) return 0;
+		if ( Input.Pressed( "slot2" ) ) return 1;
+		if ( Input.Pressed( "slot3" ) ) return 2;
+		if ( Input.Pressed( "slot4" ) ) return 3;
+		if ( Input.Pressed( "slot5" ) ) return 4;
+		if ( Input.Pressed( "slot6" ) ) return 5;
+
+		return -1;
 	}
 
 	[ClientRpc]
@@ -207,25 +242,48 @@ public partial class DeathmatchPlayer : Player
 		DoPlayerAnimation();
 		SimulateActiveChild( cl, ActiveChild );
 
-		//
 		// If the current weapon is out of ammo and we last fired it over half a second ago
 		// lets try to switch to a better wepaon
-		//
 		if ( ActiveChild is HLDMWeapon weapon && !weapon.IsUsable() && weapon.TimeSincePrimaryAttack > 0.5f && weapon.TimeSinceSecondaryAttack > 0.5f )
 		{
 			SwitchToBestWeapon();
 		}
 
-		if(Input.Pressed("GravGun") && ActiveChild is not GravGun )
+		if( Input.Pressed("QuickSwap") )
 		{
 			var inv = Inventory as DmInventory;
 
-			var gravgun = inv.List.Where( g => g is GravGun )
-				.FirstOrDefault();
+			var curActive = ActiveChild;
+			ActiveChildInput = inv.LastActive;
 
-			if ( gravgun == null ) return;
+			inv.LastActive = curActive;
+		}
 
-			ActiveChildInput = gravgun;
+		if( Input.Pressed("GravGun") )
+		{
+			var inv = Inventory as DmInventory;
+
+			if ( ActiveChild is not GravGun )
+			{
+				var gravgun = inv.List.Where( g => g is GravGun )
+					.FirstOrDefault();
+
+				inv.LastActive = ActiveChild;
+				ActiveChildInput = gravgun;
+			} 
+			else
+			{
+				ActiveChildInput = inv.LastActive;
+				inv.LastActive = inv.List
+					.Where( g => g is GravGun )
+					.FirstOrDefault();
+			}
+		}
+
+		if ( Input.MouseWheel != 0 || GetSlotInput() != -1 )
+		{
+			if ( !SuppressAttacks )
+				SuppressAttacks = true;
 		}
 	}
 
@@ -233,12 +291,21 @@ public partial class DeathmatchPlayer : Player
 	{
 		var best = Children.Select( x => x as HLDMWeapon )
 			.Where( x => x.IsValid() && x.IsUsable() )
-			.OrderByDescending( x => x.BucketWeight )
+			.OrderByDescending( x => x.SlotOrder )
 			.FirstOrDefault();
 
 		if ( best == null ) return;
 
 		ActiveChild = best;
+	}
+
+	public override void OnActiveChildChanged( Entity previous, Entity next )
+	{
+		base.OnActiveChildChanged( previous, next );
+
+		(Inventory as DmInventory).LastActive = previous;
+
+		if ( SuppressAttacks ) SuppressAttacks = false;
 	}
 
 	public override void StartTouch( Entity other )
@@ -253,14 +320,12 @@ public partial class DeathmatchPlayer : Player
 		UpdateCamera();
 	}
 
-	DamageInfo LastDamage;
-
 	public override void TakeDamage( DamageInfo info )
 	{
 		if ( LifeState == LifeState.Dead || InGodMode )
 			return;
 
-		LastDamage = info;
+		LastDamageInfo = info;
 
 		if ( info.Hitbox.HasTag( "head" ) )
 			info.Damage *= 2.0f;

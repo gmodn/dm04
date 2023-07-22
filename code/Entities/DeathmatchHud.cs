@@ -1,4 +1,4 @@
-﻿public partial class DeathmatchHud : HudEntity<HudRootPanel>
+﻿/*public partial class DeathmatchHud : HudEntity<HudRootPanel>
 {
 	[ClientRpc]
 	public void OnPlayerDied( DeathmatchPlayer player )
@@ -12,3 +12,4 @@
 		Game.AssertClient();
 	}
 }
+*/

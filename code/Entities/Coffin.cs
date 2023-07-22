@@ -21,7 +21,6 @@
 			Log.Info( $"Coffin ID: {this.NetworkIdent}" );
 			Log.Info( $"Coffin Contents: {this.Weapons} {this.Ammos}" );
 		}
-		else;
 	}
 
 	public void Populate( DeathmatchPlayer player )

@@ -8,15 +8,15 @@ partial class AR2 : HLDMWeapon
 {
 	public static readonly Model WorldModel = Model.Load( "models/weapons/hl2_ar2/w_hl2_ar2.vmdl" );
 	public override string ViewModelPath => "models/weapons/hl2_ar2/v_hl2_ar2.vmdl";
-
 	public override float PrimaryRate => 10.0f;
 	public override float SecondaryRate => 0.5f;
 	public override int ClipSize => 30;
 	public override AmmoType AmmoType => AmmoType.AR2;
 	public override AmmoType SecondaryAmmo => AmmoType.AR2Alt;
 	public override float ReloadTime => 1.7f;
-	public override int Bucket => 2;
-	
+	public override int SlotColumn => 2;
+	public override int SlotOrder => 2;
+
 	RealTimeUntil timeToAltFire;
 	bool isChargingAlt;
 	Sound chargeSound;
@@ -40,8 +40,7 @@ partial class AR2 : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( !TakeAmmo( 1 ) )
 		{
@@ -60,17 +59,16 @@ partial class AR2 : HLDMWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "hl2_smg1.fire" );
+		PlaySound( "hl2_ar2.fire" );
 
-		//
 		// Shoot the bullets
-		//
 		ShootBullet( 0.1f, 1.5f, 12.0f, 3.0f );
-
 	}
 
 	public override void AttackSecondary()
 	{
+		base.AttackSecondary();
+
 		if ( Owner is DeathmatchPlayer player && Game.IsServer )
 		{
 			if ( player.AmmoCount( SecondaryAmmo ) <= 0 )

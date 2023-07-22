@@ -11,7 +11,8 @@ partial class Crowbar : HLDMWeapon
 	public override float ReloadTime => 3.0f;
 	public override AmmoType AmmoType => AmmoType.None;
 	public override int ClipSize => 0;
-	public override int Bucket => 0;
+	public override int SlotColumn => 0;
+	public override int SlotOrder => 1;
 
 	public override void Spawn()
 	{
@@ -28,8 +29,7 @@ partial class Crowbar : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		// woosh sound
 		// screen shake
@@ -68,7 +68,7 @@ partial class Crowbar : HLDMWeapon
 
 	public override void SimulateAnimator( CitizenAnimationHelper anim )
 	{
-		anim.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
+		anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
 		anim.AimBodyWeight = 1.0f;
 	}
 }

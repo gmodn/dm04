@@ -3,10 +3,17 @@
 	public virtual AmmoType AmmoType => AmmoType.None;
 	public virtual int ClipSize => 16;
 	public virtual float ReloadTime => 3.0f;
-	public virtual int Bucket => 1;
-	public virtual int BucketWeight => 100;
+
+	/// <summary>
+	/// The column order this weapon will go in, follow the array indexing
+	/// </summary>
+	public virtual int SlotColumn => 1;
+
+	/// <summary>
+	/// The order in the column, don't use the array indexing for this
+	/// </summary>
+	public virtual int SlotOrder => 1;
 	public virtual AmmoType SecondaryAmmo => AmmoType.None;
-	public virtual int Order => (Bucket * 10000) + BucketWeight;
 
 	public virtual string AmmoIcon => "p";
 
@@ -30,7 +37,9 @@
 	public PickupTrigger PickupTrigger { get; protected set; }
 	public PickupTrigger GravPickupTrigger { get; protected set; }
 
-	public void gravhitbox()
+	public DeathmatchPlayer Holder => Owner as DeathmatchPlayer;
+
+	public void CreateGravHitbox()
 	{
 		GravPickupTrigger = new PickupTrigger();
 		GravPickupTrigger.SetTriggerSize( 64 );
@@ -38,9 +47,23 @@
 		GravPickupTrigger.Position = Position;
 	}
 
-	public void gravhitboxremove()
+	public void RemoveGravHitbox()
 	{
 		GravPickupTrigger.Delete();
+	}
+
+	public override bool CanPrimaryAttack()
+	{
+		if ( Holder.SuppressAttacks ) return false;
+
+		return base.CanPrimaryAttack();
+	}
+
+	public override bool CanSecondaryAttack()
+	{
+		if ( Holder.SuppressAttacks ) return false;
+
+		return base.CanSecondaryAttack();
 	}
 
 	public int AvailableAmmo()
@@ -102,19 +125,33 @@
 		DoReloadEffects();
 	}
 
+	TimeSince timeSinceSuppressed;
+
 	public override void Simulate( IClient owner )
 	{
 		if ( TimeSinceDeployed < 0.6f )
+			return;
+
+		if ( timeSinceSuppressed < 0.2f ) 
 			return;
 
 		if ( !IsReloading )
 		{
 			base.Simulate( owner );
 		}
-
+		
 		if ( IsReloading && TimeSinceReload > ReloadTime )
 		{
 			OnReloadFinish();
+		}
+
+		if ( Holder.SuppressAttacks )
+		{
+			if ( Input.Pressed( "Attack1" ) || Input.Pressed( "Attack2" ) )
+			{
+				Holder.SuppressAttacks = false;
+				timeSinceSuppressed = 0;
+			}
 		}
 	}
 
@@ -263,7 +300,8 @@
 	{
 		if ( AmmoClip > 0 ) return true;
 		if ( AmmoType == AmmoType.None ) return true;
-		return AvailableAmmo() > 0;
+
+		return AvailableAmmo() > 0 && AvailableAltAmmo() > 0;
 	}
 
 	public override void OnCarryStart( Entity carrier )

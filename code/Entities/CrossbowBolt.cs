@@ -14,7 +14,7 @@ partial class CrossbowBolt : ModelEntity
 	}
 
 
-	[Event.Tick.Server]
+	[GameEvent.Tick.Server]
 	public virtual void Tick()
 	{
 		if ( !Game.IsServer )
@@ -49,10 +49,10 @@ partial class CrossbowBolt : ModelEntity
 
 			if ( tr.Entity.IsValid() )
 			{
-				var damageInfo = DamageInfo.FromBullet( tr.EndPosition, tr.Direction * 200, 20 )
-													.UsingTraceResult( tr )
-													.WithAttacker( Owner )
-													.WithWeapon( this );
+				var damageInfo = DamageInfo.FromBullet( tr.EndPosition, tr.Direction * 200, 100 )
+					.UsingTraceResult( tr )
+					.WithAttacker( Owner )
+					.WithWeapon( this );
 
 				tr.Entity.TakeDamage( damageInfo );
 			}
@@ -61,9 +61,7 @@ partial class CrossbowBolt : ModelEntity
 			SetParent( tr.Entity, tr.Bone );
 			Owner = null;
 
-			//
 			// Surface impact effect
-			//
 			tr.Normal = Rotation.Forward * -1;
 			tr.Surface.DoBulletImpact( tr );
 			velocity = default;

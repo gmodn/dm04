@@ -42,7 +42,7 @@ partial class SlamEntity : Prop
 
 		
 	}
-	[Event.Tick.Server]
+	[GameEvent.Tick.Server]
 	protected virtual async Task OnTickAsync()
 	{
 		if ( armed == true)

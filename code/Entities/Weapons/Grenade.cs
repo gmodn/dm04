@@ -10,7 +10,8 @@ partial class GrenadeWeapon : HLDMWeapon
 	public override float ReloadTime => 1f;
 	public override AmmoType AmmoType => AmmoType.Grenade;
 	public override int ClipSize => 1;
-	public override int Bucket => 4;
+	public override int SlotColumn => 4;
+	public override int SlotOrder => 1;
 
 	public override void Spawn()
 	{
@@ -27,8 +28,7 @@ partial class GrenadeWeapon : HLDMWeapon
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( Owner is not DeathmatchPlayer player ) return;
 

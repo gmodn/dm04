@@ -13,8 +13,8 @@ partial class Python : HLDMWeapon
 	public override int ClipSize => 6;
 	public override AmmoType AmmoType => AmmoType.Magnum;
 
-	public override int Bucket => 1;
-	public override int BucketWeight => 200;
+	public override int SlotColumn => 1;
+	public override int SlotOrder => 2;
 
 	[Net, Predicted]
 	public bool Zoomed { get; set; }
@@ -32,13 +32,12 @@ partial class Python : HLDMWeapon
 
 	public override bool CanPrimaryAttack()
 	{
-		return base.CanPrimaryAttack() && Input.Pressed( InputButton.PrimaryAttack );
+		return base.CanPrimaryAttack() && Input.Pressed( "Attack1" );
 	}
 
 	public override void AttackPrimary()
 	{
-		TimeSincePrimaryAttack = 0;
-		TimeSinceSecondaryAttack = 0;
+		base.AttackPrimary();
 
 		if ( !TakeAmmo( 1 ) )
 		{
