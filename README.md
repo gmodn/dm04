@@ -1,6 +1,13 @@
-Half-Life Deathmatch is...
+<p align="center">
+	<img src="https://static.wixstatic.com/media/aa7e94_2a81b4fbb2e04c66b2554092440491ba~mv2.png/v1/fill/w_600,h_90,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/hldm-logo.png">
+</p>
+<hr>
 
-Credits:
+[Half Life: Deathmatch](https://asset.party/gman/dm04) (Previously known as Deathmatch 2004, or DM04) is a Half-Life-themed Deathmatch experience in S&box. 
+This is constantly in development, so any criticism is welcome, just make it constructive, please. 
+I want this to be as mapper/developer-friendly as possible, so if there is something that isn't in that you need, let me know and I'll work on it.
+
+# Half-Life Deathmatch is...
 
 Gman (Ian): Programming, UI, Lead
 ItsRifter: Programming
@@ -11,7 +18,7 @@ Rice: Mapping
 Foxtrot: Mapping
 Super Smol: Programming, Weapon Model Implementation
 
-External Sources:
+# External Sources:
 Amper Software (Breaker Admin System) : [https://github.com/AmperSoftware/breaker/wiki/Server-Administration]
 
 Juniez (Weapon models and textures) [https://www.artstation.com/juniez]:
@@ -46,6 +53,4 @@ HL2:MMod Team (Weapon animations, and sounds) [https://www.moddb.com/mods/hl2-ep
 	ModDB - Hosting, promotion, home of HL2MMod.
 
 Shadow_RUN (Rigging Juniez's models to MMod animations) [https://gamebanana.com/members/1389410]
-
-Half-Life 2: Remade Assets (Models) [https://steamcommunity.com/workshop/filedetails/?id=2438227263]
 
