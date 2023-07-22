@@ -24,8 +24,8 @@ I want this to be as mapper/developer-friendly as possible, so if there is somet
 Amper Software (Breaker Admin System) : [https://github.com/AmperSoftware/breaker/wiki/Server-Administration]
 
 Juniez (Weapon models and textures) [https://www.artstation.com/juniez]:
+	
 	Hello, please enjoy this.
-
 	LICENSE
 	Please do not redistribute this simply as a part of a larger package (i.e. repacks, compilations, etc).
 	Otherwise, please feel free to redistribute this zip, as long as this read me is included.
