@@ -1,0 +1,33 @@
+@using Sandbox.UI
+@inherits Panel
+
+<style>
+	.SplashPage
+	{
+		.intro
+		{
+			width: 100%;
+			height: 100%;
+		}
+	}
+</style>
+
+
+<root>
+	<VideoPanel class="intro" Source="ui\MainMenu\GameMenu\SplashContent\intro.mp4"></VideoPanel>
+</root>
+
+@code
+{
+	TimeSince TimeSinceCreated { get; set; } = 0;
+
+	public override void Tick()
+	{
+		if ( !IsVisible ) return;
+
+		if ( TimeSinceCreated > 13f )
+		{
+			this.Navigate( "/" );
+		}
+	}
+}

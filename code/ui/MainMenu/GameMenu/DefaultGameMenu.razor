@@ -21,7 +21,9 @@
 {
     public DefaultGameMenu()
     {
-        DefaultUrl = "/";
+        DefaultUrl = "/splash";
+
+        AddDestination("/splash", typeof(SplashPage));
 
         if (Game.InGame) Navigate("/active");
 
