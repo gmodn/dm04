@@ -4,6 +4,9 @@
 </p>
 <hr>
 
+# NOTE:
+Half-Life Deathmatch is undergowing another major project change, it is highly advised that you wait for that to be completed before using this as an example.
+
 [Half Life: Deathmatch](https://asset.party/gman/dm04) (Previously known as Deathmatch 2004, or DM04) is a Half-Life-themed Deathmatch experience in S&box. 
 This is constantly in development, so any criticism is welcome, just make it constructive, please. 
 I want this to be as mapper/developer-friendly as possible, so if there is something that isn't in that you need, let me know and I'll work on it.
