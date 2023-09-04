@@ -2,19 +2,18 @@
 @inherits Panel
 
 <style>
-	.SplashPage
+	SplashPage
 	{
-		.intro
-		{
-			width: 100%;
-			height: 100%;
-		}
+		position: absolute;
+		width: 200%;
+		height: 175%;
+		transform: translateX(-4%) translateY(-25%);
+		z-index: 99;
 	}
 </style>
 
-
 <root>
-	<VideoPanel class="intro" Source="ui\MainMenu\GameMenu\SplashContent\intro.mp4"></VideoPanel>
+	<VideoPanel Source="ui\MainMenu\GameMenu\SplashContent\intro.mp4"></VideoPanel>
 </root>
 
 @code
@@ -26,8 +25,6 @@
 		if ( !IsVisible ) return;
 
 		if ( TimeSinceCreated > 13f )
-		{
-			this.Navigate( "/" );
-		}
+			Delete(true);
 	}
 }

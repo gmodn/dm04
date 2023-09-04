@@ -29,6 +29,22 @@
 
 @code
 {
+    static bool isFirstTime = true;
+
+    public FrontPage()
+    {
+        if (isFirstTime)
+            FirstTimeStart();
+    }
+
+    void FirstTimeStart()
+    {
+        AddChild<SplashPage>();
+
+        //DefaultUrl = "/splash";
+        //AddDestination("/splash", typeof(SplashPage));
+    }
+
     async Task CreateNewLobby()
     {
         // we will navigate to lobby when it's ready
@@ -66,5 +82,11 @@
     public override void Tick()
     {
         base.Tick();
+    }
+
+    [Event.Hotload]
+    protected void MenuHotload()
+    {
+        isFirstTime = false;
     }
 }

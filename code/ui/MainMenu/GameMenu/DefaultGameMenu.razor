@@ -21,16 +21,13 @@
 {
     public DefaultGameMenu()
     {
-        DefaultUrl = "/splash";
-
-        AddDestination("/splash", typeof(SplashPage));
-
         if (Game.InGame) Navigate("/active");
 
+        DefaultUrl = "/";
         AddDestination("/", typeof(FrontPage));
 
         BindClass( "ingame", () => Game.InGame );
-        BindClass("inlobby", () => Game.Menu.Lobby != null);
+        BindClass( "inlobby", () => Game.Menu.Lobby != null);
     }
 
     protected override void OnEvent( PanelEvent e )
