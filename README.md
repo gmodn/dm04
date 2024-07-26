@@ -5,7 +5,7 @@
 <hr>
 
 # NOTE:
-Half-Life Deathmatch is currently on hold due to major changes within s&box. Once s&box becomes more stable, the project will continue.
+Half-Life Deathmatch is currently on hold due for the forseeable future, and is currently completely broken due to updates with s&box as a platform.
 
 [Half Life: Deathmatch](https://asset.party/gman/dm04) (Previously known as Deathmatch 2004, or DM04) is a Half-Life-themed Deathmatch experience in S&box. 
 This is constantly in development, so any criticism is welcome, just make it constructive, please. 
